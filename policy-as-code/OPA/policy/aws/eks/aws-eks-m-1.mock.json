@@ -1,0 +1,851 @@
+{
+    "mock": {
+      "m1_valid": {
+        "resource_changes": [
+          {
+            "address": "module.eks.aws_eks_cluster.eks_cluster",
+            "module_address": "module.midtier",
+            "mode": "managed",
+            "type": "aws_eks_cluster",
+            "name": "eks_cluster",
+            "provider_name": "registry.terraform.io/hashicorp/aws",
+            "change": {
+              "actions": [
+                "create"
+              ],
+              "before": null,
+              "after": {
+                "enabled_cluster_log_types": [
+                  "api",
+                  "audit",
+                  "authenticator",
+                  "controllerManager",
+                  "scheduler"
+                ],
+                "encryption_config": [
+                  {
+                    "provider": [
+                      {
+                      }
+                    ],
+                    "resources": [
+                      "secrets"
+                    ]
+                  }
+                ],
+                "name": "quantexa-dev-eks-cluster",
+                "tags": null,
+                "tags_all": {
+                  "project": "quantexa-mvp"
+                },
+                "timeouts": null,
+                "version": "1.21",
+                "vpc_config": [
+                  {
+                    "endpoint_private_access": true,
+                    "endpoint_public_access": false,
+                    "subnet_ids": [
+                      "subnet-081e40a32b90a4185",
+                      "subnet-0854a6ae56612b073"
+                    ]
+                  }
+                ]
+              },
+              "after_unknown": {
+                "arn": true,
+                "certificate_authority": true,
+                "created_at": true,
+                "enabled_cluster_log_types": [
+                  false,
+                  false,
+                  false,
+                  false,
+                  false
+                ],
+                "encryption_config": [
+                  {
+                    "provider": [
+                      {
+                        "key_arn": true
+                      }
+                    ],
+                    "resources": [
+                      false
+                    ]
+                  }
+                ],
+                "endpoint": true,
+                "id": true,
+                "identity": true,
+                "kubernetes_network_config": true,
+                "platform_version": true,
+                "role_arn": true,
+                "status": true,
+                "tags_all": {
+                },
+                "vpc_config": [
+                  {
+                    "cluster_security_group_id": true,
+                    "public_access_cidrs": true,
+                    "security_group_ids": true,
+                    "subnet_ids": [
+                      false,
+                      false
+                    ],
+                    "vpc_id": true
+                  }
+                ]
+              },
+              "before_sensitive": false,
+              "after_sensitive": {
+                "certificate_authority": [
+                ],
+                "enabled_cluster_log_types": [
+                  false,
+                  false,
+                  false,
+                  false,
+                  false
+                ],
+                "encryption_config": [
+                  {
+                    "provider": [
+                      {
+                      }
+                    ],
+                    "resources": [
+                      false
+                    ]
+                  }
+                ],
+                "identity": [
+                ],
+                "kubernetes_network_config": [
+                ],
+                "tags_all": {
+                },
+                "vpc_config": [
+                  {
+                    "public_access_cidrs": [
+                    ],
+                    "security_group_ids": [
+                    ],
+                    "subnet_ids": [
+                      false,
+                      false
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "m1_api_invalid": {
+        "resource_changes": [
+          {
+            "address": "module.eks.aws_eks_cluster.eks_cluster",
+            "module_address": "module.midtier",
+            "mode": "managed",
+            "type": "aws_eks_cluster",
+            "name": "eks_cluster",
+            "provider_name": "registry.terraform.io/hashicorp/aws",
+            "change": {
+              "actions": [
+                "create"
+              ],
+              "before": null,
+              "after": {
+                "enabled_cluster_log_types": [
+                  "api1",
+                  "audit",
+                  "authenticator",
+                  "controllerManager",
+                  "scheduler"
+                ],
+                "encryption_config": [
+                  {
+                    "provider": [
+                      {
+                      }
+                    ],
+                    "resources": [
+                      "secrets"
+                    ]
+                  }
+                ],
+                "name": "quantexa-dev-eks-cluster",
+                "tags": null,
+                "tags_all": {
+                  "project": "quantexa-mvp"
+                },
+                "timeouts": null,
+                "version": "1.21",
+                "vpc_config": [
+                  {
+                    "endpoint_private_access": true,
+                    "endpoint_public_access": false,
+                    "subnet_ids": [
+                      "subnet-081e40a32b90a4185",
+                      "subnet-0854a6ae56612b073"
+                    ]
+                  }
+                ]
+              },
+              "after_unknown": {
+                "arn": true,
+                "certificate_authority": true,
+                "created_at": true,
+                "enabled_cluster_log_types": [
+                  false,
+                  false,
+                  false,
+                  false,
+                  false
+                ],
+                "encryption_config": [
+                  {
+                    "provider": [
+                      {
+                        "key_arn": true
+                      }
+                    ],
+                    "resources": [
+                      false
+                    ]
+                  }
+                ],
+                "endpoint": true,
+                "id": true,
+                "identity": true,
+                "kubernetes_network_config": true,
+                "platform_version": true,
+                "role_arn": true,
+                "status": true,
+                "tags_all": {
+                },
+                "vpc_config": [
+                  {
+                    "cluster_security_group_id": true,
+                    "public_access_cidrs": true,
+                    "security_group_ids": true,
+                    "subnet_ids": [
+                      false,
+                      false
+                    ],
+                    "vpc_id": true
+                  }
+                ]
+              },
+              "before_sensitive": false,
+              "after_sensitive": {
+                "certificate_authority": [
+                ],
+                "enabled_cluster_log_types": [
+                  false,
+                  false,
+                  false,
+                  false,
+                  false
+                ],
+                "encryption_config": [
+                  {
+                    "provider": [
+                      {
+                      }
+                    ],
+                    "resources": [
+                      false
+                    ]
+                  }
+                ],
+                "identity": [
+                ],
+                "kubernetes_network_config": [
+                ],
+                "tags_all": {
+                },
+                "vpc_config": [
+                  {
+                    "public_access_cidrs": [
+                    ],
+                    "security_group_ids": [
+                    ],
+                    "subnet_ids": [
+                      false,
+                      false
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "m1_audit_invalid": {
+        "resource_changes": [
+          {
+            "address": "module.eks.aws_eks_cluster.eks_cluster",
+            "module_address": "module.midtier",
+            "mode": "managed",
+            "type": "aws_eks_cluster",
+            "name": "eks_cluster",
+            "provider_name": "registry.terraform.io/hashicorp/aws",
+            "change": {
+              "actions": [
+                "create"
+              ],
+              "before": null,
+              "after": {
+                "enabled_cluster_log_types": [
+                  "api",
+                  "audit1",
+                  "authenticator",
+                  "controllerManager",
+                  "scheduler"
+                ],
+                "encryption_config": [
+                  {
+                    "provider": [
+                      {
+                      }
+                    ],
+                    "resources": [
+                      "secrets"
+                    ]
+                  }
+                ],
+                "name": "quantexa-dev-eks-cluster",
+                "tags": null,
+                "tags_all": {
+                  "project": "quantexa-mvp"
+                },
+                "timeouts": null,
+                "version": "1.21",
+                "vpc_config": [
+                  {
+                    "endpoint_private_access": true,
+                    "endpoint_public_access": false,
+                    "subnet_ids": [
+                      "subnet-081e40a32b90a4185",
+                      "subnet-0854a6ae56612b073"
+                    ]
+                  }
+                ]
+              },
+              "after_unknown": {
+                "arn": true,
+                "certificate_authority": true,
+                "created_at": true,
+                "enabled_cluster_log_types": [
+                  false,
+                  false,
+                  false,
+                  false,
+                  false
+                ],
+                "encryption_config": [
+                  {
+                    "provider": [
+                      {
+                        "key_arn": true
+                      }
+                    ],
+                    "resources": [
+                      false
+                    ]
+                  }
+                ],
+                "endpoint": true,
+                "id": true,
+                "identity": true,
+                "kubernetes_network_config": true,
+                "platform_version": true,
+                "role_arn": true,
+                "status": true,
+                "tags_all": {
+                },
+                "vpc_config": [
+                  {
+                    "cluster_security_group_id": true,
+                    "public_access_cidrs": true,
+                    "security_group_ids": true,
+                    "subnet_ids": [
+                      false,
+                      false
+                    ],
+                    "vpc_id": true
+                  }
+                ]
+              },
+              "before_sensitive": false,
+              "after_sensitive": {
+                "certificate_authority": [
+                ],
+                "enabled_cluster_log_types": [
+                  false,
+                  false,
+                  false,
+                  false,
+                  false
+                ],
+                "encryption_config": [
+                  {
+                    "provider": [
+                      {
+                      }
+                    ],
+                    "resources": [
+                      false
+                    ]
+                  }
+                ],
+                "identity": [
+                ],
+                "kubernetes_network_config": [
+                ],
+                "tags_all": {
+                },
+                "vpc_config": [
+                  {
+                    "public_access_cidrs": [
+                    ],
+                    "security_group_ids": [
+                    ],
+                    "subnet_ids": [
+                      false,
+                      false
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "m1_authenticator_invalid": {
+        "resource_changes": [
+          {
+            "address": "module.eks.aws_eks_cluster.eks_cluster",
+            "module_address": "module.midtier",
+            "mode": "managed",
+            "type": "aws_eks_cluster",
+            "name": "eks_cluster",
+            "provider_name": "registry.terraform.io/hashicorp/aws",
+            "change": {
+              "actions": [
+                "create"
+              ],
+              "before": null,
+              "after": {
+                "enabled_cluster_log_types": [
+                  "api",
+                  "audit",
+                  "authenticator1",
+                  "controllerManager",
+                  "scheduler"
+                ],
+                "encryption_config": [
+                  {
+                    "provider": [
+                      {
+                      }
+                    ],
+                    "resources": [
+                      "secrets"
+                    ]
+                  }
+                ],
+                "name": "quantexa-dev-eks-cluster",
+                "tags": null,
+                "tags_all": {
+                  "project": "quantexa-mvp"
+                },
+                "timeouts": null,
+                "version": "1.21",
+                "vpc_config": [
+                  {
+                    "endpoint_private_access": true,
+                    "endpoint_public_access": false,
+                    "subnet_ids": [
+                      "subnet-081e40a32b90a4185",
+                      "subnet-0854a6ae56612b073"
+                    ]
+                  }
+                ]
+              },
+              "after_unknown": {
+                "arn": true,
+                "certificate_authority": true,
+                "created_at": true,
+                "enabled_cluster_log_types": [
+                  false,
+                  false,
+                  false,
+                  false,
+                  false
+                ],
+                "encryption_config": [
+                  {
+                    "provider": [
+                      {
+                        "key_arn": true
+                      }
+                    ],
+                    "resources": [
+                      false
+                    ]
+                  }
+                ],
+                "endpoint": true,
+                "id": true,
+                "identity": true,
+                "kubernetes_network_config": true,
+                "platform_version": true,
+                "role_arn": true,
+                "status": true,
+                "tags_all": {
+                },
+                "vpc_config": [
+                  {
+                    "cluster_security_group_id": true,
+                    "public_access_cidrs": true,
+                    "security_group_ids": true,
+                    "subnet_ids": [
+                      false,
+                      false
+                    ],
+                    "vpc_id": true
+                  }
+                ]
+              },
+              "before_sensitive": false,
+              "after_sensitive": {
+                "certificate_authority": [
+                ],
+                "enabled_cluster_log_types": [
+                  false,
+                  false,
+                  false,
+                  false,
+                  false
+                ],
+                "encryption_config": [
+                  {
+                    "provider": [
+                      {
+                      }
+                    ],
+                    "resources": [
+                      false
+                    ]
+                  }
+                ],
+                "identity": [
+                ],
+                "kubernetes_network_config": [
+                ],
+                "tags_all": {
+                },
+                "vpc_config": [
+                  {
+                    "public_access_cidrs": [
+                    ],
+                    "security_group_ids": [
+                    ],
+                    "subnet_ids": [
+                      false,
+                      false
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "m1_controllerManager_invalid": {
+        "resource_changes": [
+          {
+            "address": "module.eks.aws_eks_cluster.eks_cluster",
+            "module_address": "module.midtier",
+            "mode": "managed",
+            "type": "aws_eks_cluster",
+            "name": "eks_cluster",
+            "provider_name": "registry.terraform.io/hashicorp/aws",
+            "change": {
+              "actions": [
+                "create"
+              ],
+              "before": null,
+              "after": {
+                "enabled_cluster_log_types": [
+                  "api",
+                  "audit",
+                  "authenticator",
+                  "controllerManager1",
+                  "scheduler"
+                ],
+                "encryption_config": [
+                  {
+                    "provider": [
+                      {
+                      }
+                    ],
+                    "resources": [
+                      "secrets"
+                    ]
+                  }
+                ],
+                "name": "quantexa-dev-eks-cluster",
+                "tags": null,
+                "tags_all": {
+                  "project": "quantexa-mvp"
+                },
+                "timeouts": null,
+                "version": "1.21",
+                "vpc_config": [
+                  {
+                    "endpoint_private_access": true,
+                    "endpoint_public_access": false,
+                    "subnet_ids": [
+                      "subnet-081e40a32b90a4185",
+                      "subnet-0854a6ae56612b073"
+                    ]
+                  }
+                ]
+              },
+              "after_unknown": {
+                "arn": true,
+                "certificate_authority": true,
+                "created_at": true,
+                "enabled_cluster_log_types": [
+                  false,
+                  false,
+                  false,
+                  false,
+                  false
+                ],
+                "encryption_config": [
+                  {
+                    "provider": [
+                      {
+                        "key_arn": true
+                      }
+                    ],
+                    "resources": [
+                      false
+                    ]
+                  }
+                ],
+                "endpoint": true,
+                "id": true,
+                "identity": true,
+                "kubernetes_network_config": true,
+                "platform_version": true,
+                "role_arn": true,
+                "status": true,
+                "tags_all": {
+                },
+                "vpc_config": [
+                  {
+                    "cluster_security_group_id": true,
+                    "public_access_cidrs": true,
+                    "security_group_ids": true,
+                    "subnet_ids": [
+                      false,
+                      false
+                    ],
+                    "vpc_id": true
+                  }
+                ]
+              },
+              "before_sensitive": false,
+              "after_sensitive": {
+                "certificate_authority": [
+                ],
+                "enabled_cluster_log_types": [
+                  false,
+                  false,
+                  false,
+                  false,
+                  false
+                ],
+                "encryption_config": [
+                  {
+                    "provider": [
+                      {
+                      }
+                    ],
+                    "resources": [
+                      false
+                    ]
+                  }
+                ],
+                "identity": [
+                ],
+                "kubernetes_network_config": [
+                ],
+                "tags_all": {
+                },
+                "vpc_config": [
+                  {
+                    "public_access_cidrs": [
+                    ],
+                    "security_group_ids": [
+                    ],
+                    "subnet_ids": [
+                      false,
+                      false
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "m1_scheduler_invalid": {
+        "resource_changes": [
+          {
+            "address": "module.eks.aws_eks_cluster.eks_cluster",
+            "module_address": "module.midtier",
+            "mode": "managed",
+            "type": "aws_eks_cluster",
+            "name": "eks_cluster",
+            "provider_name": "registry.terraform.io/hashicorp/aws",
+            "change": {
+              "actions": [
+                "create"
+              ],
+              "before": null,
+              "after": {
+                "enabled_cluster_log_types": [
+                  "api",
+                  "audit",
+                  "authenticator",
+                  "controllerManager",
+                  "scheduler1"
+                ],
+                "encryption_config": [
+                  {
+                    "provider": [
+                      {
+                      }
+                    ],
+                    "resources": [
+                      "secrets"
+                    ]
+                  }
+                ],
+                "name": "quantexa-dev-eks-cluster",
+                "tags": null,
+                "tags_all": {
+                  "project": "quantexa-mvp"
+                },
+                "timeouts": null,
+                "version": "1.21",
+                "vpc_config": [
+                  {
+                    "endpoint_private_access": true,
+                    "endpoint_public_access": false,
+                    "subnet_ids": [
+                      "subnet-081e40a32b90a4185",
+                      "subnet-0854a6ae56612b073"
+                    ]
+                  }
+                ]
+              },
+              "after_unknown": {
+                "arn": true,
+                "certificate_authority": true,
+                "created_at": true,
+                "enabled_cluster_log_types": [
+                  false,
+                  false,
+                  false,
+                  false,
+                  false
+                ],
+                "encryption_config": [
+                  {
+                    "provider": [
+                      {
+                        "key_arn": true
+                      }
+                    ],
+                    "resources": [
+                      false
+                    ]
+                  }
+                ],
+                "endpoint": true,
+                "id": true,
+                "identity": true,
+                "kubernetes_network_config": true,
+                "platform_version": true,
+                "role_arn": true,
+                "status": true,
+                "tags_all": {
+                },
+                "vpc_config": [
+                  {
+                    "cluster_security_group_id": true,
+                    "public_access_cidrs": true,
+                    "security_group_ids": true,
+                    "subnet_ids": [
+                      false,
+                      false
+                    ],
+                    "vpc_id": true
+                  }
+                ]
+              },
+              "before_sensitive": false,
+              "after_sensitive": {
+                "certificate_authority": [
+                ],
+                "enabled_cluster_log_types": [
+                  false,
+                  false,
+                  false,
+                  false,
+                  false
+                ],
+                "encryption_config": [
+                  {
+                    "provider": [
+                      {
+                      }
+                    ],
+                    "resources": [
+                      false
+                    ]
+                  }
+                ],
+                "identity": [
+                ],
+                "kubernetes_network_config": [
+                ],
+                "tags_all": {
+                },
+                "vpc_config": [
+                  {
+                    "public_access_cidrs": [
+                    ],
+                    "security_group_ids": [
+                    ],
+                    "subnet_ids": [
+                      false,
+                      false
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+  

@@ -1,0 +1,490 @@
+{
+  "mock": {
+    "ssm_not_compliant_default": {
+      "resource_changes": [
+        {
+          "address": "aws_ssm_parameter.ssm_not_compliant_default",
+          "mode": "managed",
+          "type": "aws_ssm_parameter",
+          "name": "ssm_not_compliant_default",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "allowed_pattern": null,
+              "description": null,
+              "name": "/my/default/key",
+              "overwrite": null,
+              "tags": null,
+              "tier": "Standard",
+              "type": "SecureString",
+              "value": "AVerySecureString"
+            },
+            "after_unknown": {
+              "arn": true,
+              "data_type": true,
+              "id": true,
+              "key_id": true,
+              "tags_all": true,
+              "version": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "tags_all": {},
+              "value": true
+            }
+          }
+        }
+      ],
+      "configuration": {
+        "root_module": {
+          "resources": [
+            {
+              "address": "aws_ssm_parameter.ssm_not_compliant_default",
+              "mode": "managed",
+              "type": "aws_ssm_parameter",
+              "name": "ssm_not_compliant_default",
+              "provider_config_key": "aws",
+              "expressions": {
+                "name": {
+                  "constant_value": "/my/default/key"
+                },
+                "type": {
+                  "constant_value": "SecureString"
+                },
+                "value": {
+                  "constant_value": "AVerySecureString"
+                }
+              },
+              "schema_version": 0
+            }
+          ]
+        }
+      }
+    },
+    "ssm_not_compliant_hard_coded": {
+      "resource_changes": [
+        {
+          "address": "aws_ssm_parameter.ssm_not_compliant_hard_coded",
+          "mode": "managed",
+          "type": "aws_ssm_parameter",
+          "name": "ssm_not_compliant_hard_coded",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "allowed_pattern": null,
+              "description": null,
+              "key_id": "alias/aws/ssm",
+              "name": "/my/hardcoded/noncomp/key",
+              "overwrite": null,
+              "tags": null,
+              "tier": "Standard",
+              "type": "SecureString",
+              "value": "AVerySecureString"
+            },
+            "after_unknown": {
+              "arn": true,
+              "data_type": true,
+              "id": true,
+              "tags_all": true,
+              "version": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "tags_all": {},
+              "value": true
+            }
+          }
+        }
+      ],
+      "configuration": {
+        "root_module": {
+          "resources": [
+            {
+              "address": "aws_ssm_parameter.ssm_not_compliant_hard_coded",
+              "mode": "managed",
+              "type": "aws_ssm_parameter",
+              "name": "ssm_not_compliant_hard_coded",
+              "provider_config_key": "aws",
+              "expressions": {
+                "key_id": {
+                  "constant_value": "alias/aws/ssm"
+                },
+                "name": {
+                  "constant_value": "/my/hardcoded/noncomp/key"
+                },
+                "type": {
+                  "constant_value": "SecureString"
+                },
+                "value": {
+                  "constant_value": "AVerySecureString"
+                }
+              },
+              "schema_version": 0
+            }
+          ]
+        }
+      }
+    },
+    "ssm_compliant_hard": {
+      "resource_changes": [
+        {
+          "address": "aws_ssm_parameter.ssm_compliant_hard",
+          "mode": "managed",
+          "type": "aws_ssm_parameter",
+          "name": "ssm_compliant_hard",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "allowed_pattern": null,
+              "description": null,
+              "key_id": "arn:aws:kms:us-east-1:111122223333:alias/my-key",
+              "name": "/my/hardcoded/alias/key",
+              "overwrite": null,
+              "tags": null,
+              "tier": "Standard",
+              "type": "SecureString",
+              "value": "AVerySecureString"
+            },
+            "after_unknown": {
+              "arn": true,
+              "data_type": true,
+              "id": true,
+              "tags_all": true,
+              "version": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "tags_all": {},
+              "value": true
+            }
+          }
+        }
+      ],
+      "configuration": {
+        "root_module": {
+          "resources": [
+            {
+              "address": "aws_ssm_parameter.ssm_compliant_hard",
+              "mode": "managed",
+              "type": "aws_ssm_parameter",
+              "name": "ssm_compliant_hard",
+              "provider_config_key": "aws",
+              "expressions": {
+                "key_id": {
+                  "constant_value": "arn:aws:kms:us-east-1:111122223333:alias/my-key"
+                },
+                "name": {
+                  "constant_value": "/my/hardcoded/alias/key"
+                },
+                "type": {
+                  "constant_value": "SecureString"
+                },
+                "value": {
+                  "constant_value": "AVerySecureString"
+                }
+              },
+              "schema_version": 0
+            }
+          ]
+        }
+      }
+    },
+    "ssm_compliant_referenced": {
+      "resource_changes": [
+        {
+          "address": "module.testmodule.aws_ssm_parameter.ssm_compliant_referenced",
+          "module_address": "module.testmodule",
+          "mode": "managed",
+          "type": "aws_ssm_parameter",
+          "name": "ssm_compliant_referenced",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "allowed_pattern": null,
+              "description": null,
+              "name": "/my/default/key/ref/def",
+              "overwrite": null,
+              "tags": null,
+              "tier": "Standard",
+              "type": "SecureString",
+              "value": "AVerySecureString"
+            },
+            "after_unknown": {
+              "arn": true,
+              "data_type": true,
+              "id": true,
+              "key_id": true,
+              "tags_all": true,
+              "version": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "tags_all": {},
+              "value": true
+            }
+          }
+        }
+      ],
+      "configuration": {
+        "root_module": {
+          "module_calls": {
+            "testmodule": {
+              "module": {
+                "resources": [
+                  {
+                    "address": "aws_ssm_parameter.ssm_compliant_referenced",
+                    "mode": "managed",
+                    "type": "aws_ssm_parameter",
+                    "name": "ssm_compliant_referenced",
+                    "provider_config_key": "aws",
+                    "expressions": {
+                      "key_id": {
+                        "references": [
+                          "aws_kms_key.default_key.arn",
+                          "aws_kms_key.default_key"
+                        ]
+                      },
+                      "name": {
+                        "constant_value": "/my/default/key/ref/def"
+                      },
+                      "type": {
+                        "constant_value": "SecureString"
+                      },
+                      "value": {
+                        "constant_value": "AVerySecureString"
+                      }
+                    },
+                    "schema_version": 0
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "ssm_compliant_referenced_without_module": {
+      "resource_changes": [
+        {
+          "address": "aws_ssm_parameter.ssm_compliant_referenced",
+          "mode": "managed",
+          "type": "aws_ssm_parameter",
+          "name": "ssm_compliant_referenced",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "allowed_pattern": null,
+              "description": null,
+              "name": "/my/default/key/ref/def",
+              "overwrite": null,
+              "tags": null,
+              "tier": "Standard",
+              "type": "SecureString",
+              "value": "AVerySecureString"
+            },
+            "after_unknown": {
+              "arn": true,
+              "data_type": true,
+              "id": true,
+              "key_id": true,
+              "tags_all": true,
+              "version": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "tags_all": {},
+              "value": true
+            }
+          }
+        }
+      ],
+      "configuration": {
+        "root_module": {
+          "resources": [
+            {
+              "address": "aws_ssm_parameter.ssm_compliant_referenced",
+              "mode": "managed",
+              "type": "aws_ssm_parameter",
+              "name": "ssm_compliant_referenced",
+              "provider_config_key": "aws",
+              "expressions": {
+                "key_id": {
+                  "references": [
+                    "aws_kms_key.default_key.arn",
+                    "aws_kms_key.default_key"
+                  ]
+                },
+                "name": {
+                  "constant_value": "/my/default/key/ref/def"
+                },
+                "type": {
+                  "constant_value": "SecureString"
+                },
+                "value": {
+                  "constant_value": "AVerySecureString"
+                }
+              },
+              "schema_version": 0
+            }
+          ]
+        }
+      }
+    },
+    "ssm_not_compliant_string": {
+      "resource_changes": [
+        {
+          "address": "aws_ssm_parameter.ssm_not_compliant_string",
+          "mode": "managed",
+          "type": "aws_ssm_parameter",
+          "name": "ssm_not_compliant_string",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "allowed_pattern": null,
+              "description": null,
+              "key_id": "arn:aws:kms:us-east-1:111122223333:alias/my-key",
+              "name": "/my/hardcoded/alias/key",
+              "overwrite": null,
+              "tags": null,
+              "tier": "Standard",
+              "type": "String",
+              "value": "AVerySecureString"
+            },
+            "after_unknown": {
+              "arn": true,
+              "data_type": true,
+              "id": true,
+              "tags_all": true,
+              "version": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "tags_all": {},
+              "value": true
+            }
+          }
+        }
+      ],
+      "configuration": {
+        "root_module": {
+          "resources": [
+            {
+              "address": "aws_ssm_parameter.ssm_not_compliant_string",
+              "mode": "managed",
+              "type": "aws_ssm_parameter",
+              "name": "ssm_not_compliant_string",
+              "provider_config_key": "aws",
+              "expressions": {
+                "key_id": {
+                  "constant_value": "arn:aws:kms:us-east-1:111122223333:alias/my-key"
+                },
+                "name": {
+                  "constant_value": "/my/hardcoded/alias/key"
+                },
+                "type": {
+                  "constant_value": "String"
+                },
+                "value": {
+                  "constant_value": "AVerySecureString"
+                }
+              },
+              "schema_version": 0
+            }
+          ]
+        }
+      }
+    },
+    "ssm_not_compliant_stringList": {
+      "resource_changes": [
+        {
+          "address": "aws_ssm_parameter.ssm_not_compliant_stringList",
+          "mode": "managed",
+          "type": "aws_ssm_parameter",
+          "name": "ssm_not_compliant_stringList",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "allowed_pattern": null,
+              "description": null,
+              "key_id": "arn:aws:kms:us-east-1:111122223333:alias/my-key",
+              "name": "/my/hardcoded/alias/key",
+              "overwrite": null,
+              "tags": null,
+              "tier": "Standard",
+              "type": "StringList",
+              "value": "AVerySecureString"
+            },
+            "after_unknown": {
+              "arn": true,
+              "data_type": true,
+              "id": true,
+              "tags_all": true,
+              "version": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "tags_all": {},
+              "value": true
+            }
+          }
+        }
+      ],
+      "configuration": {
+        "root_module": {
+          "resources": [
+            {
+              "address": "aws_ssm_parameter.ssm_not_compliant_stringList",
+              "mode": "managed",
+              "type": "aws_ssm_parameter",
+              "name": "ssm_not_compliant_stringList",
+              "provider_config_key": "aws",
+              "expressions": {
+                "key_id": {
+                  "constant_value": "arn:aws:kms:us-east-1:111122223333:alias/my-key"
+                },
+                "name": {
+                  "constant_value": "/my/hardcoded/alias/key"
+                },
+                "type": {
+                  "constant_value": "StringList"
+                },
+                "value": {
+                  "constant_value": "AVerySecureString"
+                }
+              },
+              "schema_version": 0
+            }
+          ]
+        }
+      }
+    }
+  }
+}

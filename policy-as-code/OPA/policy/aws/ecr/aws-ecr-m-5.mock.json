@@ -1,0 +1,1051 @@
+{
+  "mock": {
+    "valid_lifecycle_policy": {
+      "resource_changes": [
+        {
+          "address": "aws_ecr_lifecycle_policy.foopolicy",
+          "mode": "managed",
+          "type": "aws_ecr_lifecycle_policy",
+          "name": "foopolicy",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "policy": "{\"rules\":[{\"action\":{\"type\":\"expire\"},\"description\":\"Expire images older than 14 days\",\"rulePriority\":1,\"selection\":{\"countNumber\":14,\"countType\":\"sinceImagePushed\",\"countUnit\":\"days\",\"tagStatus\":\"untagged\"}},{\"action\":{\"type\":\"expire\"},\"description\":\"Keep last 2 images\",\"rulePriority\":2,\"selection\":{\"countNumber\":2,\"countType\":\"imageCountMoreThan\",\"tagPrefixList\":[\"v\"],\"tagStatus\":\"tagged\"}}]}",
+              "repository": "bar"
+            },
+            "after_unknown": {
+              "id": true,
+              "registry_id": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {}
+          }
+        },
+        {
+          "address": "aws_ecr_repository.foo",
+          "mode": "managed",
+          "type": "aws_ecr_repository",
+          "name": "foo",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "encryption_configuration": [],
+              "image_scanning_configuration": [],
+              "image_tag_mutability": "MUTABLE",
+              "name": "bar",
+              "tags": null,
+              "timeouts": null
+            },
+            "after_unknown": {
+              "arn": true,
+              "encryption_configuration": [],
+              "id": true,
+              "image_scanning_configuration": [],
+              "registry_id": true,
+              "repository_url": true,
+              "tags_all": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "encryption_configuration": [],
+              "image_scanning_configuration": [],
+              "tags_all": {}
+            }
+          }
+        }
+      ],
+      "configuration": {
+        "root_module": {
+          "resources": [
+            {
+              "address": "aws_ecr_lifecycle_policy.foopolicy",
+              "mode": "managed",
+              "type": "aws_ecr_lifecycle_policy",
+              "name": "foopolicy",
+              "provider_config_key": "aws",
+              "expressions": {
+                "policy": {
+                  "constant_value": "{\n    \"rules\": [\n        {\n            \"rulePriority\": 1,\n            \"description\": \"Expire images older than 14 days\",\n            \"selection\": {\n                \"tagStatus\": \"untagged\",\n                \"countType\": \"sinceImagePushed\",\n                \"countUnit\": \"days\",\n                \"countNumber\": 14\n            },\n            \"action\": {\n                \"type\": \"expire\"\n            }\n        },\n        {\n            \"rulePriority\": 1,\n            \"description\": \"Keep last 2 images\",\n            \"selection\": {\n                \"tagStatus\": \"tagged\",\n                \"tagPrefixList\": [\"v\"],\n                \"countType\": \"imageCountMoreThan\",\n                \"countNumber\": 2\n            },\n            \"action\": {\n                \"type\": \"expire\"\n            }\n        }\n    ]\n}\n"
+                },
+                "repository": {
+                  "references": [
+                    "aws_ecr_repository.foo.name",
+                    "aws_ecr_repository.foo"
+                  ]
+                }
+              },
+              "schema_version": 0
+            },
+            {
+              "address": "aws_ecr_repository.foo",
+              "mode": "managed",
+              "type": "aws_ecr_repository",
+              "name": "foo",
+              "provider_config_key": "aws",
+              "expressions": {
+                "name": {
+                  "constant_value": "bar"
+                }
+              },
+              "schema_version": 0
+            }
+          ]
+        }
+      }
+    },
+    "valid_lifecycle_policy2": {
+      "resource_changes": [
+        {
+          "address": "aws_ecr_lifecycle_policy.foopolicy",
+          "mode": "managed",
+          "type": "aws_ecr_lifecycle_policy",
+          "name": "foopolicy",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "policy": "{\"rules\":[{\"action\":{\"type\":\"expire\"},\"description\":\"Expire images older than 2 versions\",\"rulePriority\":1,\"selection\":{\"countNumber\":2,\"countType\":\"imageCountMoreThan\",\"tagStatus\":\"any\"}}]}",
+              "repository": "bar"
+            },
+            "after_unknown": {
+              "id": true,
+              "registry_id": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {}
+          }
+        },
+        {
+          "address": "aws_ecr_repository.foo",
+          "mode": "managed",
+          "type": "aws_ecr_repository",
+          "name": "foo",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "encryption_configuration": [],
+              "image_scanning_configuration": [],
+              "image_tag_mutability": "MUTABLE",
+              "name": "bar",
+              "tags": null,
+              "timeouts": null
+            },
+            "after_unknown": {
+              "arn": true,
+              "encryption_configuration": [],
+              "id": true,
+              "image_scanning_configuration": [],
+              "registry_id": true,
+              "repository_url": true,
+              "tags_all": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "encryption_configuration": [],
+              "image_scanning_configuration": [],
+              "tags_all": {}
+            }
+          }
+        }
+      ],
+      "configuration": {
+        "root_module": {
+          "resources": [
+            {
+              "address": "aws_ecr_lifecycle_policy.foopolicy",
+              "mode": "managed",
+              "type": "aws_ecr_lifecycle_policy",
+              "name": "foopolicy",
+              "provider_config_key": "aws",
+              "expressions": {
+                "policy": {
+                  "constant_value": "{\n    \"rules\": [\n        {\n            \"rulePriority\": 1,\n            \"description\": \"Expire images older than 14 days\",\n            \"selection\": {\n                \"tagStatus\": \"untagged\",\n                \"countType\": \"sinceImagePushed\",\n                \"countUnit\": \"days\",\n                \"countNumber\": 14\n            },\n            \"action\": {\n                \"type\": \"expire\"\n            }\n        },\n        {\n            \"rulePriority\": 1,\n            \"description\": \"Keep last 2 images\",\n            \"selection\": {\n                \"tagStatus\": \"tagged\",\n                \"tagPrefixList\": [\"v\"],\n                \"countType\": \"imageCountMoreThan\",\n                \"countNumber\": 2\n            },\n            \"action\": {\n                \"type\": \"expire\"\n            }\n        }\n    ]\n}\n"
+                },
+                "repository": {
+                  "references": [
+                    "aws_ecr_repository.foo.name",
+                    "aws_ecr_repository.foo"
+                  ]
+                }
+              },
+              "schema_version": 0
+            },
+            {
+              "address": "aws_ecr_repository.foo",
+              "mode": "managed",
+              "type": "aws_ecr_repository",
+              "name": "foo",
+              "provider_config_key": "aws",
+              "expressions": {
+                "name": {
+                  "constant_value": "bar"
+                }
+              },
+              "schema_version": 0
+            }
+          ]
+        }
+      }
+    },
+    "valid_lifecycle_policy3": {
+      "resource_changes": [
+        {
+          "address": "aws_ecr_lifecycle_policy.foopolicy",
+          "mode": "managed",
+          "type": "aws_ecr_lifecycle_policy",
+          "name": "foopolicy",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "policy": "{\"rules\":[{\"action\":{\"type\":\"expire\"},\"description\":\"Expire images older than 2 versions\",\"rulePriority\":1,\"selection\":{\"countNumber\":2,\"countType\":\"imageCountMoreThan\",\"tagStatus\":\"any\"}},{\"action\":{\"type\":\"expire\"},\"description\":\"Keep last 2 images\",\"rulePriority\":2,\"selection\":{\"countNumber\":2,\"countType\":\"imageCountMoreThan\",\"tagPrefixList\":[\"v\"],\"tagStatus\":\"tagged\"}}]}",
+              "repository": "bar"
+            },
+            "after_unknown": {
+              "id": true,
+              "registry_id": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {}
+          }
+        },
+        {
+          "address": "aws_ecr_repository.foo",
+          "mode": "managed",
+          "type": "aws_ecr_repository",
+          "name": "foo",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "encryption_configuration": [],
+              "image_scanning_configuration": [],
+              "image_tag_mutability": "MUTABLE",
+              "name": "bar",
+              "tags": null,
+              "timeouts": null
+            },
+            "after_unknown": {
+              "arn": true,
+              "encryption_configuration": [],
+              "id": true,
+              "image_scanning_configuration": [],
+              "registry_id": true,
+              "repository_url": true,
+              "tags_all": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "encryption_configuration": [],
+              "image_scanning_configuration": [],
+              "tags_all": {}
+            }
+          }
+        }
+      ],
+      "configuration": {
+        "root_module": {
+          "resources": [
+            {
+              "address": "aws_ecr_lifecycle_policy.foopolicy",
+              "mode": "managed",
+              "type": "aws_ecr_lifecycle_policy",
+              "name": "foopolicy",
+              "provider_config_key": "aws",
+              "expressions": {
+                "policy": {
+                  "constant_value": "{\n    \"rules\": [\n        {\n            \"rulePriority\": 1,\n            \"description\": \"Expire images older than 14 days\",\n            \"selection\": {\n                \"tagStatus\": \"untagged\",\n                \"countType\": \"sinceImagePushed\",\n                \"countUnit\": \"days\",\n                \"countNumber\": 14\n            },\n            \"action\": {\n                \"type\": \"expire\"\n            }\n        },\n        {\n            \"rulePriority\": 1,\n            \"description\": \"Keep last 2 images\",\n            \"selection\": {\n                \"tagStatus\": \"tagged\",\n                \"tagPrefixList\": [\"v\"],\n                \"countType\": \"imageCountMoreThan\",\n                \"countNumber\": 2\n            },\n            \"action\": {\n                \"type\": \"expire\"\n            }\n        }\n    ]\n}\n"
+                },
+                "repository": {
+                  "references": [
+                    "aws_ecr_repository.foo.name",
+                    "aws_ecr_repository.foo"
+                  ]
+                }
+              },
+              "schema_version": 0
+            },
+            {
+              "address": "aws_ecr_repository.foo",
+              "mode": "managed",
+              "type": "aws_ecr_repository",
+              "name": "foo",
+              "provider_config_key": "aws",
+              "expressions": {
+                "name": {
+                  "constant_value": "bar"
+                }
+              },
+              "schema_version": 0
+            }
+          ]
+        }
+      }
+    },
+    "invalid_lifecycle_policy": {
+      "resource_changes": [
+        {
+          "address": "aws_ecr_lifecycle_policy.foopolicy",
+          "mode": "managed",
+          "type": "aws_ecr_lifecycle_policy",
+          "name": "foopolicy",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "policy": "{\"rules\":[{\"action\":{\"type\":\"expire\"},\"description\":\"Expire images older than 14 days\",\"rulePriority\":1,\"selection\":{\"countNumber\":14,\"countType\":\"sinceImagePushed\",\"countUnit\":\"days\",\"tagStatus\":\"untagged\"}},{\"action\":{\"type\":\"expire\"},\"description\":\"Keep last 30 images\",\"rulePriority\":2,\"selection\":{\"countNumber\":30,\"countType\":\"imageCountMoreThan\",\"tagPrefixList\":[\"v\"],\"tagStatus\":\"tagged\"}}]}",
+              "repository": "bar"
+            },
+            "after_unknown": {
+              "id": true,
+              "registry_id": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {}
+          }
+        },
+        {
+          "address": "aws_ecr_repository.foo",
+          "mode": "managed",
+          "type": "aws_ecr_repository",
+          "name": "foo",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "encryption_configuration": [],
+              "image_scanning_configuration": [],
+              "image_tag_mutability": "MUTABLE",
+              "name": "bar",
+              "tags": null,
+              "timeouts": null
+            },
+            "after_unknown": {
+              "arn": true,
+              "encryption_configuration": [],
+              "id": true,
+              "image_scanning_configuration": [],
+              "registry_id": true,
+              "repository_url": true,
+              "tags_all": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "encryption_configuration": [],
+              "image_scanning_configuration": [],
+              "tags_all": {}
+            }
+          }
+        }
+      ],
+      "configuration": {
+        "root_module": {
+          "resources": [
+            {
+              "address": "aws_ecr_lifecycle_policy.foopolicy",
+              "mode": "managed",
+              "type": "aws_ecr_lifecycle_policy",
+              "name": "foopolicy",
+              "provider_config_key": "aws",
+              "expressions": {
+                "policy": {
+                  "constant_value": "{\n    \"rules\": [\n        {\n            \"rulePriority\": 1,\n            \"description\": \"Expire images older than 14 days\",\n            \"selection\": {\n                \"tagStatus\": \"untagged\",\n                \"countType\": \"sinceImagePushed\",\n                \"countUnit\": \"days\",\n                \"countNumber\": 14\n            },\n            \"action\": {\n                \"type\": \"expire\"\n            }\n        },\n        {\n            \"rulePriority\": 1,\n            \"description\": \"Keep last 2 images\",\n            \"selection\": {\n                \"tagStatus\": \"tagged\",\n                \"tagPrefixList\": [\"v\"],\n                \"countType\": \"imageCountMoreThan\",\n                \"countNumber\": 2\n            },\n            \"action\": {\n                \"type\": \"expire\"\n            }\n        }\n    ]\n}\n"
+                },
+                "repository": {
+                  "references": [
+                    "aws_ecr_repository.foo.name",
+                    "aws_ecr_repository.foo"
+                  ]
+                }
+              },
+              "schema_version": 0
+            },
+            {
+              "address": "aws_ecr_repository.foo",
+              "mode": "managed",
+              "type": "aws_ecr_repository",
+              "name": "foo",
+              "provider_config_key": "aws",
+              "expressions": {
+                "name": {
+                  "constant_value": "bar"
+                }
+              },
+              "schema_version": 0
+            }
+          ]
+        }
+      }
+    },
+    "invalid_lifecycle_policy2": {
+      "resource_changes": [
+        {
+          "address": "aws_ecr_lifecycle_policy.foopolicy",
+          "mode": "managed",
+          "type": "aws_ecr_lifecycle_policy",
+          "name": "foopolicy",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "policy": "{\"rules\":[{\"action\":{\"type\":\"expire\"},\"description\":\"Expire images older than 14 days\",\"rulePriority\":1,\"selection\":{\"countNumber\":14,\"countType\":\"sinceImagePushed\",\"countUnit\":\"days\",\"tagStatus\":\"any\"}}]}",
+              "repository": "bar"
+            },
+            "after_unknown": {
+              "id": true,
+              "registry_id": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {}
+          }
+        },
+        {
+          "address": "aws_ecr_repository.foo",
+          "mode": "managed",
+          "type": "aws_ecr_repository",
+          "name": "foo",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "encryption_configuration": [],
+              "image_scanning_configuration": [],
+              "image_tag_mutability": "MUTABLE",
+              "name": "bar",
+              "tags": null,
+              "timeouts": null
+            },
+            "after_unknown": {
+              "arn": true,
+              "encryption_configuration": [],
+              "id": true,
+              "image_scanning_configuration": [],
+              "registry_id": true,
+              "repository_url": true,
+              "tags_all": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "encryption_configuration": [],
+              "image_scanning_configuration": [],
+              "tags_all": {}
+            }
+          }
+        }
+      ],
+      "configuration": {
+        "root_module": {
+          "resources": [
+            {
+              "address": "aws_ecr_lifecycle_policy.foopolicy",
+              "mode": "managed",
+              "type": "aws_ecr_lifecycle_policy",
+              "name": "foopolicy",
+              "provider_config_key": "aws",
+              "expressions": {
+                "policy": {
+                  "constant_value": "{\n    \"rules\": [\n        {\n            \"rulePriority\": 1,\n            \"description\": \"Expire images older than 14 days\",\n            \"selection\": {\n                \"tagStatus\": \"untagged\",\n                \"countType\": \"sinceImagePushed\",\n                \"countUnit\": \"days\",\n                \"countNumber\": 14\n            },\n            \"action\": {\n                \"type\": \"expire\"\n            }\n        },\n        {\n            \"rulePriority\": 1,\n            \"description\": \"Keep last 2 images\",\n            \"selection\": {\n                \"tagStatus\": \"tagged\",\n                \"tagPrefixList\": [\"v\"],\n                \"countType\": \"imageCountMoreThan\",\n                \"countNumber\": 2\n            },\n            \"action\": {\n                \"type\": \"expire\"\n            }\n        }\n    ]\n}\n"
+                },
+                "repository": {
+                  "references": [
+                    "aws_ecr_repository.foo.name",
+                    "aws_ecr_repository.foo"
+                  ]
+                }
+              },
+              "schema_version": 0
+            },
+            {
+              "address": "aws_ecr_repository.foo",
+              "mode": "managed",
+              "type": "aws_ecr_repository",
+              "name": "foo",
+              "provider_config_key": "aws",
+              "expressions": {
+                "name": {
+                  "constant_value": "bar"
+                }
+              },
+              "schema_version": 0
+            }
+          ]
+        }
+      }
+    },
+    "missing_lifecycle_policy": {
+      "resource_changes": [
+        {
+          "address": "aws_ecr_lifecycle_policy.foopolicy",
+          "mode": "managed",
+          "type": "aws_ecr_lifecycle_policy",
+          "name": "foopolicy",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "repository": "bar"
+            },
+            "after_unknown": {
+              "id": true,
+              "registry_id": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {}
+          }
+        },
+        {
+          "address": "aws_ecr_repository.foo",
+          "mode": "managed",
+          "type": "aws_ecr_repository",
+          "name": "foo",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "encryption_configuration": [],
+              "image_scanning_configuration": [],
+              "image_tag_mutability": "MUTABLE",
+              "name": "bar",
+              "tags": null,
+              "timeouts": null
+            },
+            "after_unknown": {
+              "arn": true,
+              "encryption_configuration": [],
+              "id": true,
+              "image_scanning_configuration": [],
+              "registry_id": true,
+              "repository_url": true,
+              "tags_all": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "encryption_configuration": [],
+              "image_scanning_configuration": [],
+              "tags_all": {}
+            }
+          }
+        }
+      ],
+      "configuration": {
+        "root_module": {
+          "resources": [
+            {
+              "address": "aws_ecr_lifecycle_policy.foopolicy",
+              "mode": "managed",
+              "type": "aws_ecr_lifecycle_policy",
+              "name": "foopolicy",
+              "provider_config_key": "aws",
+              "expressions": {
+                "policy": {
+                  "constant_value": "{\n    \"rules\": [\n        {\n            \"rulePriority\": 1,\n            \"description\": \"Expire images older than 14 days\",\n            \"selection\": {\n                \"tagStatus\": \"untagged\",\n                \"countType\": \"sinceImagePushed\",\n                \"countUnit\": \"days\",\n                \"countNumber\": 14\n            },\n            \"action\": {\n                \"type\": \"expire\"\n            }\n        },\n        {\n            \"rulePriority\": 1,\n            \"description\": \"Keep last 2 images\",\n            \"selection\": {\n                \"tagStatus\": \"tagged\",\n                \"tagPrefixList\": [\"v\"],\n                \"countType\": \"imageCountMoreThan\",\n                \"countNumber\": 2\n            },\n            \"action\": {\n                \"type\": \"expire\"\n            }\n        }\n    ]\n}\n"
+                },
+                "repository": {
+                  "references": [
+                    "aws_ecr_repository.foo.name",
+                    "aws_ecr_repository.foo"
+                  ]
+                }
+              },
+              "schema_version": 0
+            },
+            {
+              "address": "aws_ecr_repository.foo",
+              "mode": "managed",
+              "type": "aws_ecr_repository",
+              "name": "foo",
+              "provider_config_key": "aws",
+              "expressions": {
+                "name": {
+                  "constant_value": "bar"
+                }
+              },
+              "schema_version": 0
+            }
+          ]
+        }
+      }
+    },
+    "no_lifecycle_policy_resource": {
+      "resource_changes": [
+        {
+          "address": "aws_ecr_repository.foo",
+          "mode": "managed",
+          "type": "aws_ecr_repository",
+          "name": "foo",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "encryption_configuration": [],
+              "image_scanning_configuration": [],
+              "image_tag_mutability": "MUTABLE",
+              "name": "bar",
+              "tags": null,
+              "timeouts": null
+            },
+            "after_unknown": {
+              "arn": true,
+              "encryption_configuration": [],
+              "id": true,
+              "image_scanning_configuration": [],
+              "registry_id": true,
+              "repository_url": true,
+              "tags_all": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "encryption_configuration": [],
+              "image_scanning_configuration": [],
+              "tags_all": {}
+            }
+          }
+        }
+      ]
+    },
+    "multiple_repos_no_lifecycle": {
+      "resource_changes": [
+        {
+          "address": "aws_ecr_lifecycle_policy.foopolicy",
+          "mode": "managed",
+          "type": "aws_ecr_lifecycle_policy",
+          "name": "foopolicy",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "policy": "{\"rules\":[{\"action\":{\"type\":\"expire\"},\"description\":\"Expire images older than 14 days\",\"rulePriority\":1,\"selection\":{\"countNumber\":14,\"countType\":\"sinceImagePushed\",\"countUnit\":\"days\",\"tagStatus\":\"untagged\"}},{\"action\":{\"type\":\"expire\"},\"description\":\"Keep last 2 images\",\"rulePriority\":2,\"selection\":{\"countNumber\":2,\"countType\":\"imageCountMoreThan\",\"tagPrefixList\":[\"v\"],\"tagStatus\":\"tagged\"}}]}",
+              "repository": "bar"
+            },
+            "after_unknown": {
+              "id": true,
+              "registry_id": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {}
+          }
+        },
+        {
+          "address": "aws_ecr_repository.foo",
+          "mode": "managed",
+          "type": "aws_ecr_repository",
+          "name": "foo",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "encryption_configuration": [],
+              "image_scanning_configuration": [],
+              "image_tag_mutability": "MUTABLE",
+              "name": "bar",
+              "tags": null,
+              "timeouts": null
+            },
+            "after_unknown": {
+              "arn": true,
+              "encryption_configuration": [],
+              "id": true,
+              "image_scanning_configuration": [],
+              "registry_id": true,
+              "repository_url": true,
+              "tags_all": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "encryption_configuration": [],
+              "image_scanning_configuration": [],
+              "tags_all": {}
+            }
+          }
+        },
+        {
+          "address": "aws_ecr_repository.test",
+          "mode": "managed",
+          "type": "aws_ecr_repository",
+          "name": "test",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "encryption_configuration": [],
+              "image_scanning_configuration": [],
+              "image_tag_mutability": "MUTABLE",
+              "name": "test",
+              "tags": null,
+              "timeouts": null
+            },
+            "after_unknown": {
+              "arn": true,
+              "encryption_configuration": [],
+              "id": true,
+              "image_scanning_configuration": [],
+              "registry_id": true,
+              "repository_url": true,
+              "tags_all": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "encryption_configuration": [],
+              "image_scanning_configuration": [],
+              "tags_all": {}
+            }
+          }
+        }
+      ],
+      "configuration": {
+        "root_module": {
+          "resources": [
+            {
+              "address": "aws_ecr_lifecycle_policy.foopolicy",
+              "mode": "managed",
+              "type": "aws_ecr_lifecycle_policy",
+              "name": "foopolicy",
+              "provider_config_key": "aws",
+              "expressions": {
+                "policy": {
+                  "constant_value": "{\n    \"rules\": [\n        {\n            \"rulePriority\": 1,\n            \"description\": \"Expire images older than 14 days\",\n            \"selection\": {\n                \"tagStatus\": \"untagged\",\n                \"countType\": \"sinceImagePushed\",\n                \"countUnit\": \"days\",\n                \"countNumber\": 14\n            },\n            \"action\": {\n                \"type\": \"expire\"\n            }\n        },\n        {\n            \"rulePriority\": 2,\n            \"description\": \"Keep last 2 images\",\n            \"selection\": {\n                \"tagStatus\": \"tagged\",\n                \"tagPrefixList\": [\"v\"],\n                \"countType\": \"imageCountMoreThan\",\n                \"countNumber\": 2\n            },\n            \"action\": {\n                \"type\": \"expire\"\n            }\n        }\n    ]\n}\n"
+                },
+                "repository": {
+                  "references": [
+                    "aws_ecr_repository.foo.name",
+                    "aws_ecr_repository.foo"
+                  ]
+                }
+              },
+              "schema_version": 0
+            },
+            {
+              "address": "aws_ecr_repository.foo",
+              "mode": "managed",
+              "type": "aws_ecr_repository",
+              "name": "foo",
+              "provider_config_key": "aws",
+              "expressions": {
+                "name": {
+                  "constant_value": "bar"
+                }
+              },
+              "schema_version": 0
+            },
+            {
+              "address": "aws_ecr_repository.test",
+              "mode": "managed",
+              "type": "aws_ecr_repository",
+              "name": "test",
+              "provider_config_key": "aws",
+              "expressions": {
+                "name": {
+                  "constant_value": "test"
+                }
+              },
+              "schema_version": 0
+            }
+          ]
+        }
+      }
+    },
+    "no_op_ecr_repo_lifecycle_policy": {
+      "resource_changes": [
+        {
+          "address": "aws_ecr_lifecycle_policy.foopolicy",
+          "mode": "managed",
+          "type": "aws_ecr_lifecycle_policy",
+          "name": "foopolicy",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "policy": "{\"rules\":[{\"action\":{\"type\":\"expire\"},\"description\":\"Keep last 2 images\",\"rulePriority\":1,\"selection\":{\"countNumber\":2,\"countType\":\"imageCountMoreThan\",\"tagPrefixList\":[\"v\"],\"tagStatus\":\"tagged\"}}]}",
+              "repository": "bar"
+            },
+            "after_unknown": {
+              "id": true,
+              "registry_id": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {}
+          }
+        },
+        {
+          "address": "aws_ecr_repository.foo",
+          "mode": "managed",
+          "type": "aws_ecr_repository",
+          "name": "foo",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "no-op"
+            ],
+            "before": {
+              "arn": "arn:aws:ecr:eu-central-1:123456789012:repository/bar",
+              "encryption_configuration": [
+                {
+                  "encryption_type": "AES256",
+                  "kms_key": ""
+                }
+              ],
+              "id": "bar",
+              "image_scanning_configuration": [
+                {
+                  "scan_on_push": false
+                }
+              ],
+              "image_tag_mutability": "MUTABLE",
+              "name": "bar",
+              "registry_id": "123456789012",
+              "repository_url": "123456789012.dkr.ecr.eu-central-1.amazonaws.com/bar",
+              "tags": {},
+              "tags_all": {},
+              "timeouts": null
+            },
+            "after": {
+              "arn": "arn:aws:ecr:eu-central-1:123456789012:repository/bar",
+              "encryption_configuration": [
+                {
+                  "encryption_type": "AES256",
+                  "kms_key": ""
+                }
+              ],
+              "id": "bar",
+              "image_scanning_configuration": [
+                {
+                  "scan_on_push": false
+                }
+              ],
+              "image_tag_mutability": "MUTABLE",
+              "name": "bar",
+              "registry_id": "123456789012",
+              "repository_url": "123456789012.dkr.ecr.eu-central-1.amazonaws.com/bar",
+              "tags": {},
+              "tags_all": {},
+              "timeouts": null
+            },
+            "after_unknown": {},
+            "before_sensitive": {
+              "encryption_configuration": [
+                {}
+              ],
+              "image_scanning_configuration": [
+                {}
+              ],
+              "tags": {},
+              "tags_all": {}
+            },
+            "after_sensitive": {
+              "encryption_configuration": [
+                {}
+              ],
+              "image_scanning_configuration": [
+                {}
+              ],
+              "tags": {},
+              "tags_all": {}
+            }
+          }
+        }
+      ],
+      "configuration": {
+        "provider_config": {
+          "aws": {
+            "name": "aws",
+            "expressions": {
+              "region": {
+                "constant_value": "eu-central-1"
+              }
+            }
+          }
+        },
+        "root_module": {
+          "resources": [
+            {
+              "address": "aws_ecr_lifecycle_policy.foopolicy",
+              "mode": "managed",
+              "type": "aws_ecr_lifecycle_policy",
+              "name": "foopolicy",
+              "provider_config_key": "aws",
+              "expressions": {
+                "policy": {
+                  "constant_value": "{\n    \"rules\": [\n        {\n            \"rulePriority\": 1,\n            \"description\": \"Keep last 2 images\",\n            \"selection\": {\n                \"tagStatus\": \"tagged\",\n                \"tagPrefixList\": [\"v\"],\n                \"countType\": \"imageCountMoreThan\",\n                \"countNumber\": 2\n            },\n            \"action\": {\n                \"type\": \"expire\"\n            }\n        }\n    ]\n}\n"
+                },
+                "repository": {
+                  "references": [
+                    "aws_ecr_repository.foo.name",
+                    "aws_ecr_repository.foo"
+                  ]
+                }
+              },
+              "schema_version": 0
+            },
+            {
+              "address": "aws_ecr_repository.foo",
+              "mode": "managed",
+              "type": "aws_ecr_repository",
+              "name": "foo",
+              "provider_config_key": "aws",
+              "expressions": {
+                "name": {
+                  "constant_value": "bar"
+                }
+              },
+              "schema_version": 0
+            }
+          ]
+        }
+      }
+    },
+    "no_op_ecr_repo_no_lifecycle_policy": {
+      "resource_changes": [
+        {
+          "address": "aws_ecr_repository.foo",
+          "mode": "managed",
+          "type": "aws_ecr_repository",
+          "name": "foo",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "no-op"
+            ],
+            "before": {
+              "arn": "arn:aws:ecr:eu-central-1:123456789012:repository/bar",
+              "encryption_configuration": [
+                {
+                  "encryption_type": "AES256",
+                  "kms_key": ""
+                }
+              ],
+              "id": "bar",
+              "image_scanning_configuration": [
+                {
+                  "scan_on_push": false
+                }
+              ],
+              "image_tag_mutability": "MUTABLE",
+              "name": "bar",
+              "registry_id": "123456789012",
+              "repository_url": "123456789012.dkr.ecr.eu-central-1.amazonaws.com/bar",
+              "tags": {},
+              "tags_all": {},
+              "timeouts": null
+            },
+            "after": {
+              "arn": "arn:aws:ecr:eu-central-1:123456789012:repository/bar",
+              "encryption_configuration": [
+                {
+                  "encryption_type": "AES256",
+                  "kms_key": ""
+                }
+              ],
+              "id": "bar",
+              "image_scanning_configuration": [
+                {
+                  "scan_on_push": false
+                }
+              ],
+              "image_tag_mutability": "MUTABLE",
+              "name": "bar",
+              "registry_id": "123456789012",
+              "repository_url": "123456789012.dkr.ecr.eu-central-1.amazonaws.com/bar",
+              "tags": {},
+              "tags_all": {},
+              "timeouts": null
+            },
+            "after_unknown": {},
+            "before_sensitive": {
+              "encryption_configuration": [
+                {}
+              ],
+              "image_scanning_configuration": [
+                {}
+              ],
+              "tags": {},
+              "tags_all": {}
+            },
+            "after_sensitive": {
+              "encryption_configuration": [
+                {}
+              ],
+              "image_scanning_configuration": [
+                {}
+              ],
+              "tags": {},
+              "tags_all": {}
+            }
+          }
+        }
+      ],
+      "configuration": {
+        "root_module": {
+          "resources": [
+            {
+              "address": "aws_ecr_repository.foo",
+              "mode": "managed",
+              "type": "aws_ecr_repository",
+              "name": "foo",
+              "provider_config_key": "aws",
+              "expressions": {
+                "name": {
+                  "constant_value": "bar"
+                }
+              },
+              "schema_version": 0
+            }
+          ]
+        }
+      }
+    }
+  }
+}

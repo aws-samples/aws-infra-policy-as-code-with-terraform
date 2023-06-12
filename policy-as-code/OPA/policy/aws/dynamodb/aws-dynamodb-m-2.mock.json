@@ -1,0 +1,356 @@
+{
+    "mock": {
+        "valid": {
+          "resource_changes": [
+            {
+              "address": "aws_dynamodb_table.basic-dynamodb-table",
+              "mode": "managed",
+              "type": "aws_dynamodb_table",
+              "name": "basic-dynamodb-table",
+              "provider_name": "registry.terraform.io/hashicorp/aws",
+              "change": {
+                "actions": ["create"],
+                "before": null,
+                "after": {
+                  "attribute": [{ "name": "UserId", "type": "S" }],
+                  "billing_mode": "PROVISIONED",
+                  "global_secondary_index": [],
+                  "hash_key": "UserId",
+                  "local_secondary_index": [],
+                  "name": "GameScores",
+                  "range_key": null,
+                  "read_capacity": 20,
+                  "replica": [],
+                  "restore_date_time": null,
+                  "restore_source_name": null,
+                  "restore_to_latest_time": null,
+                  "server_side_encryption": [
+                    {
+                      "enabled": true,
+                      "kms_key_arn": "arn:aws:kms:eu-central-1:709673909586:key/c099c386-c5e5-46c9-b015-ca7db54ebe4a"
+                    }
+                  ],
+                  "stream_enabled": null,
+                  "table_class": null,
+                  "tags": { "Environment": "production", "Name": "dynamodb-table-1" },
+                  "tags_all": {
+                    "Environment": "production",
+                    "Name": "dynamodb-table-1"
+                  },
+                  "timeouts": null,
+                  "write_capacity": 20
+                },
+                "after_unknown": {
+                  "arn": true,
+                  "attribute": [{}],
+                  "global_secondary_index": [],
+                  "id": true,
+                  "local_secondary_index": [],
+                  "point_in_time_recovery": true,
+                  "replica": [],
+                  "server_side_encryption": [{}],
+                  "stream_arn": true,
+                  "stream_label": true,
+                  "stream_view_type": true,
+                  "tags": {},
+                  "tags_all": {},
+                  "ttl": true
+                }
+              }
+            },
+            {
+              "address": "aws_vpc_endpoint.dynamodb",
+              "mode": "managed",
+              "type": "aws_vpc_endpoint",
+              "name": "dynamodb",
+              "provider_name": "registry.terraform.io/hashicorp/aws",
+              "change": {
+                "actions": ["create"],
+                "before": null,
+                "after": {
+                  "auto_accept": null,
+                  "policy": "{\"Statement\":[{\"Action\":\"dynamodb:*\",\"Effect\":\"Allow\",\"Principal\":\"*\",\"Resource\":\"arn:aws:dynamodb:::*\"}],\"Version\":\"2012-10-17\"}",
+                  "private_dns_enabled": false,
+                  "security_group_ids": ["sg-002b45f994e86c38c"],
+                  "service_name": "com.amazonaws.eu-central-1.dynamodb",
+                  "tags": null,
+                  "timeouts": null,
+                  "vpc_endpoint_type": "Gateway",
+                  "vpc_id": "vpc-0b58b6878f9cdab6f"
+                },
+                "after_unknown": {
+                  "arn": true,
+                  "cidr_blocks": true,
+                  "dns_entry": true,
+                  "id": true,
+                  "network_interface_ids": true,
+                  "owner_id": true,
+                  "prefix_list_id": true,
+                  "requester_managed": true,
+                  "route_table_ids": true,
+                  "security_group_ids": [false],
+                  "state": true,
+                  "subnet_ids": true,
+                  "tags_all": true
+                }
+              }
+            }
+          ]
+        },
+        "invalid": {
+          "invalid_no_vpc_endpoint": {
+            "resource_changes": [
+              {
+                "address": "aws_dynamodb_table.basic-dynamodb-table",
+                "mode": "managed",
+                "type": "aws_dynamodb_table",
+                "name": "basic-dynamodb-table",
+                "provider_name": "registry.terraform.io/hashicorp/aws",
+                "change": {
+                  "actions": ["create"],
+                  "before": null,
+                  "after": {
+                    "attribute": [{ "name": "UserId", "type": "S" }],
+                    "billing_mode": "PROVISIONED",
+                    "global_secondary_index": [],
+                    "hash_key": "UserId",
+                    "local_secondary_index": [],
+                    "name": "GameScores",
+                    "range_key": null,
+                    "read_capacity": 20,
+                    "replica": [],
+                    "restore_date_time": null,
+                    "restore_source_name": null,
+                    "restore_to_latest_time": null,
+                    "server_side_encryption": [
+                      {
+                        "enabled": true,
+                        "kms_key_arn": "arn:aws:kms:eu-central-1:709673909586:key/c099c386-c5e5-46c9-b015-ca7db54ebe4a"
+                      }
+                    ],
+                    "stream_enabled": null,
+                    "table_class": null,
+                    "tags": { "Environment": "production", "Name": "dynamodb-table-1" },
+                    "tags_all": {
+                      "Environment": "production",
+                      "Name": "dynamodb-table-1"
+                    },
+                    "timeouts": null,
+                    "write_capacity": 20
+                  },
+                  "after_unknown": {
+                    "arn": true,
+                    "attribute": [{}],
+                    "global_secondary_index": [],
+                    "id": true,
+                    "local_secondary_index": [],
+                    "point_in_time_recovery": true,
+                    "replica": [],
+                    "server_side_encryption": [{}],
+                    "stream_arn": true,
+                    "stream_label": true,
+                    "stream_view_type": true,
+                    "tags": {},
+                    "tags_all": {},
+                    "ttl": true
+                  }
+                }
+              }
+            ]
+          },
+          "invalid_no_vpc_endpoint_policy": {
+            "resource_changes": [
+              {
+                "address": "aws_dynamodb_table.basic-dynamodb-table",
+                "mode": "managed",
+                "type": "aws_dynamodb_table",
+                "name": "basic-dynamodb-table",
+                "provider_name": "registry.terraform.io/hashicorp/aws",
+                "change": {
+                  "actions": ["create"],
+                  "before": null,
+                  "after": {
+                    "attribute": [{ "name": "UserId", "type": "S" }],
+                    "billing_mode": "PROVISIONED",
+                    "global_secondary_index": [],
+                    "hash_key": "UserId",
+                    "local_secondary_index": [],
+                    "name": "GameScores",
+                    "range_key": null,
+                    "read_capacity": 20,
+                    "replica": [],
+                    "restore_date_time": null,
+                    "restore_source_name": null,
+                    "restore_to_latest_time": null,
+                    "server_side_encryption": [
+                      {
+                        "enabled": true,
+                        "kms_key_arn": "arn:aws:kms:eu-central-1:709673909586:key/c099c386-c5e5-46c9-b015-ca7db54ebe4a"
+                      }
+                    ],
+                    "stream_enabled": null,
+                    "table_class": null,
+                    "tags": { "Environment": "production", "Name": "dynamodb-table-1" },
+                    "tags_all": {
+                      "Environment": "production",
+                      "Name": "dynamodb-table-1"
+                    },
+                    "timeouts": null,
+                    "write_capacity": 20
+                  },
+                  "after_unknown": {
+                    "arn": true,
+                    "attribute": [{}],
+                    "global_secondary_index": [],
+                    "id": true,
+                    "local_secondary_index": [],
+                    "point_in_time_recovery": true,
+                    "replica": [],
+                    "server_side_encryption": [{}],
+                    "stream_arn": true,
+                    "stream_label": true,
+                    "stream_view_type": true,
+                    "tags": {},
+                    "tags_all": {},
+                    "ttl": true
+                  }
+                }
+              },
+              {
+                "address": "aws_vpc_endpoint.dynamodb",
+                "mode": "managed",
+                "type": "aws_vpc_endpoint",
+                "name": "dynamodb",
+                "provider_name": "registry.terraform.io/hashicorp/aws",
+                "change": {
+                  "actions": ["create"],
+                  "before": null,
+                  "after": {
+                    "auto_accept": null,
+                    "private_dns_enabled": false,
+                    "security_group_ids": ["sg-002b45f994e86c38c"],
+                    "service_name": "com.amazonaws.eu-central-1.dynamodb",
+                    "tags": null,
+                    "timeouts": null,
+                    "vpc_endpoint_type": "Gateway",
+                    "vpc_id": "vpc-0b58b6878f9cdab6f"
+                  },
+                  "after_unknown": {
+                    "arn": true,
+                    "cidr_blocks": true,
+                    "dns_entry": true,
+                    "id": true,
+                    "network_interface_ids": true,
+                    "owner_id": true,
+                    "prefix_list_id": true,
+                    "requester_managed": true,
+                    "route_table_ids": true,
+                    "security_group_ids": [false],
+                    "state": true,
+                    "subnet_ids": true,
+                    "tags_all": true
+                  }
+                }
+              }
+            ]
+          },
+          "invalid_vpc_endpoint_policy_wildcard": {
+            "resource_changes": [
+              {
+                "address": "aws_dynamodb_table.basic-dynamodb-table",
+                "mode": "managed",
+                "type": "aws_dynamodb_table",
+                "name": "basic-dynamodb-table",
+                "provider_name": "registry.terraform.io/hashicorp/aws",
+                "change": {
+                  "actions": ["create"],
+                  "before": null,
+                  "after": {
+                    "attribute": [{ "name": "UserId", "type": "S" }],
+                    "billing_mode": "PROVISIONED",
+                    "global_secondary_index": [],
+                    "hash_key": "UserId",
+                    "local_secondary_index": [],
+                    "name": "GameScores",
+                    "range_key": null,
+                    "read_capacity": 20,
+                    "replica": [],
+                    "restore_date_time": null,
+                    "restore_source_name": null,
+                    "restore_to_latest_time": null,
+                    "server_side_encryption": [
+                      {
+                        "enabled": true,
+                        "kms_key_arn": "arn:aws:kms:eu-central-1:709673909586:key/c099c386-c5e5-46c9-b015-ca7db54ebe4a"
+                      }
+                    ],
+                    "stream_enabled": null,
+                    "table_class": null,
+                    "tags": { "Environment": "production", "Name": "dynamodb-table-1" },
+                    "tags_all": {
+                      "Environment": "production",
+                      "Name": "dynamodb-table-1"
+                    },
+                    "timeouts": null,
+                    "write_capacity": 20
+                  },
+                  "after_unknown": {
+                    "arn": true,
+                    "attribute": [{}],
+                    "global_secondary_index": [],
+                    "id": true,
+                    "local_secondary_index": [],
+                    "point_in_time_recovery": true,
+                    "replica": [],
+                    "server_side_encryption": [{}],
+                    "stream_arn": true,
+                    "stream_label": true,
+                    "stream_view_type": true,
+                    "tags": {},
+                    "tags_all": {},
+                    "ttl": true
+                  }
+                }
+              },
+              {
+                "address": "aws_vpc_endpoint.dynamodb",
+                "mode": "managed",
+                "type": "aws_vpc_endpoint",
+                "name": "dynamodb",
+                "provider_name": "registry.terraform.io/hashicorp/aws",
+                "change": {
+                  "actions": ["create"],
+                  "before": null,
+                  "after": {
+                    "auto_accept": null,
+                    "policy": "{\"Statement\":[{\"Action\":\"dynamodb:*\",\"Effect\":\"Allow\",\"Principal\":\"*\",\"Resource\":\"*\"}],\"Version\":\"2012-10-17\"}",
+                    "private_dns_enabled": false,
+                    "security_group_ids": ["sg-002b45f994e86c38c"],
+                    "service_name": "com.amazonaws.eu-central-1.dynamodb",
+                    "tags": null,
+                    "timeouts": null,
+                    "vpc_endpoint_type": "Gateway",
+                    "vpc_id": "vpc-0b58b6878f9cdab6f"
+                  },
+                  "after_unknown": {
+                    "arn": true,
+                    "cidr_blocks": true,
+                    "dns_entry": true,
+                    "id": true,
+                    "network_interface_ids": true,
+                    "owner_id": true,
+                    "prefix_list_id": true,
+                    "requester_managed": true,
+                    "route_table_ids": true,
+                    "security_group_ids": [false],
+                    "state": true,
+                    "subnet_ids": true,
+                    "tags_all": true
+                  }
+                }
+              }
+            ]
+          }   
+    }
+  }
+}

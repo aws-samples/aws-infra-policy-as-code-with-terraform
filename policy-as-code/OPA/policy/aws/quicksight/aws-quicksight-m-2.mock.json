@@ -1,0 +1,306 @@
+{
+  "mock": {
+    "valid": {
+      "resource_changes": [
+        {
+          "address": "module.quicksight.aws_quicksight_data_source.s3-ds",
+          "module_address": "module.quicksight",
+          "mode": "managed",
+          "type": "aws_quicksight_data_source",
+          "name": "s3-ds",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "credentials": [],
+              "data_source_id": "S3 datasource",
+              "name": "S3 datasource",
+              "parameters": [
+                {
+                  "amazon_elasticsearch": [],
+                  "athena": [],
+                  "aurora": [],
+                  "aurora_postgresql": [],
+                  "aws_iot_analytics": [],
+                  "jira": [],
+                  "maria_db": [],
+                  "mysql": [],
+                  "oracle": [],
+                  "postgresql": [],
+                  "presto": [],
+                  "rds": [],
+                  "redshift": [],
+                  "s3": [
+                    {
+                      "manifest_file_location": [
+                        {
+                          "bucket": "quick-site-test-s3-bucket",
+                          "key": "test/data"
+                        }
+                      ]
+                    }
+                  ],
+                  "service_now": [],
+                  "snowflake": [],
+                  "spark": [],
+                  "sql_server": [],
+                  "teradata": [],
+                  "twitter": []
+                }
+              ],
+              "permission": [],
+              "ssl_properties": [
+                {
+                  "disable_ssl": false
+                }
+              ],
+              "tags": null,
+              "type": "S3",
+              "vpc_connection_properties": [
+                {
+                  "vpc_connection_arn": "arn:aws:vpc:us-east-1:123456789012:connection/12345678-1234-1234-1234-123456789012"
+                }
+              ]
+            },
+            "after_unknown": {
+              "arn": true,
+              "aws_account_id": true,
+              "credentials": [],
+              "id": true,
+              "parameters": [
+                {
+                  "amazon_elasticsearch": [],
+                  "athena": [],
+                  "aurora": [],
+                  "aurora_postgresql": [],
+                  "aws_iot_analytics": [],
+                  "jira": [],
+                  "maria_db": [],
+                  "mysql": [],
+                  "oracle": [],
+                  "postgresql": [],
+                  "presto": [],
+                  "rds": [],
+                  "redshift": [],
+                  "s3": [
+                    {
+                      "manifest_file_location": [
+                        {}
+                      ]
+                    }
+                  ],
+                  "service_now": [],
+                  "snowflake": [],
+                  "spark": [],
+                  "sql_server": [],
+                  "teradata": [],
+                  "twitter": []
+                }
+              ],
+              "permission": [],
+              "ssl_properties": [
+                {}
+              ],
+              "tags_all": true,
+              "vpc_connection_properties": [
+                {}
+              ]
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "credentials": [],
+              "parameters": [
+                {
+                  "amazon_elasticsearch": [],
+                  "athena": [],
+                  "aurora": [],
+                  "aurora_postgresql": [],
+                  "aws_iot_analytics": [],
+                  "jira": [],
+                  "maria_db": [],
+                  "mysql": [],
+                  "oracle": [],
+                  "postgresql": [],
+                  "presto": [],
+                  "rds": [],
+                  "redshift": [],
+                  "s3": [
+                    {
+                      "manifest_file_location": [
+                        {}
+                      ]
+                    }
+                  ],
+                  "service_now": [],
+                  "snowflake": [],
+                  "spark": [],
+                  "sql_server": [],
+                  "teradata": [],
+                  "twitter": []
+                }
+              ],
+              "permission": [],
+              "ssl_properties": [
+                {}
+              ],
+              "tags_all": {},
+              "vpc_connection_properties": [
+                {}
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "invalid": {
+      "resource_changes": [
+        {
+          "address": "module.quicksight.aws_quicksight_data_source.s3-ds",
+          "module_address": "module.quicksight",
+          "mode": "managed",
+          "type": "aws_quicksight_data_source",
+          "name": "s3-ds",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "credentials": [],
+              "data_source_id": "S3 datasource",
+              "name": "S3 datasource",
+              "parameters": [
+                {
+                  "amazon_elasticsearch": [],
+                  "athena": [],
+                  "aurora": [],
+                  "aurora_postgresql": [],
+                  "aws_iot_analytics": [],
+                  "jira": [],
+                  "maria_db": [],
+                  "mysql": [],
+                  "oracle": [],
+                  "postgresql": [],
+                  "presto": [],
+                  "rds": [],
+                  "redshift": [],
+                  "s3": [
+                    {
+                      "manifest_file_location": [
+                        {
+                          "bucket": "quick-site-test-s3-bucket",
+                          "key": "test/data"
+                        }
+                      ]
+                    }
+                  ],
+                  "service_now": [],
+                  "snowflake": [],
+                  "spark": [],
+                  "sql_server": [],
+                  "teradata": [],
+                  "twitter": []
+                }
+              ],
+              "permission": [],
+              "ssl_properties": [
+                {
+                  "disable_ssl": false
+                }
+              ],
+              "tags": null,
+              "type": "S3",
+              "vpc_connection_properties": []
+            },
+            "after_unknown": {
+              "arn": true,
+              "aws_account_id": true,
+              "credentials": [],
+              "id": true,
+              "parameters": [
+                {
+                  "amazon_elasticsearch": [],
+                  "athena": [],
+                  "aurora": [],
+                  "aurora_postgresql": [],
+                  "aws_iot_analytics": [],
+                  "jira": [],
+                  "maria_db": [],
+                  "mysql": [],
+                  "oracle": [],
+                  "postgresql": [],
+                  "presto": [],
+                  "rds": [],
+                  "redshift": [],
+                  "s3": [
+                    {
+                      "manifest_file_location": [
+                        {}
+                      ]
+                    }
+                  ],
+                  "service_now": [],
+                  "snowflake": [],
+                  "spark": [],
+                  "sql_server": [],
+                  "teradata": [],
+                  "twitter": []
+                }
+              ],
+              "permission": [],
+              "ssl_properties": [
+                {}
+              ],
+              "tags_all": true,
+              "vpc_connection_properties": []
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "credentials": [],
+              "parameters": [
+                {
+                  "amazon_elasticsearch": [],
+                  "athena": [],
+                  "aurora": [],
+                  "aurora_postgresql": [],
+                  "aws_iot_analytics": [],
+                  "jira": [],
+                  "maria_db": [],
+                  "mysql": [],
+                  "oracle": [],
+                  "postgresql": [],
+                  "presto": [],
+                  "rds": [],
+                  "redshift": [],
+                  "s3": [
+                    {
+                      "manifest_file_location": [
+                        {}
+                      ]
+                    }
+                  ],
+                  "service_now": [],
+                  "snowflake": [],
+                  "spark": [],
+                  "sql_server": [],
+                  "teradata": [],
+                  "twitter": []
+                }
+              ],
+              "permission": [],
+              "ssl_properties": [
+                {}
+              ],
+              "tags_all": {},
+              "vpc_connection_properties": []
+            }
+          }
+        }
+      ]
+    }
+  }
+}

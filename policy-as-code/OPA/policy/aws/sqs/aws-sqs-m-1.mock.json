@@ -1,0 +1,147 @@
+{
+  "mock": {
+    "valid": {
+      "kms_key_id": {
+        "resource_changes": [
+          {
+            "address": "aws_sqs_queue.sqs-queue",
+            "mode": "managed",
+            "type": "aws_sqs_queue",
+            "name": "sqs-queue",
+            "provider_name": "registry.terraform.io/hashicorp/aws",
+            "change": {
+              "actions": [
+                "create"
+              ],
+              "before": null,
+              "after": {
+                "content_based_deduplication": false,
+                "delay_seconds": 90,
+                "fifo_queue": false,
+                "kms_data_key_reuse_period_seconds": 3600,
+                "kms_master_key_id": "arn:aws:kms:eu-central-1:995705686092:key/5099b15e-c5e5-40b4-8c0a-d9072a78a30d",
+                "max_message_size": 2048,
+                "message_retention_seconds": 86400,
+                "name": "tf-sqs-queue",
+                "receive_wait_time_seconds": 10,
+                "redrive_allow_policy": null,
+                "redrive_policy": null,
+                "sqs_managed_sse_enabled": null,
+                "tags": null,
+                "visibility_timeout_seconds": 30
+              },
+              "after_unknown": {
+                "arn": true,
+                "deduplication_scope": true,
+                "fifo_throughput_limit": true,
+                "id": true,
+                "name_prefix": true,
+                "policy": true,
+                "tags_all": true,
+                "url": true
+              },
+              "before_sensitive": false,
+              "after_sensitive": {
+                "tags_all": {}
+              }
+            }
+          }
+        ]
+      },
+      "managed_sse": {
+        "resource_changes": [
+          {
+            "address": "aws_sqs_queue.sqs-queue",
+            "mode": "managed",
+            "type": "aws_sqs_queue",
+            "name": "sqs-queue",
+            "provider_name": "registry.terraform.io/hashicorp/aws",
+            "change": {
+              "actions": [
+                "create"
+              ],
+              "before": null,
+              "after": {
+                "content_based_deduplication": false,
+                "delay_seconds": 90,
+                "fifo_queue": false,
+                "kms_data_key_reuse_period_seconds": 3600,
+                "kms_master_key_id": null,
+                "max_message_size": 2048,
+                "message_retention_seconds": 86400,
+                "name": "tf-sqs-queue",
+                "receive_wait_time_seconds": 10,
+                "redrive_allow_policy": null,
+                "redrive_policy": null,
+                "sqs_managed_sse_enabled": true,
+                "tags": null,
+                "visibility_timeout_seconds": 30
+              },
+              "after_unknown": {
+                "arn": true,
+                "deduplication_scope": true,
+                "fifo_throughput_limit": true,
+                "id": true,
+                "name_prefix": true,
+                "policy": true,
+                "tags_all": true,
+                "url": true
+              },
+              "before_sensitive": false,
+              "after_sensitive": {
+                "tags_all": {}
+              }
+            }
+          }
+        ]
+      }
+    },
+    "invalid": {
+      "resource_changes": [
+        {
+          "address": "aws_sqs_queue.sqs-queue",
+          "mode": "managed",
+          "type": "aws_sqs_queue",
+          "name": "sqs-queue",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "content_based_deduplication": false,
+              "delay_seconds": 90,
+              "fifo_queue": false,
+              "kms_master_key_id": null,
+              "max_message_size": 2048,
+              "message_retention_seconds": 86400,
+              "name": "tf-sqs-queue",
+              "receive_wait_time_seconds": 10,
+              "redrive_allow_policy": null,
+              "redrive_policy": null,
+              "sqs_managed_sse_enabled": null,
+              "tags": null,
+              "visibility_timeout_seconds": 30
+            },
+            "after_unknown": {
+              "arn": true,
+              "deduplication_scope": true,
+              "fifo_throughput_limit": true,
+              "id": true,
+              "kms_data_key_reuse_period_seconds": true,
+              "name_prefix": true,
+              "policy": true,
+              "tags_all": true,
+              "url": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "tags_all": {}
+            }
+          }
+        }
+      ]
+    }
+  }
+}

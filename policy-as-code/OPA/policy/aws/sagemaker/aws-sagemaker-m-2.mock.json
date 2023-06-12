@@ -1,0 +1,355 @@
+{
+  "mock": {
+    "valid_referenced": {
+      "resource_changes": [
+        {
+          "address": "aws_sagemaker_notebook_instance.test",
+          "mode": "managed",
+          "type": "aws_sagemaker_notebook_instance",
+          "name": "test",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "accelerator_types": null,
+              "additional_code_repositories": null,
+              "default_code_repository": null,
+              "direct_internet_access": "Enabled",
+              "instance_metadata_service_configuration": [],
+              "instance_type": "ml.t2.medium",
+              "lifecycle_config_name": null,
+              "name": "my-notebook-instance",
+              "role_arn": "arn:aws:iam::123456789012:role/SageMakerInstanceRole",
+              "root_access": "Enabled",
+              "subnet_id": null,
+              "tags": null,
+              "volume_size": 5
+            },
+            "after_unknown": {
+              "arn": true,
+              "id": true,
+              "instance_metadata_service_configuration": [],
+              "kms_key_id": true,
+              "network_interface_id": true,
+              "platform_identifier": true,
+              "security_groups": true,
+              "tags_all": true,
+              "url": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "instance_metadata_service_configuration": [],
+              "security_groups": [],
+              "tags_all": {}
+            }
+          }
+        }
+      ]
+    },
+    "valid_constant": {
+      "resource_changes": [
+        {
+          "address": "aws_sagemaker_notebook_instance.test",
+          "mode": "managed",
+          "type": "aws_sagemaker_notebook_instance",
+          "name": "test",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "accelerator_types": null,
+              "additional_code_repositories": null,
+              "default_code_repository": null,
+              "direct_internet_access": "Enabled",
+              "instance_metadata_service_configuration": [],
+              "instance_type": "ml.t2.medium",
+              "kms_key_id": "arn:aws:kms:eu-central-1:123456789012:key/3613c98e-2775-479e-a2ae-29b804e945e6",
+              "lifecycle_config_name": null,
+              "name": "my-notebook-instance",
+              "role_arn": "arn:aws:iam::123456789012:role/SageMakerInstanceRole",
+              "root_access": "Enabled",
+              "subnet_id": null,
+              "tags": null,
+              "volume_size": 5
+            },
+            "after_unknown": {
+              "arn": true,
+              "id": true,
+              "instance_metadata_service_configuration": [],
+              "network_interface_id": true,
+              "platform_identifier": true,
+              "security_groups": true,
+              "tags_all": true,
+              "url": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "instance_metadata_service_configuration": [],
+              "security_groups": [],
+              "tags_all": {}
+            }
+          }
+        }
+      ]
+    },
+    "default_settings": {
+      "resource_changes": [
+        {
+          "address": "aws_sagemaker_notebook_instance.test",
+          "mode": "managed",
+          "type": "aws_sagemaker_notebook_instance",
+          "name": "test",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "accelerator_types": null,
+              "additional_code_repositories": null,
+              "default_code_repository": null,
+              "direct_internet_access": "Enabled",
+              "instance_metadata_service_configuration": [],
+              "instance_type": "ml.t2.medium",
+              "kms_key_id": null,
+              "lifecycle_config_name": null,
+              "name": "my-notebook-instance",
+              "role_arn": "arn:aws:iam::123456789012:role/SageMakerInstanceRole",
+              "root_access": "Enabled",
+              "subnet_id": null,
+              "tags": null,
+              "volume_size": 5
+            },
+            "after_unknown": {
+              "arn": true,
+              "id": true,
+              "instance_metadata_service_configuration": [],
+              "network_interface_id": true,
+              "platform_identifier": true,
+              "security_groups": true,
+              "tags_all": true,
+              "url": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "instance_metadata_service_configuration": [],
+              "security_groups": [],
+              "tags_all": {}
+            }
+          }
+        }
+      ]
+    },
+    "valid_domain": {
+      "resource_changes": [
+        {
+          "address": "aws_sagemaker_domain.test",
+          "mode": "managed",
+          "type": "aws_sagemaker_domain",
+          "name": "test",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "app_network_access_type": "PublicInternetOnly",
+              "auth_mode": "IAM",
+              "default_user_settings": [
+                {
+                  "jupyter_server_app_settings": [],
+                  "kernel_gateway_app_settings": [
+                    {
+                      "custom_image": [
+                        {
+                          "app_image_config_name": "example",
+                          "image_version_number": null
+                        }
+                      ],
+                      "default_resource_spec": [],
+                      "lifecycle_config_arns": null
+                    }
+                  ],
+                  "security_groups": null,
+                  "sharing_settings": [],
+                  "tensor_board_app_settings": []
+                }
+              ],
+              "domain_name": "example",
+              "kms_key_id": "arn:aws:kms:us-east-1:123456789012:key/3613c98e-2775-479e-a2ae-29b804e936ef",
+              "retention_policy": [],
+              "subnet_ids": [
+                "subnet-0dbcfd27057ef49d0"
+              ],
+              "tags": null,
+              "vpc_id": "vpc-0546603990c1ac749"
+            },
+            "after_unknown": {
+              "arn": true,
+              "default_user_settings": [
+                {
+                  "execution_role": true,
+                  "jupyter_server_app_settings": [],
+                  "kernel_gateway_app_settings": [
+                    {
+                      "custom_image": [
+                        {
+                          "image_name": true
+                        }
+                      ],
+                      "default_resource_spec": []
+                    }
+                  ],
+                  "sharing_settings": [],
+                  "tensor_board_app_settings": []
+                }
+              ],
+              "home_efs_file_system_id": true,
+              "id": true,
+              "retention_policy": [],
+              "single_sign_on_managed_application_instance_id": true,
+              "subnet_ids": [
+                false
+              ],
+              "tags_all": true,
+              "url": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "default_user_settings": [
+                {
+                  "jupyter_server_app_settings": [],
+                  "kernel_gateway_app_settings": [
+                    {
+                      "custom_image": [
+                        {}
+                      ],
+                      "default_resource_spec": []
+                    }
+                  ],
+                  "sharing_settings": [],
+                  "tensor_board_app_settings": []
+                }
+              ],
+              "retention_policy": [],
+              "subnet_ids": [
+                false
+              ],
+              "tags_all": {}
+            }
+          }
+        }
+      ]
+    },
+    "invalid_domain": {
+      "resource_changes": [
+        {
+          "address": "aws_sagemaker_domain.test",
+          "mode": "managed",
+          "type": "aws_sagemaker_domain",
+          "name": "test",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "app_network_access_type": "PublicInternetOnly",
+              "auth_mode": "IAM",
+              "default_user_settings": [
+                {
+                  "jupyter_server_app_settings": [],
+                  "kernel_gateway_app_settings": [
+                    {
+                      "custom_image": [
+                        {
+                          "app_image_config_name": "example",
+                          "image_version_number": null
+                        }
+                      ],
+                      "default_resource_spec": [],
+                      "lifecycle_config_arns": null
+                    }
+                  ],
+                  "security_groups": null,
+                  "sharing_settings": [],
+                  "tensor_board_app_settings": []
+                }
+              ],
+              "domain_name": "example",
+              "kms_key_id": null,
+              "retention_policy": [],
+              "subnet_ids": [
+                "subnet-0dbcfd27057ef49d0"
+              ],
+              "tags": null,
+              "vpc_id": "vpc-0546603990c1ac749"
+            },
+            "after_unknown": {
+              "arn": true,
+              "default_user_settings": [
+                {
+                  "execution_role": true,
+                  "jupyter_server_app_settings": [],
+                  "kernel_gateway_app_settings": [
+                    {
+                      "custom_image": [
+                        {
+                          "image_name": true
+                        }
+                      ],
+                      "default_resource_spec": []
+                    }
+                  ],
+                  "sharing_settings": [],
+                  "tensor_board_app_settings": []
+                }
+              ],
+              "home_efs_file_system_id": true,
+              "id": true,
+              "retention_policy": [],
+              "single_sign_on_managed_application_instance_id": true,
+              "subnet_ids": [
+                false
+              ],
+              "tags_all": true,
+              "url": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "default_user_settings": [
+                {
+                  "jupyter_server_app_settings": [],
+                  "kernel_gateway_app_settings": [
+                    {
+                      "custom_image": [
+                        {}
+                      ],
+                      "default_resource_spec": []
+                    }
+                  ],
+                  "sharing_settings": [],
+                  "tensor_board_app_settings": []
+                }
+              ],
+              "retention_policy": [],
+              "subnet_ids": [
+                false
+              ],
+              "tags_all": {}
+            }
+          }
+        }
+      ]
+    }
+  }
+}

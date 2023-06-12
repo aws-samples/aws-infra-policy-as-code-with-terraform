@@ -1,0 +1,236 @@
+{
+    "mock": {
+        "valid": {
+            "cmk": {
+            "resource_changes": [
+              {
+                "address": "aws_dynamodb_table.basic-dynamodb-table",
+                "mode": "managed",
+                "type": "aws_dynamodb_table",
+                "name": "basic-dynamodb-table",
+                "provider_name": "registry.terraform.io/hashicorp/aws",
+                "change": {
+                  "actions": ["create"],
+                  "before": null,
+                  "after": {
+                    "attribute": [{ "name": "UserId", "type": "S" }],
+                    "billing_mode": "PROVISIONED",
+                    "global_secondary_index": [],
+                    "hash_key": "UserId",
+                    "local_secondary_index": [],
+                    "name": "GameScores",
+                    "range_key": null,
+                    "read_capacity": 20,
+                    "replica": [],
+                    "restore_date_time": null,
+                    "restore_source_name": null,
+                    "restore_to_latest_time": null,
+                    "server_side_encryption": [
+                      {
+                        "enabled": true,
+                        "kms_key_arn": "arn:aws:kms:eu-central-1:709673909586:key/c099c386-c5e5-46c9-b015-ca7db54ebe4a"
+                      }
+                    ],
+                    "stream_enabled": null,
+                    "table_class": null,
+                    "tags": { "Environment": "production", "Name": "dynamodb-table-1" },
+                    "tags_all": {
+                      "Environment": "production",
+                      "Name": "dynamodb-table-1"
+                    },
+                    "timeouts": null,
+                    "write_capacity": 20
+                  },
+                  "after_unknown": {
+                    "arn": true,
+                    "attribute": [{}],
+                    "global_secondary_index": [],
+                    "id": true,
+                    "local_secondary_index": [],
+                    "point_in_time_recovery": true,
+                    "replica": [],
+                    "server_side_encryption": [{ "kms_key_arn": true }],
+                    "stream_arn": true,
+                    "stream_label": true,
+                    "stream_view_type": true,
+                    "tags": {},
+                    "tags_all": {},
+                    "ttl": true
+                  }
+                }
+              }
+              ]
+            },
+            "cmk_reference": {
+              "resource_changes": [
+                {
+                  "address": "aws_dynamodb_table.basic-dynamodb-table",
+                  "mode": "managed",
+                  "type": "aws_dynamodb_table",
+                  "name": "basic-dynamodb-table",
+                  "provider_name": "registry.terraform.io/hashicorp/aws",
+                  "change": {
+                    "actions": ["create"],
+                    "before": null,
+                    "after": {
+                      "attribute": [{ "name": "UserId", "type": "S" }],
+                      "billing_mode": "PROVISIONED",
+                      "global_secondary_index": [],
+                      "hash_key": "UserId",
+                      "local_secondary_index": [],
+                      "name": "GameScores",
+                      "range_key": null,
+                      "read_capacity": 20,
+                      "replica": [],
+                      "restore_date_time": null,
+                      "restore_source_name": null,
+                      "restore_to_latest_time": null,
+                      "server_side_encryption": [
+                        {
+                          "enabled": true
+                        }
+                      ],
+                      "stream_enabled": null,
+                      "table_class": null,
+                      "tags": { "Environment": "production", "Name": "dynamodb-table-1" },
+                      "tags_all": {
+                        "Environment": "production",
+                        "Name": "dynamodb-table-1"
+                      },
+                      "timeouts": null,
+                      "write_capacity": 20
+                    },
+                    "after_unknown": {
+                      "arn": true,
+                      "attribute": [{}],
+                      "global_secondary_index": [],
+                      "id": true,
+                      "local_secondary_index": [],
+                      "point_in_time_recovery": true,
+                      "replica": [],
+                      "server_side_encryption": [{ "kms_key_arn": true }],
+                      "stream_arn": true,
+                      "stream_label": true,
+                      "stream_view_type": true,
+                      "tags": {},
+                      "tags_all": {},
+                      "ttl": true
+                    }
+                  }
+                }
+                ]
+              }
+        },
+        "invalid": {
+            "no_enc": {
+              "resource_changes": [
+                  {
+                    "address": "aws_dynamodb_table.basic-dynamodb-table2",
+                    "mode": "managed",
+                    "type": "aws_dynamodb_table",
+                    "name": "basic-dynamodb-table2",
+                    "provider_name": "registry.terraform.io/hashicorp/aws",
+                    "change": {
+                      "actions": ["create"],
+                      "before": null,
+                      "after": {
+                        "attribute": [{ "name": "UserId", "type": "S" }],
+                        "billing_mode": "PROVISIONED",
+                        "global_secondary_index": [],
+                        "hash_key": "UserId",
+                        "local_secondary_index": [],
+                        "name": "GameScores",
+                        "range_key": null,
+                        "read_capacity": 20,
+                        "replica": [],
+                        "restore_date_time": null,
+                        "restore_source_name": null,
+                        "restore_to_latest_time": null,
+                        "stream_enabled": null,
+                        "table_class": null,
+                        "tags": { "Environment": "production", "Name": "dynamodb-table-1" },
+                        "tags_all": {
+                          "Environment": "production",
+                          "Name": "dynamodb-table-1"
+                        },
+                        "timeouts": null,
+                        "write_capacity": 20
+                      },
+                      "after_unknown": {
+                        "arn": true,
+                        "attribute": [{}],
+                        "global_secondary_index": [],
+                        "id": true,
+                        "local_secondary_index": [],
+                        "point_in_time_recovery": true,
+                        "replica": [],
+                        "server_side_encryption": true,
+                        "stream_arn": true,
+                        "stream_label": true,
+                        "stream_view_type": true,
+                        "tags": {},
+                        "tags_all": {},
+                        "ttl": true
+                      }
+                    }
+                  }
+                ]
+            },
+            "no_cmk": {
+              "resource_changes": [
+                {
+                  "address": "aws_dynamodb_table.basic-dynamodb-table3",
+                  "mode": "managed",
+                  "type": "aws_dynamodb_table",
+                  "name": "basic-dynamodb-table3",
+                  "provider_name": "registry.terraform.io/hashicorp/aws",
+                  "change": {
+                    "actions": ["create"],
+                    "before": null,
+                    "after": {
+                      "attribute": [{ "name": "UserId", "type": "S" }],
+                      "billing_mode": "PROVISIONED",
+                      "global_secondary_index": [],
+                      "hash_key": "UserId",
+                      "local_secondary_index": [],
+                      "name": "GameScores",
+                      "range_key": null,
+                      "read_capacity": 20,
+                      "replica": [],
+                      "restore_date_time": null,
+                      "restore_source_name": null,
+                      "restore_to_latest_time": null,
+                      "server_side_encryption": [{ "enabled": true }],
+                      "stream_enabled": null,
+                      "table_class": null,
+                      "tags": { "Environment": "production", "Name": "dynamodb-table-1" },
+                      "tags_all": {
+                        "Environment": "production",
+                        "Name": "dynamodb-table-1"
+                      },
+                      "timeouts": null,
+                      "write_capacity": 20
+                    },
+                    "after_unknown": {
+                      "arn": true,
+                      "attribute": [{}],
+                      "global_secondary_index": [],
+                      "id": true,
+                      "local_secondary_index": [],
+                      "point_in_time_recovery": true,
+                      "replica": [],
+                      "server_side_encryption": [{ "kms_key_arn": true }],
+                      "stream_arn": true,
+                      "stream_label": true,
+                      "stream_view_type": true,
+                      "tags": {},
+                      "tags_all": {},
+                      "ttl": true
+                    }
+                  }
+                }
+                ]
+            }
+        }
+    }
+}

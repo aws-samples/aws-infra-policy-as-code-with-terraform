@@ -1,0 +1,673 @@
+{
+  "mock": {
+    "r1_ref_valid": {
+      "format_version":"1.0",
+      "terraform_version":"1.1.1",
+      "resource_changes":[
+        {
+           "address":"module.eks.aws_launch_template.this",
+           "module_address":"module.eks",
+           "mode":"managed",
+           "type":"aws_launch_template",
+           "name":"this",
+           "provider_name":"registry.terraform.io/hashicorp/aws",
+           "change":{
+              "actions":[
+                 "create"
+              ],
+              "before":null,
+              "after":{
+                 "block_device_mappings":[
+
+                 ],
+                 "capacity_reservation_specification":[
+
+                 ],
+                 "cpu_options":[
+
+                 ],
+                 "credit_specification":[
+
+                 ],
+                 "description":null,
+                 "disable_api_termination":null,
+                 "ebs_optimized":null,
+                 "elastic_gpu_specifications":[
+
+                 ],
+                 "elastic_inference_accelerator":[
+
+                 ],
+                 "enclave_options":[
+
+                 ],
+                 "hibernation_options":[
+
+                 ],
+                 "iam_instance_profile":[
+
+                 ],
+                 "image_id":"ami-0e70dc9d2c457f1c8",
+                 "instance_initiated_shutdown_behavior":null,
+                 "instance_market_options":[
+
+                 ],
+                 "instance_requirements":[
+
+                 ],
+                 "instance_type":"t3.large",
+                 "kernel_id":null,
+                 "key_name":null,
+                 "license_specification":[
+
+                 ],
+                 "maintenance_options":[
+
+                 ],
+                 "monitoring":[
+
+                 ],
+                 "name":"3c4c-test-cluster-lt",
+                 "network_interfaces":[
+
+                 ],
+                 "placement":[
+
+                 ],
+                 "private_dns_name_options":[
+
+                 ],
+                 "ram_disk_id":null,
+                 "security_group_names":null,
+                 "tag_specifications":[
+
+                 ],
+                 "tags":null,
+                 "update_default_version":null,
+                 "user_data":null
+              },
+              "after_unknown":{
+                 "arn":true,
+                 "block_device_mappings":[
+
+                 ],
+                 "capacity_reservation_specification":[
+
+                 ],
+                 "cpu_options":[
+
+                 ],
+                 "credit_specification":[
+
+                 ],
+                 "default_version":true,
+                 "elastic_gpu_specifications":[
+
+                 ],
+                 "elastic_inference_accelerator":[
+
+                 ],
+                 "enclave_options":[
+
+                 ],
+                 "hibernation_options":[
+
+                 ],
+                 "iam_instance_profile":[
+
+                 ],
+                 "id":true,
+                 "instance_market_options":[
+
+                 ],
+                 "instance_requirements":[
+
+                 ],
+                 "latest_version":true,
+                 "license_specification":[
+
+                 ],
+                 "maintenance_options":[
+
+                 ],
+                 "metadata_options":true,
+                 "monitoring":[
+
+                 ],
+                 "name_prefix":true,
+                 "network_interfaces":[
+
+                 ],
+                 "placement":[
+
+                 ],
+                 "private_dns_name_options":[
+
+                 ],
+                 "tag_specifications":[
+
+                 ],
+                 "tags_all":true,
+                 "vpc_security_group_ids":true
+              },
+              "before_sensitive":false,
+              "after_sensitive":{
+                 "block_device_mappings":[
+
+                 ],
+                 "capacity_reservation_specification":[
+
+                 ],
+                 "cpu_options":[
+
+                 ],
+                 "credit_specification":[
+
+                 ],
+                 "elastic_gpu_specifications":[
+
+                 ],
+                 "elastic_inference_accelerator":[
+
+                 ],
+                 "enclave_options":[
+
+                 ],
+                 "hibernation_options":[
+
+                 ],
+                 "iam_instance_profile":[
+
+                 ],
+                 "instance_market_options":[
+
+                 ],
+                 "instance_requirements":[
+
+                 ],
+                 "license_specification":[
+
+                 ],
+                 "maintenance_options":[
+
+                 ],
+                 "metadata_options":[
+
+                 ],
+                 "monitoring":[
+
+                 ],
+                 "network_interfaces":[
+
+                 ],
+                 "placement":[
+
+                 ],
+                 "private_dns_name_options":[
+
+                 ],
+                 "tag_specifications":[
+
+                 ],
+                 "tags_all":{
+
+                 },
+                 "vpc_security_group_ids":[
+
+                 ]
+              }
+           }
+        }
+      ]
+    },
+    "r1_sgid_valid": {
+      "format_version":"1.0",
+      "terraform_version":"1.1.1",
+      "resource_changes":[
+        {
+           "address":"module.eks.aws_launch_template.this",
+           "module_address":"module.eks",
+           "mode":"managed",
+           "type":"aws_launch_template",
+           "name":"this",
+           "provider_name":"registry.terraform.io/hashicorp/aws",
+           "change":{
+              "actions":[
+                 "create"
+              ],
+              "before":null,
+              "after":{
+                 "block_device_mappings":[
+
+                 ],
+                 "capacity_reservation_specification":[
+
+                 ],
+                 "cpu_options":[
+
+                 ],
+                 "credit_specification":[
+
+                 ],
+                 "description":null,
+                 "disable_api_termination":null,
+                 "ebs_optimized":null,
+                 "elastic_gpu_specifications":[
+
+                 ],
+                 "elastic_inference_accelerator":[
+
+                 ],
+                 "enclave_options":[
+
+                 ],
+                 "hibernation_options":[
+
+                 ],
+                 "iam_instance_profile":[
+
+                 ],
+                 "image_id":"ami-0e70dc9d2c457f1c8",
+                 "instance_initiated_shutdown_behavior":null,
+                 "instance_market_options":[
+
+                 ],
+                 "instance_requirements":[
+
+                 ],
+                 "instance_type":"t3.large",
+                 "kernel_id":null,
+                 "key_name":null,
+                 "license_specification":[
+
+                 ],
+                 "maintenance_options":[
+
+                 ],
+                 "monitoring":[
+
+                 ],
+                 "name":"3c4c-test-cluster-lt",
+                 "network_interfaces":[
+
+                 ],
+                 "placement":[
+
+                 ],
+                 "private_dns_name_options":[
+
+                 ],
+                 "ram_disk_id":null,
+                 "security_group_names":null,
+                 "tag_specifications":[
+
+                 ],
+                 "tags":null,
+                 "update_default_version":null,
+                 "user_data":null,
+                 "vpc_security_group_ids":[
+                    "sg-02f7d448806f1e366"
+                 ]
+              },
+              "after_unknown":{
+                 "arn":true,
+                 "block_device_mappings":[
+
+                 ],
+                 "capacity_reservation_specification":[
+
+                 ],
+                 "cpu_options":[
+
+                 ],
+                 "credit_specification":[
+
+                 ],
+                 "default_version":true,
+                 "elastic_gpu_specifications":[
+
+                 ],
+                 "elastic_inference_accelerator":[
+
+                 ],
+                 "enclave_options":[
+
+                 ],
+                 "hibernation_options":[
+
+                 ],
+                 "iam_instance_profile":[
+
+                 ],
+                 "id":true,
+                 "instance_market_options":[
+
+                 ],
+                 "instance_requirements":[
+
+                 ],
+                 "latest_version":true,
+                 "license_specification":[
+
+                 ],
+                 "maintenance_options":[
+
+                 ],
+                 "metadata_options":true,
+                 "monitoring":[
+
+                 ],
+                 "name_prefix":true,
+                 "network_interfaces":[
+
+                 ],
+                 "placement":[
+
+                 ],
+                 "private_dns_name_options":[
+
+                 ],
+                 "tag_specifications":[
+
+                 ],
+                 "tags_all":true,
+                 "vpc_security_group_ids":[
+                    false
+                 ]
+              },
+              "before_sensitive":false,
+              "after_sensitive":{
+                 "block_device_mappings":[
+
+                 ],
+                 "capacity_reservation_specification":[
+
+                 ],
+                 "cpu_options":[
+
+                 ],
+                 "credit_specification":[
+
+                 ],
+                 "elastic_gpu_specifications":[
+
+                 ],
+                 "elastic_inference_accelerator":[
+
+                 ],
+                 "enclave_options":[
+
+                 ],
+                 "hibernation_options":[
+
+                 ],
+                 "iam_instance_profile":[
+
+                 ],
+                 "instance_market_options":[
+
+                 ],
+                 "instance_requirements":[
+
+                 ],
+                 "license_specification":[
+
+                 ],
+                 "maintenance_options":[
+
+                 ],
+                 "metadata_options":[
+
+                 ],
+                 "monitoring":[
+
+                 ],
+                 "network_interfaces":[
+
+                 ],
+                 "placement":[
+
+                 ],
+                 "private_dns_name_options":[
+
+                 ],
+                 "tag_specifications":[
+
+                 ],
+                 "tags_all":{
+
+                 },
+                 "vpc_security_group_ids":[
+                    false
+                 ]
+              }
+           }
+        }
+      ]
+    },
+    "r1_invalid":{
+      "terraform_version":"1.1.1",
+      "resource_changes":[
+        {
+           "address":"module.eks.aws_launch_template.this",
+           "module_address":"module.eks",
+           "mode":"managed",
+           "type":"aws_launch_template",
+           "name":"this",
+           "provider_name":"registry.terraform.io/hashicorp/aws",
+           "change":{
+              "actions":[
+                 "create"
+              ],
+              "before":null,
+              "after":{
+                 "block_device_mappings":[
+
+                 ],
+                 "capacity_reservation_specification":[
+
+                 ],
+                 "cpu_options":[
+
+                 ],
+                 "credit_specification":[
+
+                 ],
+                 "description":null,
+                 "disable_api_termination":null,
+                 "ebs_optimized":null,
+                 "elastic_gpu_specifications":[
+
+                 ],
+                 "elastic_inference_accelerator":[
+
+                 ],
+                 "enclave_options":[
+
+                 ],
+                 "hibernation_options":[
+
+                 ],
+                 "iam_instance_profile":[
+
+                 ],
+                 "image_id":"ami-0e70dc9d2c457f1c8",
+                 "instance_initiated_shutdown_behavior":null,
+                 "instance_market_options":[
+
+                 ],
+                 "instance_requirements":[
+
+                 ],
+                 "instance_type":"t3.large",
+                 "kernel_id":null,
+                 "key_name":null,
+                 "license_specification":[
+
+                 ],
+                 "maintenance_options":[
+
+                 ],
+                 "monitoring":[
+
+                 ],
+                 "name":"3c4c-test-cluster-lt",
+                 "network_interfaces":[
+
+                 ],
+                 "placement":[
+
+                 ],
+                 "private_dns_name_options":[
+
+                 ],
+                 "ram_disk_id":null,
+                 "security_group_names":null,
+                 "tag_specifications":[
+
+                 ],
+                 "tags":null,
+                 "update_default_version":null,
+                 "user_data":null,
+                 "vpc_security_group_ids":[
+
+                 ]
+              },
+              "after_unknown":{
+                 "arn":true,
+                 "block_device_mappings":[
+
+                 ],
+                 "capacity_reservation_specification":[
+
+                 ],
+                 "cpu_options":[
+
+                 ],
+                 "credit_specification":[
+
+                 ],
+                 "default_version":true,
+                 "elastic_gpu_specifications":[
+
+                 ],
+                 "elastic_inference_accelerator":[
+
+                 ],
+                 "enclave_options":[
+
+                 ],
+                 "hibernation_options":[
+
+                 ],
+                 "iam_instance_profile":[
+
+                 ],
+                 "id":true,
+                 "instance_market_options":[
+
+                 ],
+                 "instance_requirements":[
+
+                 ],
+                 "latest_version":true,
+                 "license_specification":[
+
+                 ],
+                 "maintenance_options":[
+
+                 ],
+                 "metadata_options":true,
+                 "monitoring":[
+
+                 ],
+                 "name_prefix":true,
+                 "network_interfaces":[
+
+                 ],
+                 "placement":[
+
+                 ],
+                 "private_dns_name_options":[
+
+                 ],
+                 "tag_specifications":[
+
+                 ],
+                 "tags_all":true,
+                 "vpc_security_group_ids":[
+                    false
+                 ]
+              },
+              "before_sensitive":false,
+              "after_sensitive":{
+                 "block_device_mappings":[
+
+                 ],
+                 "capacity_reservation_specification":[
+
+                 ],
+                 "cpu_options":[
+
+                 ],
+                 "credit_specification":[
+
+                 ],
+                 "elastic_gpu_specifications":[
+
+                 ],
+                 "elastic_inference_accelerator":[
+
+                 ],
+                 "enclave_options":[
+
+                 ],
+                 "hibernation_options":[
+
+                 ],
+                 "iam_instance_profile":[
+
+                 ],
+                 "instance_market_options":[
+
+                 ],
+                 "instance_requirements":[
+
+                 ],
+                 "license_specification":[
+
+                 ],
+                 "maintenance_options":[
+
+                 ],
+                 "metadata_options":[
+
+                 ],
+                 "monitoring":[
+
+                 ],
+                 "network_interfaces":[
+
+                 ],
+                 "placement":[
+
+                 ],
+                 "private_dns_name_options":[
+
+                 ],
+                 "tag_specifications":[
+
+                 ],
+                 "tags_all":{
+
+                 },
+                 "vpc_security_group_ids":[
+                    false
+                 ]
+              }
+           }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,378 @@
+{
+    "mock":{
+        "invalid_protocol":{
+            "resource_changes": [{
+                "address": "aws_msk_cluster.cluster",
+                "mode": "managed",
+                "type": "aws_msk_cluster",
+                "name": "cluster",
+                "provider_name": "registry.terraform.io/hashicorp/aws",
+                "change": {
+                    "actions": ["create"],
+                    "before": null,
+                    "after": {
+                        "broker_node_group_info": [{
+                            "az_distribution": "DEFAULT",
+                            "ebs_volume_size": 1000,
+                            "instance_type": "kafka.t3.small"
+                        }],
+                        "client_authentication": [],
+                        "cluster_name": "cluster",
+                        "configuration_info": [],
+                        "encryption_info": [{
+                            "encryption_in_transit": [{
+                                "client_broker": "TLS",
+                                "in_cluster": true
+                            }]
+                        }],
+                        "enhanced_monitoring": "DEFAULT",
+                        "kafka_version": "3.2.0",
+                        "logging_info": [],
+                        "number_of_broker_nodes": 3,
+                        "open_monitoring": [],
+                        "tags": null,
+                        "timeouts": null
+                    },
+                    "after_unknown": {
+                        "arn": true,
+                        "bootstrap_brokers": true,
+                        "bootstrap_brokers_public_sasl_iam": true,
+                        "bootstrap_brokers_public_sasl_scram": true,
+                        "bootstrap_brokers_public_tls": true,
+                        "bootstrap_brokers_sasl_iam": true,
+                        "bootstrap_brokers_sasl_scram": true,
+                        "bootstrap_brokers_tls": true,
+                        "broker_node_group_info": [{
+                            "client_subnets": true,
+                            "connectivity_info": true,
+                            "security_groups": true,
+                            "storage_info": true
+                        }],
+                        "client_authentication": [],
+                        "configuration_info": [],
+                        "current_version": true,
+                        "encryption_info": [{
+                            "encryption_at_rest_kms_key_arn": true,
+                            "encryption_in_transit": [{}]
+                        }],
+                        "id": true,
+                        "logging_info": [],
+                        "open_monitoring": [],
+                        "tags_all": true,
+                        "zookeeper_connect_string": true,
+                        "zookeeper_connect_string_tls": true
+                    },
+                    "before_sensitive": false,
+                    "after_sensitive": {
+                        "broker_node_group_info": [{
+                            "client_subnets": [],
+                            "connectivity_info": [],
+                            "security_groups": [],
+                            "storage_info": []
+                        }],
+                        "client_authentication": [],
+                        "configuration_info": [],
+                        "encryption_info": [{
+                            "encryption_in_transit": [{}]
+                        }],
+                        "logging_info": [],
+                        "open_monitoring": [],
+                        "tags_all": {}
+                    }
+                }
+            }],
+            "configuration": {
+                "root_module": {
+                    "resources": [{
+                        "address": "aws_msk_cluster.cluster",
+                        "mode": "managed",
+                        "type": "aws_msk_cluster",
+                        "name": "cluster",
+                        "provider_config_key": "aws",
+                        "expressions": {
+                            "broker_node_group_info": [{
+                                "client_subnets": {
+                                    "references": ["aws_subnet.subnet_az1.id", "aws_subnet.subnet_az1", "aws_subnet.subnet_az2.id", "aws_subnet.subnet_az2", "aws_subnet.subnet_az3.id", "aws_subnet.subnet_az3"]
+                                },
+                                "ebs_volume_size": {
+                                    "references": ["var.broker_ebs_volume_size"]
+                                },
+                                "instance_type": {
+                                    "references": ["var.instance_type"]
+                                },
+                                "security_groups": {
+                                    "references": ["aws_security_group.sg.id", "aws_security_group.sg"]
+                                }
+                            }],
+                            "cluster_name": {
+                                "references": ["var.cluster_name"]
+                            },
+                            "encryption_info": [{
+                                "encryption_at_rest_kms_key_arn": {
+                                    "references": ["aws_kms_key.msk_key.arn", "aws_kms_key.msk_key"]
+                                },
+                                "encryption_in_transit": [{
+                                    "client_broker": {
+                                        "references": ["var.client_broker_connection_method"]
+                                    },
+                                    "in_cluster": {
+                                        "constant_value": true
+                                    }
+                                }]
+                            }],
+                            "kafka_version": {
+                                "constant_value": "3.2.0"
+                            },
+                            "number_of_broker_nodes": {
+                                "constant_value": 3
+                            }
+                        },
+                        "schema_version": 0
+                    }],
+                    "variables": {
+                        "aws_region": {
+                            "default": "eu-central-1",
+                            "description": "Default region"
+                        },
+                        "az": {
+                            "default": ["eu-central-1a", "eu-central-1b", "eu-central-1c"],
+                            "description": "list of availablity zones to be used"
+                        },
+                        "broker_ebs_volume_size": {
+                            "default": 1000,
+                            "description": "EBS volume size of brokers in GB"
+                        },
+                        "cidr_block": {
+                            "default": "10.0.0.0/22",
+                            "description": "vpc id to be used"
+                        },
+                        "client_broker_connection_method": {
+                            "default": "TLS",
+                            "description": "Encryption Method for in cluster traffic"
+                        },
+                        "cluster_name": {
+                            "default": "cluster",
+                            "description": "Name of the MSK cluster"
+                        },
+                        "env": {
+                            "default": "dev",
+                            "description": "environment of the application"
+                        },
+                        "instance_type": {
+                            "default": "kafka.t3.small",
+                            "description": "Instance type for Kafka Brokers"
+                        },
+                        "name": {
+                            "default": "cluster",
+                            "description": "name of the resource"
+                        },
+                        "service": {
+                            "default": "msk",
+                            "description": "name of the AWS Service"
+                        },
+                        "subnets": {
+                            "default": ["10.0.1.0/24", "10.0.2.0/24", "10.0.3.0/24"],
+                            "description": "list of subnets ,maximum of 3 can be provided where the kafka brokers will be provisioned"
+                        }
+                    }
+                }
+            }
+        }
+,
+    "valid_protocol":{
+        "resource_changes": [
+            {
+                "address": "aws_msk_cluster.cluster",
+                "mode": "managed",
+                "type": "aws_msk_cluster",
+                "name": "cluster",
+                "provider_name": "registry.terraform.io/hashicorp/aws",
+                "change": {
+                    "actions": [
+                        "create"
+                    ],
+                    "before": null,
+                    "after": {
+                        "broker_node_group_info": [
+                            {
+                                "az_distribution": "DEFAULT",
+                                "instance_type": "kafka.t3.small",
+                                "storage_info": [
+                                    {
+                                        "ebs_storage_info": [
+                                            {
+                                                "provisioned_throughput": [],
+                                                "volume_size": 1000
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ],
+                        "client_authentication": [
+                            {
+                                "sasl": [
+                                    {
+                                        "iam": true,
+                                        "scram": null
+                                    }
+                                ],
+                                "tls": [],
+                                "unauthenticated": null
+                            }
+                        ],
+                        "cluster_name": "cluster",
+                        "configuration_info": [],
+                        "encryption_info": [
+                            {
+                                "encryption_in_transit": [
+                                    {
+                                        "client_broker": "TLS",
+                                        "in_cluster": true
+                                    }
+                                ]
+                            }
+                        ],
+                        "enhanced_monitoring": "DEFAULT",
+                        "kafka_version": "3.2.0",
+                        "logging_info": [
+                            {
+                                "broker_logs": [
+                                    {
+                                        "cloudwatch_logs": [
+                                            {
+                                                "enabled": true,
+                                                "log_group": "msk_broker_logs"
+                                            }
+                                        ],
+                                        "firehose": [],
+                                        "s3": []
+                                    }
+                                ]
+                            }
+                        ],
+                        "number_of_broker_nodes": 3,
+                        "open_monitoring": [],
+                        "tags": null,
+                        "timeouts": null
+                    },
+                    "after_unknown": {
+                        "arn": true,
+                        "bootstrap_brokers": true,
+                        "bootstrap_brokers_public_sasl_iam": true,
+                        "bootstrap_brokers_public_sasl_scram": true,
+                        "bootstrap_brokers_public_tls": true,
+                        "bootstrap_brokers_sasl_iam": true,
+                        "bootstrap_brokers_sasl_scram": true,
+                        "bootstrap_brokers_tls": true,
+                        "broker_node_group_info": [
+                            {
+                                "client_subnets": true,
+                                "connectivity_info": true,
+                                "ebs_volume_size": true,
+                                "security_groups": true,
+                                "storage_info": [
+                                    {
+                                        "ebs_storage_info": [
+                                            {
+                                                "provisioned_throughput": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ],
+                        "client_authentication": [
+                            {
+                                "sasl": [
+                                    {}
+                                ],
+                                "tls": []
+                            }
+                        ],
+                        "configuration_info": [],
+                        "current_version": true,
+                        "encryption_info": [
+                            {
+                                "encryption_at_rest_kms_key_arn": true,
+                                "encryption_in_transit": [
+                                    {}
+                                ]
+                            }
+                        ],
+                        "id": true,
+                        "logging_info": [
+                            {
+                                "broker_logs": [
+                                    {
+                                        "cloudwatch_logs": [
+                                            {}
+                                        ],
+                                        "firehose": [],
+                                        "s3": []
+                                    }
+                                ]
+                            }
+                        ],
+                        "open_monitoring": [],
+                        "tags_all": true,
+                        "zookeeper_connect_string": true,
+                        "zookeeper_connect_string_tls": true
+                    },
+                    "before_sensitive": false,
+                    "after_sensitive": {
+                        "broker_node_group_info": [
+                            {
+                                "client_subnets": [],
+                                "connectivity_info": [],
+                                "security_groups": [],
+                                "storage_info": [
+                                    {
+                                        "ebs_storage_info": [
+                                            {
+                                                "provisioned_throughput": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ],
+                        "client_authentication": [
+                            {
+                                "sasl": [
+                                    {}
+                                ],
+                                "tls": []
+                            }
+                        ],
+                        "configuration_info": [],
+                        "encryption_info": [
+                            {
+                                "encryption_in_transit": [
+                                    {}
+                                ]
+                            }
+                        ],
+                        "logging_info": [
+                            {
+                                "broker_logs": [
+                                    {
+                                        "cloudwatch_logs": [
+                                            {}
+                                        ],
+                                        "firehose": [],
+                                        "s3": []
+                                    }
+                                ]
+                            }
+                        ],
+                        "open_monitoring": [],
+                        "tags_all": {}
+                    }
+                }
+            }
+        ]
+    }
+    }
+}
+

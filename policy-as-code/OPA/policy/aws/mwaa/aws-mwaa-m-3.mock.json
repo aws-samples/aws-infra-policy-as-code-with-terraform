@@ -1,0 +1,1340 @@
+{
+  "mock": {
+    "all_endpoints": {
+      "resource_changes": [
+        {
+          "address": "aws_mwaa_environment.valid",
+          "mode": "managed",
+          "type": "aws_mwaa_environment",
+          "name": "valid",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "airflow_configuration_options": null,
+              "dag_s3_path": "dags/",
+              "execution_role_arn": "arn:aws:iam::569128700374:role/AutomationAssumeRole",
+              "kms_key": "arn:aws:kms:eu-central-1:569128700374:key/58b589f1-483f-4034-be51-4c69c493f6ca",
+              "logging_configuration": [
+                {
+                  "dag_processing_logs": [
+                    {
+                      "enabled": true,
+                      "log_level": "DEBUG"
+                    }
+                  ],
+                  "scheduler_logs": [
+                    {
+                      "enabled": true,
+                      "log_level": "INFO"
+                    }
+                  ],
+                  "task_logs": [
+                    {
+                      "enabled": true,
+                      "log_level": "WARNING"
+                    }
+                  ],
+                  "webserver_logs": [
+                    {
+                      "enabled": true,
+                      "log_level": "ERROR"
+                    }
+                  ],
+                  "worker_logs": [
+                    {
+                      "enabled": true,
+                      "log_level": "CRITICAL"
+                    }
+                  ]
+                }
+              ],
+              "name": "valid",
+              "network_configuration": [
+                {
+                  "security_group_ids": [
+                    "sg-04ffd413ff4467d19"
+                  ],
+                  "subnet_ids": [
+                    "subnet-019d9925f809928c5",
+                    "subnet-0919979b1d57452a5"
+                  ]
+                }
+              ],
+              "plugins_s3_path": null,
+              "requirements_s3_path": null,
+              "source_bucket_arn": "arn:aws:s3:::mwaabucket",
+              "tags": null
+            },
+            "after_unknown": {
+              "airflow_version": true,
+              "arn": true,
+              "created_at": true,
+              "environment_class": true,
+              "id": true,
+              "last_updated": true,
+              "logging_configuration": [
+                {
+                  "dag_processing_logs": [
+                    {
+                      "cloud_watch_log_group_arn": true
+                    }
+                  ],
+                  "scheduler_logs": [
+                    {
+                      "cloud_watch_log_group_arn": true
+                    }
+                  ],
+                  "task_logs": [
+                    {
+                      "cloud_watch_log_group_arn": true
+                    }
+                  ],
+                  "webserver_logs": [
+                    {
+                      "cloud_watch_log_group_arn": true
+                    }
+                  ],
+                  "worker_logs": [
+                    {
+                      "cloud_watch_log_group_arn": true
+                    }
+                  ]
+                }
+              ],
+              "max_workers": true,
+              "min_workers": true,
+              "network_configuration": [
+                {
+                  "security_group_ids": [
+                    false
+                  ],
+                  "subnet_ids": [
+                    false,
+                    false
+                  ]
+                }
+              ],
+              "plugins_s3_object_version": true,
+              "requirements_s3_object_version": true,
+              "schedulers": true,
+              "service_role_arn": true,
+              "status": true,
+              "tags_all": true,
+              "webserver_access_mode": true,
+              "webserver_url": true,
+              "weekly_maintenance_window_start": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "airflow_configuration_options": true,
+              "last_updated": [],
+              "logging_configuration": [
+                {
+                  "dag_processing_logs": [
+                    {}
+                  ],
+                  "scheduler_logs": [
+                    {}
+                  ],
+                  "task_logs": [
+                    {}
+                  ],
+                  "webserver_logs": [
+                    {}
+                  ],
+                  "worker_logs": [
+                    {}
+                  ]
+                }
+              ],
+              "network_configuration": [
+                {
+                  "security_group_ids": [
+                    false
+                  ],
+                  "subnet_ids": [
+                    false,
+                    false
+                  ]
+                }
+              ],
+              "tags_all": {}
+            }
+          }
+        },
+        {
+          "address": "aws_vpc_endpoint.mwaa_api",
+          "mode": "managed",
+          "type": "aws_vpc_endpoint",
+          "name": "mwaa_api",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "auto_accept": null,
+              "private_dns_enabled": false,
+              "service_name": "com.amazonaws.eu-central-1.airflow.api",
+              "tags": null,
+              "timeouts": null,
+              "vpc_endpoint_type": "Interface",
+              "vpc_id": "vpc-0202a4ea5b1478f89"
+            },
+            "after_unknown": {
+              "arn": true,
+              "cidr_blocks": true,
+              "dns_entry": true,
+              "id": true,
+              "network_interface_ids": true,
+              "owner_id": true,
+              "policy": true,
+              "prefix_list_id": true,
+              "requester_managed": true,
+              "route_table_ids": true,
+              "security_group_ids": true,
+              "state": true,
+              "subnet_ids": true,
+              "tags_all": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "cidr_blocks": [],
+              "dns_entry": [],
+              "network_interface_ids": [],
+              "route_table_ids": [],
+              "security_group_ids": [],
+              "subnet_ids": [],
+              "tags_all": {}
+            }
+          }
+        },
+        {
+          "address": "aws_vpc_endpoint.mwaa_ecr_api",
+          "mode": "managed",
+          "type": "aws_vpc_endpoint",
+          "name": "mwaa_ecr_api",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "auto_accept": null,
+              "private_dns_enabled": false,
+              "service_name": "com.amazonaws.eu-central-1.ecr.api",
+              "tags": null,
+              "timeouts": null,
+              "vpc_endpoint_type": "Interface",
+              "vpc_id": "vpc-0202a4ea5b1478f89"
+            },
+            "after_unknown": {
+              "arn": true,
+              "cidr_blocks": true,
+              "dns_entry": true,
+              "id": true,
+              "network_interface_ids": true,
+              "owner_id": true,
+              "policy": true,
+              "prefix_list_id": true,
+              "requester_managed": true,
+              "route_table_ids": true,
+              "security_group_ids": true,
+              "state": true,
+              "subnet_ids": true,
+              "tags_all": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "cidr_blocks": [],
+              "dns_entry": [],
+              "network_interface_ids": [],
+              "route_table_ids": [],
+              "security_group_ids": [],
+              "subnet_ids": [],
+              "tags_all": {}
+            }
+          }
+        },
+        {
+          "address": "aws_vpc_endpoint.mwaa_ecr_dkr",
+          "mode": "managed",
+          "type": "aws_vpc_endpoint",
+          "name": "mwaa_ecr_dkr",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "auto_accept": null,
+              "private_dns_enabled": false,
+              "service_name": "com.amazonaws.eu-central-1.ecr.dkr",
+              "tags": null,
+              "timeouts": null,
+              "vpc_endpoint_type": "Interface",
+              "vpc_id": "vpc-0202a4ea5b1478f89"
+            },
+            "after_unknown": {
+              "arn": true,
+              "cidr_blocks": true,
+              "dns_entry": true,
+              "id": true,
+              "network_interface_ids": true,
+              "owner_id": true,
+              "policy": true,
+              "prefix_list_id": true,
+              "requester_managed": true,
+              "route_table_ids": true,
+              "security_group_ids": true,
+              "state": true,
+              "subnet_ids": true,
+              "tags_all": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "cidr_blocks": [],
+              "dns_entry": [],
+              "network_interface_ids": [],
+              "route_table_ids": [],
+              "security_group_ids": [],
+              "subnet_ids": [],
+              "tags_all": {}
+            }
+          }
+        },
+        {
+          "address": "aws_vpc_endpoint.mwaa_env",
+          "mode": "managed",
+          "type": "aws_vpc_endpoint",
+          "name": "mwaa_env",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "auto_accept": null,
+              "private_dns_enabled": false,
+              "service_name": "com.amazonaws.eu-central-1.airflow.env",
+              "tags": null,
+              "timeouts": null,
+              "vpc_endpoint_type": "Interface",
+              "vpc_id": "vpc-0202a4ea5b1478f89"
+            },
+            "after_unknown": {
+              "arn": true,
+              "cidr_blocks": true,
+              "dns_entry": true,
+              "id": true,
+              "network_interface_ids": true,
+              "owner_id": true,
+              "policy": true,
+              "prefix_list_id": true,
+              "requester_managed": true,
+              "route_table_ids": true,
+              "security_group_ids": true,
+              "state": true,
+              "subnet_ids": true,
+              "tags_all": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "cidr_blocks": [],
+              "dns_entry": [],
+              "network_interface_ids": [],
+              "route_table_ids": [],
+              "security_group_ids": [],
+              "subnet_ids": [],
+              "tags_all": {}
+            }
+          }
+        },
+        {
+          "address": "aws_vpc_endpoint.mwaa_kms",
+          "mode": "managed",
+          "type": "aws_vpc_endpoint",
+          "name": "mwaa_kms",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "auto_accept": null,
+              "private_dns_enabled": false,
+              "service_name": "com.amazonaws.eu-central-1.kms",
+              "tags": null,
+              "timeouts": null,
+              "vpc_endpoint_type": "Interface",
+              "vpc_id": "vpc-0202a4ea5b1478f89"
+            },
+            "after_unknown": {
+              "arn": true,
+              "cidr_blocks": true,
+              "dns_entry": true,
+              "id": true,
+              "network_interface_ids": true,
+              "owner_id": true,
+              "policy": true,
+              "prefix_list_id": true,
+              "requester_managed": true,
+              "route_table_ids": true,
+              "security_group_ids": true,
+              "state": true,
+              "subnet_ids": true,
+              "tags_all": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "cidr_blocks": [],
+              "dns_entry": [],
+              "network_interface_ids": [],
+              "route_table_ids": [],
+              "security_group_ids": [],
+              "subnet_ids": [],
+              "tags_all": {}
+            }
+          }
+        },
+        {
+          "address": "aws_vpc_endpoint.mwaa_logs",
+          "mode": "managed",
+          "type": "aws_vpc_endpoint",
+          "name": "mwaa_logs",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "auto_accept": null,
+              "private_dns_enabled": false,
+              "service_name": "com.amazonaws.eu-central-1.logs",
+              "tags": null,
+              "timeouts": null,
+              "vpc_endpoint_type": "Interface",
+              "vpc_id": "vpc-0202a4ea5b1478f89"
+            },
+            "after_unknown": {
+              "arn": true,
+              "cidr_blocks": true,
+              "dns_entry": true,
+              "id": true,
+              "network_interface_ids": true,
+              "owner_id": true,
+              "policy": true,
+              "prefix_list_id": true,
+              "requester_managed": true,
+              "route_table_ids": true,
+              "security_group_ids": true,
+              "state": true,
+              "subnet_ids": true,
+              "tags_all": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "cidr_blocks": [],
+              "dns_entry": [],
+              "network_interface_ids": [],
+              "route_table_ids": [],
+              "security_group_ids": [],
+              "subnet_ids": [],
+              "tags_all": {}
+            }
+          }
+        },
+        {
+          "address": "aws_vpc_endpoint.mwaa_monitoring",
+          "mode": "managed",
+          "type": "aws_vpc_endpoint",
+          "name": "mwaa_monitoring",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "auto_accept": null,
+              "private_dns_enabled": false,
+              "service_name": "com.amazonaws.eu-central-1.monitoring",
+              "tags": null,
+              "timeouts": null,
+              "vpc_endpoint_type": "Interface",
+              "vpc_id": "vpc-0202a4ea5b1478f89"
+            },
+            "after_unknown": {
+              "arn": true,
+              "cidr_blocks": true,
+              "dns_entry": true,
+              "id": true,
+              "network_interface_ids": true,
+              "owner_id": true,
+              "policy": true,
+              "prefix_list_id": true,
+              "requester_managed": true,
+              "route_table_ids": true,
+              "security_group_ids": true,
+              "state": true,
+              "subnet_ids": true,
+              "tags_all": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "cidr_blocks": [],
+              "dns_entry": [],
+              "network_interface_ids": [],
+              "route_table_ids": [],
+              "security_group_ids": [],
+              "subnet_ids": [],
+              "tags_all": {}
+            }
+          }
+        },
+        {
+          "address": "aws_vpc_endpoint.mwaa_ops",
+          "mode": "managed",
+          "type": "aws_vpc_endpoint",
+          "name": "mwaa_ops",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "auto_accept": null,
+              "private_dns_enabled": false,
+              "service_name": "com.amazonaws.eu-central-1.airflow.ops",
+              "tags": null,
+              "timeouts": null,
+              "vpc_endpoint_type": "Interface",
+              "vpc_id": "vpc-0202a4ea5b1478f89"
+            },
+            "after_unknown": {
+              "arn": true,
+              "cidr_blocks": true,
+              "dns_entry": true,
+              "id": true,
+              "network_interface_ids": true,
+              "owner_id": true,
+              "policy": true,
+              "prefix_list_id": true,
+              "requester_managed": true,
+              "route_table_ids": true,
+              "security_group_ids": true,
+              "state": true,
+              "subnet_ids": true,
+              "tags_all": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "cidr_blocks": [],
+              "dns_entry": [],
+              "network_interface_ids": [],
+              "route_table_ids": [],
+              "security_group_ids": [],
+              "subnet_ids": [],
+              "tags_all": {}
+            }
+          }
+        },
+        {
+          "address": "aws_vpc_endpoint.mwaa_s3",
+          "mode": "managed",
+          "type": "aws_vpc_endpoint",
+          "name": "mwaa_s3",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "auto_accept": null,
+              "private_dns_enabled": false,
+              "service_name": "com.amazonaws.eu-central-1.s3",
+              "tags": null,
+              "timeouts": null,
+              "vpc_endpoint_type": "Gateway",
+              "vpc_id": "vpc-0202a4ea5b1478f89"
+            },
+            "after_unknown": {
+              "arn": true,
+              "cidr_blocks": true,
+              "dns_entry": true,
+              "id": true,
+              "network_interface_ids": true,
+              "owner_id": true,
+              "policy": true,
+              "prefix_list_id": true,
+              "requester_managed": true,
+              "route_table_ids": true,
+              "security_group_ids": true,
+              "state": true,
+              "subnet_ids": true,
+              "tags_all": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "cidr_blocks": [],
+              "dns_entry": [],
+              "network_interface_ids": [],
+              "route_table_ids": [],
+              "security_group_ids": [],
+              "subnet_ids": [],
+              "tags_all": {}
+            }
+          }
+        },
+        {
+          "address": "aws_vpc_endpoint.mwaa_sqs",
+          "mode": "managed",
+          "type": "aws_vpc_endpoint",
+          "name": "mwaa_sqs",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "auto_accept": null,
+              "private_dns_enabled": false,
+              "service_name": "com.amazonaws.eu-central-1.sqs",
+              "tags": null,
+              "timeouts": null,
+              "vpc_endpoint_type": "Interface",
+              "vpc_id": "vpc-0202a4ea5b1478f89"
+            },
+            "after_unknown": {
+              "arn": true,
+              "cidr_blocks": true,
+              "dns_entry": true,
+              "id": true,
+              "network_interface_ids": true,
+              "owner_id": true,
+              "policy": true,
+              "prefix_list_id": true,
+              "requester_managed": true,
+              "route_table_ids": true,
+              "security_group_ids": true,
+              "state": true,
+              "subnet_ids": true,
+              "tags_all": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "cidr_blocks": [],
+              "dns_entry": [],
+              "network_interface_ids": [],
+              "route_table_ids": [],
+              "security_group_ids": [],
+              "subnet_ids": [],
+              "tags_all": {}
+            }
+          }
+        }
+      ]
+    },
+    "no_endpoints": {
+      "resource_changes": [
+        {
+          "address": "aws_mwaa_environment.valid",
+          "mode": "managed",
+          "type": "aws_mwaa_environment",
+          "name": "valid",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "airflow_configuration_options": null,
+              "dag_s3_path": "dags/",
+              "execution_role_arn": "arn:aws:iam::569128700374:role/AutomationAssumeRole",
+              "kms_key": null,
+              "name": "valid",
+              "network_configuration": [
+                {
+                  "security_group_ids": [
+                    "sg-04ffd413ff4467d19"
+                  ],
+                  "subnet_ids": [
+                    "subnet-019d9925f809928c5",
+                    "subnet-0919979b1d57452a5"
+                  ]
+                }
+              ],
+              "plugins_s3_path": null,
+              "requirements_s3_path": null,
+              "source_bucket_arn": "arn:aws:s3:::mwaabucket",
+              "tags": null
+            },
+            "after_unknown": {
+              "airflow_version": true,
+              "arn": true,
+              "created_at": true,
+              "environment_class": true,
+              "id": true,
+              "last_updated": true,
+              "logging_configuration": true,
+              "max_workers": true,
+              "min_workers": true,
+              "network_configuration": [
+                {
+                  "security_group_ids": [
+                    false
+                  ],
+                  "subnet_ids": [
+                    false,
+                    false
+                  ]
+                }
+              ],
+              "plugins_s3_object_version": true,
+              "requirements_s3_object_version": true,
+              "schedulers": true,
+              "service_role_arn": true,
+              "status": true,
+              "tags_all": true,
+              "webserver_access_mode": true,
+              "webserver_url": true,
+              "weekly_maintenance_window_start": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "airflow_configuration_options": true,
+              "last_updated": [],
+              "logging_configuration": [],
+              "network_configuration": [
+                {
+                  "security_group_ids": [
+                    false
+                  ],
+                  "subnet_ids": [
+                    false,
+                    false
+                  ]
+                }
+              ],
+              "tags_all": {}
+            }
+          }
+        }
+      ]
+    },
+    "not_all_endpoints": {
+      "resource_changes": [
+        {
+          "address": "aws_mwaa_environment.valid",
+          "mode": "managed",
+          "type": "aws_mwaa_environment",
+          "name": "valid",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "airflow_configuration_options": null,
+              "dag_s3_path": "dags/",
+              "execution_role_arn": "arn:aws:iam::569128700374:role/AutomationAssumeRole",
+              "kms_key": "arn:aws:kms:eu-central-1:569128700374:key/58b589f1-483f-4034-be51-4c69c493f6ca",
+              "logging_configuration": [
+                {
+                  "dag_processing_logs": [
+                    {
+                      "enabled": true,
+                      "log_level": "DEBUG"
+                    }
+                  ],
+                  "scheduler_logs": [
+                    {
+                      "enabled": true,
+                      "log_level": "INFO"
+                    }
+                  ],
+                  "task_logs": [
+                    {
+                      "enabled": true,
+                      "log_level": "WARNING"
+                    }
+                  ],
+                  "webserver_logs": [
+                    {
+                      "enabled": true,
+                      "log_level": "ERROR"
+                    }
+                  ],
+                  "worker_logs": [
+                    {
+                      "enabled": true,
+                      "log_level": "CRITICAL"
+                    }
+                  ]
+                }
+              ],
+              "name": "valid",
+              "network_configuration": [
+                {
+                  "security_group_ids": [
+                    "sg-04ffd413ff4467d19"
+                  ],
+                  "subnet_ids": [
+                    "subnet-019d9925f809928c5",
+                    "subnet-0919979b1d57452a5"
+                  ]
+                }
+              ],
+              "plugins_s3_path": null,
+              "requirements_s3_path": null,
+              "source_bucket_arn": "arn:aws:s3:::mwaabucket",
+              "tags": null
+            },
+            "after_unknown": {
+              "airflow_version": true,
+              "arn": true,
+              "created_at": true,
+              "environment_class": true,
+              "id": true,
+              "last_updated": true,
+              "logging_configuration": [
+                {
+                  "dag_processing_logs": [
+                    {
+                      "cloud_watch_log_group_arn": true
+                    }
+                  ],
+                  "scheduler_logs": [
+                    {
+                      "cloud_watch_log_group_arn": true
+                    }
+                  ],
+                  "task_logs": [
+                    {
+                      "cloud_watch_log_group_arn": true
+                    }
+                  ],
+                  "webserver_logs": [
+                    {
+                      "cloud_watch_log_group_arn": true
+                    }
+                  ],
+                  "worker_logs": [
+                    {
+                      "cloud_watch_log_group_arn": true
+                    }
+                  ]
+                }
+              ],
+              "max_workers": true,
+              "min_workers": true,
+              "network_configuration": [
+                {
+                  "security_group_ids": [
+                    false
+                  ],
+                  "subnet_ids": [
+                    false,
+                    false
+                  ]
+                }
+              ],
+              "plugins_s3_object_version": true,
+              "requirements_s3_object_version": true,
+              "schedulers": true,
+              "service_role_arn": true,
+              "status": true,
+              "tags_all": true,
+              "webserver_access_mode": true,
+              "webserver_url": true,
+              "weekly_maintenance_window_start": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "airflow_configuration_options": true,
+              "last_updated": [],
+              "logging_configuration": [
+                {
+                  "dag_processing_logs": [
+                    {}
+                  ],
+                  "scheduler_logs": [
+                    {}
+                  ],
+                  "task_logs": [
+                    {}
+                  ],
+                  "webserver_logs": [
+                    {}
+                  ],
+                  "worker_logs": [
+                    {}
+                  ]
+                }
+              ],
+              "network_configuration": [
+                {
+                  "security_group_ids": [
+                    false
+                  ],
+                  "subnet_ids": [
+                    false,
+                    false
+                  ]
+                }
+              ],
+              "tags_all": {}
+            }
+          }
+        },
+        {
+          "address": "aws_vpc_endpoint.mwaa_ecr_api",
+          "mode": "managed",
+          "type": "aws_vpc_endpoint",
+          "name": "mwaa_ecr_api",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "auto_accept": null,
+              "private_dns_enabled": false,
+              "service_name": "com.amazonaws.eu-central-1.ecr.api",
+              "tags": null,
+              "timeouts": null,
+              "vpc_endpoint_type": "Interface",
+              "vpc_id": "vpc-0202a4ea5b1478f89"
+            },
+            "after_unknown": {
+              "arn": true,
+              "cidr_blocks": true,
+              "dns_entry": true,
+              "id": true,
+              "network_interface_ids": true,
+              "owner_id": true,
+              "policy": true,
+              "prefix_list_id": true,
+              "requester_managed": true,
+              "route_table_ids": true,
+              "security_group_ids": true,
+              "state": true,
+              "subnet_ids": true,
+              "tags_all": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "cidr_blocks": [],
+              "dns_entry": [],
+              "network_interface_ids": [],
+              "route_table_ids": [],
+              "security_group_ids": [],
+              "subnet_ids": [],
+              "tags_all": {}
+            }
+          }
+        },
+        {
+          "address": "aws_vpc_endpoint.mwaa_ecr_dkr",
+          "mode": "managed",
+          "type": "aws_vpc_endpoint",
+          "name": "mwaa_ecr_dkr",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "auto_accept": null,
+              "private_dns_enabled": false,
+              "service_name": "com.amazonaws.eu-central-1.ecr.dkr",
+              "tags": null,
+              "timeouts": null,
+              "vpc_endpoint_type": "Interface",
+              "vpc_id": "vpc-0202a4ea5b1478f89"
+            },
+            "after_unknown": {
+              "arn": true,
+              "cidr_blocks": true,
+              "dns_entry": true,
+              "id": true,
+              "network_interface_ids": true,
+              "owner_id": true,
+              "policy": true,
+              "prefix_list_id": true,
+              "requester_managed": true,
+              "route_table_ids": true,
+              "security_group_ids": true,
+              "state": true,
+              "subnet_ids": true,
+              "tags_all": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "cidr_blocks": [],
+              "dns_entry": [],
+              "network_interface_ids": [],
+              "route_table_ids": [],
+              "security_group_ids": [],
+              "subnet_ids": [],
+              "tags_all": {}
+            }
+          }
+        },
+        {
+          "address": "aws_vpc_endpoint.mwaa_env",
+          "mode": "managed",
+          "type": "aws_vpc_endpoint",
+          "name": "mwaa_env",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "auto_accept": null,
+              "private_dns_enabled": false,
+              "service_name": "com.amazonaws.eu-central-1.airflow.env",
+              "tags": null,
+              "timeouts": null,
+              "vpc_endpoint_type": "Interface",
+              "vpc_id": "vpc-0202a4ea5b1478f89"
+            },
+            "after_unknown": {
+              "arn": true,
+              "cidr_blocks": true,
+              "dns_entry": true,
+              "id": true,
+              "network_interface_ids": true,
+              "owner_id": true,
+              "policy": true,
+              "prefix_list_id": true,
+              "requester_managed": true,
+              "route_table_ids": true,
+              "security_group_ids": true,
+              "state": true,
+              "subnet_ids": true,
+              "tags_all": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "cidr_blocks": [],
+              "dns_entry": [],
+              "network_interface_ids": [],
+              "route_table_ids": [],
+              "security_group_ids": [],
+              "subnet_ids": [],
+              "tags_all": {}
+            }
+          }
+        },
+        {
+          "address": "aws_vpc_endpoint.mwaa_kms",
+          "mode": "managed",
+          "type": "aws_vpc_endpoint",
+          "name": "mwaa_kms",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "auto_accept": null,
+              "private_dns_enabled": false,
+              "service_name": "com.amazonaws.eu-central-1.kms",
+              "tags": null,
+              "timeouts": null,
+              "vpc_endpoint_type": "Interface",
+              "vpc_id": "vpc-0202a4ea5b1478f89"
+            },
+            "after_unknown": {
+              "arn": true,
+              "cidr_blocks": true,
+              "dns_entry": true,
+              "id": true,
+              "network_interface_ids": true,
+              "owner_id": true,
+              "policy": true,
+              "prefix_list_id": true,
+              "requester_managed": true,
+              "route_table_ids": true,
+              "security_group_ids": true,
+              "state": true,
+              "subnet_ids": true,
+              "tags_all": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "cidr_blocks": [],
+              "dns_entry": [],
+              "network_interface_ids": [],
+              "route_table_ids": [],
+              "security_group_ids": [],
+              "subnet_ids": [],
+              "tags_all": {}
+            }
+          }
+        },
+        {
+          "address": "aws_vpc_endpoint.mwaa_logs",
+          "mode": "managed",
+          "type": "aws_vpc_endpoint",
+          "name": "mwaa_logs",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "auto_accept": null,
+              "private_dns_enabled": false,
+              "service_name": "com.amazonaws.eu-central-1.logs",
+              "tags": null,
+              "timeouts": null,
+              "vpc_endpoint_type": "Interface",
+              "vpc_id": "vpc-0202a4ea5b1478f89"
+            },
+            "after_unknown": {
+              "arn": true,
+              "cidr_blocks": true,
+              "dns_entry": true,
+              "id": true,
+              "network_interface_ids": true,
+              "owner_id": true,
+              "policy": true,
+              "prefix_list_id": true,
+              "requester_managed": true,
+              "route_table_ids": true,
+              "security_group_ids": true,
+              "state": true,
+              "subnet_ids": true,
+              "tags_all": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "cidr_blocks": [],
+              "dns_entry": [],
+              "network_interface_ids": [],
+              "route_table_ids": [],
+              "security_group_ids": [],
+              "subnet_ids": [],
+              "tags_all": {}
+            }
+          }
+        },
+        {
+          "address": "aws_vpc_endpoint.mwaa_monitoring",
+          "mode": "managed",
+          "type": "aws_vpc_endpoint",
+          "name": "mwaa_monitoring",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "auto_accept": null,
+              "private_dns_enabled": false,
+              "service_name": "com.amazonaws.eu-central-1.monitoring",
+              "tags": null,
+              "timeouts": null,
+              "vpc_endpoint_type": "Interface",
+              "vpc_id": "vpc-0202a4ea5b1478f89"
+            },
+            "after_unknown": {
+              "arn": true,
+              "cidr_blocks": true,
+              "dns_entry": true,
+              "id": true,
+              "network_interface_ids": true,
+              "owner_id": true,
+              "policy": true,
+              "prefix_list_id": true,
+              "requester_managed": true,
+              "route_table_ids": true,
+              "security_group_ids": true,
+              "state": true,
+              "subnet_ids": true,
+              "tags_all": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "cidr_blocks": [],
+              "dns_entry": [],
+              "network_interface_ids": [],
+              "route_table_ids": [],
+              "security_group_ids": [],
+              "subnet_ids": [],
+              "tags_all": {}
+            }
+          }
+        },
+        {
+          "address": "aws_vpc_endpoint.mwaa_ops",
+          "mode": "managed",
+          "type": "aws_vpc_endpoint",
+          "name": "mwaa_ops",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "auto_accept": null,
+              "private_dns_enabled": false,
+              "service_name": "com.amazonaws.eu-central-1.airflow.ops",
+              "tags": null,
+              "timeouts": null,
+              "vpc_endpoint_type": "Interface",
+              "vpc_id": "vpc-0202a4ea5b1478f89"
+            },
+            "after_unknown": {
+              "arn": true,
+              "cidr_blocks": true,
+              "dns_entry": true,
+              "id": true,
+              "network_interface_ids": true,
+              "owner_id": true,
+              "policy": true,
+              "prefix_list_id": true,
+              "requester_managed": true,
+              "route_table_ids": true,
+              "security_group_ids": true,
+              "state": true,
+              "subnet_ids": true,
+              "tags_all": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "cidr_blocks": [],
+              "dns_entry": [],
+              "network_interface_ids": [],
+              "route_table_ids": [],
+              "security_group_ids": [],
+              "subnet_ids": [],
+              "tags_all": {}
+            }
+          }
+        },
+        {
+          "address": "aws_vpc_endpoint.mwaa_s3",
+          "mode": "managed",
+          "type": "aws_vpc_endpoint",
+          "name": "mwaa_s3",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "auto_accept": null,
+              "private_dns_enabled": false,
+              "service_name": "com.amazonaws.eu-central-1.s3",
+              "tags": null,
+              "timeouts": null,
+              "vpc_endpoint_type": "Gateway",
+              "vpc_id": "vpc-0202a4ea5b1478f89"
+            },
+            "after_unknown": {
+              "arn": true,
+              "cidr_blocks": true,
+              "dns_entry": true,
+              "id": true,
+              "network_interface_ids": true,
+              "owner_id": true,
+              "policy": true,
+              "prefix_list_id": true,
+              "requester_managed": true,
+              "route_table_ids": true,
+              "security_group_ids": true,
+              "state": true,
+              "subnet_ids": true,
+              "tags_all": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "cidr_blocks": [],
+              "dns_entry": [],
+              "network_interface_ids": [],
+              "route_table_ids": [],
+              "security_group_ids": [],
+              "subnet_ids": [],
+              "tags_all": {}
+            }
+          }
+        },
+        {
+          "address": "aws_vpc_endpoint.mwaa_sqs",
+          "mode": "managed",
+          "type": "aws_vpc_endpoint",
+          "name": "mwaa_sqs",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "auto_accept": null,
+              "private_dns_enabled": false,
+              "service_name": "com.amazonaws.eu-central-1.sqs",
+              "tags": null,
+              "timeouts": null,
+              "vpc_endpoint_type": "Interface",
+              "vpc_id": "vpc-0202a4ea5b1478f89"
+            },
+            "after_unknown": {
+              "arn": true,
+              "cidr_blocks": true,
+              "dns_entry": true,
+              "id": true,
+              "network_interface_ids": true,
+              "owner_id": true,
+              "policy": true,
+              "prefix_list_id": true,
+              "requester_managed": true,
+              "route_table_ids": true,
+              "security_group_ids": true,
+              "state": true,
+              "subnet_ids": true,
+              "tags_all": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "cidr_blocks": [],
+              "dns_entry": [],
+              "network_interface_ids": [],
+              "route_table_ids": [],
+              "security_group_ids": [],
+              "subnet_ids": [],
+              "tags_all": {}
+            }
+          }
+        }
+      ]
+    }
+  }
+}

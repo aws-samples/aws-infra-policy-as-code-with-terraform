@@ -1,0 +1,176 @@
+{
+    "mock": {
+        "valid": {
+            "encrypted": {
+              "resource_changes": [
+                {
+                  "address": "aws_dax_cluster.encrypted",
+                  "mode": "managed",
+                  "type": "aws_dax_cluster",
+                  "name": "encrypted",
+                  "provider_name": "registry.terraform.io/hashicorp/aws",
+                  "change": {
+                    "actions": ["create"],
+                    "before": null,
+                    "after": {
+                      "availability_zones": null,
+                      "cluster_endpoint_encryption_type": "TLS",
+                      "cluster_name": "cluster-example",
+                      "description": null,
+                      "iam_role_arn": "arn:aws:iam::709673909586:role/service-role/samplefunc-role-ff693h5x",
+                      "node_type": "dax.r1.large",
+                      "notification_topic_arn": null,
+                      "replication_factor": 1,
+                      "server_side_encryption": [{ "enabled": true }],
+                      "tags": null,
+                      "timeouts": null
+                    },
+                    "after_unknown": {
+                      "arn": true,
+                      "cluster_address": true,
+                      "configuration_endpoint": true,
+                      "id": true,
+                      "maintenance_window": true,
+                      "nodes": true,
+                      "parameter_group_name": true,
+                      "port": true,
+                      "security_group_ids": true,
+                      "server_side_encryption": [{}],
+                      "subnet_group_name": true,
+                      "tags_all": true
+                    }
+                  }
+                }
+                ]
+            }
+        },
+        "invalid": {
+            "no_TLS": {
+            "resource_changes": [
+              {
+                "address": "aws_dax_cluster.not_encrypted",
+                "mode": "managed",
+                "type": "aws_dax_cluster",
+                "name": "not_encrypted",
+                "provider_name": "registry.terraform.io/hashicorp/aws",
+                "change": {
+                  "actions": ["create"],
+                  "before": null,
+                  "after": {
+                    "availability_zones": null,
+                    "cluster_endpoint_encryption_type": null,
+                    "cluster_name": "cluster-example",
+                    "description": null,
+                    "iam_role_arn": "arn:aws:iam::709673909586:role/service-role/samplefunc-role-ff693h5x",
+                    "node_type": "dax.r1.large",
+                    "notification_topic_arn": null,
+                    "replication_factor": 1,
+                    "server_side_encryption": [{ "enabled": true }],
+                    "tags": null,
+                    "timeouts": null
+                  },
+                  "after_unknown": {
+                    "arn": true,
+                    "cluster_address": true,
+                    "configuration_endpoint": true,
+                    "id": true,
+                    "maintenance_window": true,
+                    "nodes": true,
+                    "parameter_group_name": true,
+                    "port": true,
+                    "security_group_ids": true,
+                    "server_side_encryption": [],
+                    "subnet_group_name": true,
+                    "tags_all": true
+                  }
+                }
+              }
+              ]
+            },
+            "no_ServerSide": {
+              "resource_changes": [
+                {
+                  "address": "aws_dax_cluster.not_encrypted",
+                  "mode": "managed",
+                  "type": "aws_dax_cluster",
+                  "name": "not_encrypted",
+                  "provider_name": "registry.terraform.io/hashicorp/aws",
+                  "change": {
+                    "actions": ["create"],
+                    "before": null,
+                    "after": {
+                      "availability_zones": null,
+                      "cluster_endpoint_encryption_type": "TLS",
+                      "cluster_name": "cluster-example",
+                      "description": null,
+                      "iam_role_arn": "arn:aws:iam::709673909586:role/service-role/samplefunc-role-ff693h5x",
+                      "node_type": "dax.r1.large",
+                      "notification_topic_arn": null,
+                      "replication_factor": 1,
+                      "server_side_encryption": [],
+                      "tags": null,
+                      "timeouts": null
+                    },
+                    "after_unknown": {
+                      "arn": true,
+                      "cluster_address": true,
+                      "configuration_endpoint": true,
+                      "id": true,
+                      "maintenance_window": true,
+                      "nodes": true,
+                      "parameter_group_name": true,
+                      "port": true,
+                      "security_group_ids": true,
+                      "server_side_encryption": [],
+                      "subnet_group_name": true,
+                      "tags_all": true
+                    }
+                  }
+                }
+                ]
+            },
+            "no_Both": {
+                "resource_changes": [
+                  {
+                    "address": "aws_dax_cluster.not_encrypted",
+                    "mode": "managed",
+                    "type": "aws_dax_cluster",
+                    "name": "not_encrypted",
+                    "provider_name": "registry.terraform.io/hashicorp/aws",
+                    "change": {
+                      "actions": ["create"],
+                      "before": null,
+                      "after": {
+                        "availability_zones": null,
+                        "cluster_endpoint_encryption_type": null,
+                        "cluster_name": "cluster-example",
+                        "description": null,
+                        "iam_role_arn": "arn:aws:iam::709673909586:role/service-role/samplefunc-role-ff693h5x",
+                        "node_type": "dax.r1.large",
+                        "notification_topic_arn": null,
+                        "replication_factor": 1,
+                        "server_side_encryption": [],
+                        "tags": null,
+                        "timeouts": null
+                      },
+                      "after_unknown": {
+                        "arn": true,
+                        "cluster_address": true,
+                        "configuration_endpoint": true,
+                        "id": true,
+                        "maintenance_window": true,
+                        "nodes": true,
+                        "parameter_group_name": true,
+                        "port": true,
+                        "security_group_ids": true,
+                        "server_side_encryption": [],
+                        "subnet_group_name": true,
+                        "tags_all": true
+                      }
+                    }
+                  }
+                  ]
+            }
+        }
+    }
+}

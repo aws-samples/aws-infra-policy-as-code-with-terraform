@@ -1,0 +1,722 @@
+{
+  "mock": {
+    "compliant": {
+      "resource_changes": [
+        {
+          "address": "aws_redshift_cluster.compliant",
+          "mode": "managed",
+          "type": "aws_redshift_cluster",
+          "name": "compliant",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "allow_version_upgrade": true,
+              "automated_snapshot_retention_period": 1,
+              "cluster_identifier": "tf-redshift-cluster",
+              "cluster_parameter_group_name": "parameter-group-compliant",
+              "cluster_version": "1.0",
+              "elastic_ip": null,
+              "encrypted": true,
+              "final_snapshot_identifier": null,
+              "logging": [
+                {
+                  "bucket_name": "tf-redshit-bucket",
+                  "enable": true
+                }
+              ],
+              "master_password": "Mustbe8characters",
+              "master_username": "compliantuser",
+              "node_type": "dc2.large",
+              "number_of_nodes": 1,
+              "owner_account": null,
+              "port": 5439,
+              "publicly_accessible": false,
+              "skip_final_snapshot": false,
+              "snapshot_cluster_identifier": null,
+              "snapshot_copy": [],
+              "snapshot_identifier": null,
+              "tags": null,
+              "timeouts": null
+            },
+            "after_unknown": {
+              "arn": true,
+              "availability_zone": true,
+              "cluster_nodes": true,
+              "cluster_public_key": true,
+              "cluster_revision_number": true,
+              "cluster_security_groups": true,
+              "cluster_subnet_group_name": true,
+              "cluster_type": true,
+              "database_name": true,
+              "dns_name": true,
+              "endpoint": true,
+              "enhanced_vpc_routing": true,
+              "iam_roles": true,
+              "id": true,
+              "kms_key_id": true,
+              "logging": [
+                {
+                  "s3_key_prefix": true
+                }
+              ],
+              "preferred_maintenance_window": true,
+              "snapshot_copy": [],
+              "tags_all": true,
+              "vpc_security_group_ids": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "cluster_nodes": [],
+              "cluster_security_groups": [],
+              "iam_roles": [],
+              "logging": [
+                {}
+              ],
+              "master_password": true,
+              "snapshot_copy": [],
+              "tags_all": {},
+              "vpc_security_group_ids": []
+            }
+          }
+        }
+      ],
+      "configuration": {
+        "root_module": {
+          "resources": [
+            {
+              "address": "aws_redshift_cluster.compliant",
+              "mode": "managed",
+              "type": "aws_redshift_cluster",
+              "name": "compliant",
+              "provider_config_key": "aws",
+              "expressions": {
+                "cluster_identifier": {
+                  "constant_value": "tf-redshift-cluster"
+                },
+                "cluster_parameter_group_name": {
+                  "references": [
+                    "aws_redshift_parameter_group.pg-compliant.name",
+                    "aws_redshift_parameter_group.pg-compliant"
+                  ]
+                },
+                "encrypted": {
+                  "constant_value": "true"
+                },
+                "logging": [
+                  {
+                    "bucket_name": {
+                      "references": [
+                        "aws_s3_bucket.redshiftbucket.bucket",
+                        "aws_s3_bucket.redshiftbucket"
+                      ]
+                    },
+                    "enable": {
+                      "constant_value": true
+                    }
+                  }
+                ],
+                "master_password": {
+                  "constant_value": "Mustbe8characters"
+                },
+                "master_username": {
+                  "constant_value": "compliantuser"
+                },
+                "node_type": {
+                  "constant_value": "dc2.large"
+                },
+                "publicly_accessible": {
+                  "constant_value": "false"
+                }
+              },
+              "schema_version": 0
+            },
+            {
+              "address": "aws_redshift_parameter_group.pg-compliant",
+              "mode": "managed",
+              "type": "aws_redshift_parameter_group",
+              "name": "pg-compliant",
+              "provider_config_key": "aws",
+              "expressions": {
+                "family": {
+                  "constant_value": "redshift-1.0"
+                },
+                "name": {
+                  "constant_value": "parameter-group-compliant"
+                },
+                "parameter": [
+                  {
+                    "name": {
+                      "constant_value": "require_ssl"
+                    },
+                    "value": {
+                      "constant_value": "true"
+                    }
+                  },
+                  {
+                    "name": {
+                      "constant_value": "enable_user_activity_logging"
+                    },
+                    "value": {
+                      "constant_value": "true"
+                    }
+                  }
+                ]
+              },
+              "schema_version": 0
+            }
+          ]
+        }
+      }
+    },
+    "notcompliant_logging_attribute": {
+      "resource_changes": [
+        {
+          "address": "aws_redshift_cluster.notcompliant_logging_attribute",
+          "mode": "managed",
+          "type": "aws_redshift_cluster",
+          "name": "notcompliant_logging_attribute",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "allow_version_upgrade": true,
+              "automated_snapshot_retention_period": 1,
+              "cluster_identifier": "tf2-redshift-cluster",
+              "cluster_version": "1.0",
+              "elastic_ip": null,
+              "encrypted": false,
+              "final_snapshot_identifier": null,
+              "logging": [],
+              "master_password": "Mustbe8characters",
+              "master_username": "awsuser",
+              "node_type": "dc2.large",
+              "number_of_nodes": 1,
+              "owner_account": null,
+              "port": 5439,
+              "publicly_accessible": true,
+              "skip_final_snapshot": false,
+              "snapshot_cluster_identifier": null,
+              "snapshot_copy": [],
+              "snapshot_identifier": null,
+              "tags": null,
+              "timeouts": null
+            },
+            "after_unknown": {
+              "arn": true,
+              "availability_zone": true,
+              "cluster_nodes": true,
+              "cluster_parameter_group_name": true,
+              "cluster_public_key": true,
+              "cluster_revision_number": true,
+              "cluster_security_groups": true,
+              "cluster_subnet_group_name": true,
+              "cluster_type": true,
+              "database_name": true,
+              "dns_name": true,
+              "endpoint": true,
+              "enhanced_vpc_routing": true,
+              "iam_roles": true,
+              "id": true,
+              "kms_key_id": true,
+              "logging": [],
+              "preferred_maintenance_window": true,
+              "snapshot_copy": [],
+              "tags_all": true,
+              "vpc_security_group_ids": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "cluster_nodes": [],
+              "cluster_security_groups": [],
+              "iam_roles": [],
+              "logging": [],
+              "master_password": true,
+              "snapshot_copy": [],
+              "tags_all": {},
+              "vpc_security_group_ids": []
+            }
+          }
+        }
+      ],
+      "configuration": {
+        "root_module": {
+          "resources": [
+            {
+              "address": "aws_redshift_cluster.notcompliant_logging_attribute",
+              "mode": "managed",
+              "type": "aws_redshift_cluster",
+              "name": "notcompliant_logging_attribute",
+              "provider_config_key": "aws",
+              "expressions": {
+                "cluster_identifier": {
+                  "constant_value": "tf2-redshift-cluster"
+                },
+                "master_password": {
+                  "constant_value": "Mustbe8characters"
+                },
+                "master_username": {
+                  "constant_value": "awsuser"
+                },
+                "node_type": {
+                  "constant_value": "dc2.large"
+                }
+              },
+              "schema_version": 0
+            }
+          ]
+        }
+      }
+    },
+    "notcompliant_no_parameter_group": {
+      "resource_changes": [
+        {
+          "address": "aws_redshift_cluster.notcompliant_no_parameter_group",
+          "mode": "managed",
+          "type": "aws_redshift_cluster",
+          "name": "notcompliant_no_parameter_group",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "allow_version_upgrade": true,
+              "automated_snapshot_retention_period": 1,
+              "cluster_identifier": "tf2-redshift-cluster",
+              "cluster_version": "1.0",
+              "elastic_ip": null,
+              "encrypted": false,
+              "final_snapshot_identifier": null,
+              "logging": [
+                {
+                  "bucket_name": "tf-redshit-bucket",
+                  "enable": true
+                }
+              ],
+              "master_password": "Mustbe8characters",
+              "master_username": "awsuser",
+              "node_type": "dc2.large",
+              "number_of_nodes": 1,
+              "owner_account": null,
+              "port": 5439,
+              "publicly_accessible": true,
+              "skip_final_snapshot": false,
+              "snapshot_cluster_identifier": null,
+              "snapshot_copy": [],
+              "snapshot_identifier": null,
+              "tags": null,
+              "timeouts": null
+            },
+            "after_unknown": {
+              "arn": true,
+              "availability_zone": true,
+              "cluster_nodes": true,
+              "cluster_parameter_group_name": true,
+              "cluster_public_key": true,
+              "cluster_revision_number": true,
+              "cluster_security_groups": true,
+              "cluster_subnet_group_name": true,
+              "cluster_type": true,
+              "database_name": true,
+              "dns_name": true,
+              "endpoint": true,
+              "enhanced_vpc_routing": true,
+              "iam_roles": true,
+              "id": true,
+              "kms_key_id": true,
+              "logging": [
+                {
+                  "s3_key_prefix": true
+                }
+              ],
+              "preferred_maintenance_window": true,
+              "snapshot_copy": [],
+              "tags_all": true,
+              "vpc_security_group_ids": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "cluster_nodes": [],
+              "cluster_security_groups": [],
+              "iam_roles": [],
+              "logging": [
+                {}
+              ],
+              "master_password": true,
+              "snapshot_copy": [],
+              "tags_all": {},
+              "vpc_security_group_ids": []
+            }
+          }
+        }
+      ],
+      "configuration": {
+        "root_module": {
+          "resources": [
+            {
+              "address": "aws_redshift_cluster.notcompliant_no_parameter_group",
+              "mode": "managed",
+              "type": "aws_redshift_cluster",
+              "name": "notcompliant_no_parameter_group",
+              "provider_config_key": "aws",
+              "expressions": {
+                "cluster_identifier": {
+                  "constant_value": "tf2-redshift-cluster"
+                },
+                "logging": [
+                  {
+                    "bucket_name": {
+                      "references": [
+                        "aws_s3_bucket.redshiftbucket.bucket",
+                        "aws_s3_bucket.redshiftbucket"
+                      ]
+                    },
+                    "enable": {
+                      "constant_value": true
+                    }
+                  }
+                ],
+                "master_password": {
+                  "constant_value": "Mustbe8characters"
+                },
+                "master_username": {
+                  "constant_value": "awsuser"
+                },
+                "node_type": {
+                  "constant_value": "dc2.large"
+                }
+              },
+              "schema_version": 0
+            }
+          ]
+        }
+      }
+    },
+    "notcompliant_no_valid_parameter": {
+      "resource_changes": [
+        {
+          "address": "aws_redshift_cluster.notcompliant_no_valid_parameter",
+          "mode": "managed",
+          "type": "aws_redshift_cluster",
+          "name": "notcompliant_no_valid_user_logging",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "allow_version_upgrade": true,
+              "automated_snapshot_retention_period": 1,
+              "cluster_identifier": "tf2-redshift-cluster",
+              "cluster_parameter_group_name": "parameter-group-compliant",
+              "cluster_version": "1.0",
+              "elastic_ip": null,
+              "encrypted": false,
+              "final_snapshot_identifier": null,
+              "logging": [
+                {
+                  "bucket_name": "tf-redshit-bucket",
+                  "enable": true
+                }
+              ],
+              "master_password": "Mustbe8characters",
+              "master_username": "awsuser",
+              "node_type": "dc2.large",
+              "number_of_nodes": 1,
+              "owner_account": null,
+              "port": 5439,
+              "publicly_accessible": true,
+              "skip_final_snapshot": false,
+              "snapshot_cluster_identifier": null,
+              "snapshot_copy": [],
+              "snapshot_identifier": null,
+              "tags": null,
+              "timeouts": null
+            },
+            "after_unknown": {
+              "arn": true,
+              "availability_zone": true,
+              "cluster_nodes": true,
+              "cluster_public_key": true,
+              "cluster_revision_number": true,
+              "cluster_security_groups": true,
+              "cluster_subnet_group_name": true,
+              "cluster_type": true,
+              "database_name": true,
+              "dns_name": true,
+              "endpoint": true,
+              "enhanced_vpc_routing": true,
+              "iam_roles": true,
+              "id": true,
+              "kms_key_id": true,
+              "logging": [
+                {
+                  "s3_key_prefix": true
+                }
+              ],
+              "preferred_maintenance_window": true,
+              "snapshot_copy": [],
+              "tags_all": true,
+              "vpc_security_group_ids": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "cluster_nodes": [],
+              "cluster_security_groups": [],
+              "iam_roles": [],
+              "logging": [
+                {}
+              ],
+              "master_password": true,
+              "snapshot_copy": [],
+              "tags_all": {},
+              "vpc_security_group_ids": []
+            }
+          }
+        }
+      ],
+      "configuration": {
+        "root_module": {
+          "resources": [
+            {
+              "address": "aws_redshift_cluster.notcompliant_no_valid_user_logging",
+              "mode": "managed",
+              "type": "aws_redshift_cluster",
+              "name": "notcompliant_no_valid_user_logging",
+              "provider_config_key": "aws",
+              "expressions": {
+                "cluster_identifier": {
+                  "constant_value": "tf2-redshift-cluster"
+                },
+                "cluster_parameter_group_name": {
+                  "references": [
+                    "aws_redshift_parameter_group.pg-not-compliant.name",
+                    "aws_redshift_parameter_group.pg-not-compliant"
+                  ]
+                },
+                "logging": [
+                  {
+                    "bucket_name": {
+                      "references": [
+                        "aws_s3_bucket.redshiftbucket.bucket",
+                        "aws_s3_bucket.redshiftbucket"
+                      ]
+                    },
+                    "enable": {
+                      "constant_value": true
+                    }
+                  }
+                ],
+                "master_password": {
+                  "constant_value": "Mustbe8characters"
+                },
+                "master_username": {
+                  "constant_value": "awsuser"
+                },
+                "node_type": {
+                  "constant_value": "dc2.large"
+                }
+              },
+              "schema_version": 0
+            },
+            {
+              "address": "aws_redshift_parameter_group.pg-not-compliant",
+              "mode": "managed",
+              "type": "aws_redshift_parameter_group",
+              "name": "pg-not-compliant",
+              "provider_config_key": "aws",
+              "expressions": {
+                "family": {
+                  "constant_value": "redshift-1.0"
+                },
+                "name": {
+                  "constant_value": "parameter-group-compliant"
+                },
+                "parameter": [
+                  {
+                    "name": {
+                      "constant_value": "notcompliant"
+                    },
+                    "value": {
+                      "constant_value": "true"
+                    }
+                  }
+                ]
+              },
+              "schema_version": 0
+            }
+          ]
+        }
+      }
+    },
+    "notcompliant_not_s3_destination": {
+      "resource_changes": [
+        {
+          "address": "aws_redshift_cluster.notcompliant_not_s3_destination",
+          "mode": "managed",
+          "type": "aws_redshift_cluster",
+          "name": "notcompliant_not_s3_destination",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "allow_version_upgrade": true,
+              "automated_snapshot_retention_period": 1,
+              "cluster_identifier": "tf2-redshift-cluster",
+              "cluster_parameter_group_name": "parameter-group-compliant",
+              "cluster_version": "1.0",
+              "elastic_ip": null,
+              "encrypted": false,
+              "final_snapshot_identifier": null,
+              "logging": [
+                {
+                  "enable": true
+                }
+              ],
+              "master_password": "Mustbe8characters",
+              "master_username": "awsuser",
+              "node_type": "dc2.large",
+              "number_of_nodes": 1,
+              "owner_account": null,
+              "port": 5439,
+              "publicly_accessible": true,
+              "skip_final_snapshot": false,
+              "snapshot_cluster_identifier": null,
+              "snapshot_copy": [],
+              "snapshot_identifier": null,
+              "tags": null,
+              "timeouts": null
+            },
+            "after_unknown": {
+              "arn": true,
+              "availability_zone": true,
+              "cluster_nodes": true,
+              "cluster_public_key": true,
+              "cluster_revision_number": true,
+              "cluster_security_groups": true,
+              "cluster_subnet_group_name": true,
+              "cluster_type": true,
+              "database_name": true,
+              "dns_name": true,
+              "endpoint": true,
+              "enhanced_vpc_routing": true,
+              "iam_roles": true,
+              "id": true,
+              "kms_key_id": true,
+              "logging": [
+                {
+                  "bucket_name": true,
+                  "s3_key_prefix": true
+                }
+              ],
+              "preferred_maintenance_window": true,
+              "snapshot_copy": [],
+              "tags_all": true,
+              "vpc_security_group_ids": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "cluster_nodes": [],
+              "cluster_security_groups": [],
+              "iam_roles": [],
+              "logging": [
+                {}
+              ],
+              "master_password": true,
+              "snapshot_copy": [],
+              "tags_all": {},
+              "vpc_security_group_ids": []
+            }
+          }
+        }
+      ],
+      "configuration": {
+        "root_module": {
+          "resources": [
+            {
+              "address": "aws_redshift_cluster.notcompliant_not_s3_destination",
+              "mode": "managed",
+              "type": "aws_redshift_cluster",
+              "name": "notcompliant_not_s3_destination",
+              "provider_config_key": "aws",
+              "expressions": {
+                "cluster_identifier": {
+                  "constant_value": "tf2-redshift-cluster"
+                },
+                "cluster_parameter_group_name": {
+                  "references": [
+                    "aws_redshift_parameter_group.pg-compliant.name",
+                    "aws_redshift_parameter_group.pg-compliant"
+                  ]
+                },
+                "logging": [
+                  {
+                    "enable": {
+                      "constant_value": true
+                    }
+                  }
+                ],
+                "master_password": {
+                  "constant_value": "Mustbe8characters"
+                },
+                "master_username": {
+                  "constant_value": "awsuser"
+                },
+                "node_type": {
+                  "constant_value": "dc2.large"
+                }
+              },
+              "schema_version": 0
+            },
+            {
+              "address": "aws_redshift_parameter_group.pg-compliant",
+              "mode": "managed",
+              "type": "aws_redshift_parameter_group",
+              "name": "pg-compliant",
+              "provider_config_key": "aws",
+              "expressions": {
+                "family": {
+                  "constant_value": "redshift-1.0"
+                },
+                "name": {
+                  "constant_value": "parameter-group-compliant"
+                },
+                "parameter": [
+                  {
+                    "name": {
+                      "constant_value": "require_ssl"
+                    },
+                    "value": {
+                      "constant_value": "true"
+                    }
+                  },
+                  {
+                    "name": {
+                      "constant_value": "enable_user_activity_logging"
+                    },
+                    "value": {
+                      "constant_value": "true"
+                    }
+                  }
+                ]
+              },
+              "schema_version": 0
+            }
+          ]
+        }
+      }
+    }
+  }
+}

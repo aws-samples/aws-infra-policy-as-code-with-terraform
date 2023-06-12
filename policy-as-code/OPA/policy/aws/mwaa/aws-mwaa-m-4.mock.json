@@ -1,0 +1,2036 @@
+{
+  "mock": {
+    "valid": {
+      "resource_changes": [
+    {
+      "address": "aws_mwaa_environment.example",
+      "mode": "managed",
+      "type": "aws_mwaa_environment",
+      "name": "example",
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "before": null,
+        "after": {
+          "airflow_configuration_options": null,
+          "dag_s3_path": "dags/",
+          "execution_role_arn": "arn:aws:iam::569128700374:role/AutomationAssumeRole",
+          "kms_key": null,
+          "logging_configuration": [
+            {
+              "dag_processing_logs": [
+                {
+                  "enabled": true,
+                  "log_level": "DEBUG"
+                }
+              ],
+              "scheduler_logs": [
+                {
+                  "enabled": true,
+                  "log_level": "INFO"
+                }
+              ],
+              "task_logs": [
+                {
+                  "enabled": true,
+                  "log_level": "WARNING"
+                }
+              ],
+              "webserver_logs": [
+                {
+                  "enabled": true,
+                  "log_level": "ERROR"
+                }
+              ],
+              "worker_logs": [
+                {
+                  "enabled": true,
+                  "log_level": "CRITICAL"
+                }
+              ]
+            }
+          ],
+          "name": "example",
+          "network_configuration": [
+            {
+              "security_group_ids": [
+                "sg-04ffd413ff4467d19"
+              ],
+              "subnet_ids": [
+                "subnet-019d9925f809928c5",
+                "subnet-0919979b1d57452a5"
+              ]
+            }
+          ],
+          "plugins_s3_path": null,
+          "requirements_s3_path": null,
+          "source_bucket_arn": "arn:aws:s3:::mwaabucket",
+          "tags": null
+        },
+        "after_unknown": {
+          "airflow_version": true,
+          "arn": true,
+          "created_at": true,
+          "environment_class": true,
+          "id": true,
+          "last_updated": true,
+          "logging_configuration": [
+            {
+              "dag_processing_logs": [
+                {
+                  "cloud_watch_log_group_arn": true
+                }
+              ],
+              "scheduler_logs": [
+                {
+                  "cloud_watch_log_group_arn": true
+                }
+              ],
+              "task_logs": [
+                {
+                  "cloud_watch_log_group_arn": true
+                }
+              ],
+              "webserver_logs": [
+                {
+                  "cloud_watch_log_group_arn": true
+                }
+              ],
+              "worker_logs": [
+                {
+                  "cloud_watch_log_group_arn": true
+                }
+              ]
+            }
+          ],
+          "max_workers": true,
+          "min_workers": true,
+          "network_configuration": [
+            {
+              "security_group_ids": [
+                false
+              ],
+              "subnet_ids": [
+                false,
+                false
+              ]
+            }
+          ],
+          "plugins_s3_object_version": true,
+          "requirements_s3_object_version": true,
+          "schedulers": true,
+          "service_role_arn": true,
+          "status": true,
+          "tags_all": true,
+          "webserver_access_mode": true,
+          "webserver_url": true,
+          "weekly_maintenance_window_start": true
+        },
+        "before_sensitive": false,
+        "after_sensitive": {
+          "airflow_configuration_options": true,
+          "last_updated": [],
+          "logging_configuration": [
+            {
+              "dag_processing_logs": [
+                {}
+              ],
+              "scheduler_logs": [
+                {}
+              ],
+              "task_logs": [
+                {}
+              ],
+              "webserver_logs": [
+                {}
+              ],
+              "worker_logs": [
+                {}
+              ]
+            }
+          ],
+          "network_configuration": [
+            {
+              "security_group_ids": [
+                false
+              ],
+              "subnet_ids": [
+                false,
+                false
+              ]
+            }
+          ],
+          "tags_all": {}
+        }
+      }
+    }
+  ]
+    },
+    "mwaa_env_default": {
+      "resource_changes": [
+    {
+      "address": "aws_mwaa_environment.example",
+      "mode": "managed",
+      "type": "aws_mwaa_environment",
+      "name": "example",
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "before": null,
+        "after": {
+          "airflow_configuration_options": null,
+          "dag_s3_path": "dags/",
+          "execution_role_arn": "arn:aws:iam::569128700374:role/AutomationAssumeRole",
+          "kms_key": null,
+          "name": "example",
+          "network_configuration": [
+            {
+              "security_group_ids": [
+                "sg-04ffd413ff4467d19"
+              ],
+              "subnet_ids": [
+                "subnet-019d9925f809928c5",
+                "subnet-0919979b1d57452a5"
+              ]
+            }
+          ],
+          "plugins_s3_path": null,
+          "requirements_s3_path": null,
+          "source_bucket_arn": "arn:aws:s3:::mwaabucket",
+          "tags": null
+        },
+        "after_unknown": {
+          "airflow_version": true,
+          "arn": true,
+          "created_at": true,
+          "environment_class": true,
+          "id": true,
+          "last_updated": true,
+          "logging_configuration": true,
+          "max_workers": true,
+          "min_workers": true,
+          "network_configuration": [
+            {
+              "security_group_ids": [
+                false
+              ],
+              "subnet_ids": [
+                false,
+                false
+              ]
+            }
+          ],
+          "plugins_s3_object_version": true,
+          "requirements_s3_object_version": true,
+          "schedulers": true,
+          "service_role_arn": true,
+          "status": true,
+          "tags_all": true,
+          "webserver_access_mode": true,
+          "webserver_url": true,
+          "weekly_maintenance_window_start": true
+        },
+        "before_sensitive": false,
+        "after_sensitive": {
+          "airflow_configuration_options": true,
+          "last_updated": [],
+          "logging_configuration": [],
+          "network_configuration": [
+            {
+              "security_group_ids": [
+                false
+              ],
+              "subnet_ids": [
+                false,
+                false
+              ]
+            }
+          ],
+          "tags_all": {}
+        }
+      }
+    }
+  ]
+    },
+    "invalid_dag": {
+      "resource_changes": [
+    {
+      "address": "aws_mwaa_environment.example",
+      "mode": "managed",
+      "type": "aws_mwaa_environment",
+      "name": "example",
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "before": null,
+        "after": {
+          "airflow_configuration_options": null,
+          "dag_s3_path": "dags/",
+          "execution_role_arn": "arn:aws:iam::569128700374:role/AutomationAssumeRole",
+          "kms_key": null,
+          "logging_configuration": [
+            {
+              "dag_processing_logs": [
+                {
+                  "enabled": false,
+                  "log_level": "DEBUG"
+                }
+              ],
+              "scheduler_logs": [
+                {
+                  "enabled": true,
+                  "log_level": "INFO"
+                }
+              ],
+              "task_logs": [
+                {
+                  "enabled": true,
+                  "log_level": "WARNING"
+                }
+              ],
+              "webserver_logs": [
+                {
+                  "enabled": true,
+                  "log_level": "ERROR"
+                }
+              ],
+              "worker_logs": [
+                {
+                  "enabled": true,
+                  "log_level": "CRITICAL"
+                }
+              ]
+            }
+          ],
+          "name": "example",
+          "network_configuration": [
+            {
+              "security_group_ids": [
+                "sg-04ffd413ff4467d19"
+              ],
+              "subnet_ids": [
+                "subnet-019d9925f809928c5",
+                "subnet-0919979b1d57452a5"
+              ]
+            }
+          ],
+          "plugins_s3_path": null,
+          "requirements_s3_path": null,
+          "source_bucket_arn": "arn:aws:s3:::mwaabucket",
+          "tags": null
+        },
+        "after_unknown": {
+          "airflow_version": true,
+          "arn": true,
+          "created_at": true,
+          "environment_class": true,
+          "id": true,
+          "last_updated": true,
+          "logging_configuration": [
+            {
+              "dag_processing_logs": [
+                {
+                  "cloud_watch_log_group_arn": true
+                }
+              ],
+              "scheduler_logs": [
+                {
+                  "cloud_watch_log_group_arn": true
+                }
+              ],
+              "task_logs": [
+                {
+                  "cloud_watch_log_group_arn": true
+                }
+              ],
+              "webserver_logs": [
+                {
+                  "cloud_watch_log_group_arn": true
+                }
+              ],
+              "worker_logs": [
+                {
+                  "cloud_watch_log_group_arn": true
+                }
+              ]
+            }
+          ],
+          "max_workers": true,
+          "min_workers": true,
+          "network_configuration": [
+            {
+              "security_group_ids": [
+                false
+              ],
+              "subnet_ids": [
+                false,
+                false
+              ]
+            }
+          ],
+          "plugins_s3_object_version": true,
+          "requirements_s3_object_version": true,
+          "schedulers": true,
+          "service_role_arn": true,
+          "status": true,
+          "tags_all": true,
+          "webserver_access_mode": true,
+          "webserver_url": true,
+          "weekly_maintenance_window_start": true
+        },
+        "before_sensitive": false,
+        "after_sensitive": {
+          "airflow_configuration_options": true,
+          "last_updated": [],
+          "logging_configuration": [
+            {
+              "dag_processing_logs": [
+                {}
+              ],
+              "scheduler_logs": [
+                {}
+              ],
+              "task_logs": [
+                {}
+              ],
+              "webserver_logs": [
+                {}
+              ],
+              "worker_logs": [
+                {}
+              ]
+            }
+          ],
+          "network_configuration": [
+            {
+              "security_group_ids": [
+                false
+              ],
+              "subnet_ids": [
+                false,
+                false
+              ]
+            }
+          ],
+          "tags_all": {}
+        }
+      }
+    }
+  ]
+    },
+    "invalid_scheduler": {
+  "resource_changes": [
+    {
+      "address": "aws_mwaa_environment.example",
+      "mode": "managed",
+      "type": "aws_mwaa_environment",
+      "name": "example",
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "before": null,
+        "after": {
+          "airflow_configuration_options": null,
+          "dag_s3_path": "dags/",
+          "execution_role_arn": "arn:aws:iam::569128700374:role/AutomationAssumeRole",
+          "kms_key": null,
+          "logging_configuration": [
+            {
+              "dag_processing_logs": [
+                {
+                  "enabled": true,
+                  "log_level": "DEBUG"
+                }
+              ],
+              "scheduler_logs": [
+                {
+                  "enabled": false,
+                  "log_level": "INFO"
+                }
+              ],
+              "task_logs": [
+                {
+                  "enabled": true,
+                  "log_level": "WARNING"
+                }
+              ],
+              "webserver_logs": [
+                {
+                  "enabled": true,
+                  "log_level": "ERROR"
+                }
+              ],
+              "worker_logs": [
+                {
+                  "enabled": true,
+                  "log_level": "CRITICAL"
+                }
+              ]
+            }
+          ],
+          "name": "example",
+          "network_configuration": [
+            {
+              "security_group_ids": [
+                "sg-04ffd413ff4467d19"
+              ],
+              "subnet_ids": [
+                "subnet-019d9925f809928c5",
+                "subnet-0919979b1d57452a5"
+              ]
+            }
+          ],
+          "plugins_s3_path": null,
+          "requirements_s3_path": null,
+          "source_bucket_arn": "arn:aws:s3:::mwaabucket",
+          "tags": null
+        },
+        "after_unknown": {
+          "airflow_version": true,
+          "arn": true,
+          "created_at": true,
+          "environment_class": true,
+          "id": true,
+          "last_updated": true,
+          "logging_configuration": [
+            {
+              "dag_processing_logs": [
+                {
+                  "cloud_watch_log_group_arn": true
+                }
+              ],
+              "scheduler_logs": [
+                {
+                  "cloud_watch_log_group_arn": true
+                }
+              ],
+              "task_logs": [
+                {
+                  "cloud_watch_log_group_arn": true
+                }
+              ],
+              "webserver_logs": [
+                {
+                  "cloud_watch_log_group_arn": true
+                }
+              ],
+              "worker_logs": [
+                {
+                  "cloud_watch_log_group_arn": true
+                }
+              ]
+            }
+          ],
+          "max_workers": true,
+          "min_workers": true,
+          "network_configuration": [
+            {
+              "security_group_ids": [
+                false
+              ],
+              "subnet_ids": [
+                false,
+                false
+              ]
+            }
+          ],
+          "plugins_s3_object_version": true,
+          "requirements_s3_object_version": true,
+          "schedulers": true,
+          "service_role_arn": true,
+          "status": true,
+          "tags_all": true,
+          "webserver_access_mode": true,
+          "webserver_url": true,
+          "weekly_maintenance_window_start": true
+        },
+        "before_sensitive": false,
+        "after_sensitive": {
+          "airflow_configuration_options": true,
+          "last_updated": [],
+          "logging_configuration": [
+            {
+              "dag_processing_logs": [
+                {}
+              ],
+              "scheduler_logs": [
+                {}
+              ],
+              "task_logs": [
+                {}
+              ],
+              "webserver_logs": [
+                {}
+              ],
+              "worker_logs": [
+                {}
+              ]
+            }
+          ],
+          "network_configuration": [
+            {
+              "security_group_ids": [
+                false
+              ],
+              "subnet_ids": [
+                false,
+                false
+              ]
+            }
+          ],
+          "tags_all": {}
+        }
+      }
+    }
+  ]
+    },
+    "invalid_task": {
+      "resource_changes": [
+    {
+      "address": "aws_mwaa_environment.example",
+      "mode": "managed",
+      "type": "aws_mwaa_environment",
+      "name": "example",
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "before": null,
+        "after": {
+          "airflow_configuration_options": null,
+          "dag_s3_path": "dags/",
+          "execution_role_arn": "arn:aws:iam::569128700374:role/AutomationAssumeRole",
+          "kms_key": null,
+          "logging_configuration": [
+            {
+              "dag_processing_logs": [
+                {
+                  "enabled": true,
+                  "log_level": "DEBUG"
+                }
+              ],
+              "scheduler_logs": [
+                {
+                  "enabled": true,
+                  "log_level": "INFO"
+                }
+              ],
+              "task_logs": [
+                {
+                  "enabled": false,
+                  "log_level": "WARNING"
+                }
+              ],
+              "webserver_logs": [
+                {
+                  "enabled": true,
+                  "log_level": "ERROR"
+                }
+              ],
+              "worker_logs": [
+                {
+                  "enabled": true,
+                  "log_level": "CRITICAL"
+                }
+              ]
+            }
+          ],
+          "name": "example",
+          "network_configuration": [
+            {
+              "security_group_ids": [
+                "sg-04ffd413ff4467d19"
+              ],
+              "subnet_ids": [
+                "subnet-019d9925f809928c5",
+                "subnet-0919979b1d57452a5"
+              ]
+            }
+          ],
+          "plugins_s3_path": null,
+          "requirements_s3_path": null,
+          "source_bucket_arn": "arn:aws:s3:::mwaabucket",
+          "tags": null
+        },
+        "after_unknown": {
+          "airflow_version": true,
+          "arn": true,
+          "created_at": true,
+          "environment_class": true,
+          "id": true,
+          "last_updated": true,
+          "logging_configuration": [
+            {
+              "dag_processing_logs": [
+                {
+                  "cloud_watch_log_group_arn": true
+                }
+              ],
+              "scheduler_logs": [
+                {
+                  "cloud_watch_log_group_arn": true
+                }
+              ],
+              "task_logs": [
+                {
+                  "cloud_watch_log_group_arn": true
+                }
+              ],
+              "webserver_logs": [
+                {
+                  "cloud_watch_log_group_arn": true
+                }
+              ],
+              "worker_logs": [
+                {
+                  "cloud_watch_log_group_arn": true
+                }
+              ]
+            }
+          ],
+          "max_workers": true,
+          "min_workers": true,
+          "network_configuration": [
+            {
+              "security_group_ids": [
+                false
+              ],
+              "subnet_ids": [
+                false,
+                false
+              ]
+            }
+          ],
+          "plugins_s3_object_version": true,
+          "requirements_s3_object_version": true,
+          "schedulers": true,
+          "service_role_arn": true,
+          "status": true,
+          "tags_all": true,
+          "webserver_access_mode": true,
+          "webserver_url": true,
+          "weekly_maintenance_window_start": true
+        },
+        "before_sensitive": false,
+        "after_sensitive": {
+          "airflow_configuration_options": true,
+          "last_updated": [],
+          "logging_configuration": [
+            {
+              "dag_processing_logs": [
+                {}
+              ],
+              "scheduler_logs": [
+                {}
+              ],
+              "task_logs": [
+                {}
+              ],
+              "webserver_logs": [
+                {}
+              ],
+              "worker_logs": [
+                {}
+              ]
+            }
+          ],
+          "network_configuration": [
+            {
+              "security_group_ids": [
+                false
+              ],
+              "subnet_ids": [
+                false,
+                false
+              ]
+            }
+          ],
+          "tags_all": {}
+        }
+      }
+    }
+  ]
+    },
+    "invalid_webserver": {
+      "resource_changes": [
+    {
+      "address": "aws_mwaa_environment.example",
+      "mode": "managed",
+      "type": "aws_mwaa_environment",
+      "name": "example",
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "before": null,
+        "after": {
+          "airflow_configuration_options": null,
+          "dag_s3_path": "dags/",
+          "execution_role_arn": "arn:aws:iam::569128700374:role/AutomationAssumeRole",
+          "kms_key": null,
+          "logging_configuration": [
+            {
+              "dag_processing_logs": [
+                {
+                  "enabled": true,
+                  "log_level": "DEBUG"
+                }
+              ],
+              "scheduler_logs": [
+                {
+                  "enabled": true,
+                  "log_level": "INFO"
+                }
+              ],
+              "task_logs": [
+                {
+                  "enabled": true,
+                  "log_level": "WARNING"
+                }
+              ],
+              "webserver_logs": [
+                {
+                  "enabled": false,
+                  "log_level": "ERROR"
+                }
+              ],
+              "worker_logs": [
+                {
+                  "enabled": true,
+                  "log_level": "CRITICAL"
+                }
+              ]
+            }
+          ],
+          "name": "example",
+          "network_configuration": [
+            {
+              "security_group_ids": [
+                "sg-04ffd413ff4467d19"
+              ],
+              "subnet_ids": [
+                "subnet-019d9925f809928c5",
+                "subnet-0919979b1d57452a5"
+              ]
+            }
+          ],
+          "plugins_s3_path": null,
+          "requirements_s3_path": null,
+          "source_bucket_arn": "arn:aws:s3:::mwaabucket",
+          "tags": null
+        },
+        "after_unknown": {
+          "airflow_version": true,
+          "arn": true,
+          "created_at": true,
+          "environment_class": true,
+          "id": true,
+          "last_updated": true,
+          "logging_configuration": [
+            {
+              "dag_processing_logs": [
+                {
+                  "cloud_watch_log_group_arn": true
+                }
+              ],
+              "scheduler_logs": [
+                {
+                  "cloud_watch_log_group_arn": true
+                }
+              ],
+              "task_logs": [
+                {
+                  "cloud_watch_log_group_arn": true
+                }
+              ],
+              "webserver_logs": [
+                {
+                  "cloud_watch_log_group_arn": true
+                }
+              ],
+              "worker_logs": [
+                {
+                  "cloud_watch_log_group_arn": true
+                }
+              ]
+            }
+          ],
+          "max_workers": true,
+          "min_workers": true,
+          "network_configuration": [
+            {
+              "security_group_ids": [
+                false
+              ],
+              "subnet_ids": [
+                false,
+                false
+              ]
+            }
+          ],
+          "plugins_s3_object_version": true,
+          "requirements_s3_object_version": true,
+          "schedulers": true,
+          "service_role_arn": true,
+          "status": true,
+          "tags_all": true,
+          "webserver_access_mode": true,
+          "webserver_url": true,
+          "weekly_maintenance_window_start": true
+        },
+        "before_sensitive": false,
+        "after_sensitive": {
+          "airflow_configuration_options": true,
+          "last_updated": [],
+          "logging_configuration": [
+            {
+              "dag_processing_logs": [
+                {}
+              ],
+              "scheduler_logs": [
+                {}
+              ],
+              "task_logs": [
+                {}
+              ],
+              "webserver_logs": [
+                {}
+              ],
+              "worker_logs": [
+                {}
+              ]
+            }
+          ],
+          "network_configuration": [
+            {
+              "security_group_ids": [
+                false
+              ],
+              "subnet_ids": [
+                false,
+                false
+              ]
+            }
+          ],
+          "tags_all": {}
+        }
+      }
+    }
+  ]
+    },
+    "invalid_worker": {
+      "resource_changes": [
+    {
+      "address": "aws_mwaa_environment.example",
+      "mode": "managed",
+      "type": "aws_mwaa_environment",
+      "name": "example",
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "before": null,
+        "after": {
+          "airflow_configuration_options": null,
+          "dag_s3_path": "dags/",
+          "execution_role_arn": "arn:aws:iam::569128700374:role/AutomationAssumeRole",
+          "kms_key": null,
+          "logging_configuration": [
+            {
+              "dag_processing_logs": [
+                {
+                  "enabled": true,
+                  "log_level": "DEBUG"
+                }
+              ],
+              "scheduler_logs": [
+                {
+                  "enabled": true,
+                  "log_level": "INFO"
+                }
+              ],
+              "task_logs": [
+                {
+                  "enabled": true,
+                  "log_level": "WARNING"
+                }
+              ],
+              "webserver_logs": [
+                {
+                  "enabled": true,
+                  "log_level": "ERROR"
+                }
+              ],
+              "worker_logs": [
+                {
+                  "enabled": false,
+                  "log_level": "CRITICAL"
+                }
+              ]
+            }
+          ],
+          "name": "example",
+          "network_configuration": [
+            {
+              "security_group_ids": [
+                "sg-04ffd413ff4467d19"
+              ],
+              "subnet_ids": [
+                "subnet-019d9925f809928c5",
+                "subnet-0919979b1d57452a5"
+              ]
+            }
+          ],
+          "plugins_s3_path": null,
+          "requirements_s3_path": null,
+          "source_bucket_arn": "arn:aws:s3:::mwaabucket",
+          "tags": null
+        },
+        "after_unknown": {
+          "airflow_version": true,
+          "arn": true,
+          "created_at": true,
+          "environment_class": true,
+          "id": true,
+          "last_updated": true,
+          "logging_configuration": [
+            {
+              "dag_processing_logs": [
+                {
+                  "cloud_watch_log_group_arn": true
+                }
+              ],
+              "scheduler_logs": [
+                {
+                  "cloud_watch_log_group_arn": true
+                }
+              ],
+              "task_logs": [
+                {
+                  "cloud_watch_log_group_arn": true
+                }
+              ],
+              "webserver_logs": [
+                {
+                  "cloud_watch_log_group_arn": true
+                }
+              ],
+              "worker_logs": [
+                {
+                  "cloud_watch_log_group_arn": true
+                }
+              ]
+            }
+          ],
+          "max_workers": true,
+          "min_workers": true,
+          "network_configuration": [
+            {
+              "security_group_ids": [
+                false
+              ],
+              "subnet_ids": [
+                false,
+                false
+              ]
+            }
+          ],
+          "plugins_s3_object_version": true,
+          "requirements_s3_object_version": true,
+          "schedulers": true,
+          "service_role_arn": true,
+          "status": true,
+          "tags_all": true,
+          "webserver_access_mode": true,
+          "webserver_url": true,
+          "weekly_maintenance_window_start": true
+        },
+        "before_sensitive": false,
+        "after_sensitive": {
+          "airflow_configuration_options": true,
+          "last_updated": [],
+          "logging_configuration": [
+            {
+              "dag_processing_logs": [
+                {}
+              ],
+              "scheduler_logs": [
+                {}
+              ],
+              "task_logs": [
+                {}
+              ],
+              "webserver_logs": [
+                {}
+              ],
+              "worker_logs": [
+                {}
+              ]
+            }
+          ],
+          "network_configuration": [
+            {
+              "security_group_ids": [
+                false
+              ],
+              "subnet_ids": [
+                false,
+                false
+              ]
+            }
+          ],
+          "tags_all": {}
+        }
+      }
+    }
+  ]
+    },
+    "undefined_dag": {
+      "resource_changes": [
+    {
+      "address": "aws_mwaa_environment.example",
+      "mode": "managed",
+      "type": "aws_mwaa_environment",
+      "name": "example",
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "before": null,
+        "after": {
+          "airflow_configuration_options": null,
+          "dag_s3_path": "dags/",
+          "execution_role_arn": "arn:aws:iam::569128700374:role/AutomationAssumeRole",
+          "kms_key": null,
+          "logging_configuration": [
+            {
+              "scheduler_logs": [
+                {
+                  "enabled": true,
+                  "log_level": "INFO"
+                }
+              ],
+              "task_logs": [
+                {
+                  "enabled": true,
+                  "log_level": "WARNING"
+                }
+              ],
+              "webserver_logs": [
+                {
+                  "enabled": true,
+                  "log_level": "ERROR"
+                }
+              ],
+              "worker_logs": [
+                {
+                  "enabled": true,
+                  "log_level": "CRITICAL"
+                }
+              ]
+            }
+          ],
+          "name": "example",
+          "network_configuration": [
+            {
+              "security_group_ids": [
+                "sg-04ffd413ff4467d19"
+              ],
+              "subnet_ids": [
+                "subnet-019d9925f809928c5",
+                "subnet-0919979b1d57452a5"
+              ]
+            }
+          ],
+          "plugins_s3_path": null,
+          "requirements_s3_path": null,
+          "source_bucket_arn": "arn:aws:s3:::mwaabucket",
+          "tags": null
+        },
+        "after_unknown": {
+          "airflow_version": true,
+          "arn": true,
+          "created_at": true,
+          "environment_class": true,
+          "id": true,
+          "last_updated": true,
+          "logging_configuration": [
+            {
+              "dag_processing_logs": true,
+              "scheduler_logs": [
+                {
+                  "cloud_watch_log_group_arn": true
+                }
+              ],
+              "task_logs": [
+                {
+                  "cloud_watch_log_group_arn": true
+                }
+              ],
+              "webserver_logs": [
+                {
+                  "cloud_watch_log_group_arn": true
+                }
+              ],
+              "worker_logs": [
+                {
+                  "cloud_watch_log_group_arn": true
+                }
+              ]
+            }
+          ],
+          "max_workers": true,
+          "min_workers": true,
+          "network_configuration": [
+            {
+              "security_group_ids": [
+                false
+              ],
+              "subnet_ids": [
+                false,
+                false
+              ]
+            }
+          ],
+          "plugins_s3_object_version": true,
+          "requirements_s3_object_version": true,
+          "schedulers": true,
+          "service_role_arn": true,
+          "status": true,
+          "tags_all": true,
+          "webserver_access_mode": true,
+          "webserver_url": true,
+          "weekly_maintenance_window_start": true
+        },
+        "before_sensitive": false,
+        "after_sensitive": {
+          "airflow_configuration_options": true,
+          "last_updated": [],
+          "logging_configuration": [
+            {
+              "dag_processing_logs": [],
+              "scheduler_logs": [
+                {}
+              ],
+              "task_logs": [
+                {}
+              ],
+              "webserver_logs": [
+                {}
+              ],
+              "worker_logs": [
+                {}
+              ]
+            }
+          ],
+          "network_configuration": [
+            {
+              "security_group_ids": [
+                false
+              ],
+              "subnet_ids": [
+                false,
+                false
+              ]
+            }
+          ],
+          "tags_all": {}
+        }
+      }
+    }
+  ]
+    },
+    "undefined_scheduler": {
+      "resource_changes": [
+    {
+      "address": "aws_mwaa_environment.example",
+      "mode": "managed",
+      "type": "aws_mwaa_environment",
+      "name": "example",
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "before": null,
+        "after": {
+          "airflow_configuration_options": null,
+          "dag_s3_path": "dags/",
+          "execution_role_arn": "arn:aws:iam::569128700374:role/AutomationAssumeRole",
+          "kms_key": null,
+          "logging_configuration": [
+            {
+              "dag_processing_logs": [
+                {
+                  "enabled": true,
+                  "log_level": "DEBUG"
+                }
+              ],
+              "task_logs": [
+                {
+                  "enabled": true,
+                  "log_level": "WARNING"
+                }
+              ],
+              "webserver_logs": [
+                {
+                  "enabled": true,
+                  "log_level": "ERROR"
+                }
+              ],
+              "worker_logs": [
+                {
+                  "enabled": true,
+                  "log_level": "CRITICAL"
+                }
+              ]
+            }
+          ],
+          "name": "example",
+          "network_configuration": [
+            {
+              "security_group_ids": [
+                "sg-04ffd413ff4467d19"
+              ],
+              "subnet_ids": [
+                "subnet-019d9925f809928c5",
+                "subnet-0919979b1d57452a5"
+              ]
+            }
+          ],
+          "plugins_s3_path": null,
+          "requirements_s3_path": null,
+          "source_bucket_arn": "arn:aws:s3:::mwaabucket",
+          "tags": null
+        },
+        "after_unknown": {
+          "airflow_version": true,
+          "arn": true,
+          "created_at": true,
+          "environment_class": true,
+          "id": true,
+          "last_updated": true,
+          "logging_configuration": [
+            {
+              "dag_processing_logs": [
+                {
+                  "cloud_watch_log_group_arn": true
+                }
+              ],
+              "scheduler_logs": true,
+              "task_logs": [
+                {
+                  "cloud_watch_log_group_arn": true
+                }
+              ],
+              "webserver_logs": [
+                {
+                  "cloud_watch_log_group_arn": true
+                }
+              ],
+              "worker_logs": [
+                {
+                  "cloud_watch_log_group_arn": true
+                }
+              ]
+            }
+          ],
+          "max_workers": true,
+          "min_workers": true,
+          "network_configuration": [
+            {
+              "security_group_ids": [
+                false
+              ],
+              "subnet_ids": [
+                false,
+                false
+              ]
+            }
+          ],
+          "plugins_s3_object_version": true,
+          "requirements_s3_object_version": true,
+          "schedulers": true,
+          "service_role_arn": true,
+          "status": true,
+          "tags_all": true,
+          "webserver_access_mode": true,
+          "webserver_url": true,
+          "weekly_maintenance_window_start": true
+        },
+        "before_sensitive": false,
+        "after_sensitive": {
+          "airflow_configuration_options": true,
+          "last_updated": [],
+          "logging_configuration": [
+            {
+              "dag_processing_logs": [
+                {}
+              ],
+              "scheduler_logs": [],
+              "task_logs": [
+                {}
+              ],
+              "webserver_logs": [
+                {}
+              ],
+              "worker_logs": [
+                {}
+              ]
+            }
+          ],
+          "network_configuration": [
+            {
+              "security_group_ids": [
+                false
+              ],
+              "subnet_ids": [
+                false,
+                false
+              ]
+            }
+          ],
+          "tags_all": {}
+        }
+      }
+    }
+  ]
+    },
+    "undefined_task": {
+      "resource_changes": [
+    {
+      "address": "aws_mwaa_environment.example",
+      "mode": "managed",
+      "type": "aws_mwaa_environment",
+      "name": "example",
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "before": null,
+        "after": {
+          "airflow_configuration_options": null,
+          "dag_s3_path": "dags/",
+          "execution_role_arn": "arn:aws:iam::569128700374:role/AutomationAssumeRole",
+          "kms_key": null,
+          "logging_configuration": [
+            {
+              "dag_processing_logs": [
+                {
+                  "enabled": true,
+                  "log_level": "DEBUG"
+                }
+              ],
+              "scheduler_logs": [
+                {
+                  "enabled": true,
+                  "log_level": "INFO"
+                }
+              ],
+              "webserver_logs": [
+                {
+                  "enabled": true,
+                  "log_level": "ERROR"
+                }
+              ],
+              "worker_logs": [
+                {
+                  "enabled": true,
+                  "log_level": "CRITICAL"
+                }
+              ]
+            }
+          ],
+          "name": "example",
+          "network_configuration": [
+            {
+              "security_group_ids": [
+                "sg-04ffd413ff4467d19"
+              ],
+              "subnet_ids": [
+                "subnet-019d9925f809928c5",
+                "subnet-0919979b1d57452a5"
+              ]
+            }
+          ],
+          "plugins_s3_path": null,
+          "requirements_s3_path": null,
+          "source_bucket_arn": "arn:aws:s3:::mwaabucket",
+          "tags": null
+        },
+        "after_unknown": {
+          "airflow_version": true,
+          "arn": true,
+          "created_at": true,
+          "environment_class": true,
+          "id": true,
+          "last_updated": true,
+          "logging_configuration": [
+            {
+              "dag_processing_logs": [
+                {
+                  "cloud_watch_log_group_arn": true
+                }
+              ],
+              "scheduler_logs": [
+                {
+                  "cloud_watch_log_group_arn": true
+                }
+              ],
+              "task_logs": true,
+              "webserver_logs": [
+                {
+                  "cloud_watch_log_group_arn": true
+                }
+              ],
+              "worker_logs": [
+                {
+                  "cloud_watch_log_group_arn": true
+                }
+              ]
+            }
+          ],
+          "max_workers": true,
+          "min_workers": true,
+          "network_configuration": [
+            {
+              "security_group_ids": [
+                false
+              ],
+              "subnet_ids": [
+                false,
+                false
+              ]
+            }
+          ],
+          "plugins_s3_object_version": true,
+          "requirements_s3_object_version": true,
+          "schedulers": true,
+          "service_role_arn": true,
+          "status": true,
+          "tags_all": true,
+          "webserver_access_mode": true,
+          "webserver_url": true,
+          "weekly_maintenance_window_start": true
+        },
+        "before_sensitive": false,
+        "after_sensitive": {
+          "airflow_configuration_options": true,
+          "last_updated": [],
+          "logging_configuration": [
+            {
+              "dag_processing_logs": [
+                {}
+              ],
+              "scheduler_logs": [
+                {}
+              ],
+              "task_logs": [],
+              "webserver_logs": [
+                {}
+              ],
+              "worker_logs": [
+                {}
+              ]
+            }
+          ],
+          "network_configuration": [
+            {
+              "security_group_ids": [
+                false
+              ],
+              "subnet_ids": [
+                false,
+                false
+              ]
+            }
+          ],
+          "tags_all": {}
+        }
+      }
+    }
+  ]
+    },
+    "undefined_webserver": {
+      "resource_changes": [
+    {
+      "address": "aws_mwaa_environment.example",
+      "mode": "managed",
+      "type": "aws_mwaa_environment",
+      "name": "example",
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "before": null,
+        "after": {
+          "airflow_configuration_options": null,
+          "dag_s3_path": "dags/",
+          "execution_role_arn": "arn:aws:iam::569128700374:role/AutomationAssumeRole",
+          "kms_key": null,
+          "logging_configuration": [
+            {
+              "dag_processing_logs": [
+                {
+                  "enabled": true,
+                  "log_level": "DEBUG"
+                }
+              ],
+              "scheduler_logs": [
+                {
+                  "enabled": true,
+                  "log_level": "INFO"
+                }
+              ],
+              "task_logs": [
+                {
+                  "enabled": true,
+                  "log_level": "WARNING"
+                }
+              ],
+              "worker_logs": [
+                {
+                  "enabled": true,
+                  "log_level": "CRITICAL"
+                }
+              ]
+            }
+          ],
+          "name": "example",
+          "network_configuration": [
+            {
+              "security_group_ids": [
+                "sg-04ffd413ff4467d19"
+              ],
+              "subnet_ids": [
+                "subnet-019d9925f809928c5",
+                "subnet-0919979b1d57452a5"
+              ]
+            }
+          ],
+          "plugins_s3_path": null,
+          "requirements_s3_path": null,
+          "source_bucket_arn": "arn:aws:s3:::mwaabucket",
+          "tags": null
+        },
+        "after_unknown": {
+          "airflow_version": true,
+          "arn": true,
+          "created_at": true,
+          "environment_class": true,
+          "id": true,
+          "last_updated": true,
+          "logging_configuration": [
+            {
+              "dag_processing_logs": [
+                {
+                  "cloud_watch_log_group_arn": true
+                }
+              ],
+              "scheduler_logs": [
+                {
+                  "cloud_watch_log_group_arn": true
+                }
+              ],
+              "task_logs": [
+                {
+                  "cloud_watch_log_group_arn": true
+                }
+              ],
+              "webserver_logs": true,
+              "worker_logs": [
+                {
+                  "cloud_watch_log_group_arn": true
+                }
+              ]
+            }
+          ],
+          "max_workers": true,
+          "min_workers": true,
+          "network_configuration": [
+            {
+              "security_group_ids": [
+                false
+              ],
+              "subnet_ids": [
+                false,
+                false
+              ]
+            }
+          ],
+          "plugins_s3_object_version": true,
+          "requirements_s3_object_version": true,
+          "schedulers": true,
+          "service_role_arn": true,
+          "status": true,
+          "tags_all": true,
+          "webserver_access_mode": true,
+          "webserver_url": true,
+          "weekly_maintenance_window_start": true
+        },
+        "before_sensitive": false,
+        "after_sensitive": {
+          "airflow_configuration_options": true,
+          "last_updated": [],
+          "logging_configuration": [
+            {
+              "dag_processing_logs": [
+                {}
+              ],
+              "scheduler_logs": [
+                {}
+              ],
+              "task_logs": [
+                {}
+              ],
+              "webserver_logs": [],
+              "worker_logs": [
+                {}
+              ]
+            }
+          ],
+          "network_configuration": [
+            {
+              "security_group_ids": [
+                false
+              ],
+              "subnet_ids": [
+                false,
+                false
+              ]
+            }
+          ],
+          "tags_all": {}
+        }
+      }
+    }
+  ]
+    },
+    "undefined_worker": {
+      "resource_changes": [
+    {
+      "address": "aws_mwaa_environment.example",
+      "mode": "managed",
+      "type": "aws_mwaa_environment",
+      "name": "example",
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "before": null,
+        "after": {
+          "airflow_configuration_options": null,
+          "dag_s3_path": "dags/",
+          "execution_role_arn": "arn:aws:iam::569128700374:role/AutomationAssumeRole",
+          "kms_key": null,
+          "logging_configuration": [
+            {
+              "dag_processing_logs": [
+                {
+                  "enabled": true,
+                  "log_level": "DEBUG"
+                }
+              ],
+              "scheduler_logs": [
+                {
+                  "enabled": true,
+                  "log_level": "INFO"
+                }
+              ],
+              "task_logs": [
+                {
+                  "enabled": true,
+                  "log_level": "WARNING"
+                }
+              ],
+              "webserver_logs": [
+                {
+                  "enabled": true,
+                  "log_level": "ERROR"
+                }
+              ]
+            }
+          ],
+          "name": "example",
+          "network_configuration": [
+            {
+              "security_group_ids": [
+                "sg-04ffd413ff4467d19"
+              ],
+              "subnet_ids": [
+                "subnet-019d9925f809928c5",
+                "subnet-0919979b1d57452a5"
+              ]
+            }
+          ],
+          "plugins_s3_path": null,
+          "requirements_s3_path": null,
+          "source_bucket_arn": "arn:aws:s3:::mwaabucket",
+          "tags": null
+        },
+        "after_unknown": {
+          "airflow_version": true,
+          "arn": true,
+          "created_at": true,
+          "environment_class": true,
+          "id": true,
+          "last_updated": true,
+          "logging_configuration": [
+            {
+              "dag_processing_logs": [
+                {
+                  "cloud_watch_log_group_arn": true
+                }
+              ],
+              "scheduler_logs": [
+                {
+                  "cloud_watch_log_group_arn": true
+                }
+              ],
+              "task_logs": [
+                {
+                  "cloud_watch_log_group_arn": true
+                }
+              ],
+              "webserver_logs": [
+                {
+                  "cloud_watch_log_group_arn": true
+                }
+              ],
+              "worker_logs": true
+            }
+          ],
+          "max_workers": true,
+          "min_workers": true,
+          "network_configuration": [
+            {
+              "security_group_ids": [
+                false
+              ],
+              "subnet_ids": [
+                false,
+                false
+              ]
+            }
+          ],
+          "plugins_s3_object_version": true,
+          "requirements_s3_object_version": true,
+          "schedulers": true,
+          "service_role_arn": true,
+          "status": true,
+          "tags_all": true,
+          "webserver_access_mode": true,
+          "webserver_url": true,
+          "weekly_maintenance_window_start": true
+        },
+        "before_sensitive": false,
+        "after_sensitive": {
+          "airflow_configuration_options": true,
+          "last_updated": [],
+          "logging_configuration": [
+            {
+              "dag_processing_logs": [
+                {}
+              ],
+              "scheduler_logs": [
+                {}
+              ],
+              "task_logs": [
+                {}
+              ],
+              "webserver_logs": [
+                {}
+              ],
+              "worker_logs": []
+            }
+          ],
+          "network_configuration": [
+            {
+              "security_group_ids": [
+                false
+              ],
+              "subnet_ids": [
+                false,
+                false
+              ]
+            }
+          ],
+          "tags_all": {}
+        }
+      }
+    }
+  ]
+    },
+    "undefined_worker_invalid_dag": {
+      "resource_changes": [
+    {
+      "address": "aws_mwaa_environment.example",
+      "mode": "managed",
+      "type": "aws_mwaa_environment",
+      "name": "example",
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "before": null,
+        "after": {
+          "airflow_configuration_options": null,
+          "dag_s3_path": "dags/",
+          "execution_role_arn": "arn:aws:iam::569128700374:role/AutomationAssumeRole",
+          "kms_key": null,
+          "logging_configuration": [
+            {
+              "dag_processing_logs": [
+                {
+                  "enabled": false,
+                  "log_level": "DEBUG"
+                }
+              ],
+              "scheduler_logs": [
+                {
+                  "enabled": true,
+                  "log_level": "INFO"
+                }
+              ],
+              "task_logs": [
+                {
+                  "enabled": true,
+                  "log_level": "WARNING"
+                }
+              ],
+              "webserver_logs": [
+                {
+                  "enabled": true,
+                  "log_level": "ERROR"
+                }
+              ]
+            }
+          ],
+          "name": "example",
+          "network_configuration": [
+            {
+              "security_group_ids": [
+                "sg-04ffd413ff4467d19"
+              ],
+              "subnet_ids": [
+                "subnet-019d9925f809928c5",
+                "subnet-0919979b1d57452a5"
+              ]
+            }
+          ],
+          "plugins_s3_path": null,
+          "requirements_s3_path": null,
+          "source_bucket_arn": "arn:aws:s3:::mwaabucket",
+          "tags": null
+        },
+        "after_unknown": {
+          "airflow_version": true,
+          "arn": true,
+          "created_at": true,
+          "environment_class": true,
+          "id": true,
+          "last_updated": true,
+          "logging_configuration": [
+            {
+              "dag_processing_logs": [
+                {
+                  "cloud_watch_log_group_arn": true
+                }
+              ],
+              "scheduler_logs": [
+                {
+                  "cloud_watch_log_group_arn": true
+                }
+              ],
+              "task_logs": [
+                {
+                  "cloud_watch_log_group_arn": true
+                }
+              ],
+              "webserver_logs": [
+                {
+                  "cloud_watch_log_group_arn": true
+                }
+              ],
+              "worker_logs": true
+            }
+          ],
+          "max_workers": true,
+          "min_workers": true,
+          "network_configuration": [
+            {
+              "security_group_ids": [
+                false
+              ],
+              "subnet_ids": [
+                false,
+                false
+              ]
+            }
+          ],
+          "plugins_s3_object_version": true,
+          "requirements_s3_object_version": true,
+          "schedulers": true,
+          "service_role_arn": true,
+          "status": true,
+          "tags_all": true,
+          "webserver_access_mode": true,
+          "webserver_url": true,
+          "weekly_maintenance_window_start": true
+        },
+        "before_sensitive": false,
+        "after_sensitive": {
+          "airflow_configuration_options": true,
+          "last_updated": [],
+          "logging_configuration": [
+            {
+              "dag_processing_logs": [
+                {}
+              ],
+              "scheduler_logs": [
+                {}
+              ],
+              "task_logs": [
+                {}
+              ],
+              "webserver_logs": [
+                {}
+              ],
+              "worker_logs": []
+            }
+          ],
+          "network_configuration": [
+            {
+              "security_group_ids": [
+                false
+              ],
+              "subnet_ids": [
+                false,
+                false
+              ]
+            }
+          ],
+          "tags_all": {}
+        }
+      }
+    }
+  ]
+    }
+  }
+}

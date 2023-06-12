@@ -1,0 +1,202 @@
+{
+	"mock": {
+		"ecr_repo_policy_compliant": {
+			"resource_changes": [
+				{
+					"address": "aws_ecr_repository.foo",
+					"mode": "managed",
+					"type": "aws_ecr_repository",
+					"name": "foo",
+					"provider_name": "registry.terraform.io/hashicorp/aws",
+					"change": {
+						"actions": [
+							"create"
+						],
+						"before": null,
+						"after": {
+							"encryption_configuration": [],
+							"image_scanning_configuration": [],
+							"image_tag_mutability": "MUTABLE",
+							"name": "bar",
+							"tags": null,
+							"timeouts": null
+						},
+						"after_unknown": {
+							"arn": true,
+							"encryption_configuration": [],
+							"id": true,
+							"image_scanning_configuration": [],
+							"registry_id": true,
+							"repository_url": true,
+							"tags_all": true
+						},
+						"before_sensitive": false,
+						"after_sensitive": {
+							"encryption_configuration": [],
+							"image_scanning_configuration": [],
+							"tags_all": {}
+						}
+					}
+				},
+				{
+					"address": "aws_ecr_repository_policy.repopolicy",
+					"mode": "managed",
+					"type": "aws_ecr_repository_policy",
+					"name": "repopolicy",
+					"provider_name": "registry.terraform.io/hashicorp/aws",
+					"change": {
+						"actions": [
+							"create"
+						],
+						"before": null,
+						"after": {
+							"policy": "{\n    \"Version\": \"2008-10-17\",\n    \"Statement\": [\n        {\n            \"Sid\": \"new policy\",\n            \"Effect\": \"Allow\",\n            \"Principal\": \"*\",\n            \"Action\": [\n                \"ecr:GetDownloadUrlForLayer\",\n                \"ecr:BatchGetImage\",\n                \"ecr:BatchCheckLayerAvailability\",\n                \"ecr:PutImage\",\n                \"ecr:InitiateLayerUpload\",\n                \"ecr:UploadLayerPart\",\n                \"ecr:CompleteLayerUpload\",\n                \"ecr:DescribeRepositories\",\n                \"ecr:GetRepositoryPolicy\",\n                \"ecr:ListImages\",\n                \"ecr:DeleteRepository\",\n                \"ecr:BatchDeleteImage\",\n                \"ecr:SetRepositoryPolicy\",\n                \"ecr:DeleteRepositoryPolicy\"\n            ],\n            \"Condition\": {\n\t        \"StringEquals\": {\"aws:PrincipalOrgID\":\"o-1m7fkgsbz3\"}\n    \t    }\n        }\n    ]\n}\n",
+							"repository": "foo"
+						},
+						"after_unknown": {
+							"id": true,
+							"registry_id": true
+						},
+						"before_sensitive": false,
+						"after_sensitive": {}
+					}
+				}
+			]
+		},
+		"valid_aws_permission_policy": {
+			"resource_changes": [
+				{
+					"address": "aws_ecr_repository_policy.repopolicy",
+					"mode": "managed",
+					"type": "aws_ecr_repository_policy",
+					"name": "repopolicy",
+					"provider_name": "registry.terraform.io/hashicorp/aws",
+					"change": {
+						"actions": [
+							"create"
+						],
+						"before": null,
+						"after": {
+							"policy": "{\n    \"Version\": \"2008-10-17\",\n    \"Statement\": [\n        {\n            \"Sid\": \"new policy\",\n            \"Effect\": \"Allow\",\n            \"Principal\": {\"AWS\": \"*\"},\n            \"Action\": [\n                \"ecr:GetDownloadUrlForLayer\",\n                \"ecr:BatchGetImage\",\n                \"ecr:BatchCheckLayerAvailability\",\n                \"ecr:PutImage\",\n                \"ecr:InitiateLayerUpload\",\n                \"ecr:UploadLayerPart\",\n                \"ecr:CompleteLayerUpload\",\n                \"ecr:DescribeRepositories\",\n                \"ecr:GetRepositoryPolicy\",\n                \"ecr:ListImages\",\n                \"ecr:DeleteRepository\",\n                \"ecr:BatchDeleteImage\",\n                \"ecr:SetRepositoryPolicy\",\n                \"ecr:DeleteRepositoryPolicy\"\n            ],\n            \"Condition\": {\n\t        \"StringEquals\": {\"aws:PrincipalOrgID\":\"o-1m7fkgsbz3\"}\n    \t    }\n        }\n    ]\n}\n",
+							"repository": "foo"
+						},
+						"after_unknown": {
+							"id": true,
+							"registry_id": true
+						},
+						"before_sensitive": false,
+						"after_sensitive": {}
+					}
+				}
+			]
+		},
+		"valid_service_permission_policy": {
+			"resource_changes": [
+				{
+					"address": "aws_ecr_repository_policy.repopolicy",
+					"mode": "managed",
+					"type": "aws_ecr_repository_policy",
+					"name": "repopolicy",
+					"provider_name": "registry.terraform.io/hashicorp/aws",
+					"change": {
+						"actions": [
+							"create"
+						],
+						"before": null,
+						"after": {
+							"policy": "{\n    \"Version\": \"2008-10-17\",\n    \"Statement\": [\n        {\n            \"Sid\": \"new policy\",\n            \"Effect\": \"Allow\",\n            \"Principal\": {\"Service\": \"*\"},\n            \"Action\": [\n                \"ecr:GetDownloadUrlForLayer\",\n                \"ecr:BatchGetImage\",\n                \"ecr:BatchCheckLayerAvailability\",\n                \"ecr:PutImage\",\n                \"ecr:InitiateLayerUpload\",\n                \"ecr:UploadLayerPart\",\n                \"ecr:CompleteLayerUpload\",\n                \"ecr:DescribeRepositories\",\n                \"ecr:GetRepositoryPolicy\",\n                \"ecr:ListImages\",\n                \"ecr:DeleteRepository\",\n                \"ecr:BatchDeleteImage\",\n                \"ecr:SetRepositoryPolicy\",\n                \"ecr:DeleteRepositoryPolicy\"\n            ],\n            \"Condition\": {\n\t        \"StringEquals\": {\"aws:PrincipalOrgID\":\"o-1m7fkgsbz3\"}\n    \t    }\n        }\n    ]\n}\n",
+							"repository": "foo"
+						},
+						"after_unknown": {
+							"id": true,
+							"registry_id": true
+						},
+						"before_sensitive": false,
+						"after_sensitive": {}
+					}
+				}
+			]
+		},
+		"excess_permission_policy": {
+			"resource_changes": [
+				{
+					"address": "aws_ecr_repository_policy.repopolicy",
+					"mode": "managed",
+					"type": "aws_ecr_repository_policy",
+					"name": "repopolicy",
+					"provider_name": "registry.terraform.io/hashicorp/aws",
+					"change": {
+						"actions": [
+							"create"
+						],
+						"before": null,
+						"after": {
+							"policy": "{\n    \"Version\": \"2008-10-17\",\n    \"Statement\": [\n        {\n            \"Sid\": \"new policy\",\n            \"Effect\": \"Allow\",\n            \"Principal\": \"*\",\n            \"Action\": [\n                \"ecr:GetDownloadUrlForLayer\",\n                \"ecr:BatchGetImage\",\n                \"ecr:BatchCheckLayerAvailability\",\n                \"ecr:PutImage\",\n                \"ecr:InitiateLayerUpload\",\n                \"ecr:UploadLayerPart\",\n                \"ecr:CompleteLayerUpload\",\n                \"ecr:DescribeRepositories\",\n                \"ecr:GetRepositoryPolicy\",\n                \"ecr:ListImages\",\n                \"ecr:DeleteRepository\",\n                \"ecr:BatchDeleteImage\",\n                \"ecr:SetRepositoryPolicy\",\n                \"ecr:DeleteRepositoryPolicy\"\n            ]        }\n    ]\n}\n",
+							"repository": "foo"
+						},
+						"after_unknown": {
+							"id": true,
+							"registry_id": true
+						},
+						"before_sensitive": false,
+						"after_sensitive": {}
+					}
+				}
+			]
+		},
+		"excess_aws_permission_policy": {
+			"resource_changes": [
+				{
+					"address": "aws_ecr_repository_policy.repopolicy",
+					"mode": "managed",
+					"type": "aws_ecr_repository_policy",
+					"name": "repopolicy",
+					"provider_name": "registry.terraform.io/hashicorp/aws",
+					"change": {
+						"actions": [
+							"create"
+						],
+						"before": null,
+						"after": {
+							"policy": "{\n    \"Version\": \"2008-10-17\",\n    \"Statement\": [\n        {\n            \"Sid\": \"new policy\",\n            \"Effect\": \"Allow\",\n            \"Principal\": {\"AWS\": \"*\"},\n            \"Action\": [\n                \"ecr:GetDownloadUrlForLayer\",\n                \"ecr:BatchGetImage\",\n                \"ecr:BatchCheckLayerAvailability\",\n                \"ecr:PutImage\",\n                \"ecr:InitiateLayerUpload\",\n                \"ecr:UploadLayerPart\",\n                \"ecr:CompleteLayerUpload\",\n                \"ecr:DescribeRepositories\",\n                \"ecr:GetRepositoryPolicy\",\n                \"ecr:ListImages\",\n                \"ecr:DeleteRepository\",\n                \"ecr:BatchDeleteImage\",\n                \"ecr:SetRepositoryPolicy\",\n                \"ecr:DeleteRepositoryPolicy\"\n            ]        }\n    ]\n}\n",
+							"repository": "foo"
+						},
+						"after_unknown": {
+							"id": true,
+							"registry_id": true
+						},
+						"before_sensitive": false,
+						"after_sensitive": {}
+					}
+				}
+			]
+		},
+		"excess_service_permission_policy": {
+			"resource_changes": [
+				{
+					"address": "aws_ecr_repository_policy.repopolicy",
+					"mode": "managed",
+					"type": "aws_ecr_repository_policy",
+					"name": "repopolicy",
+					"provider_name": "registry.terraform.io/hashicorp/aws",
+					"change": {
+						"actions": [
+							"create"
+						],
+						"before": null,
+						"after": {
+							"policy": "{\n    \"Version\": \"2008-10-17\",\n    \"Statement\": [\n        {\n            \"Sid\": \"new policy\",\n            \"Effect\": \"Allow\",\n            \"Principal\": {\"Service\": \"*\"},\n            \"Action\": [\n                \"ecr:GetDownloadUrlForLayer\",\n                \"ecr:BatchGetImage\",\n                \"ecr:BatchCheckLayerAvailability\",\n                \"ecr:PutImage\",\n                \"ecr:InitiateLayerUpload\",\n                \"ecr:UploadLayerPart\",\n                \"ecr:CompleteLayerUpload\",\n                \"ecr:DescribeRepositories\",\n                \"ecr:GetRepositoryPolicy\",\n                \"ecr:ListImages\",\n                \"ecr:DeleteRepository\",\n                \"ecr:BatchDeleteImage\",\n                \"ecr:SetRepositoryPolicy\",\n                \"ecr:DeleteRepositoryPolicy\"\n            ]        }\n    ]\n}\n",
+							"repository": "foo"
+						},
+						"after_unknown": {
+							"id": true,
+							"registry_id": true
+						},
+						"before_sensitive": false,
+						"after_sensitive": {}
+					}
+				}
+			]
+		}
+	}
+}

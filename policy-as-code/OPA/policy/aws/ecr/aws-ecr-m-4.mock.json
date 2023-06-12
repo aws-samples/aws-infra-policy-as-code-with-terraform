@@ -1,0 +1,417 @@
+{
+  "mock": {
+    "valid_ecr_vpc_endpoints": {
+      "resource_changes": [
+        {
+          "address": "aws_ecr_repository.ecr_repo_compliant",
+          "mode": "managed",
+          "type": "aws_ecr_repository",
+          "name": "ecr_repo_compliant",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "encryption_configuration": [
+                {
+                  "encryption_type": "KMS"
+                }
+              ],
+              "image_scanning_configuration": [
+                {
+                  "scan_on_push": true
+                }
+              ],
+              "image_tag_mutability": "IMMUTABLE",
+              "name": "ecr-repo-compliant",
+              "tags": null,
+              "timeouts": null
+            },
+            "after_unknown": {
+              "arn": true,
+              "encryption_configuration": [
+                {
+                  "kms_key": true
+                }
+              ],
+              "id": true,
+              "image_scanning_configuration": [
+                {}
+              ],
+              "registry_id": true,
+              "repository_url": true,
+              "tags_all": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "encryption_configuration": [
+                {}
+              ],
+              "image_scanning_configuration": [
+                {}
+              ],
+              "tags_all": {}
+            }
+          }
+        },
+        {
+          "address": "aws_vpc_endpoint.ecr_vpc_endpoint",
+          "mode": "managed",
+          "type": "aws_vpc_endpoint",
+          "name": "ecr_vpc_endpoint",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "after": {
+              "auto_accept": null,
+              "private_dns_enabled": true,
+              "security_group_ids": [
+                "sg-0e2c0ecdd9f309acb"
+              ],
+              "service_name": "com.amazonaws.eu-central-1.ecr.api",
+              "tags": null,
+              "timeouts": null,
+              "vpc_endpoint_type": "Interface",
+              "vpc_id": "vpc-094984b88ccd1e462",
+              "policy": "{\n  \"Statement\": [\n    {\n      \"Action\": \"*\", \n      \"Effect\": \"Allow\", \n      \"Principal\": \"*\", \n      \"Resource\": \"arn:aws:ecr:us-east-1:123456789012:image/testimage\"\n    }\n  ]\n}"
+            }
+          }
+        },
+        {
+          "address": "aws_vpc_endpoint.ecr_dkr_vpc_endpoint",
+          "mode": "managed",
+          "type": "aws_vpc_endpoint",
+          "name": "ecr_dkr_vpc_endpoint",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "after": {
+              "auto_accept": null,
+              "private_dns_enabled": true,
+              "security_group_ids": [
+                "sg-0e2c0ecdd9f309acb"
+              ],
+              "service_name": "com.amazonaws.eu-central-1.ecr.dkr",
+              "tags": null,
+              "timeouts": null,
+              "vpc_endpoint_type": "Interface",
+              "vpc_id": "vpc-094984b88ccd1e462",
+              "policy": "{\n  \"Statement\": [\n    {\n      \"Action\": \"*\", \n      \"Effect\": \"Allow\", \n      \"Principal\": \"*\", \n      \"Resource\": \"arn:aws:ecr:us-east-1:123456789012:image/testimage\"\n    }\n  ]\n}"
+            }
+          }
+        }
+      ]
+    },
+    "valid_ecr_with_no_api_endpoint": {
+      "resource_changes": [
+        {
+          "address": "aws_ecr_repository.ecr_repo_compliant",
+          "mode": "managed",
+          "type": "aws_ecr_repository",
+          "name": "ecr_repo_compliant",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "encryption_configuration": [
+                {
+                  "encryption_type": "KMS"
+                }
+              ],
+              "image_scanning_configuration": [
+                {
+                  "scan_on_push": true
+                }
+              ],
+              "image_tag_mutability": "IMMUTABLE",
+              "name": "ecr-repo-compliant",
+              "tags": null,
+              "timeouts": null
+            },
+            "after_unknown": {
+              "arn": true,
+              "encryption_configuration": [
+                {
+                  "kms_key": true
+                }
+              ],
+              "id": true,
+              "image_scanning_configuration": [
+                {}
+              ],
+              "registry_id": true,
+              "repository_url": true,
+              "tags_all": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "encryption_configuration": [
+                {}
+              ],
+              "image_scanning_configuration": [
+                {}
+              ],
+              "tags_all": {}
+            }
+          }
+        },
+        {
+          "address": "aws_vpc_endpoint.ecr_dkr_vpc_endpoint",
+          "mode": "managed",
+          "type": "aws_vpc_endpoint",
+          "name": "ecr_dkr_vpc_endpoint",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "after": {
+              "auto_accept": null,
+              "private_dns_enabled": true,
+              "security_group_ids": [
+                "sg-0e2c0ecdd9f309acb"
+              ],
+              "service_name": "com.amazonaws.eu-central-1.ecr.dkr",
+              "tags": null,
+              "timeouts": null,
+              "vpc_endpoint_type": "Interface",
+              "vpc_id": "vpc-094984b88ccd1e462"
+            }
+          }
+        }
+      ]
+    },
+    "valid_ecr_with_no_dkr_endpoint": {
+      "resource_changes": [
+        {
+          "address": "aws_ecr_repository.ecr_repo_compliant",
+          "mode": "managed",
+          "type": "aws_ecr_repository",
+          "name": "ecr_repo_compliant",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "encryption_configuration": [
+                {
+                  "encryption_type": "KMS"
+                }
+              ],
+              "image_scanning_configuration": [
+                {
+                  "scan_on_push": true
+                }
+              ],
+              "image_tag_mutability": "IMMUTABLE",
+              "name": "ecr-repo-compliant",
+              "tags": null,
+              "timeouts": null
+            },
+            "after_unknown": {
+              "arn": true,
+              "encryption_configuration": [
+                {
+                  "kms_key": true
+                }
+              ],
+              "id": true,
+              "image_scanning_configuration": [
+                {}
+              ],
+              "registry_id": true,
+              "repository_url": true,
+              "tags_all": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "encryption_configuration": [
+                {}
+              ],
+              "image_scanning_configuration": [
+                {}
+              ],
+              "tags_all": {}
+            }
+          }
+        },
+        {
+          "address": "aws_vpc_endpoint.ecr_api_vpc_endpoint",
+          "mode": "managed",
+          "type": "aws_vpc_endpoint",
+          "name": "ecr_api_vpc_endpoint",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "after": {
+              "auto_accept": null,
+              "private_dns_enabled": true,
+              "security_group_ids": [
+                "sg-0e2c0ecdd9f309acb"
+              ],
+              "service_name": "com.amazonaws.eu-central-1.ecr.api",
+              "tags": null,
+              "timeouts": null,
+              "vpc_endpoint_type": "Interface",
+              "vpc_id": "vpc-094984b88ccd1e462"
+            }
+          }
+        }
+      ]
+    },
+    "ecr_invalid_vpc_endpoint": {
+      "resource_changes": [
+        {
+          "address": "aws_ecr_repository.ecr_repo_compliant",
+          "mode": "managed",
+          "type": "aws_ecr_repository",
+          "name": "ecr_repo_compliant",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "encryption_configuration": [
+                {
+                  "encryption_type": "KMS"
+                }
+              ],
+              "image_scanning_configuration": [
+                {
+                  "scan_on_push": true
+                }
+              ],
+              "image_tag_mutability": "IMMUTABLE",
+              "name": "ecr-repo-compliant",
+              "tags": null,
+              "timeouts": null
+            },
+            "after_unknown": {
+              "arn": true,
+              "encryption_configuration": [
+                {
+                  "kms_key": true
+                }
+              ],
+              "id": true,
+              "image_scanning_configuration": [
+                {}
+              ],
+              "registry_id": true,
+              "repository_url": true,
+              "tags_all": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "encryption_configuration": [
+                {}
+              ],
+              "image_scanning_configuration": [
+                {}
+              ],
+              "tags_all": {}
+            }
+          }
+        },
+        {
+          "address": "aws_vpc_endpoint.ec2",
+          "mode": "managed",
+          "type": "aws_vpc_endpoint",
+          "name": "ec2",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "after": {
+              "auto_accept": null,
+              "private_dns_enabled": true,
+              "security_group_ids": [
+                "sg-0e2c0ecdd9f309acb"
+              ],
+              "service_name": "com.amazonaws.us-east-1.ec2",
+              "tags": null,
+              "timeouts": null,
+              "vpc_endpoint_type": "Interface",
+              "vpc_id": "vpc-094984b88ccd1e462",
+              "policy": "{}"
+            }
+          }
+        }
+      ]
+    },
+    "ecr_no_vpc_endpoint": {
+      "resource_changes": [
+        {
+          "address": "aws_ecr_repository.ecr_repo_compliant",
+          "mode": "managed",
+          "type": "aws_ecr_repository",
+          "name": "ecr_repo_compliant",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "encryption_configuration": [
+                {
+                  "encryption_type": "KMS"
+                }
+              ],
+              "image_scanning_configuration": [
+                {
+                  "scan_on_push": true
+                }
+              ],
+              "image_tag_mutability": "IMMUTABLE",
+              "name": "ecr-repo-compliant",
+              "tags": null,
+              "timeouts": null
+            },
+            "after_unknown": {
+              "arn": true,
+              "encryption_configuration": [
+                {
+                  "kms_key": true
+                }
+              ],
+              "id": true,
+              "image_scanning_configuration": [
+                {}
+              ],
+              "registry_id": true,
+              "repository_url": true,
+              "tags_all": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "encryption_configuration": [
+                {}
+              ],
+              "image_scanning_configuration": [
+                {}
+              ],
+              "tags_all": {}
+            }
+          }
+        }
+      ]
+    }
+  }
+}

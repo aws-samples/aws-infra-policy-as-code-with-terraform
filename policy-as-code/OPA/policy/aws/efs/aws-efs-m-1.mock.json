@@ -1,0 +1,418 @@
+{
+  "mock": {
+    "valid_referenced": {
+      "resource_changes": [
+        {
+          "address": "aws_efs_file_system.test",
+          "mode": "managed",
+          "type": "aws_efs_file_system",
+          "name": "test",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "creation_token": "my-product",
+              "encrypted": true,
+              "lifecycle_policy": [],
+              "provisioned_throughput_in_mibps": null,
+              "tags": {
+                "infra": "true",
+                "managed_by": "terraform"
+              },
+              "tags_all": {
+                "infra": "true",
+                "managed_by": "terraform"
+              },
+              "throughput_mode": "bursting"
+            },
+            "after_unknown": {
+              "arn": true,
+              "availability_zone_id": true,
+              "availability_zone_name": true,
+              "dns_name": true,
+              "id": true,
+              "kms_key_id": true,
+              "lifecycle_policy": [],
+              "number_of_mount_targets": true,
+              "owner_id": true,
+              "performance_mode": true,
+              "size_in_bytes": true,
+              "tags": {},
+              "tags_all": {}
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "lifecycle_policy": [],
+              "size_in_bytes": [],
+              "tags": {},
+              "tags_all": {}
+            }
+          }
+        }
+      ],
+      "configuration": {
+        "root_module": {
+          "resources": [
+            {
+              "address": "aws_efs_file_system.test",
+              "mode": "managed",
+              "type": "aws_efs_file_system",
+              "name": "test",
+              "provider_config_key": "aws",
+              "expressions": {
+                "creation_token": {
+                  "constant_value": "my-product"
+                },
+                "encrypted": {
+                  "constant_value": true
+                },
+                "kms_key_id": {
+                  "references": [
+                    "aws_kms_key.efs_kms.arn",
+                    "aws_kms_key.efs_kms"
+                  ]
+                },
+                "tags": {
+                  "references": [
+                    "var.tags"
+                  ]
+                }
+              },
+              "schema_version": 0
+            }
+          ]
+        }
+      }
+    },
+    "valid_constant": {
+      "resource_changes": [
+        {
+          "address": "aws_efs_file_system.test",
+          "mode": "managed",
+          "type": "aws_efs_file_system",
+          "name": "test",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "creation_token": "my-product",
+              "encrypted": true,
+              "kms_key_id": "arn:aws:kms:eu-central-1:123456789012:key/3613c98e-2775-479e-a2ae-29b804e936d5",
+              "lifecycle_policy": [],
+              "provisioned_throughput_in_mibps": null,
+              "tags": {
+                "infra": "true",
+                "managed_by": "terraform"
+              },
+              "tags_all": {
+                "infra": "true",
+                "managed_by": "terraform"
+              },
+              "throughput_mode": "bursting"
+            },
+            "after_unknown": {
+              "arn": true,
+              "availability_zone_id": true,
+              "availability_zone_name": true,
+              "dns_name": true,
+              "id": true,
+              "lifecycle_policy": [],
+              "number_of_mount_targets": true,
+              "owner_id": true,
+              "performance_mode": true,
+              "size_in_bytes": true,
+              "tags": {},
+              "tags_all": {}
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "lifecycle_policy": [],
+              "size_in_bytes": [],
+              "tags": {},
+              "tags_all": {}
+            }
+          }
+        }
+      ],
+      "configuration": {
+        "root_module": {
+          "resources": [
+            {
+              "address": "aws_efs_file_system.test",
+              "mode": "managed",
+              "type": "aws_efs_file_system",
+              "name": "test",
+              "provider_config_key": "aws",
+              "expressions": {
+                "creation_token": {
+                  "constant_value": "my-product"
+                },
+                "encrypted": {
+                  "constant_value": true
+                },
+                "kms_key_id": {
+                  "constant_value": "arn:aws:kms:eu-central-1:123456789012:key/3613c98e-2775-479e-a2ae-29b804e936d5"
+                },
+                "tags": {
+                  "references": [
+                    "var.tags"
+                  ]
+                }
+              },
+              "schema_version": 0
+            }
+          ]
+        }
+      }
+    },
+    "default_settings": {
+      "resource_changes": [
+        {
+          "address": "aws_efs_file_system.test",
+          "mode": "managed",
+          "type": "aws_efs_file_system",
+          "name": "test",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "creation_token": "my-product",
+              "lifecycle_policy": [],
+              "provisioned_throughput_in_mibps": null,
+              "tags": {
+                "infra": "true",
+                "managed_by": "terraform"
+              },
+              "tags_all": {
+                "infra": "true",
+                "managed_by": "terraform"
+              },
+              "throughput_mode": "bursting"
+            },
+            "after_unknown": {
+              "arn": true,
+              "availability_zone_id": true,
+              "availability_zone_name": true,
+              "dns_name": true,
+              "encrypted": true,
+              "id": true,
+              "kms_key_id": true,
+              "lifecycle_policy": [],
+              "number_of_mount_targets": true,
+              "owner_id": true,
+              "performance_mode": true,
+              "size_in_bytes": true,
+              "tags": {},
+              "tags_all": {}
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "lifecycle_policy": [],
+              "size_in_bytes": [],
+              "tags": {},
+              "tags_all": {}
+            }
+          }
+        }
+      ],
+      "configuration": {
+        "root_module": {
+          "resources": [
+            {
+              "address": "aws_efs_file_system.test",
+              "mode": "managed",
+              "type": "aws_efs_file_system",
+              "name": "test",
+              "provider_config_key": "aws",
+              "expressions": {
+                "creation_token": {
+                  "constant_value": "my-product"
+                },
+                "tags": {
+                  "references": [
+                    "var.tags"
+                  ]
+                }
+              },
+              "schema_version": 0
+            }
+          ]
+        }
+      }
+    },
+    "invalid_kms_key": {
+      "resource_changes": [
+        {
+          "address": "aws_efs_file_system.test",
+          "mode": "managed",
+          "type": "aws_efs_file_system",
+          "name": "test",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "creation_token": "my-product",
+              "encrypted": true,
+              "lifecycle_policy": [],
+              "provisioned_throughput_in_mibps": null,
+              "tags": {
+                "infra": "true",
+                "managed_by": "terraform"
+              },
+              "tags_all": {
+                "infra": "true",
+                "managed_by": "terraform"
+              },
+              "throughput_mode": "bursting"
+            },
+            "after_unknown": {
+              "arn": true,
+              "availability_zone_id": true,
+              "availability_zone_name": true,
+              "dns_name": true,
+              "id": true,
+              "kms_key_id": true,
+              "lifecycle_policy": [],
+              "number_of_mount_targets": true,
+              "owner_id": true,
+              "performance_mode": true,
+              "size_in_bytes": true,
+              "tags": {},
+              "tags_all": {}
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "lifecycle_policy": [],
+              "size_in_bytes": [],
+              "tags": {},
+              "tags_all": {}
+            }
+          }
+        }
+      ],
+      "configuration": {
+        "root_module": {
+          "resources": [
+            {
+              "address": "aws_efs_file_system.test",
+              "mode": "managed",
+              "type": "aws_efs_file_system",
+              "name": "test",
+              "provider_config_key": "aws",
+              "expressions": {
+                "creation_token": {
+                  "constant_value": "my-product"
+                },
+                "encrypted": {
+                  "constant_value": true
+                },
+                "kms_key_id": {
+                  "constant_value": ""
+                },
+                "tags": {
+                  "references": [
+                    "var.tags"
+                  ]
+                }
+              },
+              "schema_version": 0
+            }
+          ]
+        }
+      }
+    },
+    "default_kms": {
+      "resource_changes": [
+        {
+          "address": "aws_efs_file_system.test",
+          "mode": "managed",
+          "type": "aws_efs_file_system",
+          "name": "test",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "creation_token": "my-product",
+              "encrypted": true,
+              "lifecycle_policy": [],
+              "provisioned_throughput_in_mibps": null,
+              "tags": {
+                "infra": "true",
+                "managed_by": "terraform"
+              },
+              "tags_all": {
+                "infra": "true",
+                "managed_by": "terraform"
+              },
+              "throughput_mode": "bursting"
+            },
+            "after_unknown": {
+              "arn": true,
+              "availability_zone_id": true,
+              "availability_zone_name": true,
+              "dns_name": true,
+              "id": true,
+              "kms_key_id": true,
+              "lifecycle_policy": [],
+              "number_of_mount_targets": true,
+              "owner_id": true,
+              "performance_mode": true,
+              "size_in_bytes": true,
+              "tags": {},
+              "tags_all": {}
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "lifecycle_policy": [],
+              "size_in_bytes": [],
+              "tags": {},
+              "tags_all": {}
+            }
+          }
+        }
+      ],
+      "configuration": {
+        "root_module": {
+          "resources": [
+            {
+              "address": "aws_efs_file_system.test",
+              "mode": "managed",
+              "type": "aws_efs_file_system",
+              "name": "test",
+              "provider_config_key": "aws",
+              "expressions": {
+                "creation_token": {
+                  "constant_value": "my-product"
+                },
+                "encrypted": {
+                  "constant_value": true
+                },
+                "tags": {
+                  "references": [
+                    "var.tags"
+                  ]
+                }
+              },
+              "schema_version": 0
+            }
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,311 @@
+{
+    "mock": {
+        "valid": {
+            "concrete_key_value": {
+                "resource_changes": [
+                    {
+                        "address": "aws_cloudwatch_log_group.opa_log_group",
+                        "mode": "managed",
+                        "type": "aws_cloudwatch_log_group",
+                        "name": "opa_log_group",
+                        "provider_name": "registry.terraform.io/hashicorp/aws",
+                        "change": {
+                            "actions": [
+                                "create"
+                            ],
+                            "before": null,
+                            "after": {
+                                "kms_key_id": "arn:aws:kms:eu-central-1:739267953015:key/3c753b1e-1672-4ea2-a367-42602e20611a",
+                                "name_prefix": null,
+                                "retention_in_days": 0,
+                                "tags": null
+                            },
+                            "after_unknown": {
+                                "arn": true,
+                                "id": true,
+                                "name": true,
+                                "tags_all": true
+                            },
+                            "before_sensitive": false,
+                            "after_sensitive": {
+                                "tags_all": {}
+                            }
+                        }
+                    }
+                ]
+            },
+            "key_resource_reference": {
+                "resource_changes": [
+                    {
+                        "address": "aws_cloudwatch_log_group.opa_log_group",
+                        "mode": "managed",
+                        "type": "aws_cloudwatch_log_group",
+                        "name": "opa_log_group",
+                        "provider_name": "registry.terraform.io/hashicorp/aws",
+                        "change": {
+                            "actions": [
+                                "create"
+                            ],
+                            "before": null,
+                            "after": {
+                                "name_prefix": null,
+                                "retention_in_days": 0,
+                                "tags": null
+                            },
+                            "after_unknown": {
+                                "arn": true,
+                                "id": true,
+                                "kms_key_id": true,
+                                "name": true,
+                                "tags_all": true
+                            },
+                            "before_sensitive": false,
+                            "after_sensitive": {
+                                "tags_all": {}
+                            }
+                        }
+                    },
+                    {
+                        "address": "aws_kms_key.opa_s3_key",
+                        "mode": "managed",
+                        "type": "aws_kms_key",
+                        "name": "opa_s3_key",
+                        "provider_name": "registry.terraform.io/hashicorp/aws",
+                        "change": {
+                            "actions": [
+                                "create"
+                            ],
+                            "before": null,
+                            "after": {
+                                "bypass_policy_lockout_safety_check": false,
+                                "customer_master_key_spec": "SYMMETRIC_DEFAULT",
+                                "deletion_window_in_days": null,
+                                "enable_key_rotation": false,
+                                "is_enabled": true,
+                                "key_usage": "ENCRYPT_DECRYPT",
+                                "policy": "{\n  \"Version\": \"2012-10-17\",\n  \"Statement\": [\n    {\n      \"Sid\": \"Allow access for Key Administrators\",\n      \"Effect\": \"Allow\",\n      \"Action\": [\n        \"kms:Update*\",\n        \"kms:UntagResource\",\n        \"kms:TagResource\",\n        \"kms:ScheduleKeyDeletion\",\n        \"kms:Revoke*\",\n        \"kms:Put*\",\n        \"kms:List*\",\n        \"kms:Get*\",\n        \"kms:Enable*\",\n        \"kms:Disable*\",\n        \"kms:Describe*\",\n        \"kms:Delete*\",\n        \"kms:Create*\",\n        \"kms:CancelKeyDeletion\"\n      ],\n      \"Resource\": \"*\",\n      \"Principal\": {\n        \"AWS\": \"arn:aws:iam::995222306147:role/infra/Configurator\"\n      }\n    },\n    {\n      \"Sid\": \"CloudWatch service principal permission to use the key\",\n      \"Effect\": \"Allow\",\n      \"Action\": [\n        \"kms:ReEncrypt*\",\n        \"kms:GenerateDataKey*\",\n        \"kms:Encrypt*\",\n        \"kms:Describe*\",\n        \"kms:Decrypt*\"\n      ],\n      \"Resource\": \"*\",\n      \"Principal\": {\n        \"Service\": \"logs.amazonaws.com\"\n      },\n      \"Condition\": {\n        \"ArnEquals\": {\n          \"kms:EncryptionContext:aws:logs:arn\": \"arn:aws:logs:eu-central-1:account-id:*\"\n        },\n        \"StringEquals\": {\n          \"kms:ViaService\": \"logs.amazonaws.com\"\n        }\n      }\n    }\n  ]\n}",
+                                "tags": null
+                            },
+                            "after_unknown": {
+                                "arn": true,
+                                "description": true,
+                                "id": true,
+                                "key_id": true,
+                                "multi_region": true,
+                                "tags_all": true
+                            },
+                            "before_sensitive": false,
+                            "after_sensitive": {
+                                "tags_all": {}
+                            }
+                        }
+                    }
+                ]
+            },
+            "has_unrelated_kms_key": {
+                "resource_changes": [
+                    {
+                        "address": "aws_cloudwatch_log_group.opa_log_group",
+                        "mode": "managed",
+                        "type": "aws_cloudwatch_log_group",
+                        "name": "opa_log_group",
+                        "provider_name": "registry.terraform.io/hashicorp/aws",
+                        "change": {
+                            "actions": [
+                                "create"
+                            ],
+                            "before": null,
+                            "after": {
+                                "kms_key_id": "arn:aws:kms:eu-central-1:739267953015:key/3c753b1e-1672-4ea2-a367-42602e20611a",
+                                "name_prefix": null,
+                                "retention_in_days": 0,
+                                "tags": null
+                            },
+                            "after_unknown": {
+                                "arn": true,
+                                "id": true,
+                                "name": true,
+                                "tags_all": true
+                            },
+                            "before_sensitive": false,
+                            "after_sensitive": {
+                                "tags_all": {}
+                            }
+                        }
+                    },
+                    {
+                        "address": "aws_kms_key.opa_s3_key",
+                        "mode": "managed",
+                        "type": "aws_kms_key",
+                        "name": "opa_s3_key",
+                        "provider_name": "registry.terraform.io/hashicorp/aws",
+                        "change": {
+                            "actions": [
+                                "create"
+                            ],
+                            "before": null,
+                            "after": {
+                                "bypass_policy_lockout_safety_check": false,
+                                "customer_master_key_spec": "SYMMETRIC_DEFAULT",
+                                "deletion_window_in_days": null,
+                                "enable_key_rotation": false,
+                                "is_enabled": true,
+                                "key_usage": "ENCRYPT_DECRYPT",
+                                "policy": "{\n  \"Version\": \"2012-10-17\",\n  \"Statement\": [\n    {\n      \"Sid\": \"Allow access for Key Administrators\",\n      \"Effect\": \"Allow\",\n      \"Action\": [\n        \"kms:Update*\",\n        \"kms:UntagResource\",\n        \"kms:TagResource\",\n        \"kms:ScheduleKeyDeletion\",\n        \"kms:Revoke*\",\n        \"kms:Put*\",\n        \"kms:List*\",\n        \"kms:Get*\",\n        \"kms:Enable*\",\n        \"kms:Disable*\",\n        \"kms:Describe*\",\n        \"kms:Delete*\",\n        \"kms:Create*\",\n        \"kms:CancelKeyDeletion\"\n      ],\n      \"Resource\": \"*\",\n      \"Principal\": {\n        \"AWS\": \"arn:aws:iam::995222306147:role/infra/Configurator\"\n      }\n    }\n  ]\n}",
+                                "tags": null
+                            },
+                            "after_unknown": {
+                                "arn": true,
+                                "description": true,
+                                "id": true,
+                                "key_id": true,
+                                "multi_region": true,
+                                "tags_all": true
+                            },
+                            "before_sensitive": false,
+                            "after_sensitive": {
+                                "tags_all": {}
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        "invalid": {
+            "key_missing": {
+                "resource_changes": [
+                    {
+                        "address": "aws_cloudwatch_log_group.opa_log_group",
+                        "mode": "managed",
+                        "type": "aws_cloudwatch_log_group",
+                        "name": "opa_log_group",
+                        "provider_name": "registry.terraform.io/hashicorp/aws",
+                        "change": {
+                            "actions": [
+                                "create"
+                            ],
+                            "before": null,
+                            "after": {
+                                "kms_key_id": null,
+                                "name_prefix": null,
+                                "retention_in_days": 0,
+                                "tags": null
+                            },
+                            "after_unknown": {
+                                "arn": true,
+                                "id": true,
+                                "name": true,
+                                "tags_all": true
+                            },
+                            "before_sensitive": false,
+                            "after_sensitive": {
+                                "tags_all": {}
+                            }
+                        }
+                    }
+                ]
+            },
+            "key_empty": {
+                "resource_changes": [
+                    {
+                        "address": "aws_cloudwatch_log_group.opa_log_group",
+                        "mode": "managed",
+                        "type": "aws_cloudwatch_log_group",
+                        "name": "opa_log_group",
+                        "provider_name": "registry.terraform.io/hashicorp/aws",
+                        "change": {
+                            "actions": [
+                                "create"
+                            ],
+                            "before": null,
+                            "after": {
+                                "kms_key_id": "",
+                                "name_prefix": null,
+                                "retention_in_days": 0,
+                                "tags": null
+                            },
+                            "after_unknown": {
+                                "arn": true,
+                                "id": true,
+                                "name": true,
+                                "tags_all": true
+                            },
+                            "before_sensitive": false,
+                            "after_sensitive": {
+                                "tags_all": {}
+                            }
+                        }
+                    }
+                ]
+            },
+            "kms_key_missing_encryption_context": {
+                "resource_changes": [
+                    {
+                        "address": "aws_cloudwatch_log_group.opa_log_group",
+                        "mode": "managed",
+                        "type": "aws_cloudwatch_log_group",
+                        "name": "opa_log_group",
+                        "provider_name": "registry.terraform.io/hashicorp/aws",
+                        "change": {
+                            "actions": [
+                                "create"
+                            ],
+                            "before": null,
+                            "after": {
+                                "name_prefix": null,
+                                "retention_in_days": 0,
+                                "tags": null
+                            },
+                            "after_unknown": {
+                                "arn": true,
+                                "id": true,
+                                "kms_key_id": true,
+                                "name": true,
+                                "tags_all": true
+                            },
+                            "before_sensitive": false,
+                            "after_sensitive": {
+                                "tags_all": {}
+                            }
+                        }
+                    },
+                    {
+                        "address": "aws_kms_key.opa_s3_key",
+                        "mode": "managed",
+                        "type": "aws_kms_key",
+                        "name": "opa_s3_key",
+                        "provider_name": "registry.terraform.io/hashicorp/aws",
+                        "change": {
+                            "actions": [
+                                "create"
+                            ],
+                            "before": null,
+                            "after": {
+                                "bypass_policy_lockout_safety_check": false,
+                                "customer_master_key_spec": "SYMMETRIC_DEFAULT",
+                                "deletion_window_in_days": null,
+                                "enable_key_rotation": false,
+                                "is_enabled": true,
+                                "key_usage": "ENCRYPT_DECRYPT",
+                                "policy": "{\n  \"Version\": \"2012-10-17\",\n  \"Statement\": [\n    {\n      \"Sid\": \"Allow access for Key Administrators\",\n      \"Effect\": \"Allow\",\n      \"Action\": [\n        \"kms:Update*\",\n        \"kms:UntagResource\",\n        \"kms:TagResource\",\n        \"kms:ScheduleKeyDeletion\",\n        \"kms:Revoke*\",\n        \"kms:Put*\",\n        \"kms:List*\",\n        \"kms:Get*\",\n        \"kms:Enable*\",\n        \"kms:Disable*\",\n        \"kms:Describe*\",\n        \"kms:Delete*\",\n        \"kms:Create*\",\n        \"kms:CancelKeyDeletion\"\n      ],\n      \"Resource\": \"*\",\n      \"Principal\": {\n        \"AWS\": \"arn:aws:iam::995222306147:role/infra/Configurator\"\n      }\n    },\n    {\n      \"Sid\": \"CloudWatch service principal permission to use the key\",\n      \"Effect\": \"Allow\",\n      \"Action\": [\n        \"kms:ReEncrypt*\",\n        \"kms:GenerateDataKey*\",\n        \"kms:Encrypt*\",\n        \"kms:Describe*\",\n        \"kms:Decrypt*\"\n      ],\n      \"Resource\": \"*\",\n      \"Principal\": {\n        \"Service\": \"logs.amazonaws.com\"\n      },\n      \"Condition\": {\n        \"StringEquals\": {\n          \"kms:ViaService\": \"logs.amazonaws.com\"\n        }\n      }\n    }\n  ]\n}",
+                                "tags": null
+                            },
+                            "after_unknown": {
+                                "arn": true,
+                                "description": true,
+                                "id": true,
+                                "key_id": true,
+                                "multi_region": true,
+                                "tags_all": true
+                            },
+                            "before_sensitive": false,
+                            "after_sensitive": {
+                                "tags_all": {}
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}

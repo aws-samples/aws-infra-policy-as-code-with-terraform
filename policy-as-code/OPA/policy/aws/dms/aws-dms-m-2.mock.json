@@ -1,0 +1,94 @@
+{
+    "mock": {
+        "valid": {
+            "configuration": {
+                "provider_config": {
+                    "aws": {
+                        "name": "aws",
+                        "expressions": {
+                            "region": {
+                                "constant_value": "eu-central-1"
+                            }
+                        }
+                    }
+                },
+                "root_module": {
+                    "resources": [
+                        {
+                            "address": "aws_dms_replication_instance.value-empty",
+                            "mode": "managed",
+                            "type": "aws_dms_replication_instance",
+                            "name": "value-empty",
+                            "provider_config_key": "aws",
+                            "expressions": {
+                                "replication_instance_class": {
+                                    "constant_value": "dms.t2.micro"
+                                },
+                                "replication_instance_id": {
+                                    "constant_value": "test-dms-replication-instance-tf-empty"
+                                }
+                            },
+                            "schema_version": 0
+                        },
+                        {
+                            "address": "aws_dms_replication_instance.value-false",
+                            "mode": "managed",
+                            "type": "aws_dms_replication_instance",
+                            "name": "value-false",
+                            "provider_config_key": "aws",
+                            "expressions": {
+                                "publicly_accessible": {
+                                    "constant_value": false
+                                },
+                                "replication_instance_class": {
+                                    "constant_value": "dms.t2.micro"
+                                },
+                                "replication_instance_id": {
+                                    "constant_value": "test-dms-replication-instance-tf-false"
+                                }
+                            },
+                            "schema_version": 0
+                        }
+                    ]
+                }
+            }
+        },
+        "invalid": {
+            "configuration": {
+                "provider_config": {
+                    "aws": {
+                        "name": "aws",
+                        "expressions": {
+                            "region": {
+                                "constant_value": "eu-central-1"
+                            }
+                        }
+                    }
+                },
+                "root_module": {
+                    "resources": [
+                        {
+                            "address": "aws_dms_replication_instance.value-true",
+                            "mode": "managed",
+                            "type": "aws_dms_replication_instance",
+                            "name": "value-true",
+                            "provider_config_key": "aws",
+                            "expressions": {
+                                "publicly_accessible": {
+                                    "constant_value": true
+                                },
+                                "replication_instance_class": {
+                                    "constant_value": "dms.t2.micro"
+                                },
+                                "replication_instance_id": {
+                                    "constant_value": "test-dms-replication-instance-tf-true"
+                                }
+                            },
+                            "schema_version": 0
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

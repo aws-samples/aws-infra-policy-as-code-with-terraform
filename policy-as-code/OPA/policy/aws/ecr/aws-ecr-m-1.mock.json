@@ -1,0 +1,86 @@
+{
+  "mock": {
+    "ecr_repo_immutable": {
+      "resource_changes": [{
+		"address": "aws_ecr_repository.ecr_repo_immutable",
+		"mode": "managed",
+		"type": "aws_ecr_repository",
+		"name": "ecr_repo_immutable",
+		"provider_name": "registry.terraform.io/hashicorp/aws",
+		"change": {
+			"actions": ["create"],
+			"before": null,
+			"after": {
+				"encryption_configuration": [{
+					"encryption_type": "KMS"
+				}],
+				"image_scanning_configuration": [{
+					"scan_on_push": true
+				}],
+				"image_tag_mutability": "IMMUTABLE",
+				"name": "ecr_repo_immutable",
+				"tags": null,
+				"timeouts": null
+			},
+			"after_unknown": {
+				"arn": true,
+				"encryption_configuration": [{
+					"kms_key": true
+				}],
+				"id": true,
+				"image_scanning_configuration": [{}],
+				"registry_id": true,
+				"repository_url": true,
+				"tags_all": true
+			},
+			"before_sensitive": false,
+			"after_sensitive": {
+				"encryption_configuration": [{}],
+				"image_scanning_configuration": [{}],
+				"tags_all": {}
+			}
+		}
+      }]
+    },
+	"ecr_repo_mutable": {
+		"resource_changes": [
+			{
+				"address": "aws_ecr_repository.ecr_repo_mutable",
+				"mode": "managed",
+				"type": "aws_ecr_repository",
+				"name": "ecr_repo_mutable",
+				"provider_name": "registry.terraform.io/hashicorp/aws",
+				"change": {
+					"actions": [
+						"create"
+					],
+					"before": null,
+					"after": {
+						"encryption_configuration": [],
+						"image_scanning_configuration": [],
+						"image_tag_mutability": "MUTABLE",
+						"name": "ecr_repo_mutable",
+						"tags": null,
+						"timeouts": null
+					},
+					"after_unknown": {
+						"arn": true,
+						"encryption_configuration": [],
+						"id": true,
+						"image_scanning_configuration": [],
+						"registry_id": true,
+						"repository_url": true,
+						"tags_all": true
+					},
+					"before_sensitive": false,
+					"after_sensitive": {
+						"encryption_configuration": [],
+						"image_scanning_configuration": [],
+						"tags_all": {}
+					}
+				}
+			}
+		]
+	}
+  }
+}

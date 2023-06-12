@@ -1,0 +1,460 @@
+{
+  "mock": {
+    "valid_https_listener_protocol": {
+      "resource_changes": [
+        {
+          "address": "aws_lb_listener.example_valid_https",
+          "mode": "managed",
+          "type": "aws_lb_listener",
+          "name": "example_valid_https",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "alpn_policy": null,
+              "certificate_arn": null,
+              "default_action": [
+                {
+                  "authenticate_cognito": [],
+                  "authenticate_oidc": [],
+                  "fixed_response": [],
+                  "forward": [],
+                  "redirect": [],
+                  "target_group_arn": "arn:aws:elasticloadbalancing:eu-central-1:123456789012:targetgroup/my-targets/73e2d6bc24d8a067",
+                  "type": "forward"
+                }
+              ],
+              "load_balancer_arn": "arn:aws:elasticloadbalancing:eu-central-1:111111111111:loadbalancer/app/elb/290878bc79e7afab",
+              "port": 443,
+              "protocol": "HTTPS",
+              "tags": null,
+              "timeouts": null
+            },
+            "after_unknown": {
+              "arn": true,
+              "default_action": [
+                {
+                  "authenticate_cognito": [],
+                  "authenticate_oidc": [],
+                  "fixed_response": [],
+                  "forward": [],
+                  "order": true,
+                  "redirect": []
+                }
+              ],
+              "id": true,
+              "ssl_policy": true,
+              "tags_all": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "default_action": [
+                {
+                  "authenticate_cognito": [],
+                  "authenticate_oidc": [],
+                  "fixed_response": [],
+                  "forward": [],
+                  "redirect": []
+                }
+              ],
+              "tags_all": {}
+            }
+          }
+        }
+      ]
+    },
+    "undefined_listener_protocol": {
+      "resource_changes": [
+        {
+          "address": "aws_lb_listener.example",
+          "mode": "managed",
+          "type": "aws_lb_listener",
+          "name": "example",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "alpn_policy": null,
+              "certificate_arn": null,
+              "default_action": [
+                {
+                  "authenticate_cognito": [],
+                  "authenticate_oidc": [],
+                  "fixed_response": [],
+                  "forward": [],
+                  "redirect": [],
+                  "target_group_arn": "arn:aws:elasticloadbalancing:eu-central-1:123456789012:targetgroup/my-targets/73e2d6bc24d8a067",
+                  "type": "forward"
+                }
+              ],
+              "load_balancer_arn": "arn:aws:elasticloadbalancing:eu-central-1:111111111111:loadbalancer/app/elb/290878bc79e7afab",
+              "port": null,
+              "tags": null,
+              "timeouts": null
+            },
+            "after_unknown": {
+              "arn": true,
+              "default_action": [
+                {
+                  "authenticate_cognito": [],
+                  "authenticate_oidc": [],
+                  "fixed_response": [],
+                  "forward": [],
+                  "order": true,
+                  "redirect": []
+                }
+              ],
+              "id": true,
+              "protocol": true,
+              "ssl_policy": true,
+              "tags_all": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "default_action": [
+                {
+                  "authenticate_cognito": [],
+                  "authenticate_oidc": [],
+                  "fixed_response": [],
+                  "forward": [],
+                  "redirect": []
+                }
+              ],
+              "tags_all": {}
+            }
+          }
+        }
+      ]
+    },
+    "invalid_listener_protocol": {
+      "resource_changes": [
+        {
+          "address": "aws_lb_listener.example",
+          "mode": "managed",
+          "type": "aws_lb_listener",
+          "name": "example",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "alpn_policy": null,
+              "certificate_arn": null,
+              "default_action": [
+                {
+                  "authenticate_cognito": [],
+                  "authenticate_oidc": [],
+                  "fixed_response": [],
+                  "forward": [],
+                  "redirect": [],
+                  "target_group_arn": "arn:aws:elasticloadbalancing:eu-central-1:123456789012:targetgroup/my-targets/73e2d6bc24d8a067",
+                  "type": "forward"
+                }
+              ],
+              "load_balancer_arn": "arn:aws:elasticloadbalancing:eu-central-1:111111111111:loadbalancer/app/elb/290878bc79e7afab",
+              "port": 80,
+              "protocol": "HTTP",
+              "tags": null,
+              "timeouts": null
+            },
+            "after_unknown": {
+              "arn": true,
+              "default_action": [
+                {
+                  "authenticate_cognito": [],
+                  "authenticate_oidc": [],
+                  "fixed_response": [],
+                  "forward": [],
+                  "order": true,
+                  "redirect": []
+                }
+              ],
+              "id": true,
+              "ssl_policy": true,
+              "tags_all": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "default_action": [
+                {
+                  "authenticate_cognito": [],
+                  "authenticate_oidc": [],
+                  "fixed_response": [],
+                  "forward": [],
+                  "redirect": []
+                }
+              ],
+              "tags_all": {}
+            }
+          }
+        }
+      ]
+    },
+    "valid_tls_listener_protocol": {
+      "resource_changes": [
+        {
+          "address": "aws_lb_listener.example_valid_tls",
+          "mode": "managed",
+          "type": "aws_lb_listener",
+          "name": "example_valid_tls",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "alpn_policy": null,
+              "certificate_arn": null,
+              "default_action": [
+                {
+                  "authenticate_cognito": [],
+                  "authenticate_oidc": [],
+                  "fixed_response": [],
+                  "forward": [],
+                  "redirect": [],
+                  "target_group_arn": "arn:aws:elasticloadbalancing:eu-central-1:123456789012:targetgroup/my-targets/73e2d6bc24d8a067",
+                  "type": "forward"
+                }
+              ],
+              "load_balancer_arn": "arn:aws:elasticloadbalancing:eu-central-1:111111111111:loadbalancer/app/elb/290878bc79e7afab",
+              "port": 443,
+              "protocol": "TLS",
+              "tags": null,
+              "timeouts": null
+            },
+            "after_unknown": {
+              "arn": true,
+              "default_action": [
+                {
+                  "authenticate_cognito": [],
+                  "authenticate_oidc": [],
+                  "fixed_response": [],
+                  "forward": [],
+                  "order": true,
+                  "redirect": []
+                }
+              ],
+              "id": true,
+              "ssl_policy": true,
+              "tags_all": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "default_action": [
+                {
+                  "authenticate_cognito": [],
+                  "authenticate_oidc": [],
+                  "fixed_response": [],
+                  "forward": [],
+                  "redirect": []
+                }
+              ],
+              "tags_all": {}
+            }
+          }
+        }
+      ]
+    },
+    "valid_https_tg_protocol": {
+      "resource_changes": [
+        {
+          "address": "aws_lb_target_group.example_valid_https",
+          "mode": "managed",
+          "type": "aws_lb_target_group",
+          "name": "example_valid_https",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "connection_termination": false,
+              "deregistration_delay": "300",
+              "lambda_multi_value_headers_enabled": false,
+              "name": "tf-example-lb-tg",
+              "name_prefix": null,
+              "port": 443,
+              "protocol": "HTTPS",
+              "proxy_protocol_v2": false,
+              "slow_start": 0,
+              "tags": null,
+              "target_type": "instance",
+              "vpc_id": "vpc-69086201"
+            },
+            "after_unknown": {
+              "arn": true,
+              "arn_suffix": true,
+              "health_check": true,
+              "id": true,
+              "load_balancing_algorithm_type": true,
+              "preserve_client_ip": true,
+              "protocol_version": true,
+              "stickiness": true,
+              "tags_all": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "health_check": [],
+              "stickiness": [],
+              "tags_all": {}
+            }
+          }
+        }
+      ]
+    },
+    "undefined_tg_protocol": {
+      "resource_changes": [
+        {
+          "address": "aws_lb_target_group.example",
+          "mode": "managed",
+          "type": "aws_lb_target_group",
+          "name": "example",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "connection_termination": false,
+              "deregistration_delay": "300",
+              "lambda_multi_value_headers_enabled": false,
+              "name": "tf-example-lb-tg",
+              "name_prefix": null,
+              "port": null,
+              "protocol": null,
+              "proxy_protocol_v2": false,
+              "slow_start": 0,
+              "tags": null,
+              "target_type": "instance",
+              "vpc_id": "vpc-69086201"
+            },
+            "after_unknown": {
+              "arn": true,
+              "arn_suffix": true,
+              "health_check": true,
+              "id": true,
+              "load_balancing_algorithm_type": true,
+              "preserve_client_ip": true,
+              "protocol_version": true,
+              "stickiness": true,
+              "tags_all": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "health_check": [],
+              "stickiness": [],
+              "tags_all": {}
+            }
+          }
+        }
+      ]
+    },
+    "invalid_tg_protocol": {
+      "resource_changes": [
+        {
+          "address": "aws_lb_target_group.example",
+          "mode": "managed",
+          "type": "aws_lb_target_group",
+          "name": "example",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "connection_termination": false,
+              "deregistration_delay": "300",
+              "lambda_multi_value_headers_enabled": false,
+              "name": "tf-example-lb-tg",
+              "name_prefix": null,
+              "port": 80,
+              "protocol": "HTTP",
+              "proxy_protocol_v2": false,
+              "slow_start": 0,
+              "tags": null,
+              "target_type": "instance",
+              "vpc_id": "vpc-69086201"
+            },
+            "after_unknown": {
+              "arn": true,
+              "arn_suffix": true,
+              "health_check": true,
+              "id": true,
+              "load_balancing_algorithm_type": true,
+              "preserve_client_ip": true,
+              "protocol_version": true,
+              "stickiness": true,
+              "tags_all": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "health_check": [],
+              "stickiness": [],
+              "tags_all": {}
+            }
+          }
+        }
+      ]
+    },
+    "valid_tls_tg_protocol": {
+      "resource_changes": [
+        {
+          "address": "aws_lb_target_group.example_valid_tls",
+          "mode": "managed",
+          "type": "aws_lb_target_group",
+          "name": "example_valid_tls",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "connection_termination": false,
+              "deregistration_delay": "300",
+              "lambda_multi_value_headers_enabled": false,
+              "name": "tf-example-lb-tg",
+              "name_prefix": null,
+              "port": 443,
+              "protocol": "TLS",
+              "proxy_protocol_v2": false,
+              "slow_start": 0,
+              "tags": null,
+              "target_type": "instance",
+              "vpc_id": "vpc-69086201"
+            },
+            "after_unknown": {
+              "arn": true,
+              "arn_suffix": true,
+              "health_check": true,
+              "id": true,
+              "load_balancing_algorithm_type": true,
+              "preserve_client_ip": true,
+              "protocol_version": true,
+              "stickiness": true,
+              "tags_all": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "health_check": [],
+              "stickiness": [],
+              "tags_all": {}
+            }
+          }
+        }
+      ]
+    }
+  }
+}

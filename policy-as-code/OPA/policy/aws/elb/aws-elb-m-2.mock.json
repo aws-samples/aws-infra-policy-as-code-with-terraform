@@ -1,0 +1,148 @@
+{
+  "mock": {
+    "valid": {
+      "resource_changes": [
+        {
+          "address": "aws_lb_target_group.example_tg",
+          "mode": "managed",
+          "type": "aws_lb_target_group",
+          "name": "example_tg",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "connection_termination": false,
+              "deregistration_delay": "300",
+              "lambda_multi_value_headers_enabled": false,
+              "name": "tf-example-lb-tg",
+              "name_prefix": null,
+              "port": 443,
+              "protocol": "HTTPS",
+              "proxy_protocol_v2": false,
+              "slow_start": 0,
+              "tags": null,
+              "target_type": "instance",
+              "vpc_id": "vpc-69086201"
+            },
+            "after_unknown": {
+              "arn": true,
+              "arn_suffix": true,
+              "health_check": true,
+              "id": true,
+              "load_balancing_algorithm_type": true,
+              "preserve_client_ip": true,
+              "protocol_version": true,
+              "stickiness": true,
+              "tags_all": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "health_check": [],
+              "stickiness": [],
+              "tags_all": {}
+            }
+          }
+        }
+      ]
+    },
+    "invalid": {
+      "resource_changes": [
+        {
+          "address": "aws_lb_target_group.example_tg",
+          "mode": "managed",
+          "type": "aws_lb_target_group",
+          "name": "example_tg",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "connection_termination": true,
+              "deregistration_delay": "300",
+              "lambda_multi_value_headers_enabled": false,
+              "name": "tf-example-lb-tg",
+              "name_prefix": null,
+              "port": 443,
+              "protocol": "HTTPS",
+              "proxy_protocol_v2": false,
+              "slow_start": 0,
+              "tags": null,
+              "target_type": "instance",
+              "vpc_id": "vpc-69086201"
+            },
+            "after_unknown": {
+              "arn": true,
+              "arn_suffix": true,
+              "health_check": true,
+              "id": true,
+              "load_balancing_algorithm_type": true,
+              "preserve_client_ip": true,
+              "protocol_version": true,
+              "stickiness": true,
+              "tags_all": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "health_check": [],
+              "stickiness": [],
+              "tags_all": {}
+            }
+          }
+        }
+      ]
+    },
+    "undefined": {
+      "resource_changes": [
+        {
+          "address": "aws_lb_target_group.example_tg",
+          "mode": "managed",
+          "type": "aws_lb_target_group",
+          "name": "example_tg",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "connection_termination": false,
+              "deregistration_delay": "300",
+              "lambda_multi_value_headers_enabled": false,
+              "name": "tf-example-lb-tg",
+              "name_prefix": null,
+              "port": 443,
+              "protocol": "HTTPS",
+              "proxy_protocol_v2": false,
+              "slow_start": 0,
+              "tags": null,
+              "target_type": "instance",
+              "vpc_id": "vpc-69086201"
+            },
+            "after_unknown": {
+              "arn": true,
+              "arn_suffix": true,
+              "health_check": true,
+              "id": true,
+              "load_balancing_algorithm_type": true,
+              "preserve_client_ip": true,
+              "protocol_version": true,
+              "stickiness": true,
+              "tags_all": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "health_check": [],
+              "stickiness": [],
+              "tags_all": {}
+            }
+          }
+        }
+      ]
+    }
+  }
+}

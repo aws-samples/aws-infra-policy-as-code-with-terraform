@@ -1,0 +1,667 @@
+{
+  "mock": {
+    "valid_emr_bootstrapping": {
+      "resource_changes": [
+        {
+          "address": "aws_emr_cluster.cluster",
+          "mode": "managed",
+          "type": "aws_emr_cluster",
+          "name": "cluster",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "additional_info": null,
+              "applications": [
+                "Spark"
+              ],
+              "auto_termination_policy": [],
+              "autoscaling_role": null,
+              "bootstrap_action": [
+                {
+                  "args": [
+                    "instance.isMaster=true",
+                    "echo running on master node"
+                  ],
+                  "name": "runif",
+                  "path": "s3://elasticmapreduce/bootstrap-actions/run-if"
+                }
+              ],
+              "configurations": null,
+              "configurations_json": "[{\"Classification\":\"hadoop-env\",\"Configurations\":[{\"Classification\":\"export\",\"Properties\":{\"JAVA_HOME\":\"/usr/lib/jvm/java-1.8.0\"}}],\"Properties\":{}},{\"Classification\":\"spark-env\",\"Configurations\":[{\"Classification\":\"export\",\"Properties\":{\"JAVA_HOME\":\"/usr/lib/jvm/java-1.8.0\"}}],\"Properties\":{}}]",
+              "core_instance_group": [
+                {
+                  "autoscaling_policy": null,
+                  "bid_price": null,
+                  "instance_count": 1,
+                  "instance_type": "m5.xlarge",
+                  "name": null
+                }
+              ],
+              "custom_ami_id": null,
+              "ebs_root_volume_size": null,
+              "ec2_attributes": [
+                {
+                  "additional_master_security_groups": null,
+                  "additional_slave_security_groups": null,
+                  "key_name": null
+                }
+              ],
+              "kerberos_attributes": [],
+              "list_steps_states": null,
+              "log_encryption_kms_key_id": null,
+              "log_uri": "s3://aws-logs-123456789012-eu-central-1/elasticmapreduce/",
+              "master_instance_group": [
+                {
+                  "bid_price": null,
+                  "instance_count": 1,
+                  "instance_type": "m5.xlarge",
+                  "name": null
+                }
+              ],
+              "name": "emr-test-arn",
+              "release_label": "emr-4.6.0",
+              "security_configuration": null,
+              "step_concurrency_level": 1,
+              "tags": {
+                "dns_zone": "env_zone",
+                "env": "env",
+                "name": "name-env",
+                "role": "rolename"
+              },
+              "tags_all": {
+                "dns_zone": "env_zone",
+                "env": "env",
+                "name": "name-env",
+                "role": "rolename"
+              },
+              "visible_to_all_users": true
+            },
+            "after_unknown": {
+              "applications": [
+                false
+              ],
+              "arn": true,
+              "auto_termination_policy": [],
+              "bootstrap_action": [
+                {
+                  "args": [
+                    false,
+                    false
+                  ]
+                }
+              ],
+              "cluster_state": true,
+              "core_instance_fleet": true,
+              "core_instance_group": [
+                {
+                  "ebs_config": true,
+                  "id": true
+                }
+              ],
+              "ec2_attributes": [
+                {
+                  "emr_managed_master_security_group": true,
+                  "emr_managed_slave_security_group": true,
+                  "instance_profile": true,
+                  "service_access_security_group": true,
+                  "subnet_id": true,
+                  "subnet_ids": true
+                }
+              ],
+              "id": true,
+              "keep_job_flow_alive_when_no_steps": true,
+              "kerberos_attributes": [],
+              "master_instance_fleet": true,
+              "master_instance_group": [
+                {
+                  "ebs_config": true,
+                  "id": true
+                }
+              ],
+              "master_public_dns": true,
+              "scale_down_behavior": true,
+              "service_role": true,
+              "step": true,
+              "tags": {},
+              "tags_all": {},
+              "termination_protection": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "applications": [
+                false
+              ],
+              "auto_termination_policy": [],
+              "bootstrap_action": [
+                {
+                  "args": [
+                    false,
+                    false
+                  ]
+                }
+              ],
+              "core_instance_fleet": [],
+              "core_instance_group": [
+                {
+                  "ebs_config": []
+                }
+              ],
+              "ec2_attributes": [
+                {
+                  "subnet_ids": []
+                }
+              ],
+              "kerberos_attributes": [],
+              "master_instance_fleet": [],
+              "master_instance_group": [
+                {
+                  "ebs_config": []
+                }
+              ],
+              "step": [],
+              "tags": {},
+              "tags_all": {}
+            }
+          }
+        }
+      ]
+    },
+    "invalid_emr_bootstrapping_path": {
+      "resource_changes": [
+        {
+          "address": "aws_emr_cluster.cluster",
+          "mode": "managed",
+          "type": "aws_emr_cluster",
+          "name": "cluster",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "additional_info": null,
+              "applications": [
+                "Spark"
+              ],
+              "auto_termination_policy": [],
+              "autoscaling_role": null,
+              "bootstrap_action": [
+                {
+                  "path": "",
+                  "name": "invalid_action"
+                }
+              ],
+              "configurations": null,
+              "configurations_json": "[{\"Classification\":\"hadoop-env\",\"Configurations\":[{\"Classification\":\"export\",\"Properties\":{\"JAVA_HOME\":\"/usr/lib/jvm/java-1.8.0\"}}],\"Properties\":{}},{\"Classification\":\"spark-env\",\"Configurations\":[{\"Classification\":\"export\",\"Properties\":{\"JAVA_HOME\":\"/usr/lib/jvm/java-1.8.0\"}}],\"Properties\":{}}]",
+              "core_instance_group": [
+                {
+                  "autoscaling_policy": null,
+                  "bid_price": null,
+                  "instance_count": 1,
+                  "instance_type": "m5.xlarge",
+                  "name": null
+                }
+              ],
+              "custom_ami_id": null,
+              "ebs_root_volume_size": null,
+              "ec2_attributes": [
+                {
+                  "additional_master_security_groups": null,
+                  "additional_slave_security_groups": null,
+                  "key_name": null
+                }
+              ],
+              "kerberos_attributes": [],
+              "list_steps_states": null,
+              "log_encryption_kms_key_id": null,
+              "log_uri": null,
+              "master_instance_group": [
+                {
+                  "bid_price": null,
+                  "instance_count": 1,
+                  "instance_type": "m5.xlarge",
+                  "name": null
+                }
+              ],
+              "name": "emr-test-arn",
+              "release_label": "emr-4.6.0",
+              "security_configuration": null,
+              "step_concurrency_level": 1,
+              "tags": {
+                "dns_zone": "env_zone",
+                "env": "env",
+                "name": "name-env",
+                "role": "rolename"
+              },
+              "tags_all": {
+                "dns_zone": "env_zone",
+                "env": "env",
+                "name": "name-env",
+                "role": "rolename"
+              },
+              "visible_to_all_users": true
+            },
+            "after_unknown": {
+              "applications": [
+                false
+              ],
+              "arn": true,
+              "auto_termination_policy": [],
+              "bootstrap_action": [
+                {
+                  "args": [
+                    false,
+                    false
+                  ]
+                }
+              ],
+              "cluster_state": true,
+              "core_instance_fleet": true,
+              "core_instance_group": [
+                {
+                  "ebs_config": true,
+                  "id": true
+                }
+              ],
+              "ec2_attributes": [
+                {
+                  "emr_managed_master_security_group": true,
+                  "emr_managed_slave_security_group": true,
+                  "instance_profile": true,
+                  "service_access_security_group": true,
+                  "subnet_id": true,
+                  "subnet_ids": true
+                }
+              ],
+              "id": true,
+              "keep_job_flow_alive_when_no_steps": true,
+              "kerberos_attributes": [],
+              "master_instance_fleet": true,
+              "master_instance_group": [
+                {
+                  "ebs_config": true,
+                  "id": true
+                }
+              ],
+              "master_public_dns": true,
+              "scale_down_behavior": true,
+              "service_role": true,
+              "step": true,
+              "tags": {},
+              "tags_all": {},
+              "termination_protection": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "applications": [
+                false
+              ],
+              "auto_termination_policy": [],
+              "bootstrap_action": [
+                {
+                  "args": [
+                    false,
+                    false
+                  ]
+                }
+              ],
+              "core_instance_fleet": [],
+              "core_instance_group": [
+                {
+                  "ebs_config": []
+                }
+              ],
+              "ec2_attributes": [
+                {
+                  "subnet_ids": []
+                }
+              ],
+              "kerberos_attributes": [],
+              "master_instance_fleet": [],
+              "master_instance_group": [
+                {
+                  "ebs_config": []
+                }
+              ],
+              "step": [],
+              "tags": {},
+              "tags_all": {}
+            }
+          }
+        }
+      ]
+    },
+    "invalid_emr_bootstrapping_name": {
+      "resource_changes": [
+        {
+          "address": "aws_emr_cluster.cluster",
+          "mode": "managed",
+          "type": "aws_emr_cluster",
+          "name": "cluster",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "additional_info": null,
+              "applications": [
+                "Spark"
+              ],
+              "auto_termination_policy": [],
+              "autoscaling_role": null,
+              "bootstrap_action": [
+                {
+                  "path": "runif",
+                  "name": ""
+                }
+              ],
+              "configurations": null,
+              "configurations_json": "[{\"Classification\":\"hadoop-env\",\"Configurations\":[{\"Classification\":\"export\",\"Properties\":{\"JAVA_HOME\":\"/usr/lib/jvm/java-1.8.0\"}}],\"Properties\":{}},{\"Classification\":\"spark-env\",\"Configurations\":[{\"Classification\":\"export\",\"Properties\":{\"JAVA_HOME\":\"/usr/lib/jvm/java-1.8.0\"}}],\"Properties\":{}}]",
+              "core_instance_group": [
+                {
+                  "autoscaling_policy": null,
+                  "bid_price": null,
+                  "instance_count": 1,
+                  "instance_type": "m5.xlarge",
+                  "name": null
+                }
+              ],
+              "custom_ami_id": null,
+              "ebs_root_volume_size": null,
+              "ec2_attributes": [
+                {
+                  "additional_master_security_groups": null,
+                  "additional_slave_security_groups": null,
+                  "key_name": null
+                }
+              ],
+              "kerberos_attributes": [],
+              "list_steps_states": null,
+              "log_encryption_kms_key_id": null,
+              "log_uri": null,
+              "master_instance_group": [
+                {
+                  "bid_price": null,
+                  "instance_count": 1,
+                  "instance_type": "m5.xlarge",
+                  "name": null
+                }
+              ],
+              "name": "emr-test-arn",
+              "release_label": "emr-4.6.0",
+              "security_configuration": null,
+              "step_concurrency_level": 1,
+              "tags": {
+                "dns_zone": "env_zone",
+                "env": "env",
+                "name": "name-env",
+                "role": "rolename"
+              },
+              "tags_all": {
+                "dns_zone": "env_zone",
+                "env": "env",
+                "name": "name-env",
+                "role": "rolename"
+              },
+              "visible_to_all_users": true
+            },
+            "after_unknown": {
+              "applications": [
+                false
+              ],
+              "arn": true,
+              "auto_termination_policy": [],
+              "bootstrap_action": [
+                {
+                  "args": [
+                    false,
+                    false
+                  ]
+                }
+              ],
+              "cluster_state": true,
+              "core_instance_fleet": true,
+              "core_instance_group": [
+                {
+                  "ebs_config": true,
+                  "id": true
+                }
+              ],
+              "ec2_attributes": [
+                {
+                  "emr_managed_master_security_group": true,
+                  "emr_managed_slave_security_group": true,
+                  "instance_profile": true,
+                  "service_access_security_group": true,
+                  "subnet_id": true,
+                  "subnet_ids": true
+                }
+              ],
+              "id": true,
+              "keep_job_flow_alive_when_no_steps": true,
+              "kerberos_attributes": [],
+              "master_instance_fleet": true,
+              "master_instance_group": [
+                {
+                  "ebs_config": true,
+                  "id": true
+                }
+              ],
+              "master_public_dns": true,
+              "scale_down_behavior": true,
+              "service_role": true,
+              "step": true,
+              "tags": {},
+              "tags_all": {},
+              "termination_protection": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "applications": [
+                false
+              ],
+              "auto_termination_policy": [],
+              "bootstrap_action": [
+                {
+                  "args": [
+                    false,
+                    false
+                  ]
+                }
+              ],
+              "core_instance_fleet": [],
+              "core_instance_group": [
+                {
+                  "ebs_config": []
+                }
+              ],
+              "ec2_attributes": [
+                {
+                  "subnet_ids": []
+                }
+              ],
+              "kerberos_attributes": [],
+              "master_instance_fleet": [],
+              "master_instance_group": [
+                {
+                  "ebs_config": []
+                }
+              ],
+              "step": [],
+              "tags": {},
+              "tags_all": {}
+            }
+          }
+        }
+      ]
+    },
+    "default_bootstrapping": {
+      "resource_changes": [
+        {
+          "address": "aws_emr_cluster.cluster",
+          "mode": "managed",
+          "type": "aws_emr_cluster",
+          "name": "cluster",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "additional_info": null,
+              "applications": [
+                "Spark"
+              ],
+              "auto_termination_policy": [],
+              "autoscaling_role": null,
+              "bootstrap_action": [],
+              "configurations": null,
+              "configurations_json": "[{\"Classification\":\"hadoop-env\",\"Configurations\":[{\"Classification\":\"export\",\"Properties\":{\"JAVA_HOME\":\"/usr/lib/jvm/java-1.8.0\"}}],\"Properties\":{}},{\"Classification\":\"spark-env\",\"Configurations\":[{\"Classification\":\"export\",\"Properties\":{\"JAVA_HOME\":\"/usr/lib/jvm/java-1.8.0\"}}],\"Properties\":{}}]",
+              "core_instance_group": [
+                {
+                  "autoscaling_policy": null,
+                  "bid_price": null,
+                  "instance_count": 1,
+                  "instance_type": "m5.xlarge",
+                  "name": null
+                }
+              ],
+              "custom_ami_id": null,
+              "ebs_root_volume_size": null,
+              "ec2_attributes": [
+                {
+                  "additional_master_security_groups": null,
+                  "additional_slave_security_groups": null,
+                  "key_name": null
+                }
+              ],
+              "kerberos_attributes": [],
+              "list_steps_states": null,
+              "log_encryption_kms_key_id": null,
+              "log_uri": "",
+              "master_instance_group": [
+                {
+                  "bid_price": null,
+                  "instance_count": 1,
+                  "instance_type": "m5.xlarge",
+                  "name": null
+                }
+              ],
+              "name": "emr-test-arn",
+              "release_label": "emr-4.6.0",
+              "security_configuration": null,
+              "step_concurrency_level": 1,
+              "tags": {
+                "dns_zone": "env_zone",
+                "env": "env",
+                "name": "name-env",
+                "role": "rolename"
+              },
+              "tags_all": {
+                "dns_zone": "env_zone",
+                "env": "env",
+                "name": "name-env",
+                "role": "rolename"
+              },
+              "visible_to_all_users": true
+            },
+            "after_unknown": {
+              "applications": [
+                false
+              ],
+              "arn": true,
+              "auto_termination_policy": [],
+              "bootstrap_action": [
+                {
+                  "args": [
+                    false,
+                    false
+                  ]
+                }
+              ],
+              "cluster_state": true,
+              "core_instance_fleet": true,
+              "core_instance_group": [
+                {
+                  "ebs_config": true,
+                  "id": true
+                }
+              ],
+              "ec2_attributes": [
+                {
+                  "emr_managed_master_security_group": true,
+                  "emr_managed_slave_security_group": true,
+                  "instance_profile": true,
+                  "service_access_security_group": true,
+                  "subnet_id": true,
+                  "subnet_ids": true
+                }
+              ],
+              "id": true,
+              "keep_job_flow_alive_when_no_steps": true,
+              "kerberos_attributes": [],
+              "master_instance_fleet": true,
+              "master_instance_group": [
+                {
+                  "ebs_config": true,
+                  "id": true
+                }
+              ],
+              "master_public_dns": true,
+              "scale_down_behavior": true,
+              "service_role": true,
+              "step": true,
+              "tags": {},
+              "tags_all": {},
+              "termination_protection": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "applications": [
+                false
+              ],
+              "auto_termination_policy": [],
+              "bootstrap_action": [
+                {
+                  "args": [
+                    false,
+                    false
+                  ]
+                }
+              ],
+              "core_instance_fleet": [],
+              "core_instance_group": [
+                {
+                  "ebs_config": []
+                }
+              ],
+              "ec2_attributes": [
+                {
+                  "subnet_ids": []
+                }
+              ],
+              "kerberos_attributes": [],
+              "master_instance_fleet": [],
+              "master_instance_group": [
+                {
+                  "ebs_config": []
+                }
+              ],
+              "step": [],
+              "tags": {},
+              "tags_all": {}
+            }
+          }
+        }
+      ]
+    }
+  }
+}

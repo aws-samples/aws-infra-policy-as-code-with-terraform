@@ -1,0 +1,229 @@
+{
+  "mock": {
+    "route53_compliant_logs_hard_coded": {
+      "resource_changes": [
+        {
+          "address": "aws_route53_resolver_query_log_config.route53_compliant_logs_hard_coded",
+          "mode": "managed",
+          "type": "aws_route53_resolver_query_log_config",
+          "name": "route53_compliant_logs_hard_coded",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "destination_arn": "arn:aws:logs:us-east-1:123456789012:destination:testDestination",
+              "name": "route53-compliant-logs-referenced",
+              "tags": null
+            },
+            "after_unknown": {
+              "arn": true,
+              "id": true,
+              "owner_id": true,
+              "share_status": true,
+              "tags_all": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "tags_all": {}
+            }
+          }
+        }
+      ],
+      "configuration": {
+        "root_module": {
+          "resources": [
+            {
+              "address": "aws_route53_resolver_query_log_config.route53_compliant_logs_hard_coded",
+              "mode": "managed",
+              "type": "aws_route53_resolver_query_log_config",
+              "name": "route53_compliant_logs_hard_coded",
+              "provider_config_key": "aws",
+              "expressions": {
+                "destination_arn": {
+                  "constant_value": "arn:aws:logs:us-east-1:123456789012:destination:testDestination"
+                },
+                "name": {
+                  "constant_value": "route53-compliant-logs-referenced"
+                }
+              },
+              "schema_version": 0
+            }
+          ]
+        }
+      }
+    },
+    "route53_compliant_logs_referenced": {
+      "resource_changes": [
+        {
+          "address": "aws_route53_resolver_query_log_config.route53_compliant_logs_referenced",
+          "mode": "managed",
+          "type": "aws_route53_resolver_query_log_config",
+          "name": "route53_compliant_logs_referenced",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "name": "route53_compliant_logs_hard_coded",
+              "tags": null
+            },
+            "after_unknown": {
+              "arn": true,
+              "id": true,
+              "owner_id": true,
+              "share_status": true,
+              "tags_all": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "tags_all": {}
+            }
+          }
+        }
+      ],
+      "configuration": {
+        "root_module": {
+          "resources": [
+            {
+              "address": "aws_route53_resolver_query_log_config.route53_compliant_logs_referenced",
+              "mode": "managed",
+              "type": "aws_route53_resolver_query_log_config",
+              "name": "route53_compliant_logs_referenced",
+              "provider_config_key": "aws",
+              "expressions": {
+                "destination_arn": {
+                  "references": [
+                    "aws_cloudwatch_log_group.aws_route53_example_com.arn",
+                    "aws_cloudwatch_log_group.aws_route53_example_com"
+                  ]
+                },
+                "name": {
+                  "constant_value": "route53_compliant_logs_hard_coded"
+                }
+              },
+              "schema_version": 0
+            }
+          ]
+        }
+      }
+    },
+    "route53_non_compliant_logs_hard_coded": {
+      "resource_changes": [
+        {
+          "address": "aws_route53_resolver_query_log_config.route53_non_compliant_logs_hard_coded",
+          "mode": "managed",
+          "type": "aws_route53_resolver_query_log_config",
+          "name": "route53_non_compliant_logs_hard_coded",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "destination_arn": "arn:aws:s3:::example",
+              "name": "route53-non-compliant-logs-referenced",
+              "tags": null
+            },
+            "after_unknown": {
+              "arn": true,
+              "id": true,
+              "owner_id": true,
+              "share_status": true,
+              "tags_all": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "tags_all": {}
+            }
+          }
+        }
+      ],
+      "configuration": {
+        "root_module": {
+          "resources": [
+            {
+              "address": "aws_route53_resolver_query_log_config.route53_non_compliant_logs_hard_coded",
+              "mode": "managed",
+              "type": "aws_route53_resolver_query_log_config",
+              "name": "route53_non_compliant_logs_hard_coded",
+              "provider_config_key": "aws",
+              "expressions": {
+                "destination_arn": {
+                  "constant_value": "arn:aws:s3:::example"
+                },
+                "name": {
+                  "constant_value": "route53-non-compliant-logs-referenced"
+                }
+              },
+              "schema_version": 0
+            }
+          ]
+        }
+      }
+    },
+    "route53_non_compliant_logs_referenced": {
+      "resource_changes": [
+        {
+          "address": "aws_route53_resolver_query_log_config.route53_non_compliant_logs_referenced",
+          "mode": "managed",
+          "type": "aws_route53_resolver_query_log_config",
+          "name": "route53_non_compliant_logs_referenced",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "destination_arn": "arn:aws:s3:::example",
+              "name": "route53-non-compliant-logs-referenced",
+              "tags": null
+            },
+            "after_unknown": {
+              "arn": true,
+              "id": true,
+              "owner_id": true,
+              "share_status": true,
+              "tags_all": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "tags_all": {}
+            }
+          }
+        }
+      ],
+      "configuration": {
+        "root_module": {
+          "resources": [
+            {
+              "address": "aws_route53_resolver_query_log_config.route53_non_compliant_logs_referenced",
+              "mode": "managed",
+              "type": "aws_route53_resolver_query_log_config",
+              "name": "route53_non_compliant_logs_referenced",
+              "provider_config_key": "aws",
+              "expressions": {
+                "destination_arn": {
+                  "references": [
+                    "aws_s3_bucket.example.arn",
+                    "aws_s3_bucket.example"
+                  ]
+                },
+                "name": {
+                  "constant_value": "route53-non-compliant-logs-referenced"
+                }
+              },
+              "schema_version": 0
+            }
+          ]
+        }
+      }
+    }
+  }
+}

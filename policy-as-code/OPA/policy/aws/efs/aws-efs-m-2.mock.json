@@ -1,0 +1,892 @@
+{
+  "mock": {
+    "valid_referenced": {
+      "resource_changes": [
+        {
+          "address": "aws_efs_mount_target.alpha",
+          "mode": "managed",
+          "type": "aws_efs_mount_target",
+          "name": "alpha",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {},
+            "after_unknown": {
+              "availability_zone_id": true,
+              "availability_zone_name": true,
+              "dns_name": true,
+              "file_system_arn": true,
+              "file_system_id": true,
+              "id": true,
+              "ip_address": true,
+              "mount_target_dns_name": true,
+              "network_interface_id": true,
+              "owner_id": true,
+              "security_groups": true,
+              "subnet_id": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "security_groups": []
+            }
+          }
+        },
+        {
+      "address": "aws_security_group.allow_tls",
+      "mode": "managed",
+      "type": "aws_security_group",
+      "name": "allow_tls",
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "before": null,
+        "after": {
+          "description": "Allow TLS inbound traffic",
+          "egress": [
+            {
+              "cidr_blocks": [
+                "0.0.0.0/0"
+              ],
+              "description": "",
+              "from_port": 0,
+              "ipv6_cidr_blocks": [
+                "::/0"
+              ],
+              "prefix_list_ids": [],
+              "protocol": "-1",
+              "security_groups": [],
+              "self": false,
+              "to_port": 0
+            }
+          ],
+          "ingress": [
+            {
+              "cidr_blocks": [
+                "10.0.0.0/16"
+              ],
+              "description": "TLS from VPC",
+              "from_port": 2049,
+              "prefix_list_ids": [],
+              "protocol": "tcp",
+              "security_groups": [],
+              "self": false,
+              "to_port": 2049
+            },
+            {
+              "cidr_blocks": [
+                "0.0.0.0/0"
+              ],
+              "description": "TLS from VPC",
+              "from_port": 443,
+              "prefix_list_ids": [],
+              "protocol": "tcp",
+              "security_groups": [],
+              "self": false,
+              "to_port": 443
+            }
+          ],
+          "name": "allow_tls",
+          "revoke_rules_on_delete": false,
+          "tags": {
+            "Name": "allow_tls"
+          },
+          "tags_all": {
+            "Name": "allow_tls"
+          },
+          "timeouts": null
+        },
+        "after_unknown": {
+          "arn": true,
+          "egress": [
+            {
+              "cidr_blocks": [
+                false
+              ],
+              "ipv6_cidr_blocks": [
+                false
+              ],
+              "prefix_list_ids": [],
+              "security_groups": []
+            }
+          ],
+          "id": true,
+          "ingress": [
+            {
+              "cidr_blocks": [
+                false
+              ],
+              "ipv6_cidr_blocks": true,
+              "prefix_list_ids": [],
+              "security_groups": []
+            }
+          ],
+          "name_prefix": true,
+          "owner_id": true,
+          "tags": {},
+          "tags_all": {},
+          "vpc_id": true
+        },
+        "before_sensitive": false,
+        "after_sensitive": {
+          "egress": [
+            {
+              "cidr_blocks": [
+                false
+              ],
+              "ipv6_cidr_blocks": [
+                false
+              ],
+              "prefix_list_ids": [],
+              "security_groups": []
+            }
+          ],
+          "ingress": [
+            {
+              "cidr_blocks": [
+                false
+              ],
+              "ipv6_cidr_blocks": [],
+              "prefix_list_ids": [],
+              "security_groups": []
+            }
+          ],
+          "tags": {},
+          "tags_all": {}
+        }
+      }
+    }
+      ],
+      "configuration": {
+        "root_module": {
+          "resources": [
+            {
+              "address": "aws_efs_mount_target.alpha",
+              "mode": "managed",
+              "type": "aws_efs_mount_target",
+              "name": "alpha",
+              "provider_config_key": "aws",
+              "expressions": {
+                "file_system_id": {
+                  "references": [
+                    "aws_efs_file_system.test.id",
+                    "aws_efs_file_system.test"
+                  ]
+                },
+                "security_groups": {
+                  "references": [
+                    "aws_security_group.allow_tls.id",
+                    "aws_security_group.allow_tls"
+                  ]
+                },
+                "subnet_id": {
+                  "references": [
+                    "aws_subnet.main.id",
+                    "aws_subnet.main"
+                  ]
+                }
+              },
+              "schema_version": 0
+            }
+          ]
+        }
+      }
+    },
+    "valid_constant": {
+      "resource_changes": [
+        {
+          "address": "aws_efs_mount_target.alpha",
+          "mode": "managed",
+          "type": "aws_efs_mount_target",
+          "name": "alpha",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "security_groups": [
+                "sg-0e593aea6c2472403"
+              ],
+              "subnet_id": "subnet-001af3448848a2194"
+            },
+            "after_unknown": {
+              "availability_zone_id": true,
+              "availability_zone_name": true,
+              "dns_name": true,
+              "file_system_arn": true,
+              "file_system_id": true,
+              "id": true,
+              "ip_address": true,
+              "mount_target_dns_name": true,
+              "network_interface_id": true,
+              "owner_id": true,
+              "security_groups": [
+                false
+              ]
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "security_groups": [
+                false
+              ]
+            }
+          }
+        }
+      ],
+      "configuration": {
+        "root_module": {
+          "resources": [
+            {
+              "address": "aws_efs_mount_target.alpha",
+              "mode": "managed",
+              "type": "aws_efs_mount_target",
+              "name": "alpha",
+              "provider_config_key": "aws",
+              "expressions": {
+                "file_system_id": {
+                  "references": [
+                    "aws_efs_file_system.test.id",
+                    "aws_efs_file_system.test"
+                  ]
+                },
+                "security_groups": {
+                  "references": [
+                    "var.security_group_ids"
+                  ]
+                },
+                "subnet_id": {
+                  "references": [
+                    "var.subnet_id"
+                  ]
+                }
+              },
+              "schema_version": 0
+            }
+          ]
+        }
+      }
+    },
+    "default_settings": {
+      "resource_changes": [
+        {
+          "address": "aws_efs_mount_target.alpha",
+          "mode": "managed",
+          "type": "aws_efs_mount_target",
+          "name": "alpha",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "subnet_id": "subnet-001af3448848a2194"
+            },
+            "after_unknown": {
+              "availability_zone_id": true,
+              "availability_zone_name": true,
+              "dns_name": true,
+              "file_system_arn": true,
+              "file_system_id": true,
+              "id": true,
+              "ip_address": true,
+              "mount_target_dns_name": true,
+              "network_interface_id": true,
+              "owner_id": true,
+              "security_groups": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "security_groups": []
+            }
+          }
+        }
+      ],
+      "configuration": {
+        "root_module": {
+          "resources": [
+            {
+              "address": "aws_efs_mount_target.alpha",
+              "mode": "managed",
+              "type": "aws_efs_mount_target",
+              "name": "alpha",
+              "provider_config_key": "aws",
+              "expressions": {
+                "file_system_id": {
+                  "references": [
+                    "aws_efs_file_system.test.id",
+                    "aws_efs_file_system.test"
+                  ]
+                },
+                "subnet_id": {
+                  "references": [
+                    "var.subnet_id"
+                  ]
+                }
+              },
+              "schema_version": 0
+            }
+          ]
+        }
+      }
+    },
+    "invalid_sg_ref_port": {
+      "resource_changes": [
+        {
+          "address": "aws_efs_mount_target.alpha",
+          "mode": "managed",
+          "type": "aws_efs_mount_target",
+          "name": "alpha",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {},
+            "after_unknown": {
+              "availability_zone_id": true,
+              "availability_zone_name": true,
+              "dns_name": true,
+              "file_system_arn": true,
+              "file_system_id": true,
+              "id": true,
+              "ip_address": true,
+              "mount_target_dns_name": true,
+              "network_interface_id": true,
+              "owner_id": true,
+              "security_groups": true,
+              "subnet_id": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "security_groups": []
+            }
+          }
+        },
+        {
+      "address": "aws_security_group.allow_tls",
+      "mode": "managed",
+      "type": "aws_security_group",
+      "name": "allow_tls",
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "before": null,
+        "after": {
+          "description": "Allow TLS inbound traffic",
+          "egress": [
+            {
+              "cidr_blocks": [
+                "0.0.0.0/0"
+              ],
+              "description": "",
+              "from_port": 0,
+              "ipv6_cidr_blocks": [
+                "::/0"
+              ],
+              "prefix_list_ids": [],
+              "protocol": "-1",
+              "security_groups": [],
+              "self": false,
+              "to_port": 0
+            }
+          ],
+          "ingress": [
+            {
+              "cidr_blocks": [
+                "10.0.0.0/16"
+              ],
+              "description": "TLS from VPC",
+              "from_port": 443,
+              "prefix_list_ids": [],
+              "protocol": "tcp",
+              "security_groups": [],
+              "self": false,
+              "to_port": 443
+            }
+          ],
+          "name": "allow_tls",
+          "revoke_rules_on_delete": false,
+          "tags": {
+            "Name": "allow_tls"
+          },
+          "tags_all": {
+            "Name": "allow_tls"
+          },
+          "timeouts": null
+        },
+        "after_unknown": {
+          "arn": true,
+          "egress": [
+            {
+              "cidr_blocks": [
+                false
+              ],
+              "ipv6_cidr_blocks": [
+                false
+              ],
+              "prefix_list_ids": [],
+              "security_groups": []
+            }
+          ],
+          "id": true,
+          "ingress": [
+            {
+              "cidr_blocks": [
+                false
+              ],
+              "ipv6_cidr_blocks": true,
+              "prefix_list_ids": [],
+              "security_groups": []
+            }
+          ],
+          "name_prefix": true,
+          "owner_id": true,
+          "tags": {},
+          "tags_all": {},
+          "vpc_id": true
+        },
+        "before_sensitive": false,
+        "after_sensitive": {
+          "egress": [
+            {
+              "cidr_blocks": [
+                false
+              ],
+              "ipv6_cidr_blocks": [
+                false
+              ],
+              "prefix_list_ids": [],
+              "security_groups": []
+            }
+          ],
+          "ingress": [
+            {
+              "cidr_blocks": [
+                false
+              ],
+              "ipv6_cidr_blocks": [],
+              "prefix_list_ids": [],
+              "security_groups": []
+            }
+          ],
+          "tags": {},
+          "tags_all": {}
+        }
+      }
+    }
+      ],
+      "configuration": {
+        "root_module": {
+          "resources": [
+            {
+              "address": "aws_efs_mount_target.alpha",
+              "mode": "managed",
+              "type": "aws_efs_mount_target",
+              "name": "alpha",
+              "provider_config_key": "aws",
+              "expressions": {
+                "file_system_id": {
+                  "references": [
+                    "aws_efs_file_system.test.id",
+                    "aws_efs_file_system.test"
+                  ]
+                },
+                "security_groups": {
+                  "references": [
+                    "aws_security_group.allow_tls.id",
+                    "aws_security_group.allow_tls"
+                  ]
+                },
+                "subnet_id": {
+                  "references": [
+                    "aws_subnet.main.id",
+                    "aws_subnet.main"
+                  ]
+                }
+              },
+              "schema_version": 0
+            }
+          ]
+        }
+      }
+    },
+    "invalid_sg_ref_cidr": {
+      "resource_changes": [
+        {
+          "address": "aws_efs_mount_target.alpha",
+          "mode": "managed",
+          "type": "aws_efs_mount_target",
+          "name": "alpha",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {},
+            "after_unknown": {
+              "availability_zone_id": true,
+              "availability_zone_name": true,
+              "dns_name": true,
+              "file_system_arn": true,
+              "file_system_id": true,
+              "id": true,
+              "ip_address": true,
+              "mount_target_dns_name": true,
+              "network_interface_id": true,
+              "owner_id": true,
+              "security_groups": true,
+              "subnet_id": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "security_groups": []
+            }
+          }
+        },
+        {
+      "address": "aws_security_group.allow_tls",
+      "mode": "managed",
+      "type": "aws_security_group",
+      "name": "allow_tls",
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "before": null,
+        "after": {
+          "description": "Allow TLS inbound traffic",
+          "egress": [
+            {
+              "cidr_blocks": [
+                "0.0.0.0/0"
+              ],
+              "description": "",
+              "from_port": 0,
+              "ipv6_cidr_blocks": [
+                "::/0"
+              ],
+              "prefix_list_ids": [],
+              "protocol": "-1",
+              "security_groups": [],
+              "self": false,
+              "to_port": 0
+            }
+          ],
+          "ingress": [
+            {
+              "cidr_blocks": [
+                "0.0.0.0/0"
+              ],
+              "description": "TLS from VPC",
+              "from_port": 2049,
+              "prefix_list_ids": [],
+              "protocol": "tcp",
+              "security_groups": [],
+              "self": false,
+              "to_port": 2049
+            }
+          ],
+          "name": "allow_tls",
+          "revoke_rules_on_delete": false,
+          "tags": {
+            "Name": "allow_tls"
+          },
+          "tags_all": {
+            "Name": "allow_tls"
+          },
+          "timeouts": null
+        },
+        "after_unknown": {
+          "arn": true,
+          "egress": [
+            {
+              "cidr_blocks": [
+                false
+              ],
+              "ipv6_cidr_blocks": [
+                false
+              ],
+              "prefix_list_ids": [],
+              "security_groups": []
+            }
+          ],
+          "id": true,
+          "ingress": [
+            {
+              "cidr_blocks": [
+                false
+              ],
+              "ipv6_cidr_blocks": true,
+              "prefix_list_ids": [],
+              "security_groups": []
+            }
+          ],
+          "name_prefix": true,
+          "owner_id": true,
+          "tags": {},
+          "tags_all": {},
+          "vpc_id": true
+        },
+        "before_sensitive": false,
+        "after_sensitive": {
+          "egress": [
+            {
+              "cidr_blocks": [
+                false
+              ],
+              "ipv6_cidr_blocks": [
+                false
+              ],
+              "prefix_list_ids": [],
+              "security_groups": []
+            }
+          ],
+          "ingress": [
+            {
+              "cidr_blocks": [
+                false
+              ],
+              "ipv6_cidr_blocks": [],
+              "prefix_list_ids": [],
+              "security_groups": []
+            }
+          ],
+          "tags": {},
+          "tags_all": {}
+        }
+      }
+    }
+      ],
+      "configuration": {
+        "root_module": {
+          "resources": [
+            {
+              "address": "aws_efs_mount_target.alpha",
+              "mode": "managed",
+              "type": "aws_efs_mount_target",
+              "name": "alpha",
+              "provider_config_key": "aws",
+              "expressions": {
+                "file_system_id": {
+                  "references": [
+                    "aws_efs_file_system.test.id",
+                    "aws_efs_file_system.test"
+                  ]
+                },
+                "security_groups": {
+                  "references": [
+                    "aws_security_group.allow_tls.id",
+                    "aws_security_group.allow_tls"
+                  ]
+                },
+                "subnet_id": {
+                  "references": [
+                    "aws_subnet.main.id",
+                    "aws_subnet.main"
+                  ]
+                }
+              },
+              "schema_version": 0
+            }
+          ]
+        }
+      }
+    },
+    "invalid_sg_ref_cidr2": {
+      "resource_changes": [
+        {
+          "address": "aws_efs_mount_target.alpha",
+          "mode": "managed",
+          "type": "aws_efs_mount_target",
+          "name": "alpha",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {},
+            "after_unknown": {
+              "availability_zone_id": true,
+              "availability_zone_name": true,
+              "dns_name": true,
+              "file_system_arn": true,
+              "file_system_id": true,
+              "id": true,
+              "ip_address": true,
+              "mount_target_dns_name": true,
+              "network_interface_id": true,
+              "owner_id": true,
+              "security_groups": true,
+              "subnet_id": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "security_groups": []
+            }
+          }
+        },
+        {
+      "address": "aws_security_group.allow_tls",
+      "mode": "managed",
+      "type": "aws_security_group",
+      "name": "allow_tls",
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "before": null,
+        "after": {
+          "description": "Allow TLS inbound traffic",
+          "egress": [
+            {
+              "cidr_blocks": [
+                "0.0.0.0/0"
+              ],
+              "description": "",
+              "from_port": 0,
+              "ipv6_cidr_blocks": [
+                "::/0"
+              ],
+              "prefix_list_ids": [],
+              "protocol": "-1",
+              "security_groups": [],
+              "self": false,
+              "to_port": 0
+            }
+          ],
+          "ingress": [
+            {
+              "cidr_blocks": [
+                "10.0.0.0/8"
+              ],
+              "description": "TLS from VPC",
+              "from_port": 2049,
+              "prefix_list_ids": [],
+              "protocol": "tcp",
+              "security_groups": [],
+              "self": false,
+              "to_port": 2049
+            }
+          ],
+          "name": "allow_tls",
+          "revoke_rules_on_delete": false,
+          "tags": {
+            "Name": "allow_tls"
+          },
+          "tags_all": {
+            "Name": "allow_tls"
+          },
+          "timeouts": null
+        },
+        "after_unknown": {
+          "arn": true,
+          "egress": [
+            {
+              "cidr_blocks": [
+                false
+              ],
+              "ipv6_cidr_blocks": [
+                false
+              ],
+              "prefix_list_ids": [],
+              "security_groups": []
+            }
+          ],
+          "id": true,
+          "ingress": [
+            {
+              "cidr_blocks": [
+                false
+              ],
+              "ipv6_cidr_blocks": true,
+              "prefix_list_ids": [],
+              "security_groups": []
+            }
+          ],
+          "name_prefix": true,
+          "owner_id": true,
+          "tags": {},
+          "tags_all": {},
+          "vpc_id": true
+        },
+        "before_sensitive": false,
+        "after_sensitive": {
+          "egress": [
+            {
+              "cidr_blocks": [
+                false
+              ],
+              "ipv6_cidr_blocks": [
+                false
+              ],
+              "prefix_list_ids": [],
+              "security_groups": []
+            }
+          ],
+          "ingress": [
+            {
+              "cidr_blocks": [
+                false
+              ],
+              "ipv6_cidr_blocks": [],
+              "prefix_list_ids": [],
+              "security_groups": []
+            }
+          ],
+          "tags": {},
+          "tags_all": {}
+        }
+      }
+    }
+      ],
+      "configuration": {
+        "root_module": {
+          "resources": [
+            {
+              "address": "aws_efs_mount_target.alpha",
+              "mode": "managed",
+              "type": "aws_efs_mount_target",
+              "name": "alpha",
+              "provider_config_key": "aws",
+              "expressions": {
+                "file_system_id": {
+                  "references": [
+                    "aws_efs_file_system.test.id",
+                    "aws_efs_file_system.test"
+                  ]
+                },
+                "security_groups": {
+                  "references": [
+                    "aws_security_group.allow_tls.id",
+                    "aws_security_group.allow_tls"
+                  ]
+                },
+                "subnet_id": {
+                  "references": [
+                    "aws_subnet.main.id",
+                    "aws_subnet.main"
+                  ]
+                }
+              },
+              "schema_version": 0
+            }
+          ]
+        }
+      }
+    }
+  }
+}

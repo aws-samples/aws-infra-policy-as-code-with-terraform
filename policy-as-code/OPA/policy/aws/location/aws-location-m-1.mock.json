@@ -1,0 +1,262 @@
+{
+  "mock": {
+    "valid_kms_key_referenced": {
+      "resource_changes": [
+        {
+          "address": "aws_kms_key.location_kms",
+          "mode": "managed",
+          "type": "aws_kms_key",
+          "name": "location_kms",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "bypass_policy_lockout_safety_check": false,
+              "customer_master_key_spec": "SYMMETRIC_DEFAULT",
+              "deletion_window_in_days": 30,
+              "description": "Key used to encryption at rest using KMS for location service ",
+              "enable_key_rotation": true,
+              "is_enabled": true,
+              "key_usage": "ENCRYPT_DECRYPT",
+              "policy": "{\n  \"Version\": \"2012-10-17\",\n  \"Statement\": [\n    {\n      \"Sid\": \"Enable IAM User Permissions\",\n      \"Effect\": \"Allow\",\n      \"Action\": \"kms:*\",\n      \"Resource\": \"*\",\n      \"Principal\": {\n        \"AWS\": \"arn:aws:iam::123456789012:root\"\n      }\n    },\n    {\n      \"Sid\": \"Allow use of key for infrastructure roles within organization\",\n      \"Effect\": \"Allow\",\n      \"Action\": [\n        \"kms:ReEncrypt*\",\n        \"kms:GenerateDataKey*\",\n        \"kms:Encrypt\",\n        \"kms:DescribeKey\",\n        \"kms:Decrypt\",\n        \"kms:CreateGrant\"\n      ],\n      \"Resource\": \"*\",\n      \"Principal\": {\n        \"AWS\": \"*\"\n      },\n      \"Condition\": {\n        \"StringEquals\": {\n          \"aws:PrincipalOrgID\": \"o-zg96uysx1e\"\n        },\n        \"StringLike\": {\n          \"aws:PrincipalArn\": [\n            \"arn:aws:iam::*:role/infra/SecurityManager\",\n            \"arn:aws:iam::*:role/infra/CloudManager\",\n            \"arn:aws:iam::*:role/infra/Configurator\"\n          ]\n        }\n      }\n    }\n  ]\n}",
+              "tags": {
+                "infra": "true"
+              },
+              "tags_all": {
+                "infra": "true"
+              }
+            },
+            "after_unknown": {
+              "arn": true,
+              "id": true,
+              "key_id": true,
+              "multi_region": true,
+              "tags": {},
+              "tags_all": {}
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "tags": {},
+              "tags_all": {}
+            }
+          }
+        },
+        {
+          "address": "aws_location_geofence_collection.test-collection",
+          "mode": "managed",
+          "type": "aws_location_geofence_collection",
+          "name": "test-collection",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "collection_name": "test-collection",
+              "description": null,
+              "tags": null,
+              "timeouts": null
+            },
+            "after_unknown": {
+              "collection_arn": true,
+              "create_time": true,
+              "id": true,
+              "kms_key_id": true,
+              "tags_all": true,
+              "update_time": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "tags_all": {}
+            }
+          }
+        },
+        {
+          "address": "aws_location_tracker.test-tracker",
+          "mode": "managed",
+          "type": "aws_location_tracker",
+          "name": "test-tracker",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "description": null,
+              "position_filtering": "TimeBased",
+              "tags": null,
+              "tracker_name": "test-tracker"
+            },
+            "after_unknown": {
+              "create_time": true,
+              "id": true,
+              "kms_key_id": true,
+              "tags_all": true,
+              "tracker_arn": true,
+              "update_time": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "tags_all": {}
+            }
+          }
+        }
+      ]
+    },
+    "valid_kms_key_constant": {
+      "resource_changes": [
+        {
+          "address": "aws_kms_key.location_kms",
+          "mode": "managed",
+          "type": "aws_kms_key",
+          "name": "location_kms",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "no-op"
+            ],
+            "before": null,
+            "after": null,
+            "after_unknown": {},
+            "before_sensitive": false,
+            "after_sensitive": false
+          },
+          "action_reason": "delete_because_no_resource_config"
+        },
+        {
+          "address": "aws_location_geofence_collection.test-collection",
+          "mode": "managed",
+          "type": "aws_location_geofence_collection",
+          "name": "test-collection",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "collection_name": "test-collection",
+              "description": null,
+              "kms_key_id": "arn:aws:kms:us-east-1:123456789012:key/e802dd93-711c-4d2c-b762-17d1f185a844",
+              "tags": null,
+              "timeouts": null
+            },
+            "after_unknown": {
+              "collection_arn": true,
+              "create_time": true,
+              "id": true,
+              "tags_all": true,
+              "update_time": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "tags_all": {}
+            }
+          }
+        },
+        {
+          "address": "aws_location_tracker.test-tracker",
+          "mode": "managed",
+          "type": "aws_location_tracker",
+          "name": "test-tracker",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "description": null,
+              "kms_key_id": "arn:aws:kms:us-east-1:123456789012:key/e802dd93-711c-4d2c-b762-17d1f185a844",
+              "position_filtering": "TimeBased",
+              "tags": null,
+              "tracker_name": "test-tracker"
+            },
+            "after_unknown": {
+              "create_time": true,
+              "id": true,
+              "tags_all": true,
+              "tracker_arn": true,
+              "update_time": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "tags_all": {}
+            }
+          }
+        }
+      ]
+    },
+    "invalid_kms_key_not_set": {
+      "resource_changes": [
+        {
+          "address": "aws_location_geofence_collection.test-collection",
+          "mode": "managed",
+          "type": "aws_location_geofence_collection",
+          "name": "test-collection",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "collection_name": "test-collection",
+              "description": null,
+              "kms_key_id": null,
+              "tags": null,
+              "timeouts": null
+            },
+            "after_unknown": {
+              "collection_arn": true,
+              "create_time": true,
+              "id": true,
+              "tags_all": true,
+              "update_time": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "tags_all": {}
+            }
+          }
+        },
+        {
+          "address": "aws_location_tracker.test-tracker",
+          "mode": "managed",
+          "type": "aws_location_tracker",
+          "name": "test-tracker",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "description": null,
+              "kms_key_id": null,
+              "position_filtering": "TimeBased",
+              "tags": null,
+              "tracker_name": "test-tracker"
+            },
+            "after_unknown": {
+              "create_time": true,
+              "id": true,
+              "tags_all": true,
+              "tracker_arn": true,
+              "update_time": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "tags_all": {}
+            }
+          }
+        }
+      ]
+    }
+  }
+}

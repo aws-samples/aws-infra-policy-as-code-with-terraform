@@ -1,0 +1,186 @@
+{
+	"mock": {
+		"valid": {
+			"configuration": {
+				"provider_config": {
+					"aws": {
+						"name": "aws",
+						"expressions": {
+							"region": {
+								"constant_value": "eu-central-1"
+							}
+						}
+					}
+				},
+				"root_module": {
+					"resources": [
+						{
+							"address": "aws_dms_replication_instance.test",
+							"mode": "managed",
+							"type": "aws_dms_replication_instance",
+							"name": "test",
+							"provider_config_key": "aws",
+							"expressions": {
+								"allocated_storage": {
+									"constant_value": 20
+								},
+								"apply_immediately": {
+									"constant_value": true
+								},
+								"auto_minor_version_upgrade": {
+									"constant_value": true
+								},
+								"availability_zone": {
+									"constant_value": "us-west-2c"
+								},
+								"engine_version": {
+									"constant_value": "3.1.4"
+								},
+								"kms_key_arn": {
+									"constant_value": "arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012"
+								},
+								"multi_az": {
+									"constant_value": false
+								},
+								"preferred_maintenance_window": {
+									"constant_value": "sun:10:30-sun:14:30"
+								},
+								"publicly_accessible": {
+									"constant_value": true
+								},
+								"replication_instance_class": {
+									"constant_value": "dms.t2.micro"
+								},
+								"replication_instance_id": {
+									"constant_value": "test-dms-replication-instance-tf"
+								}
+							},
+							"schema_version": 0
+						}
+					]
+				}
+			}
+		},
+		"invalid": [
+			{
+				"configuration": {
+					"provider_config": {
+						"aws": {
+							"name": "aws",
+							"expressions": {
+								"region": {
+									"constant_value": "eu-central-1"
+								}
+							}
+						}
+					},
+					"root_module": {
+						"resources": [
+							{
+								"address": "aws_dms_replication_instance.test_missing",
+								"mode": "managed",
+								"type": "aws_dms_replication_instance",
+								"name": "test_missing",
+								"provider_config_key": "aws",
+								"expressions": {
+									"allocated_storage": {
+										"constant_value": 20
+									},
+									"apply_immediately": {
+										"constant_value": true
+									},
+									"availability_zone": {
+										"constant_value": "us-west-2c"
+									},
+									"engine_version": {
+										"constant_value": "3.1.4"
+									},
+									"kms_key_arn": {
+										"constant_value": "arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012"
+									},
+									"multi_az": {
+										"constant_value": false
+									},
+									"preferred_maintenance_window": {
+										"constant_value": "sun:10:30-sun:14:30"
+									},
+									"publicly_accessible": {
+										"constant_value": true
+									},
+									"replication_instance_class": {
+										"constant_value": "dms.t2.micro"
+									},
+									"replication_instance_id": {
+										"constant_value": "test-dms-replication-instance-tf"
+									}
+								},
+								"schema_version": 0
+							}
+						]
+					}
+				}
+			},
+			{
+				"configuration": {
+					"provider_config": {
+						"aws": {
+							"name": "aws",
+							"expressions": {
+								"region": {
+									"constant_value": "eu-central-1"
+								}
+							}
+						}
+					},
+					"root_module": {
+						"resources": [
+							{
+								"address": "aws_dms_replication_instance.test_false",
+								"mode": "managed",
+								"type": "aws_dms_replication_instance",
+								"name": "test_false",
+								"provider_config_key": "aws",
+								"expressions": {
+									"allocated_storage": {
+										"constant_value": 20
+									},
+									"apply_immediately": {
+										"constant_value": true
+									},
+									"auto_minor_version_upgrade": {
+										"constant_value": false
+									},
+									"availability_zone": {
+										"constant_value": "us-west-2c"
+									},
+									"engine_version": {
+										"constant_value": "3.1.4"
+									},
+									"kms_key_arn": {
+										"constant_value": "arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012"
+									},
+									"multi_az": {
+										"constant_value": false
+									},
+									"preferred_maintenance_window": {
+										"constant_value": "sun:10:30-sun:14:30"
+									},
+									"publicly_accessible": {
+										"constant_value": true
+									},
+									"replication_instance_class": {
+										"constant_value": "dms.t2.micro"
+									},
+									"replication_instance_id": {
+										"constant_value": "test-dms-replication-instance-tf"
+									}
+								},
+								"schema_version": 0
+							}
+						]
+					}
+				}
+			}
+		]
+	}
+}

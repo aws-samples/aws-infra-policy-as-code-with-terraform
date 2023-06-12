@@ -1,0 +1,640 @@
+{
+  "mock": {
+    "valid_cache_encrypted": {
+      "resource_changes": [
+        {
+          "address": "aws_api_gateway_deployment.sample_deployment",
+          "mode": "managed",
+          "type": "aws_api_gateway_deployment",
+          "name": "sample_deployment",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "description": null,
+              "stage_description": null,
+              "stage_name": null,
+              "triggers": {
+                "redeployment": "e06626cc3448abcbd65402de3e61aa19af0181e2"
+              },
+              "variables": null
+            },
+            "after_unknown": {
+              "created_date": true,
+              "execution_arn": true,
+              "id": true,
+              "invoke_url": true,
+              "rest_api_id": true,
+              "triggers": {}
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "triggers": {}
+            }
+          }
+        },
+        {
+          "address": "aws_api_gateway_method_settings.method_all",
+          "mode": "managed",
+          "type": "aws_api_gateway_method_settings",
+          "name": "method_all",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "method_path": "*/*",
+              "settings": [
+                {
+                  "cache_data_encrypted": true,
+                  "caching_enabled": false,
+                  "throttling_burst_limit": -1,
+                  "throttling_rate_limit": -1
+                }
+              ],
+              "stage_name": "DB_API_Stage"
+            },
+            "after_unknown": {
+              "id": true,
+              "rest_api_id": true,
+              "settings": [
+                {
+                  "cache_ttl_in_seconds": true,
+                  "data_trace_enabled": true,
+                  "logging_level": true,
+                  "metrics_enabled": true,
+                  "require_authorization_for_cache_control": true,
+                  "unauthorized_cache_control_header_strategy": true
+                }
+              ]
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "settings": [
+                {}
+              ]
+            }
+          }
+        },
+        {
+          "address": "aws_api_gateway_rest_api.sample_rest_api",
+          "mode": "managed",
+          "type": "aws_api_gateway_rest_api",
+          "name": "sample_rest_api",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "api_key_source": "HEADER",
+              "binary_media_types": [
+                "UTF-8-encoded"
+              ],
+              "body": "{\r\n    \"swagger\": \"2.0\",\r\n    \"info\": {\r\n      \"description\": \"Your first API with Amazon API Gateway. This is a sample API that integrates via HTTP with our demo Pet Store endpoints\",\r\n      \"title\": \"PetStore\"\r\n    },\r\n    \"schemes\": [\r\n      \"https\"\r\n    ],\r\n    \"paths\": {\r\n      \"/\": {\r\n        \"get\": {\r\n          \"tags\": [\r\n            \"pets\"\r\n          ],\r\n          \"description\": \"PetStore HTML web page containing API usage information\",\r\n          \"consumes\": [\r\n            \"application/json\"\r\n          ],\r\n          \"produces\": [\r\n            \"text/html\"\r\n          ],\r\n          \"responses\": {\r\n            \"200\": {\r\n              \"description\": \"Successful operation\",\r\n              \"headers\": {\r\n                \"Content-Type\": {\r\n                  \"type\": \"string\",\r\n                  \"description\": \"Media type of request\"\r\n                }\r\n              }\r\n            }\r\n          },\r\n          \"x-amazon-apigateway-integration\": {\r\n            \"responses\": {\r\n              \"default\": {\r\n                \"statusCode\": \"200\",\r\n                \"responseParameters\": {\r\n                  \"method.response.header.Content-Type\": \"'text/html'\"\r\n                },\r\n                \"responseTemplates\": {\r\n                  \"text/html\": \"<html>\\n    <head>\\n        <style>\\n        body {\\n            color: #333;\\n            font-family: Sans-serif;\\n            max-width: 800px;\\n            margin: auto;\\n        }\\n        </style>\\n    </head>\\n    <body>\\n        <h1>Welcome to your Pet Store API</h1>\\n        <p>\\n            You have successfully deployed your first API. You are seeing this HTML page because the <code>GET</code> method to the root resource of your API returns this content as a Mock integration.\\n        </p>\\n        <p>\\n            The Pet Store API contains the <code>/pets</code> and <code>/pets/{petId}</code> resources. By making a <a href=\\\"/$context.stage/pets/\\\" target=\\\"_blank\\\"><code>GET</code> request</a> to <code>/pets</code> you can retrieve a list of Pets in your API. If you are looking for a specific pet, for example the pet with ID 1, you can make a <a href=\\\"/$context.stage/pets/1\\\" target=\\\"_blank\\\"><code>GET</code> request</a> to <code>/pets/1</code>.\\n        </p>\\n        <p>\\n            You can use a REST client such as <a href=\\\"https://www.getpostman.com/\\\" target=\\\"_blank\\\">Postman</a> to test the <code>POST</code> methods in your API to create a new pet. Use the sample body below to send the <code>POST</code> request:\\n        </p>\\n        <pre>\\n{\\n    \\\"type\\\" : \\\"cat\\\",\\n    \\\"price\\\" : 123.11\\n}\\n        </pre>\\n    </body>\\n</html>\"\r\n                }\r\n              }\r\n            },\r\n            \"passthroughBehavior\": \"when_no_match\",\r\n            \"requestTemplates\": {\r\n              \"application/json\": \"{\\\"statusCode\\\": 200}\"\r\n            },\r\n            \"type\": \"mock\"\r\n          }\r\n        }\r\n      },\r\n      \"/pets\": {\r\n        \"get\": {\r\n          \"tags\": [\r\n            \"pets\"\r\n          ],\r\n          \"summary\": \"List all pets\",\r\n          \"produces\": [\r\n            \"application/json\"\r\n          ],\r\n          \"parameters\": [\r\n            {\r\n              \"name\": \"type\",\r\n              \"in\": \"query\",\r\n              \"description\": \"The type of pet to retrieve\",\r\n              \"required\": false,\r\n              \"type\": \"string\"\r\n            },\r\n            {\r\n              \"name\": \"page\",\r\n              \"in\": \"query\",\r\n              \"description\": \"Page number of results to return.\",\r\n              \"required\": false,\r\n              \"type\": \"string\"\r\n            }\r\n          ],\r\n          \"responses\": {\r\n            \"200\": {\r\n              \"description\": \"Successful operation\",\r\n              \"schema\": {\r\n                \"$ref\": \"#/definitions/Pets\"\r\n              },\r\n              \"headers\": {\r\n                \"Access-Control-Allow-Origin\": {\r\n                  \"type\": \"string\",\r\n                  \"description\": \"URI that may access the resource\"\r\n                }\r\n              }\r\n            }\r\n          },\r\n          \"x-amazon-apigateway-integration\": {\r\n            \"responses\": {\r\n              \"default\": {\r\n                \"statusCode\": \"200\",\r\n                \"responseParameters\": {\r\n                  \"method.response.header.Access-Control-Allow-Origin\": \"'*'\"\r\n                }\r\n              }\r\n            },\r\n            \"requestParameters\": {\r\n              \"integration.request.querystring.page\": \"method.request.querystring.page\",\r\n              \"integration.request.querystring.type\": \"method.request.querystring.type\"\r\n            },\r\n            \"uri\": \"http://petstore.execute-api.us-east-1.amazonaws.com/petstore/pets\",\r\n            \"passthroughBehavior\": \"when_no_match\",\r\n            \"httpMethod\": \"GET\",\r\n            \"type\": \"http\"\r\n          }\r\n        },\r\n        \"post\": {\r\n          \"tags\": [\r\n            \"pets\"\r\n          ],\r\n          \"operationId\": \"CreatePet\",\r\n          \"summary\": \"Create a pet\",\r\n          \"consumes\": [\r\n            \"application/json\"\r\n          ],\r\n          \"produces\": [\r\n            \"application/json\"\r\n          ],\r\n          \"parameters\": [\r\n            {\r\n              \"in\": \"body\",\r\n              \"name\": \"NewPet\",\r\n              \"required\": true,\r\n              \"schema\": {\r\n                \"$ref\": \"#/definitions/NewPet\"\r\n              }\r\n            }\r\n          ],\r\n          \"responses\": {\r\n            \"200\": {\r\n              \"description\": \"Successful operation\",\r\n              \"schema\": {\r\n                \"$ref\": \"#/definitions/NewPetResponse\"\r\n              },\r\n              \"headers\": {\r\n                \"Access-Control-Allow-Origin\": {\r\n                  \"type\": \"string\",\r\n                  \"description\": \"URI that may access the resource\"\r\n                }\r\n              }\r\n            }\r\n          },\r\n          \"x-amazon-apigateway-integration\": {\r\n            \"responses\": {\r\n              \"default\": {\r\n                \"statusCode\": \"200\",\r\n                \"responseParameters\": {\r\n                  \"method.response.header.Access-Control-Allow-Origin\": \"'*'\"\r\n                }\r\n              }\r\n            },\r\n            \"uri\": \"http://petstore.execute-api.us-east-1.amazonaws.com/petstore/pets\",\r\n            \"passthroughBehavior\": \"when_no_match\",\r\n            \"httpMethod\": \"POST\",\r\n            \"type\": \"http\"\r\n          }\r\n        },\r\n        \"options\": {\r\n          \"consumes\": [\r\n            \"application/json\"\r\n          ],\r\n          \"produces\": [\r\n            \"application/json\"\r\n          ],\r\n          \"responses\": {\r\n            \"200\": {\r\n              \"description\": \"Successful operation\",\r\n              \"schema\": {\r\n                \"$ref\": \"#/definitions/Empty\"\r\n              },\r\n              \"headers\": {\r\n                \"Access-Control-Allow-Origin\": {\r\n                  \"type\": \"string\",\r\n                  \"description\": \"URI that may access the resource\"\r\n                },\r\n                \"Access-Control-Allow-Methods\": {\r\n                  \"type\": \"string\",\r\n                  \"description\": \"Method or methods allowed when accessing the resource\"\r\n                },\r\n                \"Access-Control-Allow-Headers\": {\r\n                  \"type\": \"string\",\r\n                  \"description\": \"Used in response to a preflight request to indicate which HTTP headers can be used when making the request.\"\r\n                }\r\n              }\r\n            }\r\n          },\r\n          \"x-amazon-apigateway-integration\": {\r\n            \"responses\": {\r\n              \"default\": {\r\n                \"statusCode\": \"200\",\r\n                \"responseParameters\": {\r\n                  \"method.response.header.Access-Control-Allow-Methods\": \"'POST,GET,OPTIONS'\",\r\n                  \"method.response.header.Access-Control-Allow-Headers\": \"'Content-Type,X-Amz-Date,Authorization,X-Api-Key'\",\r\n                  \"method.response.header.Access-Control-Allow-Origin\": \"'*'\"\r\n                }\r\n              }\r\n            },\r\n            \"passthroughBehavior\": \"when_no_match\",\r\n            \"requestTemplates\": {\r\n              \"application/json\": \"{\\\"statusCode\\\": 200}\"\r\n            },\r\n            \"type\": \"mock\"\r\n          }\r\n        }\r\n      },\r\n      \"/pets/{petId}\": {\r\n        \"get\": {\r\n          \"tags\": [\r\n            \"pets\"\r\n          ],\r\n          \"summary\": \"Info for a specific pet\",\r\n          \"operationId\": \"GetPet\",\r\n          \"produces\": [\r\n            \"application/json\"\r\n          ],\r\n          \"parameters\": [\r\n            {\r\n              \"name\": \"petId\",\r\n              \"in\": \"path\",\r\n              \"description\": \"The id of the pet to retrieve\",\r\n              \"required\": true,\r\n              \"type\": \"string\"\r\n            }\r\n          ],\r\n          \"responses\": {\r\n            \"200\": {\r\n              \"description\": \"Successful operation\",\r\n              \"schema\": {\r\n                \"$ref\": \"#/definitions/Pet\"\r\n              },\r\n              \"headers\": {\r\n                \"Access-Control-Allow-Origin\": {\r\n                  \"type\": \"string\",\r\n                  \"description\": \"URI that may access the resource\"\r\n                }\r\n              }\r\n            }\r\n          },\r\n          \"x-amazon-apigateway-integration\": {\r\n            \"responses\": {\r\n              \"default\": {\r\n                \"statusCode\": \"200\",\r\n                \"responseParameters\": {\r\n                  \"method.response.header.Access-Control-Allow-Origin\": \"'*'\"\r\n                }\r\n              }\r\n            },\r\n            \"requestParameters\": {\r\n              \"integration.request.path.petId\": \"method.request.path.petId\"\r\n            },\r\n            \"uri\": \"http://petstore.execute-api.us-east-1.amazonaws.com/petstore/pets/{petId}\",\r\n            \"passthroughBehavior\": \"when_no_match\",\r\n            \"httpMethod\": \"GET\",\r\n            \"type\": \"http\"\r\n          }\r\n        },\r\n        \"options\": {\r\n          \"consumes\": [\r\n            \"application/json\"\r\n          ],\r\n          \"produces\": [\r\n            \"application/json\"\r\n          ],\r\n          \"parameters\": [\r\n            {\r\n              \"name\": \"petId\",\r\n              \"in\": \"path\",\r\n              \"description\": \"The id of the pet to retrieve\",\r\n              \"required\": true,\r\n              \"type\": \"string\"\r\n            }\r\n          ],\r\n          \"responses\": {\r\n            \"200\": {\r\n              \"description\": \"Successful operation\",\r\n              \"schema\": {\r\n                \"$ref\": \"#/definitions/Empty\"\r\n              },\r\n              \"headers\": {\r\n                \"Access-Control-Allow-Origin\": {\r\n                  \"type\": \"string\",\r\n                  \"description\": \"URI that may access the resource\"\r\n                },\r\n                \"Access-Control-Allow-Methods\": {\r\n                  \"type\": \"string\",\r\n                  \"description\": \"Method or methods allowed when accessing the resource\"\r\n                },\r\n                \"Access-Control-Allow-Headers\": {\r\n                  \"type\": \"string\",\r\n                  \"description\": \"Used in response to a preflight request to indicate which HTTP headers can be used when making the request.\"\r\n                }\r\n              }\r\n            }\r\n          },\r\n          \"x-amazon-apigateway-integration\": {\r\n            \"responses\": {\r\n              \"default\": {\r\n                \"statusCode\": \"200\",\r\n                \"responseParameters\": {\r\n                  \"method.response.header.Access-Control-Allow-Methods\": \"'GET,OPTIONS'\",\r\n                  \"method.response.header.Access-Control-Allow-Headers\": \"'Content-Type,X-Amz-Date,Authorization,X-Api-Key'\",\r\n                  \"method.response.header.Access-Control-Allow-Origin\": \"'*'\"\r\n                }\r\n              }\r\n            },\r\n            \"passthroughBehavior\": \"when_no_match\",\r\n            \"requestTemplates\": {\r\n              \"application/json\": \"{\\\"statusCode\\\": 200}\"\r\n            },\r\n            \"type\": \"mock\"\r\n          }\r\n        }\r\n      }\r\n    },\r\n    \"definitions\": {\r\n      \"Pets\": {\r\n        \"type\": \"array\",\r\n        \"items\": {\r\n          \"$ref\": \"#/definitions/Pet\"\r\n        }\r\n      },\r\n      \"Empty\": {\r\n        \"type\": \"object\"\r\n      },\r\n      \"NewPetResponse\": {\r\n        \"type\": \"object\",\r\n        \"properties\": {\r\n          \"pet\": {\r\n            \"$ref\": \"#/definitions/Pet\"\r\n          },\r\n          \"message\": {\r\n            \"type\": \"string\"\r\n          }\r\n        }\r\n      },\r\n      \"Pet\": {\r\n        \"type\": \"object\",\r\n        \"properties\": {\r\n          \"id\": {\r\n            \"type\": \"integer\"\r\n          },\r\n          \"type\": {\r\n            \"type\": \"string\"\r\n          },\r\n          \"price\": {\r\n            \"type\": \"number\"\r\n          }\r\n        }\r\n      },\r\n      \"NewPet\": {\r\n        \"type\": \"object\",\r\n        \"properties\": {\r\n          \"type\": {\r\n            \"$ref\": \"#/definitions/PetType\"\r\n          },\r\n          \"price\": {\r\n            \"type\": \"number\"\r\n          }\r\n        }\r\n      },\r\n      \"PetType\": {\r\n        \"type\": \"string\",\r\n        \"enum\": [\r\n          \"dog\",\r\n          \"cat\",\r\n          \"fish\",\r\n          \"bird\",\r\n          \"gecko\"\r\n        ]\r\n      }\r\n    },\r\n    \"x-amazon-apigateway-documentation\": {\r\n      \"version\": \"v2.1\",\r\n      \"createdDate\": \"2016-11-17T07:03:59Z\",\r\n      \"documentationParts\": [\r\n        {\r\n          \"location\": {\r\n            \"type\": \"API\"\r\n          },\r\n          \"properties\": {\r\n            \"info\": {\r\n              \"description\": \"Your first API with Amazon API Gateway. This is a sample API that integrates via HTTP with our demo Pet Store endpoints\"\r\n            }\r\n          }\r\n        },\r\n        {\r\n          \"location\": {\r\n            \"type\": \"METHOD\",\r\n            \"method\": \"GET\"\r\n          },\r\n          \"properties\": {\r\n            \"tags\": [\r\n              \"pets\"\r\n            ],\r\n            \"description\": \"PetStore HTML web page containing API usage information\"\r\n          }\r\n        },\r\n        {\r\n          \"location\": {\r\n            \"type\": \"METHOD\",\r\n            \"path\": \"/pets/{petId}\",\r\n            \"method\": \"GET\"\r\n          },\r\n          \"properties\": {\r\n            \"tags\": [\r\n              \"pets\"\r\n            ],\r\n            \"summary\": \"Info for a specific pet\"\r\n          }\r\n        },\r\n        {\r\n          \"location\": {\r\n            \"type\": \"METHOD\",\r\n            \"path\": \"/pets\",\r\n            \"method\": \"GET\"\r\n          },\r\n          \"properties\": {\r\n            \"tags\": [\r\n              \"pets\"\r\n            ],\r\n            \"summary\": \"List all pets\"\r\n          }\r\n        },\r\n        {\r\n          \"location\": {\r\n            \"type\": \"METHOD\",\r\n            \"path\": \"/pets\",\r\n            \"method\": \"POST\"\r\n          },\r\n          \"properties\": {\r\n            \"tags\": [\r\n              \"pets\"\r\n            ],\r\n            \"summary\": \"Create a pet\"\r\n          }\r\n        },\r\n        {\r\n          \"location\": {\r\n            \"type\": \"PATH_PARAMETER\",\r\n            \"path\": \"/pets/{petId}\",\r\n            \"method\": \"*\",\r\n            \"name\": \"petId\"\r\n          },\r\n          \"properties\": {\r\n            \"description\": \"The id of the pet to retrieve\"\r\n          }\r\n        },\r\n        {\r\n          \"location\": {\r\n            \"type\": \"QUERY_PARAMETER\",\r\n            \"path\": \"/pets\",\r\n            \"method\": \"GET\",\r\n            \"name\": \"page\"\r\n          },\r\n          \"properties\": {\r\n            \"description\": \"Page number of results to return.\"\r\n          }\r\n        },\r\n        {\r\n          \"location\": {\r\n            \"type\": \"QUERY_PARAMETER\",\r\n            \"path\": \"/pets\",\r\n            \"method\": \"GET\",\r\n            \"name\": \"type\"\r\n          },\r\n          \"properties\": {\r\n            \"description\": \"The type of pet to retrieve\"\r\n          }\r\n        },\r\n        {\r\n          \"location\": {\r\n            \"type\": \"REQUEST_BODY\",\r\n            \"path\": \"/pets\",\r\n            \"method\": \"POST\"\r\n          },\r\n          \"properties\": {\r\n            \"description\": \"Pet object that needs to be added to the store\"\r\n          }\r\n        },\r\n        {\r\n          \"location\": {\r\n            \"type\": \"RESPONSE\",\r\n            \"method\": \"*\",\r\n            \"statusCode\": \"200\"\r\n          },\r\n          \"properties\": {\r\n            \"description\": \"Successful operation\"\r\n          }\r\n        },\r\n        {\r\n          \"location\": {\r\n            \"type\": \"RESPONSE_HEADER\",\r\n            \"method\": \"OPTIONS\",\r\n            \"statusCode\": \"200\",\r\n            \"name\": \"Access-Control-Allow-Headers\"\r\n          },\r\n          \"properties\": {\r\n            \"description\": \"Used in response to a preflight request to indicate which HTTP headers can be used when making the request.\"\r\n          }\r\n        },\r\n        {\r\n          \"location\": {\r\n            \"type\": \"RESPONSE_HEADER\",\r\n            \"method\": \"OPTIONS\",\r\n            \"statusCode\": \"200\",\r\n            \"name\": \"Access-Control-Allow-Methods\"\r\n          },\r\n          \"properties\": {\r\n            \"description\": \"Method or methods allowed when accessing the resource\"\r\n          }\r\n        },\r\n        {\r\n          \"location\": {\r\n            \"type\": \"RESPONSE_HEADER\",\r\n            \"method\": \"*\",\r\n            \"statusCode\": \"200\",\r\n            \"name\": \"Access-Control-Allow-Origin\"\r\n          },\r\n          \"properties\": {\r\n            \"description\": \"URI that may access the resource\"\r\n          }\r\n        },\r\n        {\r\n          \"location\": {\r\n            \"type\": \"RESPONSE_HEADER\",\r\n            \"method\": \"GET\",\r\n            \"statusCode\": \"200\",\r\n            \"name\": \"Content-Type\"\r\n          },\r\n          \"properties\": {\r\n            \"description\": \"Media type of request\"\r\n          }\r\n        }\r\n      ]\r\n    }\r\n  }",
+              "description": "api created with the help of terraform",
+              "endpoint_configuration": [
+                {
+                  "types": [
+                    "PRIVATE"
+                  ],
+                  "vpc_endpoint_ids": [
+                    "vpce-04a8b4a7e33ac83e7",
+                    "vpce-0628e477609011a90",
+                    "vpce-08b2d24b9b2807d6b"
+                  ]
+                }
+              ],
+              "minimum_compression_size": -1,
+              "name": "apgw-euw1-dev-na--001",
+              "parameters": null,
+              "policy": "{\"Statement\":[{\"Action\":\"execute-api:Invoke\",\"Condition\":{\"IpAddress\":{\"aws:SourceIp\":\"123.123.123.123/32\"}},\"Effect\":\"Allow\",\"Principal\":{\"AWS\":\"*\"},\"Resource\":\"${aws_api_gateway_rest_api.rest_api.execution_arn}\"}],\"Version\":\"2012-10-17\"}",
+              "tags": {
+                "AppRole": "network",
+                "AppService": "",
+                "BuildDate": "",
+                "CostCentre": "na",
+                "Environment": "dev",
+                "Name": "apgw-euw1-dev-na--001",
+                "RegionId": "euw1",
+                "VersionId": "1"
+              },
+              "tags_all": {
+                "AppRole": "network",
+                "CostCentre": "na",
+                "Environment": "dev",
+                "Name": "apgw-euw1-dev-na--001",
+                "RegionId": "euw1",
+                "VersionId": "1"
+              }
+            },
+            "after_unknown": {
+              "arn": true,
+              "binary_media_types": [
+                false
+              ],
+              "created_date": true,
+              "disable_execute_api_endpoint": true,
+              "endpoint_configuration": [
+                {
+                  "types": [
+                    false
+                  ],
+                  "vpc_endpoint_ids": [
+                    false,
+                    false,
+                    false
+                  ]
+                }
+              ],
+              "execution_arn": true,
+              "id": true,
+              "root_resource_id": true,
+              "tags": {},
+              "tags_all": {
+                "AppService": true,
+                "BuildDate": true
+              }
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "binary_media_types": [
+                false
+              ],
+              "endpoint_configuration": [
+                {
+                  "types": [
+                    false
+                  ],
+                  "vpc_endpoint_ids": [
+                    false,
+                    false,
+                    false
+                  ]
+                }
+              ],
+              "tags": {},
+              "tags_all": {}
+            }
+          }
+        },
+        {
+          "address": "aws_api_gateway_stage.sample_stage",
+          "mode": "managed",
+          "type": "aws_api_gateway_stage",
+          "name": "sample_stage",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "access_log_settings": [],
+              "cache_cluster_enabled": true,
+              "cache_cluster_size": "1.6",
+              "client_certificate_id": null,
+              "description": null,
+              "documentation_version": null,
+              "stage_name": "DB_API_Stage",
+              "tags": null,
+              "variables": null,
+              "xray_tracing_enabled": null
+            },
+            "after_unknown": {
+              "access_log_settings": [],
+              "arn": true,
+              "deployment_id": true,
+              "execution_arn": true,
+              "id": true,
+              "invoke_url": true,
+              "rest_api_id": true,
+              "tags_all": true,
+              "web_acl_arn": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "access_log_settings": [],
+              "tags_all": {}
+            }
+          }
+        }
+      ]
+    },
+    "invalid_cache_unencrypted": {
+      "resource_changes": [
+        {
+          "address": "aws_api_gateway_deployment.sample_deployment",
+          "mode": "managed",
+          "type": "aws_api_gateway_deployment",
+          "name": "sample_deployment",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "description": null,
+              "stage_description": null,
+              "stage_name": null,
+              "triggers": {
+                "redeployment": "e06626cc3448abcbd65402de3e61aa19af0181e2"
+              },
+              "variables": null
+            },
+            "after_unknown": {
+              "created_date": true,
+              "execution_arn": true,
+              "id": true,
+              "invoke_url": true,
+              "rest_api_id": true,
+              "triggers": {}
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "triggers": {}
+            }
+          }
+        },
+        {
+          "address": "aws_api_gateway_method_settings.method_all",
+          "mode": "managed",
+          "type": "aws_api_gateway_method_settings",
+          "name": "method_all",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "method_path": "*/*",
+              "settings": [
+                {
+                  "cache_data_encrypted": false,
+                  "caching_enabled": false,
+                  "throttling_burst_limit": -1,
+                  "throttling_rate_limit": -1
+                }
+              ],
+              "stage_name": "DB_API_Stage"
+            },
+            "after_unknown": {
+              "id": true,
+              "rest_api_id": true,
+              "settings": [
+                {
+                  "cache_ttl_in_seconds": true,
+                  "data_trace_enabled": true,
+                  "logging_level": true,
+                  "metrics_enabled": true,
+                  "require_authorization_for_cache_control": true,
+                  "unauthorized_cache_control_header_strategy": true
+                }
+              ]
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "settings": [
+                {}
+              ]
+            }
+          }
+        },
+        {
+          "address": "aws_api_gateway_rest_api.sample_rest_api",
+          "mode": "managed",
+          "type": "aws_api_gateway_rest_api",
+          "name": "sample_rest_api",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "api_key_source": "HEADER",
+              "binary_media_types": [
+                "UTF-8-encoded"
+              ],
+              "body": "{\r\n    \"swagger\": \"2.0\",\r\n    \"info\": {\r\n      \"description\": \"Your first API with Amazon API Gateway. This is a sample API that integrates via HTTP with our demo Pet Store endpoints\",\r\n      \"title\": \"PetStore\"\r\n    },\r\n    \"schemes\": [\r\n      \"https\"\r\n    ],\r\n    \"paths\": {\r\n      \"/\": {\r\n        \"get\": {\r\n          \"tags\": [\r\n            \"pets\"\r\n          ],\r\n          \"description\": \"PetStore HTML web page containing API usage information\",\r\n          \"consumes\": [\r\n            \"application/json\"\r\n          ],\r\n          \"produces\": [\r\n            \"text/html\"\r\n          ],\r\n          \"responses\": {\r\n            \"200\": {\r\n              \"description\": \"Successful operation\",\r\n              \"headers\": {\r\n                \"Content-Type\": {\r\n                  \"type\": \"string\",\r\n                  \"description\": \"Media type of request\"\r\n                }\r\n              }\r\n            }\r\n          },\r\n          \"x-amazon-apigateway-integration\": {\r\n            \"responses\": {\r\n              \"default\": {\r\n                \"statusCode\": \"200\",\r\n                \"responseParameters\": {\r\n                  \"method.response.header.Content-Type\": \"'text/html'\"\r\n                },\r\n                \"responseTemplates\": {\r\n                  \"text/html\": \"<html>\\n    <head>\\n        <style>\\n        body {\\n            color: #333;\\n            font-family: Sans-serif;\\n            max-width: 800px;\\n            margin: auto;\\n        }\\n        </style>\\n    </head>\\n    <body>\\n        <h1>Welcome to your Pet Store API</h1>\\n        <p>\\n            You have successfully deployed your first API. You are seeing this HTML page because the <code>GET</code> method to the root resource of your API returns this content as a Mock integration.\\n        </p>\\n        <p>\\n            The Pet Store API contains the <code>/pets</code> and <code>/pets/{petId}</code> resources. By making a <a href=\\\"/$context.stage/pets/\\\" target=\\\"_blank\\\"><code>GET</code> request</a> to <code>/pets</code> you can retrieve a list of Pets in your API. If you are looking for a specific pet, for example the pet with ID 1, you can make a <a href=\\\"/$context.stage/pets/1\\\" target=\\\"_blank\\\"><code>GET</code> request</a> to <code>/pets/1</code>.\\n        </p>\\n        <p>\\n            You can use a REST client such as <a href=\\\"https://www.getpostman.com/\\\" target=\\\"_blank\\\">Postman</a> to test the <code>POST</code> methods in your API to create a new pet. Use the sample body below to send the <code>POST</code> request:\\n        </p>\\n        <pre>\\n{\\n    \\\"type\\\" : \\\"cat\\\",\\n    \\\"price\\\" : 123.11\\n}\\n        </pre>\\n    </body>\\n</html>\"\r\n                }\r\n              }\r\n            },\r\n            \"passthroughBehavior\": \"when_no_match\",\r\n            \"requestTemplates\": {\r\n              \"application/json\": \"{\\\"statusCode\\\": 200}\"\r\n            },\r\n            \"type\": \"mock\"\r\n          }\r\n        }\r\n      },\r\n      \"/pets\": {\r\n        \"get\": {\r\n          \"tags\": [\r\n            \"pets\"\r\n          ],\r\n          \"summary\": \"List all pets\",\r\n          \"produces\": [\r\n            \"application/json\"\r\n          ],\r\n          \"parameters\": [\r\n            {\r\n              \"name\": \"type\",\r\n              \"in\": \"query\",\r\n              \"description\": \"The type of pet to retrieve\",\r\n              \"required\": false,\r\n              \"type\": \"string\"\r\n            },\r\n            {\r\n              \"name\": \"page\",\r\n              \"in\": \"query\",\r\n              \"description\": \"Page number of results to return.\",\r\n              \"required\": false,\r\n              \"type\": \"string\"\r\n            }\r\n          ],\r\n          \"responses\": {\r\n            \"200\": {\r\n              \"description\": \"Successful operation\",\r\n              \"schema\": {\r\n                \"$ref\": \"#/definitions/Pets\"\r\n              },\r\n              \"headers\": {\r\n                \"Access-Control-Allow-Origin\": {\r\n                  \"type\": \"string\",\r\n                  \"description\": \"URI that may access the resource\"\r\n                }\r\n              }\r\n            }\r\n          },\r\n          \"x-amazon-apigateway-integration\": {\r\n            \"responses\": {\r\n              \"default\": {\r\n                \"statusCode\": \"200\",\r\n                \"responseParameters\": {\r\n                  \"method.response.header.Access-Control-Allow-Origin\": \"'*'\"\r\n                }\r\n              }\r\n            },\r\n            \"requestParameters\": {\r\n              \"integration.request.querystring.page\": \"method.request.querystring.page\",\r\n              \"integration.request.querystring.type\": \"method.request.querystring.type\"\r\n            },\r\n            \"uri\": \"http://petstore.execute-api.us-east-1.amazonaws.com/petstore/pets\",\r\n            \"passthroughBehavior\": \"when_no_match\",\r\n            \"httpMethod\": \"GET\",\r\n            \"type\": \"http\"\r\n          }\r\n        },\r\n        \"post\": {\r\n          \"tags\": [\r\n            \"pets\"\r\n          ],\r\n          \"operationId\": \"CreatePet\",\r\n          \"summary\": \"Create a pet\",\r\n          \"consumes\": [\r\n            \"application/json\"\r\n          ],\r\n          \"produces\": [\r\n            \"application/json\"\r\n          ],\r\n          \"parameters\": [\r\n            {\r\n              \"in\": \"body\",\r\n              \"name\": \"NewPet\",\r\n              \"required\": true,\r\n              \"schema\": {\r\n                \"$ref\": \"#/definitions/NewPet\"\r\n              }\r\n            }\r\n          ],\r\n          \"responses\": {\r\n            \"200\": {\r\n              \"description\": \"Successful operation\",\r\n              \"schema\": {\r\n                \"$ref\": \"#/definitions/NewPetResponse\"\r\n              },\r\n              \"headers\": {\r\n                \"Access-Control-Allow-Origin\": {\r\n                  \"type\": \"string\",\r\n                  \"description\": \"URI that may access the resource\"\r\n                }\r\n              }\r\n            }\r\n          },\r\n          \"x-amazon-apigateway-integration\": {\r\n            \"responses\": {\r\n              \"default\": {\r\n                \"statusCode\": \"200\",\r\n                \"responseParameters\": {\r\n                  \"method.response.header.Access-Control-Allow-Origin\": \"'*'\"\r\n                }\r\n              }\r\n            },\r\n            \"uri\": \"http://petstore.execute-api.us-east-1.amazonaws.com/petstore/pets\",\r\n            \"passthroughBehavior\": \"when_no_match\",\r\n            \"httpMethod\": \"POST\",\r\n            \"type\": \"http\"\r\n          }\r\n        },\r\n        \"options\": {\r\n          \"consumes\": [\r\n            \"application/json\"\r\n          ],\r\n          \"produces\": [\r\n            \"application/json\"\r\n          ],\r\n          \"responses\": {\r\n            \"200\": {\r\n              \"description\": \"Successful operation\",\r\n              \"schema\": {\r\n                \"$ref\": \"#/definitions/Empty\"\r\n              },\r\n              \"headers\": {\r\n                \"Access-Control-Allow-Origin\": {\r\n                  \"type\": \"string\",\r\n                  \"description\": \"URI that may access the resource\"\r\n                },\r\n                \"Access-Control-Allow-Methods\": {\r\n                  \"type\": \"string\",\r\n                  \"description\": \"Method or methods allowed when accessing the resource\"\r\n                },\r\n                \"Access-Control-Allow-Headers\": {\r\n                  \"type\": \"string\",\r\n                  \"description\": \"Used in response to a preflight request to indicate which HTTP headers can be used when making the request.\"\r\n                }\r\n              }\r\n            }\r\n          },\r\n          \"x-amazon-apigateway-integration\": {\r\n            \"responses\": {\r\n              \"default\": {\r\n                \"statusCode\": \"200\",\r\n                \"responseParameters\": {\r\n                  \"method.response.header.Access-Control-Allow-Methods\": \"'POST,GET,OPTIONS'\",\r\n                  \"method.response.header.Access-Control-Allow-Headers\": \"'Content-Type,X-Amz-Date,Authorization,X-Api-Key'\",\r\n                  \"method.response.header.Access-Control-Allow-Origin\": \"'*'\"\r\n                }\r\n              }\r\n            },\r\n            \"passthroughBehavior\": \"when_no_match\",\r\n            \"requestTemplates\": {\r\n              \"application/json\": \"{\\\"statusCode\\\": 200}\"\r\n            },\r\n            \"type\": \"mock\"\r\n          }\r\n        }\r\n      },\r\n      \"/pets/{petId}\": {\r\n        \"get\": {\r\n          \"tags\": [\r\n            \"pets\"\r\n          ],\r\n          \"summary\": \"Info for a specific pet\",\r\n          \"operationId\": \"GetPet\",\r\n          \"produces\": [\r\n            \"application/json\"\r\n          ],\r\n          \"parameters\": [\r\n            {\r\n              \"name\": \"petId\",\r\n              \"in\": \"path\",\r\n              \"description\": \"The id of the pet to retrieve\",\r\n              \"required\": true,\r\n              \"type\": \"string\"\r\n            }\r\n          ],\r\n          \"responses\": {\r\n            \"200\": {\r\n              \"description\": \"Successful operation\",\r\n              \"schema\": {\r\n                \"$ref\": \"#/definitions/Pet\"\r\n              },\r\n              \"headers\": {\r\n                \"Access-Control-Allow-Origin\": {\r\n                  \"type\": \"string\",\r\n                  \"description\": \"URI that may access the resource\"\r\n                }\r\n              }\r\n            }\r\n          },\r\n          \"x-amazon-apigateway-integration\": {\r\n            \"responses\": {\r\n              \"default\": {\r\n                \"statusCode\": \"200\",\r\n                \"responseParameters\": {\r\n                  \"method.response.header.Access-Control-Allow-Origin\": \"'*'\"\r\n                }\r\n              }\r\n            },\r\n            \"requestParameters\": {\r\n              \"integration.request.path.petId\": \"method.request.path.petId\"\r\n            },\r\n            \"uri\": \"http://petstore.execute-api.us-east-1.amazonaws.com/petstore/pets/{petId}\",\r\n            \"passthroughBehavior\": \"when_no_match\",\r\n            \"httpMethod\": \"GET\",\r\n            \"type\": \"http\"\r\n          }\r\n        },\r\n        \"options\": {\r\n          \"consumes\": [\r\n            \"application/json\"\r\n          ],\r\n          \"produces\": [\r\n            \"application/json\"\r\n          ],\r\n          \"parameters\": [\r\n            {\r\n              \"name\": \"petId\",\r\n              \"in\": \"path\",\r\n              \"description\": \"The id of the pet to retrieve\",\r\n              \"required\": true,\r\n              \"type\": \"string\"\r\n            }\r\n          ],\r\n          \"responses\": {\r\n            \"200\": {\r\n              \"description\": \"Successful operation\",\r\n              \"schema\": {\r\n                \"$ref\": \"#/definitions/Empty\"\r\n              },\r\n              \"headers\": {\r\n                \"Access-Control-Allow-Origin\": {\r\n                  \"type\": \"string\",\r\n                  \"description\": \"URI that may access the resource\"\r\n                },\r\n                \"Access-Control-Allow-Methods\": {\r\n                  \"type\": \"string\",\r\n                  \"description\": \"Method or methods allowed when accessing the resource\"\r\n                },\r\n                \"Access-Control-Allow-Headers\": {\r\n                  \"type\": \"string\",\r\n                  \"description\": \"Used in response to a preflight request to indicate which HTTP headers can be used when making the request.\"\r\n                }\r\n              }\r\n            }\r\n          },\r\n          \"x-amazon-apigateway-integration\": {\r\n            \"responses\": {\r\n              \"default\": {\r\n                \"statusCode\": \"200\",\r\n                \"responseParameters\": {\r\n                  \"method.response.header.Access-Control-Allow-Methods\": \"'GET,OPTIONS'\",\r\n                  \"method.response.header.Access-Control-Allow-Headers\": \"'Content-Type,X-Amz-Date,Authorization,X-Api-Key'\",\r\n                  \"method.response.header.Access-Control-Allow-Origin\": \"'*'\"\r\n                }\r\n              }\r\n            },\r\n            \"passthroughBehavior\": \"when_no_match\",\r\n            \"requestTemplates\": {\r\n              \"application/json\": \"{\\\"statusCode\\\": 200}\"\r\n            },\r\n            \"type\": \"mock\"\r\n          }\r\n        }\r\n      }\r\n    },\r\n    \"definitions\": {\r\n      \"Pets\": {\r\n        \"type\": \"array\",\r\n        \"items\": {\r\n          \"$ref\": \"#/definitions/Pet\"\r\n        }\r\n      },\r\n      \"Empty\": {\r\n        \"type\": \"object\"\r\n      },\r\n      \"NewPetResponse\": {\r\n        \"type\": \"object\",\r\n        \"properties\": {\r\n          \"pet\": {\r\n            \"$ref\": \"#/definitions/Pet\"\r\n          },\r\n          \"message\": {\r\n            \"type\": \"string\"\r\n          }\r\n        }\r\n      },\r\n      \"Pet\": {\r\n        \"type\": \"object\",\r\n        \"properties\": {\r\n          \"id\": {\r\n            \"type\": \"integer\"\r\n          },\r\n          \"type\": {\r\n            \"type\": \"string\"\r\n          },\r\n          \"price\": {\r\n            \"type\": \"number\"\r\n          }\r\n        }\r\n      },\r\n      \"NewPet\": {\r\n        \"type\": \"object\",\r\n        \"properties\": {\r\n          \"type\": {\r\n            \"$ref\": \"#/definitions/PetType\"\r\n          },\r\n          \"price\": {\r\n            \"type\": \"number\"\r\n          }\r\n        }\r\n      },\r\n      \"PetType\": {\r\n        \"type\": \"string\",\r\n        \"enum\": [\r\n          \"dog\",\r\n          \"cat\",\r\n          \"fish\",\r\n          \"bird\",\r\n          \"gecko\"\r\n        ]\r\n      }\r\n    },\r\n    \"x-amazon-apigateway-documentation\": {\r\n      \"version\": \"v2.1\",\r\n      \"createdDate\": \"2016-11-17T07:03:59Z\",\r\n      \"documentationParts\": [\r\n        {\r\n          \"location\": {\r\n            \"type\": \"API\"\r\n          },\r\n          \"properties\": {\r\n            \"info\": {\r\n              \"description\": \"Your first API with Amazon API Gateway. This is a sample API that integrates via HTTP with our demo Pet Store endpoints\"\r\n            }\r\n          }\r\n        },\r\n        {\r\n          \"location\": {\r\n            \"type\": \"METHOD\",\r\n            \"method\": \"GET\"\r\n          },\r\n          \"properties\": {\r\n            \"tags\": [\r\n              \"pets\"\r\n            ],\r\n            \"description\": \"PetStore HTML web page containing API usage information\"\r\n          }\r\n        },\r\n        {\r\n          \"location\": {\r\n            \"type\": \"METHOD\",\r\n            \"path\": \"/pets/{petId}\",\r\n            \"method\": \"GET\"\r\n          },\r\n          \"properties\": {\r\n            \"tags\": [\r\n              \"pets\"\r\n            ],\r\n            \"summary\": \"Info for a specific pet\"\r\n          }\r\n        },\r\n        {\r\n          \"location\": {\r\n            \"type\": \"METHOD\",\r\n            \"path\": \"/pets\",\r\n            \"method\": \"GET\"\r\n          },\r\n          \"properties\": {\r\n            \"tags\": [\r\n              \"pets\"\r\n            ],\r\n            \"summary\": \"List all pets\"\r\n          }\r\n        },\r\n        {\r\n          \"location\": {\r\n            \"type\": \"METHOD\",\r\n            \"path\": \"/pets\",\r\n            \"method\": \"POST\"\r\n          },\r\n          \"properties\": {\r\n            \"tags\": [\r\n              \"pets\"\r\n            ],\r\n            \"summary\": \"Create a pet\"\r\n          }\r\n        },\r\n        {\r\n          \"location\": {\r\n            \"type\": \"PATH_PARAMETER\",\r\n            \"path\": \"/pets/{petId}\",\r\n            \"method\": \"*\",\r\n            \"name\": \"petId\"\r\n          },\r\n          \"properties\": {\r\n            \"description\": \"The id of the pet to retrieve\"\r\n          }\r\n        },\r\n        {\r\n          \"location\": {\r\n            \"type\": \"QUERY_PARAMETER\",\r\n            \"path\": \"/pets\",\r\n            \"method\": \"GET\",\r\n            \"name\": \"page\"\r\n          },\r\n          \"properties\": {\r\n            \"description\": \"Page number of results to return.\"\r\n          }\r\n        },\r\n        {\r\n          \"location\": {\r\n            \"type\": \"QUERY_PARAMETER\",\r\n            \"path\": \"/pets\",\r\n            \"method\": \"GET\",\r\n            \"name\": \"type\"\r\n          },\r\n          \"properties\": {\r\n            \"description\": \"The type of pet to retrieve\"\r\n          }\r\n        },\r\n        {\r\n          \"location\": {\r\n            \"type\": \"REQUEST_BODY\",\r\n            \"path\": \"/pets\",\r\n            \"method\": \"POST\"\r\n          },\r\n          \"properties\": {\r\n            \"description\": \"Pet object that needs to be added to the store\"\r\n          }\r\n        },\r\n        {\r\n          \"location\": {\r\n            \"type\": \"RESPONSE\",\r\n            \"method\": \"*\",\r\n            \"statusCode\": \"200\"\r\n          },\r\n          \"properties\": {\r\n            \"description\": \"Successful operation\"\r\n          }\r\n        },\r\n        {\r\n          \"location\": {\r\n            \"type\": \"RESPONSE_HEADER\",\r\n            \"method\": \"OPTIONS\",\r\n            \"statusCode\": \"200\",\r\n            \"name\": \"Access-Control-Allow-Headers\"\r\n          },\r\n          \"properties\": {\r\n            \"description\": \"Used in response to a preflight request to indicate which HTTP headers can be used when making the request.\"\r\n          }\r\n        },\r\n        {\r\n          \"location\": {\r\n            \"type\": \"RESPONSE_HEADER\",\r\n            \"method\": \"OPTIONS\",\r\n            \"statusCode\": \"200\",\r\n            \"name\": \"Access-Control-Allow-Methods\"\r\n          },\r\n          \"properties\": {\r\n            \"description\": \"Method or methods allowed when accessing the resource\"\r\n          }\r\n        },\r\n        {\r\n          \"location\": {\r\n            \"type\": \"RESPONSE_HEADER\",\r\n            \"method\": \"*\",\r\n            \"statusCode\": \"200\",\r\n            \"name\": \"Access-Control-Allow-Origin\"\r\n          },\r\n          \"properties\": {\r\n            \"description\": \"URI that may access the resource\"\r\n          }\r\n        },\r\n        {\r\n          \"location\": {\r\n            \"type\": \"RESPONSE_HEADER\",\r\n            \"method\": \"GET\",\r\n            \"statusCode\": \"200\",\r\n            \"name\": \"Content-Type\"\r\n          },\r\n          \"properties\": {\r\n            \"description\": \"Media type of request\"\r\n          }\r\n        }\r\n      ]\r\n    }\r\n  }",
+              "description": "api created with the help of terraform",
+              "endpoint_configuration": [
+                {
+                  "types": [
+                    "PRIVATE"
+                  ],
+                  "vpc_endpoint_ids": [
+                    "vpce-04a8b4a7e33ac83e7",
+                    "vpce-0628e477609011a90",
+                    "vpce-08b2d24b9b2807d6b"
+                  ]
+                }
+              ],
+              "minimum_compression_size": -1,
+              "name": "apgw-euw1-dev-na--001",
+              "parameters": null,
+              "policy": "{\"Statement\":[{\"Action\":\"execute-api:Invoke\",\"Condition\":{\"IpAddress\":{\"aws:SourceIp\":\"123.123.123.123/32\"}},\"Effect\":\"Allow\",\"Principal\":{\"AWS\":\"*\"},\"Resource\":\"${aws_api_gateway_rest_api.rest_api.execution_arn}\"}],\"Version\":\"2012-10-17\"}",
+              "tags": {
+                "AppRole": "network",
+                "AppService": "",
+                "BuildDate": "",
+                "CostCentre": "na",
+                "Environment": "dev",
+                "Name": "apgw-euw1-dev-na--001",
+                "RegionId": "euw1",
+                "VersionId": "1"
+              },
+              "tags_all": {
+                "AppRole": "network",
+                "CostCentre": "na",
+                "Environment": "dev",
+                "Name": "apgw-euw1-dev-na--001",
+                "RegionId": "euw1",
+                "VersionId": "1"
+              }
+            },
+            "after_unknown": {
+              "arn": true,
+              "binary_media_types": [
+                false
+              ],
+              "created_date": true,
+              "disable_execute_api_endpoint": true,
+              "endpoint_configuration": [
+                {
+                  "types": [
+                    false
+                  ],
+                  "vpc_endpoint_ids": [
+                    false,
+                    false,
+                    false
+                  ]
+                }
+              ],
+              "execution_arn": true,
+              "id": true,
+              "root_resource_id": true,
+              "tags": {},
+              "tags_all": {
+                "AppService": true,
+                "BuildDate": true
+              }
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "binary_media_types": [
+                false
+              ],
+              "endpoint_configuration": [
+                {
+                  "types": [
+                    false
+                  ],
+                  "vpc_endpoint_ids": [
+                    false,
+                    false,
+                    false
+                  ]
+                }
+              ],
+              "tags": {},
+              "tags_all": {}
+            }
+          }
+        },
+        {
+          "address": "aws_api_gateway_stage.sample_stage",
+          "mode": "managed",
+          "type": "aws_api_gateway_stage",
+          "name": "sample_stage",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "access_log_settings": [],
+              "cache_cluster_enabled": true,
+              "cache_cluster_size": "1.6",
+              "client_certificate_id": null,
+              "description": null,
+              "documentation_version": null,
+              "stage_name": "DB_API_Stage",
+              "tags": null,
+              "variables": null,
+              "xray_tracing_enabled": null
+            },
+            "after_unknown": {
+              "access_log_settings": [],
+              "arn": true,
+              "deployment_id": true,
+              "execution_arn": true,
+              "id": true,
+              "invoke_url": true,
+              "rest_api_id": true,
+              "tags_all": true,
+              "web_acl_arn": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "access_log_settings": [],
+              "tags_all": {}
+            }
+          }
+        }
+      ]
+    },
+    "undefined_cache_not_decalred": {
+      "resource_changes": [
+        {
+          "address": "aws_api_gateway_deployment.sample_deployment",
+          "mode": "managed",
+          "type": "aws_api_gateway_deployment",
+          "name": "sample_deployment",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "description": null,
+              "stage_description": null,
+              "stage_name": null,
+              "triggers": {
+                "redeployment": "e06626cc3448abcbd65402de3e61aa19af0181e2"
+              },
+              "variables": null
+            },
+            "after_unknown": {
+              "created_date": true,
+              "execution_arn": true,
+              "id": true,
+              "invoke_url": true,
+              "rest_api_id": true,
+              "triggers": {}
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "triggers": {}
+            }
+          }
+        },
+        {
+          "address": "aws_api_gateway_rest_api.sample_rest_api",
+          "mode": "managed",
+          "type": "aws_api_gateway_rest_api",
+          "name": "sample_rest_api",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "api_key_source": "HEADER",
+              "binary_media_types": [
+                "UTF-8-encoded"
+              ],
+              "body": "{\r\n    \"swagger\": \"2.0\",\r\n    \"info\": {\r\n      \"description\": \"Your first API with Amazon API Gateway. This is a sample API that integrates via HTTP with our demo Pet Store endpoints\",\r\n      \"title\": \"PetStore\"\r\n    },\r\n    \"schemes\": [\r\n      \"https\"\r\n    ],\r\n    \"paths\": {\r\n      \"/\": {\r\n        \"get\": {\r\n          \"tags\": [\r\n            \"pets\"\r\n          ],\r\n          \"description\": \"PetStore HTML web page containing API usage information\",\r\n          \"consumes\": [\r\n            \"application/json\"\r\n          ],\r\n          \"produces\": [\r\n            \"text/html\"\r\n          ],\r\n          \"responses\": {\r\n            \"200\": {\r\n              \"description\": \"Successful operation\",\r\n              \"headers\": {\r\n                \"Content-Type\": {\r\n                  \"type\": \"string\",\r\n                  \"description\": \"Media type of request\"\r\n                }\r\n              }\r\n            }\r\n          },\r\n          \"x-amazon-apigateway-integration\": {\r\n            \"responses\": {\r\n              \"default\": {\r\n                \"statusCode\": \"200\",\r\n                \"responseParameters\": {\r\n                  \"method.response.header.Content-Type\": \"'text/html'\"\r\n                },\r\n                \"responseTemplates\": {\r\n                  \"text/html\": \"<html>\\n    <head>\\n        <style>\\n        body {\\n            color: #333;\\n            font-family: Sans-serif;\\n            max-width: 800px;\\n            margin: auto;\\n        }\\n        </style>\\n    </head>\\n    <body>\\n        <h1>Welcome to your Pet Store API</h1>\\n        <p>\\n            You have successfully deployed your first API. You are seeing this HTML page because the <code>GET</code> method to the root resource of your API returns this content as a Mock integration.\\n        </p>\\n        <p>\\n            The Pet Store API contains the <code>/pets</code> and <code>/pets/{petId}</code> resources. By making a <a href=\\\"/$context.stage/pets/\\\" target=\\\"_blank\\\"><code>GET</code> request</a> to <code>/pets</code> you can retrieve a list of Pets in your API. If you are looking for a specific pet, for example the pet with ID 1, you can make a <a href=\\\"/$context.stage/pets/1\\\" target=\\\"_blank\\\"><code>GET</code> request</a> to <code>/pets/1</code>.\\n        </p>\\n        <p>\\n            You can use a REST client such as <a href=\\\"https://www.getpostman.com/\\\" target=\\\"_blank\\\">Postman</a> to test the <code>POST</code> methods in your API to create a new pet. Use the sample body below to send the <code>POST</code> request:\\n        </p>\\n        <pre>\\n{\\n    \\\"type\\\" : \\\"cat\\\",\\n    \\\"price\\\" : 123.11\\n}\\n        </pre>\\n    </body>\\n</html>\"\r\n                }\r\n              }\r\n            },\r\n            \"passthroughBehavior\": \"when_no_match\",\r\n            \"requestTemplates\": {\r\n              \"application/json\": \"{\\\"statusCode\\\": 200}\"\r\n            },\r\n            \"type\": \"mock\"\r\n          }\r\n        }\r\n      },\r\n      \"/pets\": {\r\n        \"get\": {\r\n          \"tags\": [\r\n            \"pets\"\r\n          ],\r\n          \"summary\": \"List all pets\",\r\n          \"produces\": [\r\n            \"application/json\"\r\n          ],\r\n          \"parameters\": [\r\n            {\r\n              \"name\": \"type\",\r\n              \"in\": \"query\",\r\n              \"description\": \"The type of pet to retrieve\",\r\n              \"required\": false,\r\n              \"type\": \"string\"\r\n            },\r\n            {\r\n              \"name\": \"page\",\r\n              \"in\": \"query\",\r\n              \"description\": \"Page number of results to return.\",\r\n              \"required\": false,\r\n              \"type\": \"string\"\r\n            }\r\n          ],\r\n          \"responses\": {\r\n            \"200\": {\r\n              \"description\": \"Successful operation\",\r\n              \"schema\": {\r\n                \"$ref\": \"#/definitions/Pets\"\r\n              },\r\n              \"headers\": {\r\n                \"Access-Control-Allow-Origin\": {\r\n                  \"type\": \"string\",\r\n                  \"description\": \"URI that may access the resource\"\r\n                }\r\n              }\r\n            }\r\n          },\r\n          \"x-amazon-apigateway-integration\": {\r\n            \"responses\": {\r\n              \"default\": {\r\n                \"statusCode\": \"200\",\r\n                \"responseParameters\": {\r\n                  \"method.response.header.Access-Control-Allow-Origin\": \"'*'\"\r\n                }\r\n              }\r\n            },\r\n            \"requestParameters\": {\r\n              \"integration.request.querystring.page\": \"method.request.querystring.page\",\r\n              \"integration.request.querystring.type\": \"method.request.querystring.type\"\r\n            },\r\n            \"uri\": \"http://petstore.execute-api.us-east-1.amazonaws.com/petstore/pets\",\r\n            \"passthroughBehavior\": \"when_no_match\",\r\n            \"httpMethod\": \"GET\",\r\n            \"type\": \"http\"\r\n          }\r\n        },\r\n        \"post\": {\r\n          \"tags\": [\r\n            \"pets\"\r\n          ],\r\n          \"operationId\": \"CreatePet\",\r\n          \"summary\": \"Create a pet\",\r\n          \"consumes\": [\r\n            \"application/json\"\r\n          ],\r\n          \"produces\": [\r\n            \"application/json\"\r\n          ],\r\n          \"parameters\": [\r\n            {\r\n              \"in\": \"body\",\r\n              \"name\": \"NewPet\",\r\n              \"required\": true,\r\n              \"schema\": {\r\n                \"$ref\": \"#/definitions/NewPet\"\r\n              }\r\n            }\r\n          ],\r\n          \"responses\": {\r\n            \"200\": {\r\n              \"description\": \"Successful operation\",\r\n              \"schema\": {\r\n                \"$ref\": \"#/definitions/NewPetResponse\"\r\n              },\r\n              \"headers\": {\r\n                \"Access-Control-Allow-Origin\": {\r\n                  \"type\": \"string\",\r\n                  \"description\": \"URI that may access the resource\"\r\n                }\r\n              }\r\n            }\r\n          },\r\n          \"x-amazon-apigateway-integration\": {\r\n            \"responses\": {\r\n              \"default\": {\r\n                \"statusCode\": \"200\",\r\n                \"responseParameters\": {\r\n                  \"method.response.header.Access-Control-Allow-Origin\": \"'*'\"\r\n                }\r\n              }\r\n            },\r\n            \"uri\": \"http://petstore.execute-api.us-east-1.amazonaws.com/petstore/pets\",\r\n            \"passthroughBehavior\": \"when_no_match\",\r\n            \"httpMethod\": \"POST\",\r\n            \"type\": \"http\"\r\n          }\r\n        },\r\n        \"options\": {\r\n          \"consumes\": [\r\n            \"application/json\"\r\n          ],\r\n          \"produces\": [\r\n            \"application/json\"\r\n          ],\r\n          \"responses\": {\r\n            \"200\": {\r\n              \"description\": \"Successful operation\",\r\n              \"schema\": {\r\n                \"$ref\": \"#/definitions/Empty\"\r\n              },\r\n              \"headers\": {\r\n                \"Access-Control-Allow-Origin\": {\r\n                  \"type\": \"string\",\r\n                  \"description\": \"URI that may access the resource\"\r\n                },\r\n                \"Access-Control-Allow-Methods\": {\r\n                  \"type\": \"string\",\r\n                  \"description\": \"Method or methods allowed when accessing the resource\"\r\n                },\r\n                \"Access-Control-Allow-Headers\": {\r\n                  \"type\": \"string\",\r\n                  \"description\": \"Used in response to a preflight request to indicate which HTTP headers can be used when making the request.\"\r\n                }\r\n              }\r\n            }\r\n          },\r\n          \"x-amazon-apigateway-integration\": {\r\n            \"responses\": {\r\n              \"default\": {\r\n                \"statusCode\": \"200\",\r\n                \"responseParameters\": {\r\n                  \"method.response.header.Access-Control-Allow-Methods\": \"'POST,GET,OPTIONS'\",\r\n                  \"method.response.header.Access-Control-Allow-Headers\": \"'Content-Type,X-Amz-Date,Authorization,X-Api-Key'\",\r\n                  \"method.response.header.Access-Control-Allow-Origin\": \"'*'\"\r\n                }\r\n              }\r\n            },\r\n            \"passthroughBehavior\": \"when_no_match\",\r\n            \"requestTemplates\": {\r\n              \"application/json\": \"{\\\"statusCode\\\": 200}\"\r\n            },\r\n            \"type\": \"mock\"\r\n          }\r\n        }\r\n      },\r\n      \"/pets/{petId}\": {\r\n        \"get\": {\r\n          \"tags\": [\r\n            \"pets\"\r\n          ],\r\n          \"summary\": \"Info for a specific pet\",\r\n          \"operationId\": \"GetPet\",\r\n          \"produces\": [\r\n            \"application/json\"\r\n          ],\r\n          \"parameters\": [\r\n            {\r\n              \"name\": \"petId\",\r\n              \"in\": \"path\",\r\n              \"description\": \"The id of the pet to retrieve\",\r\n              \"required\": true,\r\n              \"type\": \"string\"\r\n            }\r\n          ],\r\n          \"responses\": {\r\n            \"200\": {\r\n              \"description\": \"Successful operation\",\r\n              \"schema\": {\r\n                \"$ref\": \"#/definitions/Pet\"\r\n              },\r\n              \"headers\": {\r\n                \"Access-Control-Allow-Origin\": {\r\n                  \"type\": \"string\",\r\n                  \"description\": \"URI that may access the resource\"\r\n                }\r\n              }\r\n            }\r\n          },\r\n          \"x-amazon-apigateway-integration\": {\r\n            \"responses\": {\r\n              \"default\": {\r\n                \"statusCode\": \"200\",\r\n                \"responseParameters\": {\r\n                  \"method.response.header.Access-Control-Allow-Origin\": \"'*'\"\r\n                }\r\n              }\r\n            },\r\n            \"requestParameters\": {\r\n              \"integration.request.path.petId\": \"method.request.path.petId\"\r\n            },\r\n            \"uri\": \"http://petstore.execute-api.us-east-1.amazonaws.com/petstore/pets/{petId}\",\r\n            \"passthroughBehavior\": \"when_no_match\",\r\n            \"httpMethod\": \"GET\",\r\n            \"type\": \"http\"\r\n          }\r\n        },\r\n        \"options\": {\r\n          \"consumes\": [\r\n            \"application/json\"\r\n          ],\r\n          \"produces\": [\r\n            \"application/json\"\r\n          ],\r\n          \"parameters\": [\r\n            {\r\n              \"name\": \"petId\",\r\n              \"in\": \"path\",\r\n              \"description\": \"The id of the pet to retrieve\",\r\n              \"required\": true,\r\n              \"type\": \"string\"\r\n            }\r\n          ],\r\n          \"responses\": {\r\n            \"200\": {\r\n              \"description\": \"Successful operation\",\r\n              \"schema\": {\r\n                \"$ref\": \"#/definitions/Empty\"\r\n              },\r\n              \"headers\": {\r\n                \"Access-Control-Allow-Origin\": {\r\n                  \"type\": \"string\",\r\n                  \"description\": \"URI that may access the resource\"\r\n                },\r\n                \"Access-Control-Allow-Methods\": {\r\n                  \"type\": \"string\",\r\n                  \"description\": \"Method or methods allowed when accessing the resource\"\r\n                },\r\n                \"Access-Control-Allow-Headers\": {\r\n                  \"type\": \"string\",\r\n                  \"description\": \"Used in response to a preflight request to indicate which HTTP headers can be used when making the request.\"\r\n                }\r\n              }\r\n            }\r\n          },\r\n          \"x-amazon-apigateway-integration\": {\r\n            \"responses\": {\r\n              \"default\": {\r\n                \"statusCode\": \"200\",\r\n                \"responseParameters\": {\r\n                  \"method.response.header.Access-Control-Allow-Methods\": \"'GET,OPTIONS'\",\r\n                  \"method.response.header.Access-Control-Allow-Headers\": \"'Content-Type,X-Amz-Date,Authorization,X-Api-Key'\",\r\n                  \"method.response.header.Access-Control-Allow-Origin\": \"'*'\"\r\n                }\r\n              }\r\n            },\r\n            \"passthroughBehavior\": \"when_no_match\",\r\n            \"requestTemplates\": {\r\n              \"application/json\": \"{\\\"statusCode\\\": 200}\"\r\n            },\r\n            \"type\": \"mock\"\r\n          }\r\n        }\r\n      }\r\n    },\r\n    \"definitions\": {\r\n      \"Pets\": {\r\n        \"type\": \"array\",\r\n        \"items\": {\r\n          \"$ref\": \"#/definitions/Pet\"\r\n        }\r\n      },\r\n      \"Empty\": {\r\n        \"type\": \"object\"\r\n      },\r\n      \"NewPetResponse\": {\r\n        \"type\": \"object\",\r\n        \"properties\": {\r\n          \"pet\": {\r\n            \"$ref\": \"#/definitions/Pet\"\r\n          },\r\n          \"message\": {\r\n            \"type\": \"string\"\r\n          }\r\n        }\r\n      },\r\n      \"Pet\": {\r\n        \"type\": \"object\",\r\n        \"properties\": {\r\n          \"id\": {\r\n            \"type\": \"integer\"\r\n          },\r\n          \"type\": {\r\n            \"type\": \"string\"\r\n          },\r\n          \"price\": {\r\n            \"type\": \"number\"\r\n          }\r\n        }\r\n      },\r\n      \"NewPet\": {\r\n        \"type\": \"object\",\r\n        \"properties\": {\r\n          \"type\": {\r\n            \"$ref\": \"#/definitions/PetType\"\r\n          },\r\n          \"price\": {\r\n            \"type\": \"number\"\r\n          }\r\n        }\r\n      },\r\n      \"PetType\": {\r\n        \"type\": \"string\",\r\n        \"enum\": [\r\n          \"dog\",\r\n          \"cat\",\r\n          \"fish\",\r\n          \"bird\",\r\n          \"gecko\"\r\n        ]\r\n      }\r\n    },\r\n    \"x-amazon-apigateway-documentation\": {\r\n      \"version\": \"v2.1\",\r\n      \"createdDate\": \"2016-11-17T07:03:59Z\",\r\n      \"documentationParts\": [\r\n        {\r\n          \"location\": {\r\n            \"type\": \"API\"\r\n          },\r\n          \"properties\": {\r\n            \"info\": {\r\n              \"description\": \"Your first API with Amazon API Gateway. This is a sample API that integrates via HTTP with our demo Pet Store endpoints\"\r\n            }\r\n          }\r\n        },\r\n        {\r\n          \"location\": {\r\n            \"type\": \"METHOD\",\r\n            \"method\": \"GET\"\r\n          },\r\n          \"properties\": {\r\n            \"tags\": [\r\n              \"pets\"\r\n            ],\r\n            \"description\": \"PetStore HTML web page containing API usage information\"\r\n          }\r\n        },\r\n        {\r\n          \"location\": {\r\n            \"type\": \"METHOD\",\r\n            \"path\": \"/pets/{petId}\",\r\n            \"method\": \"GET\"\r\n          },\r\n          \"properties\": {\r\n            \"tags\": [\r\n              \"pets\"\r\n            ],\r\n            \"summary\": \"Info for a specific pet\"\r\n          }\r\n        },\r\n        {\r\n          \"location\": {\r\n            \"type\": \"METHOD\",\r\n            \"path\": \"/pets\",\r\n            \"method\": \"GET\"\r\n          },\r\n          \"properties\": {\r\n            \"tags\": [\r\n              \"pets\"\r\n            ],\r\n            \"summary\": \"List all pets\"\r\n          }\r\n        },\r\n        {\r\n          \"location\": {\r\n            \"type\": \"METHOD\",\r\n            \"path\": \"/pets\",\r\n            \"method\": \"POST\"\r\n          },\r\n          \"properties\": {\r\n            \"tags\": [\r\n              \"pets\"\r\n            ],\r\n            \"summary\": \"Create a pet\"\r\n          }\r\n        },\r\n        {\r\n          \"location\": {\r\n            \"type\": \"PATH_PARAMETER\",\r\n            \"path\": \"/pets/{petId}\",\r\n            \"method\": \"*\",\r\n            \"name\": \"petId\"\r\n          },\r\n          \"properties\": {\r\n            \"description\": \"The id of the pet to retrieve\"\r\n          }\r\n        },\r\n        {\r\n          \"location\": {\r\n            \"type\": \"QUERY_PARAMETER\",\r\n            \"path\": \"/pets\",\r\n            \"method\": \"GET\",\r\n            \"name\": \"page\"\r\n          },\r\n          \"properties\": {\r\n            \"description\": \"Page number of results to return.\"\r\n          }\r\n        },\r\n        {\r\n          \"location\": {\r\n            \"type\": \"QUERY_PARAMETER\",\r\n            \"path\": \"/pets\",\r\n            \"method\": \"GET\",\r\n            \"name\": \"type\"\r\n          },\r\n          \"properties\": {\r\n            \"description\": \"The type of pet to retrieve\"\r\n          }\r\n        },\r\n        {\r\n          \"location\": {\r\n            \"type\": \"REQUEST_BODY\",\r\n            \"path\": \"/pets\",\r\n            \"method\": \"POST\"\r\n          },\r\n          \"properties\": {\r\n            \"description\": \"Pet object that needs to be added to the store\"\r\n          }\r\n        },\r\n        {\r\n          \"location\": {\r\n            \"type\": \"RESPONSE\",\r\n            \"method\": \"*\",\r\n            \"statusCode\": \"200\"\r\n          },\r\n          \"properties\": {\r\n            \"description\": \"Successful operation\"\r\n          }\r\n        },\r\n        {\r\n          \"location\": {\r\n            \"type\": \"RESPONSE_HEADER\",\r\n            \"method\": \"OPTIONS\",\r\n            \"statusCode\": \"200\",\r\n            \"name\": \"Access-Control-Allow-Headers\"\r\n          },\r\n          \"properties\": {\r\n            \"description\": \"Used in response to a preflight request to indicate which HTTP headers can be used when making the request.\"\r\n          }\r\n        },\r\n        {\r\n          \"location\": {\r\n            \"type\": \"RESPONSE_HEADER\",\r\n            \"method\": \"OPTIONS\",\r\n            \"statusCode\": \"200\",\r\n            \"name\": \"Access-Control-Allow-Methods\"\r\n          },\r\n          \"properties\": {\r\n            \"description\": \"Method or methods allowed when accessing the resource\"\r\n          }\r\n        },\r\n        {\r\n          \"location\": {\r\n            \"type\": \"RESPONSE_HEADER\",\r\n            \"method\": \"*\",\r\n            \"statusCode\": \"200\",\r\n            \"name\": \"Access-Control-Allow-Origin\"\r\n          },\r\n          \"properties\": {\r\n            \"description\": \"URI that may access the resource\"\r\n          }\r\n        },\r\n        {\r\n          \"location\": {\r\n            \"type\": \"RESPONSE_HEADER\",\r\n            \"method\": \"GET\",\r\n            \"statusCode\": \"200\",\r\n            \"name\": \"Content-Type\"\r\n          },\r\n          \"properties\": {\r\n            \"description\": \"Media type of request\"\r\n          }\r\n        }\r\n      ]\r\n    }\r\n  }",
+              "description": "api created with the help of terraform",
+              "endpoint_configuration": [
+                {
+                  "types": [
+                    "PRIVATE"
+                  ],
+                  "vpc_endpoint_ids": [
+                    "vpce-04a8b4a7e33ac83e7",
+                    "vpce-0628e477609011a90",
+                    "vpce-08b2d24b9b2807d6b"
+                  ]
+                }
+              ],
+              "minimum_compression_size": -1,
+              "name": "apgw-euw1-dev-na--001",
+              "parameters": null,
+              "policy": "{\"Statement\":[{\"Action\":\"execute-api:Invoke\",\"Condition\":{\"IpAddress\":{\"aws:SourceIp\":\"123.123.123.123/32\"}},\"Effect\":\"Allow\",\"Principal\":{\"AWS\":\"*\"},\"Resource\":\"${aws_api_gateway_rest_api.rest_api.execution_arn}\"}],\"Version\":\"2012-10-17\"}",
+              "tags": {
+                "AppRole": "network",
+                "AppService": "",
+                "BuildDate": "",
+                "CostCentre": "na",
+                "Environment": "dev",
+                "Name": "apgw-euw1-dev-na--001",
+                "RegionId": "euw1",
+                "VersionId": "1"
+              },
+              "tags_all": {
+                "AppRole": "network",
+                "CostCentre": "na",
+                "Environment": "dev",
+                "Name": "apgw-euw1-dev-na--001",
+                "RegionId": "euw1",
+                "VersionId": "1"
+              }
+            },
+            "after_unknown": {
+              "arn": true,
+              "binary_media_types": [
+                false
+              ],
+              "created_date": true,
+              "disable_execute_api_endpoint": true,
+              "endpoint_configuration": [
+                {
+                  "types": [
+                    false
+                  ],
+                  "vpc_endpoint_ids": [
+                    false,
+                    false,
+                    false
+                  ]
+                }
+              ],
+              "execution_arn": true,
+              "id": true,
+              "root_resource_id": true,
+              "tags": {},
+              "tags_all": {
+                "AppService": true,
+                "BuildDate": true
+              }
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "binary_media_types": [
+                false
+              ],
+              "endpoint_configuration": [
+                {
+                  "types": [
+                    false
+                  ],
+                  "vpc_endpoint_ids": [
+                    false,
+                    false,
+                    false
+                  ]
+                }
+              ],
+              "tags": {},
+              "tags_all": {}
+            }
+          }
+        },
+        {
+          "address": "aws_api_gateway_stage.sample_stage",
+          "mode": "managed",
+          "type": "aws_api_gateway_stage",
+          "name": "sample_stage",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "access_log_settings": [],
+              "cache_cluster_enabled": true,
+              "cache_cluster_size": "1.6",
+              "client_certificate_id": null,
+              "description": null,
+              "documentation_version": null,
+              "stage_name": "DB_API_Stage",
+              "tags": null,
+              "variables": null,
+              "xray_tracing_enabled": null
+            },
+            "after_unknown": {
+              "access_log_settings": [],
+              "arn": true,
+              "deployment_id": true,
+              "execution_arn": true,
+              "id": true,
+              "invoke_url": true,
+              "rest_api_id": true,
+              "tags_all": true,
+              "web_acl_arn": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "access_log_settings": [],
+              "tags_all": {}
+            }
+          }
+        }
+      ]
+    }
+  }
+}

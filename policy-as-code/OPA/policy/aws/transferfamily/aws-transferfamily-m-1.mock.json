@@ -1,0 +1,143 @@
+{
+  "mock": {
+    "valid_protocol": {
+      "resource_changes": [
+        {
+          "address": "aws_transfer_server.example",
+          "mode": "managed",
+          "type": "aws_transfer_server",
+          "name": "example",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "certificate": null,
+              "directory_id": null,
+              "domain": "S3",
+              "endpoint_details": [],
+              "endpoint_type": "PUBLIC",
+              "force_destroy": false,
+              "function": null,
+              "host_key": null,
+              "identity_provider_type": "SERVICE_MANAGED",
+              "invocation_role": null,
+              "logging_role": null,
+              "protocols": [
+                "FTPS",
+                "SFTP"
+          
+              ],
+              "security_policy_name": "TransferSecurityPolicy-2018-11",
+              "tags": {
+                "Name": "Example"
+              },
+              "tags_all": {
+                "Name": "Example"
+              },
+              "url": null
+            },
+            "after_unknown": {
+              "arn": true,
+              "endpoint": true,
+              "endpoint_details": [],
+              "host_key_fingerprint": true,
+              "id": true,
+              "protocols": [
+                false,
+                false,
+                false
+              ],
+              "tags": {},
+              "tags_all": {}
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "endpoint_details": [],
+              "host_key": true,
+              "protocols": [
+                false,
+                false,
+                false
+              ],
+              "tags": {},
+              "tags_all": {}
+            }
+          }
+        }
+      ]
+    },
+    "invalid_protocol": {
+      "resource_changes": [
+        {
+          "address": "aws_transfer_server.example",
+          "mode": "managed",
+          "type": "aws_transfer_server",
+          "name": "example",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "certificate": null,
+              "directory_id": null,
+              "domain": "S3",
+              "endpoint_details": [],
+              "endpoint_type": "PUBLIC",
+              "force_destroy": false,
+              "function": null,
+              "host_key": null,
+              "identity_provider_type": "SERVICE_MANAGED",
+              "invocation_role": null,
+              "logging_role": null,
+              "protocols": [
+                "AS2",
+                "FTP",
+                "FTPS",
+                "SFTP"
+              ],
+              "security_policy_name": "TransferSecurityPolicy-2018-11",
+              "tags": {
+                "Name": "Example"
+              },
+              "tags_all": {
+                "Name": "Example"
+              },
+              "url": null
+            },
+            "after_unknown": {
+              "arn": true,
+              "endpoint": true,
+              "endpoint_details": [],
+              "host_key_fingerprint": true,
+              "id": true,
+              "protocols": [
+                false,
+                false,
+                false
+              ],
+              "tags": {},
+              "tags_all": {}
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "endpoint_details": [],
+              "host_key": true,
+              "protocols": [
+                false,
+                false,
+                false
+              ],
+              "tags": {},
+              "tags_all": {}
+            }
+          }
+        }
+      ]
+    }
+  }
+}

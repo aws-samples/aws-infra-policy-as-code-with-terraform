@@ -1,0 +1,205 @@
+{
+  "mock": {
+    "valid_kms_referenced": {
+      "resource_changes": [
+        {
+          "address": "aws_memorydb_cluster.memorydb_for_redis",
+          "mode": "managed",
+          "type": "aws_memorydb_cluster",
+          "name": "memorydb_for_redis",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "auto_minor_version_upgrade": true,
+              "description": "Managed by Terraform",
+              "final_snapshot_name": null,
+              "name": "redis",
+              "node_type": "db.t4g.small",
+              "num_replicas_per_shard": 1,
+              "num_shards": 1,
+              "snapshot_arns": null,
+              "snapshot_name": null,
+              "sns_topic_arn": null,
+              "tags": {
+                "Env": "Test",
+                "Name": "Project"
+              },
+              "tags_all": {
+                "Env": "Test",
+                "Name": "Project"
+              },
+              "timeouts": null,
+              "tls_enabled": true
+            },
+            "after_unknown": {
+              "acl_name": true,
+              "arn": true,
+              "cluster_endpoint": true,
+              "engine_patch_version": true,
+              "engine_version": true,
+              "id": true,
+              "kms_key_arn": true,
+              "maintenance_window": true,
+              "name_prefix": true,
+              "parameter_group_name": true,
+              "port": true,
+              "security_group_ids": true,
+              "shards": true,
+              "snapshot_retention_limit": true,
+              "snapshot_window": true,
+              "subnet_group_name": true,
+              "tags": {},
+              "tags_all": {}
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "cluster_endpoint": [],
+              "security_group_ids": [],
+              "shards": [],
+              "tags": {},
+              "tags_all": {}
+            }
+          }
+        }
+      ]
+    },
+    "valid_kms_constant": {
+      "resource_changes": [
+        {
+          "address": "aws_memorydb_cluster.memorydb_for_redis",
+          "mode": "managed",
+          "type": "aws_memorydb_cluster",
+          "name": "memorydb_for_redis",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "auto_minor_version_upgrade": true,
+              "description": "Managed by Terraform",
+              "final_snapshot_name": null,
+              "kms_key_arn": "arn:aws:kms:eu-central-1:806512417569:key/069253dd-2ab4-4ba5-a7e3-bac5c5d2e28f",
+              "name": "redis",
+              "node_type": "db.t4g.small",
+              "num_replicas_per_shard": 1,
+              "num_shards": 1,
+              "snapshot_arns": null,
+              "snapshot_name": null,
+              "sns_topic_arn": null,
+              "tags": {
+                "Env": "Test",
+                "Name": "Project"
+              },
+              "tags_all": {
+                "Env": "Test",
+                "Name": "Project"
+              },
+              "timeouts": null,
+              "tls_enabled": true
+            },
+            "after_unknown": {
+              "acl_name": true,
+              "arn": true,
+              "cluster_endpoint": true,
+              "engine_patch_version": true,
+              "engine_version": true,
+              "id": true,
+              "maintenance_window": true,
+              "name_prefix": true,
+              "parameter_group_name": true,
+              "port": true,
+              "security_group_ids": true,
+              "shards": true,
+              "snapshot_retention_limit": true,
+              "snapshot_window": true,
+              "subnet_group_name": true,
+              "tags": {},
+              "tags_all": {}
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "cluster_endpoint": [],
+              "security_group_ids": [],
+              "shards": [],
+              "tags": {},
+              "tags_all": {}
+            }
+          }
+        }
+      ]
+    },
+    "invalid": {
+      "resource_changes": [
+        {
+          "address": "aws_memorydb_cluster.memorydb_for_redis",
+          "mode": "managed",
+          "type": "aws_memorydb_cluster",
+          "name": "memorydb_for_redis",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "auto_minor_version_upgrade": true,
+              "description": "Managed by Terraform",
+              "final_snapshot_name": null,
+              "kms_key_arn": null,
+              "name": "redis",
+              "node_type": "db.t4g.small",
+              "num_replicas_per_shard": 1,
+              "num_shards": 1,
+              "snapshot_arns": null,
+              "snapshot_name": null,
+              "sns_topic_arn": null,
+              "tags": {
+                "Env": "Test",
+                "Name": "Project"
+              },
+              "tags_all": {
+                "Env": "Test",
+                "Name": "Project"
+              },
+              "timeouts": null,
+              "tls_enabled": true
+            },
+            "after_unknown": {
+              "acl_name": true,
+              "arn": true,
+              "cluster_endpoint": true,
+              "engine_patch_version": true,
+              "engine_version": true,
+              "id": true,
+              "maintenance_window": true,
+              "name_prefix": true,
+              "parameter_group_name": true,
+              "port": true,
+              "security_group_ids": true,
+              "shards": true,
+              "snapshot_retention_limit": true,
+              "snapshot_window": true,
+              "subnet_group_name": true,
+              "tags": {},
+              "tags_all": {}
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "cluster_endpoint": [],
+              "security_group_ids": [],
+              "shards": [],
+              "tags": {},
+              "tags_all": {}
+            }
+          }
+        }
+      ]
+    }
+  }
+}

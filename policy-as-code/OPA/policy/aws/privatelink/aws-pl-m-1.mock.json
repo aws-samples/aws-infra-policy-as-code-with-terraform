@@ -1,0 +1,104 @@
+{
+  "mock": {
+    "valid": {
+      "resource_changes": [
+        {
+          "address": "module.endpoint_service.aws_vpc_endpoint_service.endp_svc",
+          "module_address": "module.endpoint_service",
+          "mode": "managed",
+          "type": "aws_vpc_endpoint_service",
+          "name": "endp_svc",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "acceptance_required": true,
+              "gateway_load_balancer_arns": null,
+              "tags": null,
+              "timeouts": null
+            },
+            "after_unknown": {
+              "allowed_principals": true,
+              "arn": true,
+              "availability_zones": true,
+              "base_endpoint_dns_names": true,
+              "id": true,
+              "manages_vpc_endpoints": true,
+              "network_load_balancer_arns": true,
+              "private_dns_name": true,
+              "private_dns_name_configuration": true,
+              "service_name": true,
+              "service_type": true,
+              "state": true,
+              "supported_ip_address_types": true,
+              "tags_all": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "allowed_principals": [],
+              "availability_zones": [],
+              "base_endpoint_dns_names": [],
+              "network_load_balancer_arns": [],
+              "private_dns_name_configuration": [],
+              "supported_ip_address_types": [],
+              "tags_all": {}
+            }
+          }
+        }
+      ]
+    },
+    "invalid": {
+      "resource_changes": [
+        {
+          "address": "module.endpoint_service.aws_vpc_endpoint_service.endp_svc",
+          "module_address": "module.endpoint_service",
+          "mode": "managed",
+          "type": "aws_vpc_endpoint_service",
+          "name": "endp_svc",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "acceptance_required": false,
+              "gateway_load_balancer_arns": null,
+              "tags": null,
+              "timeouts": null
+            },
+            "after_unknown": {
+              "allowed_principals": true,
+              "arn": true,
+              "availability_zones": true,
+              "base_endpoint_dns_names": true,
+              "id": true,
+              "manages_vpc_endpoints": true,
+              "network_load_balancer_arns": true,
+              "private_dns_name": true,
+              "private_dns_name_configuration": true,
+              "service_name": true,
+              "service_type": true,
+              "state": true,
+              "supported_ip_address_types": true,
+              "tags_all": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "allowed_principals": [],
+              "availability_zones": [],
+              "base_endpoint_dns_names": [],
+              "network_load_balancer_arns": [],
+              "private_dns_name_configuration": [],
+              "supported_ip_address_types": [],
+              "tags_all": {}
+            }
+          }
+        }
+      ]
+    }
+  }
+}

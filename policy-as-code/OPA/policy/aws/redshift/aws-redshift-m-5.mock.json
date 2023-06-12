@@ -1,0 +1,164 @@
+{
+  "mock": {
+    "compliant": {
+      "resource_changes": [
+        {
+          "address": "aws_redshift_cluster.compliant",
+          "mode": "managed",
+          "type": "aws_redshift_cluster",
+          "name": "compliant",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "allow_version_upgrade": true,
+              "apply_immediately": false,
+              "automated_snapshot_retention_period": 1,
+              "availability_zone_relocation_enabled": null,
+              "cluster_identifier": "tf-redshift-cluster",
+              "cluster_version": "1.0",
+              "elastic_ip": null,
+              "encrypted": false,
+              "final_snapshot_identifier": null,
+              "logging": [],
+              "maintenance_track_name": "current",
+              "manual_snapshot_retention_period": -1,
+              "master_password": "Mustbe8characters",
+              "master_username": "compliantuser",
+              "node_type": "dc1.large",
+              "number_of_nodes": 1,
+              "owner_account": null,
+              "port": 5439,
+              "publicly_accessible": true,
+              "skip_final_snapshot": false,
+              "snapshot_cluster_identifier": null,
+              "snapshot_copy": [],
+              "snapshot_identifier": null,
+              "tags": null,
+              "timeouts": null
+            },
+            "after_unknown": {
+              "aqua_configuration_status": true,
+              "arn": true,
+              "availability_zone": true,
+              "cluster_nodes": true,
+              "cluster_parameter_group_name": true,
+              "cluster_public_key": true,
+              "cluster_revision_number": true,
+              "cluster_security_groups": true,
+              "cluster_subnet_group_name": true,
+              "cluster_type": true,
+              "database_name": true,
+              "default_iam_role_arn": true,
+              "dns_name": true,
+              "endpoint": true,
+              "enhanced_vpc_routing": true,
+              "iam_roles": true,
+              "id": true,
+              "kms_key_id": true,
+              "logging": [],
+              "preferred_maintenance_window": true,
+              "snapshot_copy": [],
+              "tags_all": true,
+              "vpc_security_group_ids": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "cluster_nodes": [],
+              "cluster_security_groups": [],
+              "iam_roles": [],
+              "logging": [],
+              "master_password": true,
+              "snapshot_copy": [],
+              "tags_all": {},
+              "vpc_security_group_ids": []
+            }
+          }
+        }
+      ]
+    },
+    "notcompliant":{
+      "resource_changes": [
+        {
+          "address": "aws_redshift_cluster.notcompliant",
+          "mode": "managed",
+          "type": "aws_redshift_cluster",
+          "name": "notcompliant",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "allow_version_upgrade": true,
+              "apply_immediately": false,
+              "automated_snapshot_retention_period": 1,
+              "availability_zone_relocation_enabled": null,
+              "cluster_identifier": "tf-redshift-cluster",
+              "cluster_version": "1.0",
+              "elastic_ip": null,
+              "encrypted": false,
+              "final_snapshot_identifier": null,
+              "logging": [],
+              "maintenance_track_name": "current",
+              "manual_snapshot_retention_period": -1,
+              "master_password": "Mustbe8characters",
+              "master_username": "awsuser",
+              "node_type": "dc1.large",
+              "number_of_nodes": 1,
+              "owner_account": null,
+              "port": 5439,
+              "publicly_accessible": true,
+              "skip_final_snapshot": false,
+              "snapshot_cluster_identifier": null,
+              "snapshot_copy": [],
+              "snapshot_identifier": null,
+              "tags": null,
+              "timeouts": null
+            },
+            "after_unknown": {
+              "aqua_configuration_status": true,
+              "arn": true,
+              "availability_zone": true,
+              "cluster_nodes": true,
+              "cluster_parameter_group_name": true,
+              "cluster_public_key": true,
+              "cluster_revision_number": true,
+              "cluster_security_groups": true,
+              "cluster_subnet_group_name": true,
+              "cluster_type": true,
+              "database_name": true,
+              "default_iam_role_arn": true,
+              "dns_name": true,
+              "endpoint": true,
+              "enhanced_vpc_routing": true,
+              "iam_roles": true,
+              "id": true,
+              "kms_key_id": true,
+              "logging": [],
+              "preferred_maintenance_window": true,
+              "snapshot_copy": [],
+              "tags_all": true,
+              "vpc_security_group_ids": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "cluster_nodes": [],
+              "cluster_security_groups": [],
+              "iam_roles": [],
+              "logging": [],
+              "master_password": true,
+              "snapshot_copy": [],
+              "tags_all": {},
+              "vpc_security_group_ids": []
+            }
+          }
+        }
+      ]
+    }
+  }
+}

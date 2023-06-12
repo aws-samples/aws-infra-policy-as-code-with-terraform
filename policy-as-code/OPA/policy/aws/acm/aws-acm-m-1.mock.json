@@ -1,0 +1,195 @@
+{
+  "mock": {
+    "aws_ca_non_compliant_default": {
+      "resource_changes": [
+        {
+          "address": "aws_acm_certificate.aws_ca_non_compliant_default",
+          "mode": "managed",
+          "type": "aws_acm_certificate",
+          "name": "aws_ca_non_compliant_default",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "certificate_authority_arn": null,
+              "certificate_body": null,
+              "certificate_chain": null,
+              "domain_name": "aws-ca-non-compliant-default.com",
+              "domain_validation_options": [
+                {
+                  "domain_name": "aws-ca-non-compliant-default.com"
+                }
+              ],
+              "options": [],
+              "private_key": null,
+              "tags": null,
+              "validation_method": "DNS"
+            },
+            "after_unknown": {
+              "arn": true,
+              "domain_validation_options": [
+                {
+                  "resource_record_name": true,
+                  "resource_record_type": true,
+                  "resource_record_value": true
+                }
+              ],
+              "id": true,
+              "options": [],
+              "status": true,
+              "subject_alternative_names": true,
+              "tags_all": true,
+              "validation_emails": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "domain_validation_options": [
+                {}
+              ],
+              "options": [],
+              "private_key": true,
+              "subject_alternative_names": [],
+              "tags_all": {},
+              "validation_emails": []
+            }
+          }
+        }
+      ]
+    },
+    "aws_ca_non_compliant_tags_empty": {
+      "resource_changes": [
+        {
+          "address": "aws_acm_certificate.aws_ca_non_compliant_tags_empty",
+          "mode": "managed",
+          "type": "aws_acm_certificate",
+          "name": "aws_ca_non_compliant_tags_empty",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "certificate_authority_arn": null,
+              "certificate_body": null,
+              "certificate_chain": null,
+              "domain_name": "aws-ca-non-compliant-tags-empty.com",
+              "domain_validation_options": [
+                {
+                  "domain_name": "aws-ca-non-compliant-tags-empty.com"
+                }
+              ],
+              "options": [],
+              "private_key": null,
+              "tags": {
+                "test": ""
+              },
+              "tags_all": {},
+              "validation_method": "DNS"
+            },
+            "after_unknown": {
+              "arn": true,
+              "domain_validation_options": [
+                {
+                  "resource_record_name": true,
+                  "resource_record_type": true,
+                  "resource_record_value": true
+                }
+              ],
+              "id": true,
+              "options": [],
+              "status": true,
+              "subject_alternative_names": true,
+              "tags": {},
+              "tags_all": {
+                "test": true
+              },
+              "validation_emails": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "domain_validation_options": [
+                {}
+              ],
+              "options": [],
+              "private_key": true,
+              "subject_alternative_names": [],
+              "tags": {},
+              "tags_all": {},
+              "validation_emails": []
+            }
+          }
+        }
+      ]
+    },
+    "aws_ca_compliant_tags": {
+      "resource_changes": [
+        {
+          "address": "aws_acm_certificate.aws_ca_compliant_tags",
+          "mode": "managed",
+          "type": "aws_acm_certificate",
+          "name": "aws_ca_compliant_tags",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "certificate_authority_arn": null,
+              "certificate_body": null,
+              "certificate_chain": null,
+              "domain_name": "aws-ca-compliant-tags.com",
+              "domain_validation_options": [
+                {
+                  "domain_name": "aws-ca-compliant-tags.com"
+                }
+              ],
+              "options": [],
+              "private_key": null,
+              "tags": {
+                "Environment": "test"
+              },
+              "tags_all": {
+                "Environment": "test"
+              },
+              "validation_method": "DNS"
+            },
+            "after_unknown": {
+              "arn": true,
+              "domain_validation_options": [
+                {
+                  "resource_record_name": true,
+                  "resource_record_type": true,
+                  "resource_record_value": true
+                }
+              ],
+              "id": true,
+              "options": [],
+              "status": true,
+              "subject_alternative_names": true,
+              "tags": {},
+              "tags_all": {},
+              "validation_emails": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "domain_validation_options": [
+                {}
+              ],
+              "options": [],
+              "private_key": true,
+              "subject_alternative_names": [],
+              "tags": {},
+              "tags_all": {},
+              "validation_emails": []
+            }
+          }
+        }
+      ]
+    }
+  }
+}

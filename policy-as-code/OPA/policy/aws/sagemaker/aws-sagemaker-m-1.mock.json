@@ -1,0 +1,110 @@
+{
+  "mock": {
+    "valid": {
+      "resource_changes": [
+        {
+          "address": "aws_sagemaker_notebook_instance.test",
+          "mode": "managed",
+          "type": "aws_sagemaker_notebook_instance",
+          "name": "test",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "accelerator_types": null,
+              "additional_code_repositories": null,
+              "default_code_repository": null,
+              "direct_internet_access": "Enabled",
+              "instance_metadata_service_configuration": [],
+              "instance_type": "ml.t2.medium",
+              "lifecycle_config_name": null,
+              "name": "my-notebook-instance",
+              "role_arn": "arn:aws:iam::123456789012:role/SageMakerInstanceRole",
+              "root_access": "Enabled",
+              "subnet_id": null,
+              "tags": null,
+              "volume_size": 5
+            },
+            "after_unknown": {
+              "arn": true,
+              "id": true,
+              "instance_metadata_service_configuration": [],
+              "kms_key_id": true,
+              "network_interface_id": true,
+              "platform_identifier": true,
+              "security_groups": true,
+              "tags_all": true,
+              "url": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "instance_metadata_service_configuration": [],
+              "security_groups": [],
+              "tags_all": {}
+            }
+          }
+        }
+      ]
+    },
+    "invalid": {
+      "resource_changes": [
+        {
+          "address": "aws_sagemaker_notebook_instance.test",
+          "mode": "managed",
+          "type": "aws_sagemaker_notebook_instance",
+          "name": "test",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "accelerator_types": null,
+              "additional_code_repositories": null,
+              "default_code_repository": "MyGitRepo",
+              "direct_internet_access": "Enabled",
+              "instance_metadata_service_configuration": [
+                {
+                  "minimum_instance_metadata_service_version": "2"
+                }
+              ],
+              "instance_type": "ml.t2.medium",
+              "kms_key_id": "arn:aws:kms:us-east-1:123456789012:key/3613c98e-2775-479e-a2ae-29b804e936ef",
+              "lifecycle_config_name": null,
+              "name": "my-notebook-instance",
+              "role_arn": "arn:aws:iam::123456789012:role/service-role/AmazonSageMaker-ExecutionRole",
+              "root_access": "Disabled",
+              "subnet_id": null,
+              "tags": null,
+              "volume_size": 5
+            },
+            "after_unknown": {
+              "arn": true,
+              "id": true,
+              "instance_metadata_service_configuration": [
+                {}
+              ],
+              "network_interface_id": true,
+              "platform_identifier": true,
+              "security_groups": true,
+              "tags_all": true,
+              "url": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "instance_metadata_service_configuration": [
+                {}
+              ],
+              "security_groups": [],
+              "tags_all": {}
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,358 @@
+{
+  "mock": {
+    "ecr_vpc_endpoint_with_valid_aws_condition": {
+      "resource_changes": [
+        {
+          "address": "aws_vpc_endpoint.ecr_vpc_endpoint_with_valid_aws_condition",
+          "mode": "managed",
+          "type": "aws_vpc_endpoint",
+          "name": "ecr_vpc_endpoint_with_valid_aws_condition",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "auto_accept": null,
+              "policy": "{\"Statement\":[{\"Action\":\"*\",\"Condition\":{\"StringEquals\":{\"aws:ResourceTag/ArtifactoryScanCompleted\":\"Yes\"}},\"Effect\":\"Allow\",\"Principal\": \"*\",\"Resource\":\"*\",\"Sid\":\"Allow Permissions\"}]}",
+              "private_dns_enabled": true,
+              "security_group_ids": [
+                "sg-0e2c0ecdd9f309acb"
+              ],
+              "service_name": "com.amazonaws.eu-central-1.ecr.dkr",
+              "tags": null,
+              "timeouts": null,
+              "vpc_endpoint_type": "Interface",
+              "vpc_id": "vpc-094984b88ccd1e462"
+            },
+            "after_unknown": {
+              "arn": true,
+              "cidr_blocks": true,
+              "dns_entry": true,
+              "id": true,
+              "network_interface_ids": true,
+              "owner_id": true,
+              "prefix_list_id": true,
+              "requester_managed": true,
+              "route_table_ids": true,
+              "security_group_ids": [
+                false
+              ],
+              "state": true,
+              "subnet_ids": true,
+              "tags_all": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "cidr_blocks": [],
+              "dns_entry": [],
+              "network_interface_ids": [],
+              "route_table_ids": [],
+              "security_group_ids": [
+                false
+              ],
+              "subnet_ids": [],
+              "tags_all": {}
+            }
+          }
+        }
+      ]
+    },
+    "ecr_vpc_endpoint_with_valid_ecr_condition": {
+      "resource_changes": [
+        {
+          "address": "aws_vpc_endpoint.ecr_vpc_endpoint_with_valid_ecr_condition",
+          "mode": "managed",
+          "type": "aws_vpc_endpoint",
+          "name": "ecr_vpc_endpoint_with_valid_ecr_condition",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "auto_accept": null,
+              "policy": "{\"Statement\":[{\"Action\":\"*\",\"Condition\":{\"StringEquals\":{\"ecr:ResourceTag/ArtifactoryScanCompleted\":\"Yes\"}},\"Effect\":\"Allow\",\"Principal\":\"*\",\"Resource\":\"*\",\"Sid\":\"Allow Permissions\"}]}",
+              "private_dns_enabled": true,
+              "security_group_ids": [
+                "sg-0e2c0ecdd9f309acb"
+              ],
+              "service_name": "com.amazonaws.eu-central-1.ecr.api",
+              "tags": null,
+              "timeouts": null,
+              "vpc_endpoint_type": "Interface",
+              "vpc_id": "vpc-094984b88ccd1e462"
+            },
+            "after_unknown": {
+              "arn": true,
+              "cidr_blocks": true,
+              "dns_entry": true,
+              "id": true,
+              "network_interface_ids": true,
+              "owner_id": true,
+              "prefix_list_id": true,
+              "requester_managed": true,
+              "route_table_ids": true,
+              "security_group_ids": [
+                false
+              ],
+              "state": true,
+              "subnet_ids": true,
+              "tags_all": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "cidr_blocks": [],
+              "dns_entry": [],
+              "network_interface_ids": [],
+              "route_table_ids": [],
+              "security_group_ids": [
+                false
+              ],
+              "subnet_ids": [],
+              "tags_all": {}
+            }
+          }
+        }
+      ]
+    },
+    "ecr_vpc_endpoint_with_policy_no_condition": {
+      "resource_changes": [
+        {
+          "address": "aws_vpc_endpoint.ecr_vpc_endpoint_with_policy_no_condition",
+          "mode": "managed",
+          "type": "aws_vpc_endpoint",
+          "name": "ecr_vpc_endpoint_with_policy_no_condition",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "auto_accept": null,
+              "policy": "{\"Statement\":[{\"Action\":\"*\",\"Effect\":\"Allow\",\"Principal\":\"*\",\"Resource\":\"*\",\"Sid\":\"Allow Permissions\"}]}",
+              "private_dns_enabled": true,
+              "security_group_ids": [
+                "sg-0e2c0ecdd9f309acb"
+              ],
+              "service_name": "com.amazonaws.eu-central-1.ecr.dkr",
+              "tags": null,
+              "timeouts": null,
+              "vpc_endpoint_type": "Interface",
+              "vpc_id": "vpc-094984b88ccd1e462"
+            },
+            "after_unknown": {
+              "arn": true,
+              "cidr_blocks": true,
+              "dns_entry": true,
+              "id": true,
+              "network_interface_ids": true,
+              "owner_id": true,
+              "prefix_list_id": true,
+              "requester_managed": true,
+              "route_table_ids": true,
+              "security_group_ids": [
+                false
+              ],
+              "state": true,
+              "subnet_ids": true,
+              "tags_all": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "cidr_blocks": [],
+              "dns_entry": [],
+              "network_interface_ids": [],
+              "route_table_ids": [],
+              "security_group_ids": [
+                false
+              ],
+              "subnet_ids": [],
+              "tags_all": {}
+            }
+          }
+        }
+      ]
+    },
+    "ecr_vpc_endpoint_with_no_policy": {
+      "resource_changes": [
+        {
+          "address": "aws_vpc_endpoint.ecr_vpc_endpoint_with_no_policy",
+          "mode": "managed",
+          "type": "aws_vpc_endpoint",
+          "name": "ecr_vpc_endpoint_with_no_policy",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "auto_accept": null,
+              "private_dns_enabled": true,
+              "security_group_ids": [
+                "sg-0e2c0ecdd9f309acb"
+              ],
+              "service_name": "com.amazonaws.eu-central-1.ecr.api",
+              "tags": null,
+              "timeouts": null,
+              "vpc_endpoint_type": "Interface",
+              "vpc_id": "vpc-094984b88ccd1e462"
+            },
+            "after_unknown": {
+              "arn": true,
+              "cidr_blocks": true,
+              "dns_entry": true,
+              "id": true,
+              "network_interface_ids": true,
+              "owner_id": true,
+              "policy": true,
+              "prefix_list_id": true,
+              "requester_managed": true,
+              "route_table_ids": true,
+              "security_group_ids": [
+                false
+              ],
+              "state": true,
+              "subnet_ids": true,
+              "tags_all": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "cidr_blocks": [],
+              "dns_entry": [],
+              "network_interface_ids": [],
+              "route_table_ids": [],
+              "security_group_ids": [
+                false
+              ],
+              "subnet_ids": [],
+              "tags_all": {}
+            }
+          }
+        }
+      ]
+    },
+    "ecr_vpc_endpoint_with_invalid_condition": {
+      "resource_changes": [
+        {
+          "address": "aws_vpc_endpoint.ecr_vpc_endpoint_with_invalid_condition",
+          "mode": "managed",
+          "type": "aws_vpc_endpoint",
+          "name": "ecr_vpc_endpoint_with_invalid_condition",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "auto_accept": null,
+              "policy": "{\"Statement\":[{\"Action\":\"*\",\"Condition\":{\"StringEquals\":{\"ecr:ResourceTag/ArtifactoryScanCompleted\":\"No\"}},\"Effect\":\"Allow\",\"Principal\":\"*\",\"Resource\":\"*\",\"Sid\":\"Allow Permissions\"}]}",
+              "private_dns_enabled": true,
+              "security_group_ids": [
+                "sg-0e2c0ecdd9f309acb"
+              ],
+              "service_name": "com.amazonaws.eu-central-1.ecr.api",
+              "tags": null,
+              "timeouts": null,
+              "vpc_endpoint_type": "Interface",
+              "vpc_id": "vpc-094984b88ccd1e462"
+            },
+            "after_unknown": {
+              "arn": true,
+              "cidr_blocks": true,
+              "dns_entry": true,
+              "id": true,
+              "network_interface_ids": true,
+              "owner_id": true,
+              "prefix_list_id": true,
+              "requester_managed": true,
+              "route_table_ids": true,
+              "security_group_ids": [
+                false
+              ],
+              "state": true,
+              "subnet_ids": true,
+              "tags_all": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "cidr_blocks": [],
+              "dns_entry": [],
+              "network_interface_ids": [],
+              "route_table_ids": [],
+              "security_group_ids": [
+                false
+              ],
+              "subnet_ids": [],
+              "tags_all": {}
+            }
+          }
+        }
+      ]
+    },
+    "ecr_vpc_policy_other_condition": {
+      "resource_changes": [
+        {
+          "address": "aws_vpc_endpoint.ecr_vpc_policy_other_condition",
+          "mode": "managed",
+          "type": "aws_vpc_endpoint",
+          "name": "ecr_vpc_endpoint_policy_invalid_condition",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "auto_accept": null,
+              "policy": "{\"Statement\":[{\"Action\":\"*\",\"Condition\":{\"StringEquals\":{\"aws:SourceAccount\":\"111122223333\"}},\"Effect\":\"Allow\",\"Principal\":\"*\",\"Resource\":\"*\",\"Sid\":\"Allow Permissions\"}]}",
+              "private_dns_enabled": true,
+              "security_group_ids": [
+                "sg-0e2c0ecdd9f309acb"
+              ],
+              "service_name": "com.amazonaws.eu-central-1.ecr.api",
+              "tags": null,
+              "timeouts": null,
+              "vpc_endpoint_type": "Interface",
+              "vpc_id": "vpc-094984b88ccd1e462"
+            },
+            "after_unknown": {
+              "arn": true,
+              "cidr_blocks": true,
+              "dns_entry": true,
+              "id": true,
+              "network_interface_ids": true,
+              "owner_id": true,
+              "prefix_list_id": true,
+              "requester_managed": true,
+              "route_table_ids": true,
+              "security_group_ids": [
+                false
+              ],
+              "state": true,
+              "subnet_ids": true,
+              "tags_all": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "cidr_blocks": [],
+              "dns_entry": [],
+              "network_interface_ids": [],
+              "route_table_ids": [],
+              "security_group_ids": [
+                false
+              ],
+              "subnet_ids": [],
+              "tags_all": {}
+            }
+          }
+        }
+      ]
+    }
+  }
+}

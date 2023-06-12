@@ -1,0 +1,41 @@
+{
+    "mock": {
+        "valid": {
+            "1st_policy_check": {
+                "resource_changes": [
+                    {
+                    }
+                ]
+            },
+            "2nd_policy_check": {
+                "resource_changes": [
+                    {
+                        
+                    },
+                    {
+                        
+                    }
+                ]
+            }
+        },
+        "invalid": {
+            "1st_policy_invalid_check": {
+                "resource_changes": [
+                    {
+                    
+                    }
+                ]
+            },
+            "2nd_policy_invalid_check": {
+                "resource_changes": [
+                    {
+
+                    },
+                    {
+  
+                    }
+                ]
+            }
+        }
+    }
+}

@@ -1,0 +1,244 @@
+{
+    "mock": {
+        "valid": {
+            "deny_policy": {
+                "resource_changes": [
+                    {
+                        "address": "aws_vpc_endpoint.lambda",
+                        "mode": "managed",
+                        "type": "aws_vpc_endpoint",
+                        "name": "lambda",
+                        "provider_name": "registry.terraform.io/hashicorp/aws",
+                        "change": {
+                            "actions": [
+                                "create"
+                            ],
+                            "before": null,
+                            "after": {
+                                "auto_accept": null,
+                                "policy": "{\"Statement\":[{\"Action\":\"lambda:*\",\"Condition\":{\"StringNotEquals\":{\"aws:PrincipalAccount\":\"995222306147\"}},\"Effect\":\"Deny\",\"Principal\":{\"AWS\":\"*\"},\"Resource\":\"arn:aws:lambda:*:995222306147:function:*\",\"Sid\":\"AccessForASpecificAccount\"}]}",
+                                "private_dns_enabled": true,
+                                "security_group_ids": [
+                                    "sg-0e0a7924cb13861c4"
+                                ],
+                                "service_name": "com.amazonaws.eu-central-1.lambda",
+                                "tags": null,
+                                "timeouts": null,
+                                "vpc_endpoint_type": "Interface",
+                                "vpc_id": "vpc-076a2d7afbf20afe1"
+                            },
+                            "after_unknown": {
+                                "arn": true,
+                                "cidr_blocks": true,
+                                "dns_entry": true,
+                                "id": true,
+                                "network_interface_ids": true,
+                                "owner_id": true,
+                                "prefix_list_id": true,
+                                "requester_managed": true,
+                                "route_table_ids": true,
+                                "security_group_ids": [
+                                    false
+                                ],
+                                "state": true,
+                                "subnet_ids": true,
+                                "tags_all": true
+                            },
+                            "before_sensitive": false,
+                            "after_sensitive": {
+                                "cidr_blocks": [],
+                                "dns_entry": [],
+                                "network_interface_ids": [],
+                                "route_table_ids": [],
+                                "security_group_ids": [
+                                    false
+                                ],
+                                "subnet_ids": [],
+                                "tags_all": {}
+                            }
+                        }
+                    }
+                ]
+            },
+            "allow_policy": {
+                "resource_changes": [
+                    {
+                        "address": "aws_vpc_endpoint.lambda",
+                        "mode": "managed",
+                        "type": "aws_vpc_endpoint",
+                        "name": "lambda",
+                        "provider_name": "registry.terraform.io/hashicorp/aws",
+                        "change": {
+                            "actions": [
+                                "create"
+                            ],
+                            "before": null,
+                            "after": {
+                                "auto_accept": null,
+                                "policy": "{\"Statement\":[{\"Action\":\"lambda:*\",\"Condition\":{\"StringEquals\":{\"aws:PrincipalAccount\":\"995222306147\"}},\"Effect\":\"Allow\",\"Principal\":{\"AWS\":\"*\"},\"Resource\":\"arn:aws:lambda:*:995222306147:function:*\",\"Sid\":\"AccessForASpecificAccount\"}]}",
+                                "private_dns_enabled": true,
+                                "security_group_ids": [
+                                    "sg-0e0a7924cb13861c4"
+                                ],
+                                "service_name": "com.amazonaws.eu-central-1.lambda",
+                                "tags": null,
+                                "timeouts": null,
+                                "vpc_endpoint_type": "Interface",
+                                "vpc_id": "vpc-076a2d7afbf20afe1"
+                            },
+                            "after_unknown": {
+                                "arn": true,
+                                "cidr_blocks": true,
+                                "dns_entry": true,
+                                "id": true,
+                                "network_interface_ids": true,
+                                "owner_id": true,
+                                "prefix_list_id": true,
+                                "requester_managed": true,
+                                "route_table_ids": true,
+                                "security_group_ids": [
+                                    false
+                                ],
+                                "state": true,
+                                "subnet_ids": true,
+                                "tags_all": true
+                            },
+                            "before_sensitive": false,
+                            "after_sensitive": {
+                                "cidr_blocks": [],
+                                "dns_entry": [],
+                                "network_interface_ids": [],
+                                "route_table_ids": [],
+                                "security_group_ids": [
+                                    false
+                                ],
+                                "subnet_ids": [],
+                                "tags_all": {}
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        "invalid": {
+            "full_access_policy": {
+                "resource_changes": [
+                    {
+                        "address": "aws_vpc_endpoint.lambda",
+                        "mode": "managed",
+                        "type": "aws_vpc_endpoint",
+                        "name": "lambda",
+                        "provider_name": "registry.terraform.io/hashicorp/aws",
+                        "change": {
+                            "actions": [
+                                "create"
+                            ],
+                            "before": null,
+                            "after": {
+                                "auto_accept": null,
+                                "policy": "{\"Statement\":[{\"Action\":\"lambda:*\",\"Effect\":\"Allow\",\"Principal\":\"*\",\"Resource\":\"*\",\"Sid\":\"FullAccess\"}]}",
+                                "private_dns_enabled": true,
+                                "security_group_ids": [
+                                    "sg-0e0a7924cb13861c4"
+                                ],
+                                "service_name": "com.amazonaws.eu-central-1.lambda",
+                                "tags": null,
+                                "timeouts": null,
+                                "vpc_endpoint_type": "Interface",
+                                "vpc_id": "vpc-076a2d7afbf20afe1"
+                            },
+                            "after_unknown": {
+                                "arn": true,
+                                "cidr_blocks": true,
+                                "dns_entry": true,
+                                "id": true,
+                                "network_interface_ids": true,
+                                "owner_id": true,
+                                "prefix_list_id": true,
+                                "requester_managed": true,
+                                "route_table_ids": true,
+                                "security_group_ids": [
+                                    false
+                                ],
+                                "state": true,
+                                "subnet_ids": true,
+                                "tags_all": true
+                            },
+                            "before_sensitive": false,
+                            "after_sensitive": {
+                                "cidr_blocks": [],
+                                "dns_entry": [],
+                                "network_interface_ids": [],
+                                "route_table_ids": [],
+                                "security_group_ids": [
+                                    false
+                                ],
+                                "subnet_ids": [],
+                                "tags_all": {}
+                            }
+                        }
+                    }
+                ]
+            },
+            "no_policy": {
+                "resource_changes": [
+                    {
+                        "address": "aws_vpc_endpoint.lambda",
+                        "mode": "managed",
+                        "type": "aws_vpc_endpoint",
+                        "name": "lambda",
+                        "provider_name": "registry.terraform.io/hashicorp/aws",
+                        "change": {
+                            "actions": [
+                                "create"
+                            ],
+                            "before": null,
+                            "after": {
+                                "auto_accept": null,
+                                "private_dns_enabled": true,
+                                "security_group_ids": [
+                                    "sg-0e0a7924cb13861c4"
+                                ],
+                                "service_name": "com.amazonaws.eu-central-1.lambda",
+                                "tags": null,
+                                "timeouts": null,
+                                "vpc_endpoint_type": "Interface",
+                                "vpc_id": "vpc-076a2d7afbf20afe1"
+                            },
+                            "after_unknown": {
+                                "arn": true,
+                                "cidr_blocks": true,
+                                "dns_entry": true,
+                                "id": true,
+                                "network_interface_ids": true,
+                                "owner_id": true,
+                                "policy": true,
+                                "prefix_list_id": true,
+                                "requester_managed": true,
+                                "route_table_ids": true,
+                                "security_group_ids": [
+                                    false
+                                ],
+                                "state": true,
+                                "subnet_ids": true,
+                                "tags_all": true
+                            },
+                            "before_sensitive": false,
+                            "after_sensitive": {
+                                "cidr_blocks": [],
+                                "dns_entry": [],
+                                "network_interface_ids": [],
+                                "route_table_ids": [],
+                                "security_group_ids": [
+                                    false
+                                ],
+                                "subnet_ids": [],
+                                "tags_all": {}
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}

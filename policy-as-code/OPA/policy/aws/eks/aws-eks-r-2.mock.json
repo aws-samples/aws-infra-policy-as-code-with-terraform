@@ -1,0 +1,220 @@
+{
+    "mock": {
+      "r2_valid": {
+        "resource_changes": [
+          {
+            "address": "module.eks.aws_eks_node_group.eks_nodes",
+            "module_address": "module.midtier",
+            "mode": "managed",
+            "type": "aws_eks_node_group",
+            "name": "eks_nodes",
+            "provider_name": "registry.terraform.io/hashicorp/aws",
+            "change": {
+              "actions": [
+                "create"
+              ],
+              "before": null,
+              "after": {
+                "cluster_name": "quantexa-dev-eks-cluster",
+                "disk_size": 200,
+                "force_update_version": null,
+                "instance_types": [
+                  "t3.2xlarge"
+                ],
+                "labels": null,
+                "launch_template": [
+                ],
+                "node_group_name": "eks-node-group-quantexa-dev-eks-cluster",
+                "remote_access": [
+                ],
+                "scaling_config": [
+                  {
+                    "desired_size": 3,
+                    "max_size": 6,
+                    "min_size": 3
+                  }
+                ],
+                "subnet_ids": [
+                  "subnet-081e40a32b90a4185",
+                  "subnet-0854a6ae56612b073"
+                ],
+                "tags": null,
+                "tags_all": {
+                  "project": "quantexa-mvp"
+                },
+                "taint": [
+                ],
+                "timeouts": null
+              },
+              "after_unknown": {
+                "ami_type": true,
+                "arn": true,
+                "capacity_type": true,
+                "id": true,
+                "instance_types": [
+                  false
+                ],
+                "launch_template": [
+                ],
+                "node_group_name_prefix": true,
+                "node_role_arn": true,
+                "release_version": true,
+                "remote_access": [
+                ],
+                "resources": true,
+                "scaling_config": [
+                  {
+                  }
+                ],
+                "status": true,
+                "subnet_ids": [
+                  false,
+                  false
+                ],
+                "tags_all": {
+                },
+                "taint": [
+                ],
+                "update_config": true,
+                "version": true
+              },
+              "before_sensitive": false,
+              "after_sensitive": {
+                "instance_types": [
+                  false
+                ],
+                "launch_template": [
+                ],
+                "remote_access": [
+                ],
+                "resources": [
+                ],
+                "scaling_config": [
+                  {
+                  }
+                ],
+                "subnet_ids": [
+                  false,
+                  false
+                ],
+                "tags_all": {
+                },
+                "taint": [
+                ],
+                "update_config": [
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "r2_invalid": {
+        "resource_changes": [
+          {
+            "address": "module.eks.aws_eks_node_group.eks_nodes",
+            "module_address": "module.midtier",
+            "mode": "managed",
+            "type": "aws_eks_node_group",
+            "name": "eks_nodes",
+            "provider_name": "registry.terraform.io/hashicorp/aws",
+            "change": {
+              "actions": [
+                "create"
+              ],
+              "before": null,
+              "after": {
+                "cluster_name": "quantexa-dev-eks-cluster",
+                "force_update_version": null,
+                "instance_types": [
+                  "t3.2xlarge"
+                ],
+                "labels": null,
+                "launch_template": [
+                ],
+                "node_group_name": "eks-node-group-quantexa-dev-eks-cluster",
+                "remote_access": [
+                ],
+                "scaling_config": [
+                  {
+                    "desired_size": 3,
+                    "max_size": 6,
+                    "min_size": 3
+                  }
+                ],
+                "subnet_ids": [
+                  "subnet-081e40a32b90a4185",
+                  "subnet-0854a6ae56612b073"
+                ],
+                "tags": null,
+                "tags_all": {
+                  "project": "quantexa-mvp"
+                },
+                "taint": [
+                ],
+                "timeouts": null
+              },
+              "after_unknown": {
+                "ami_type": true,
+                "arn": true,
+                "capacity_type": true,
+                "id": true,
+                "instance_types": [
+                  false
+                ],
+                "launch_template": [
+                ],
+                "node_group_name_prefix": true,
+                "node_role_arn": true,
+                "release_version": true,
+                "remote_access": [
+                ],
+                "resources": true,
+                "scaling_config": [
+                  {
+                  }
+                ],
+                "status": true,
+                "subnet_ids": [
+                  false,
+                  false
+                ],
+                "tags_all": {
+                },
+                "taint": [
+                ],
+                "update_config": true,
+                "version": true
+              },
+              "before_sensitive": false,
+              "after_sensitive": {
+                "instance_types": [
+                  false
+                ],
+                "launch_template": [
+                ],
+                "remote_access": [
+                ],
+                "resources": [
+                ],
+                "scaling_config": [
+                  {
+                  }
+                ],
+                "subnet_ids": [
+                  false,
+                  false
+                ],
+                "tags_all": {
+                },
+                "taint": [
+                ],
+                "update_config": [
+                ]
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+  

@@ -1,0 +1,489 @@
+{
+    "mock": {
+        "valid": {
+            "configuration": {
+                "provider_config": {
+                    "aws": {
+                        "name": "aws",
+                        "expressions": {
+                            "region": {
+                                "constant_value": "eu-central-1"
+                            }
+                        }
+                    }
+                },
+                "root_module": {
+                    "resources": [
+                        {
+                            "address": "aws_emr_cluster.cluster",
+                            "mode": "managed",
+                            "type": "aws_emr_cluster",
+                            "name": "cluster",
+                            "provider_config_key": "aws",
+                            "expressions": {
+                                "applications": {
+                                    "constant_value": [
+                                        "Spark"
+                                    ]
+                                },
+                                "bootstrap_action": [
+                                    {
+                                        "args": {
+                                            "constant_value": [
+                                                "instance.isMaster=true",
+                                                "echo running on master node"
+                                            ]
+                                        },
+                                        "name": {
+                                            "constant_value": "runif"
+                                        },
+                                        "path": {
+                                            "constant_value": "s3://elasticmapreduce/bootstrap-actions/run-if"
+                                        }
+                                    }
+                                ],
+                                "configurations_json": {
+                                    "constant_value": "  [\n    {\n      \"Classification\": \"hadoop-env\",\n      \"Configurations\": [\n        {\n          \"Classification\": \"export\",\n          \"Properties\": {\n            \"JAVA_HOME\": \"/usr/lib/jvm/java-1.8.0\"\n          }\n        }\n      ],\n      \"Properties\": {}\n    },\n    {\n      \"Classification\": \"spark-env\",\n      \"Configurations\": [\n        {\n          \"Classification\": \"export\",\n          \"Properties\": {\n            \"JAVA_HOME\": \"/usr/lib/jvm/java-1.8.0\"\n          }\n        }\n      ],\n      \"Properties\": {}\n    }\n  ]\n"
+                                },
+                                "core_instance_group": [
+                                    {
+                                        "instance_count": {
+                                            "constant_value": 1
+                                        },
+                                        "instance_type": {
+                                            "constant_value": "m5.xlarge"
+                                        }
+                                    }
+                                ],
+                                "ec2_attributes": [
+                                    {
+                                        "emr_managed_master_security_group": {
+                                            "references": [
+                                                "aws_security_group.allow_access.id",
+                                                "aws_security_group.allow_access"
+                                            ]
+                                        },
+                                        "emr_managed_slave_security_group": {
+                                            "references": [
+                                                "aws_security_group.allow_access.id",
+                                                "aws_security_group.allow_access"
+                                            ]
+                                        },
+                                        "instance_profile": {
+                                            "references": [
+                                                "aws_iam_instance_profile.emr_profile.arn",
+                                                "aws_iam_instance_profile.emr_profile"
+                                            ]
+                                        },
+                                        "subnet_id": {
+                                            "references": [
+                                                "aws_subnet.main.id",
+                                                "aws_subnet.main"
+                                            ]
+                                        }
+                                    }
+                                ],
+                                "master_instance_group": [
+                                    {
+                                        "instance_type": {
+                                            "constant_value": "m5.xlarge"
+                                        }
+                                    }
+                                ],
+                                "name": {
+                                    "constant_value": "emr-test-arn"
+                                },
+                                "release_label": {
+                                    "constant_value": "emr-4.6.0"
+                                },
+                                "service_role": {
+                                    "references": [
+                                        "aws_iam_role.iam_emr_service_role.arn",
+                                        "aws_iam_role.iam_emr_service_role"
+                                    ]
+                                },
+                                "tags": {
+                                    "constant_value": {
+                                        "dns_zone": "env_zone",
+                                        "env": "env",
+                                        "name": "name-env",
+                                        "role": "rolename"
+                                    }
+                                }
+                            },
+                            "schema_version": 0
+                        }
+                    ]
+                }
+            }
+        },
+        "invalid": {
+            "configuration": {
+                "provider_config": {
+                    "aws": {
+                        "name": "aws",
+                        "expressions": {
+                            "region": {
+                                "constant_value": "eu-central-1"
+                            }
+                        }
+                    }
+                },
+                "root_module": {
+                    "resources": [
+                        {
+                            "address": "aws_emr_cluster.missing-emr_managed_master_security_group",
+                            "mode": "managed",
+                            "type": "aws_emr_cluster",
+                            "name": "missing-emr_managed_master_security_group",
+                            "provider_config_key": "aws",
+                            "expressions": {
+                                "applications": {
+                                    "constant_value": [
+                                        "Spark"
+                                    ]
+                                },
+                                "bootstrap_action": [
+                                    {
+                                        "args": {
+                                            "constant_value": [
+                                                "instance.isMaster=true",
+                                                "echo running on master node"
+                                            ]
+                                        },
+                                        "name": {
+                                            "constant_value": "runif"
+                                        },
+                                        "path": {
+                                            "constant_value": "s3://elasticmapreduce/bootstrap-actions/run-if"
+                                        }
+                                    }
+                                ],
+                                "configurations_json": {
+                                    "constant_value": "  [\n    {\n      \"Classification\": \"hadoop-env\",\n      \"Configurations\": [\n        {\n          \"Classification\": \"export\",\n          \"Properties\": {\n            \"JAVA_HOME\": \"/usr/lib/jvm/java-1.8.0\"\n          }\n        }\n      ],\n      \"Properties\": {}\n    },\n    {\n      \"Classification\": \"spark-env\",\n      \"Configurations\": [\n        {\n          \"Classification\": \"export\",\n          \"Properties\": {\n            \"JAVA_HOME\": \"/usr/lib/jvm/java-1.8.0\"\n          }\n        }\n      ],\n      \"Properties\": {}\n    }\n  ]\n"
+                                },
+                                "core_instance_group": [
+                                    {
+                                        "instance_count": {
+                                            "constant_value": 1
+                                        },
+                                        "instance_type": {
+                                            "constant_value": "m5.xlarge"
+                                        }
+                                    }
+                                ],
+                                "ec2_attributes": [
+                                    {
+                                        "emr_managed_slave_security_group": {
+                                            "references": [
+                                                "aws_security_group.allow_access.id",
+                                                "aws_security_group.allow_access"
+                                            ]
+                                        },
+                                        "instance_profile": {
+                                            "references": [
+                                                "aws_iam_instance_profile.emr_profile.arn",
+                                                "aws_iam_instance_profile.emr_profile"
+                                            ]
+                                        },
+                                        "subnet_id": {
+                                            "references": [
+                                                "aws_subnet.main.id",
+                                                "aws_subnet.main"
+                                            ]
+                                        }
+                                    }
+                                ],
+                                "master_instance_group": [
+                                    {
+                                        "instance_type": {
+                                            "constant_value": "m5.xlarge"
+                                        }
+                                    }
+                                ],
+                                "name": {
+                                    "constant_value": "emr-test-arn"
+                                },
+                                "release_label": {
+                                    "constant_value": "emr-4.6.0"
+                                },
+                                "service_role": {
+                                    "references": [
+                                        "aws_iam_role.iam_emr_service_role.arn",
+                                        "aws_iam_role.iam_emr_service_role"
+                                    ]
+                                },
+                                "tags": {
+                                    "constant_value": {
+                                        "dns_zone": "env_zone",
+                                        "env": "env",
+                                        "name": "name-env",
+                                        "role": "rolename"
+                                    }
+                                }
+                            },
+                            "schema_version": 0
+                        },
+                        {
+                            "address": "aws_emr_cluster.missing-emr_managed_slave_security_group",
+                            "mode": "managed",
+                            "type": "aws_emr_cluster",
+                            "name": "missing-emr_managed_slave_security_group",
+                            "provider_config_key": "aws",
+                            "expressions": {
+                                "applications": {
+                                    "constant_value": [
+                                        "Spark"
+                                    ]
+                                },
+                                "bootstrap_action": [
+                                    {
+                                        "args": {
+                                            "constant_value": [
+                                                "instance.isMaster=true",
+                                                "echo running on master node"
+                                            ]
+                                        },
+                                        "name": {
+                                            "constant_value": "runif"
+                                        },
+                                        "path": {
+                                            "constant_value": "s3://elasticmapreduce/bootstrap-actions/run-if"
+                                        }
+                                    }
+                                ],
+                                "configurations_json": {
+                                    "constant_value": "  [\n    {\n      \"Classification\": \"hadoop-env\",\n      \"Configurations\": [\n        {\n          \"Classification\": \"export\",\n          \"Properties\": {\n            \"JAVA_HOME\": \"/usr/lib/jvm/java-1.8.0\"\n          }\n        }\n      ],\n      \"Properties\": {}\n    },\n    {\n      \"Classification\": \"spark-env\",\n      \"Configurations\": [\n        {\n          \"Classification\": \"export\",\n          \"Properties\": {\n            \"JAVA_HOME\": \"/usr/lib/jvm/java-1.8.0\"\n          }\n        }\n      ],\n      \"Properties\": {}\n    }\n  ]\n"
+                                },
+                                "core_instance_group": [
+                                    {
+                                        "instance_count": {
+                                            "constant_value": 1
+                                        },
+                                        "instance_type": {
+                                            "constant_value": "m5.xlarge"
+                                        }
+                                    }
+                                ],
+                                "ec2_attributes": [
+                                    {
+                                        "emr_managed_master_security_group": {
+                                            "references": [
+                                                "aws_security_group.allow_access.id",
+                                                "aws_security_group.allow_access"
+                                            ]
+                                        },
+                                        "instance_profile": {
+                                            "references": [
+                                                "aws_iam_instance_profile.emr_profile.arn",
+                                                "aws_iam_instance_profile.emr_profile"
+                                            ]
+                                        },
+                                        "subnet_id": {
+                                            "references": [
+                                                "aws_subnet.main.id",
+                                                "aws_subnet.main"
+                                            ]
+                                        }
+                                    }
+                                ],
+                                "master_instance_group": [
+                                    {
+                                        "instance_type": {
+                                            "constant_value": "m5.xlarge"
+                                        }
+                                    }
+                                ],
+                                "name": {
+                                    "constant_value": "emr-test-arn"
+                                },
+                                "release_label": {
+                                    "constant_value": "emr-4.6.0"
+                                },
+                                "service_role": {
+                                    "references": [
+                                        "aws_iam_role.iam_emr_service_role.arn",
+                                        "aws_iam_role.iam_emr_service_role"
+                                    ]
+                                },
+                                "tags": {
+                                    "constant_value": {
+                                        "dns_zone": "env_zone",
+                                        "env": "env",
+                                        "name": "name-env",
+                                        "role": "rolename"
+                                    }
+                                }
+                            },
+                            "schema_version": 0
+                        },
+                        {
+                            "address": "aws_emr_cluster.with_constant_id",
+                            "mode": "managed",
+                            "type": "aws_emr_cluster",
+                            "name": "with_constant_id",
+                            "provider_config_key": "aws",
+                            "expressions": {
+                                "applications": {
+                                    "constant_value": [
+                                        "Spark"
+                                    ]
+                                },
+                                "bootstrap_action": [
+                                    {
+                                        "args": {
+                                            "constant_value": [
+                                                "instance.isMaster=true",
+                                                "echo running on master node"
+                                            ]
+                                        },
+                                        "name": {
+                                            "constant_value": "runif"
+                                        },
+                                        "path": {
+                                            "constant_value": "s3://elasticmapreduce/bootstrap-actions/run-if"
+                                        }
+                                    }
+                                ],
+                                "configurations_json": {
+                                    "constant_value": "  [\n    {\n      \"Classification\": \"hadoop-env\",\n      \"Configurations\": [\n        {\n          \"Classification\": \"export\",\n          \"Properties\": {\n            \"JAVA_HOME\": \"/usr/lib/jvm/java-1.8.0\"\n          }\n        }\n      ],\n      \"Properties\": {}\n    },\n    {\n      \"Classification\": \"spark-env\",\n      \"Configurations\": [\n        {\n          \"Classification\": \"export\",\n          \"Properties\": {\n            \"JAVA_HOME\": \"/usr/lib/jvm/java-1.8.0\"\n          }\n        }\n      ],\n      \"Properties\": {}\n    }\n  ]\n"
+                                },
+                                "core_instance_group": [
+                                    {
+                                        "instance_count": {
+                                            "constant_value": 1
+                                        },
+                                        "instance_type": {
+                                            "constant_value": "m5.xlarge"
+                                        }
+                                    }
+                                ],
+                                "ec2_attributes": [
+                                    {
+                                        "emr_managed_master_security_group": {
+                                            "constant_value": "some-id-of-default-security-group"
+                                        },
+                                        "emr_managed_slave_security_group": {
+                                            "constant_value": "some-id-of-default-security-group"
+                                        },
+                                        "instance_profile": {
+                                            "references": [
+                                                "aws_iam_instance_profile.emr_profile.arn",
+                                                "aws_iam_instance_profile.emr_profile"
+                                            ]
+                                        },
+                                        "subnet_id": {
+                                            "references": [
+                                                "aws_subnet.main.id",
+                                                "aws_subnet.main"
+                                            ]
+                                        }
+                                    }
+                                ],
+                                "master_instance_group": [
+                                    {
+                                        "instance_type": {
+                                            "constant_value": "m5.xlarge"
+                                        }
+                                    }
+                                ],
+                                "name": {
+                                    "constant_value": "emr-test-arn"
+                                },
+                                "release_label": {
+                                    "constant_value": "emr-4.6.0"
+                                },
+                                "service_role": {
+                                    "references": [
+                                        "aws_iam_role.iam_emr_service_role.arn",
+                                        "aws_iam_role.iam_emr_service_role"
+                                    ]
+                                },
+                                "tags": {
+                                    "constant_value": {
+                                        "dns_zone": "env_zone",
+                                        "env": "env",
+                                        "name": "name-env",
+                                        "role": "rolename"
+                                    }
+                                }
+                            },
+                            "schema_version": 0
+                        },
+                        {
+                            "address": "aws_emr_cluster.no_ec2_attributes",
+                            "mode": "managed",
+                            "type": "aws_emr_cluster",
+                            "name": "no_ec2_attributes",
+                            "provider_config_key": "aws",
+                            "expressions": {
+                                "applications": {
+                                    "constant_value": [
+                                        "Spark"
+                                    ]
+                                },
+                                "bootstrap_action": [
+                                    {
+                                        "args": {
+                                            "constant_value": [
+                                                "instance.isMaster=true",
+                                                "echo running on master node"
+                                            ]
+                                        },
+                                        "name": {
+                                            "constant_value": "runif"
+                                        },
+                                        "path": {
+                                            "constant_value": "s3://elasticmapreduce/bootstrap-actions/run-if"
+                                        }
+                                    }
+                                ],
+                                "configurations_json": {
+                                    "constant_value": "  [\n    {\n      \"Classification\": \"hadoop-env\",\n      \"Configurations\": [\n        {\n          \"Classification\": \"export\",\n          \"Properties\": {\n            \"JAVA_HOME\": \"/usr/lib/jvm/java-1.8.0\"\n          }\n        }\n      ],\n      \"Properties\": {}\n    },\n    {\n      \"Classification\": \"spark-env\",\n      \"Configurations\": [\n        {\n          \"Classification\": \"export\",\n          \"Properties\": {\n            \"JAVA_HOME\": \"/usr/lib/jvm/java-1.8.0\"\n          }\n        }\n      ],\n      \"Properties\": {}\n    }\n  ]\n"
+                                },
+                                "core_instance_group": [
+                                    {
+                                        "instance_count": {
+                                            "constant_value": 1
+                                        },
+                                        "instance_type": {
+                                            "constant_value": "m5.xlarge"
+                                        }
+                                    }
+                                ],
+                                "master_instance_group": [
+                                    {
+                                        "instance_type": {
+                                            "constant_value": "m5.xlarge"
+                                        }
+                                    }
+                                ],
+                                "name": {
+                                    "constant_value": "emr-test-arn"
+                                },
+                                "release_label": {
+                                    "constant_value": "emr-4.6.0"
+                                },
+                                "service_role": {
+                                    "references": [
+                                        "aws_iam_role.iam_emr_service_role.arn",
+                                        "aws_iam_role.iam_emr_service_role"
+                                    ]
+                                },
+                                "tags": {
+                                    "constant_value": {
+                                        "dns_zone": "env_zone",
+                                        "env": "env",
+                                        "name": "name-env",
+                                        "role": "rolename"
+                                    }
+                                }
+                            },
+                            "schema_version": 0
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

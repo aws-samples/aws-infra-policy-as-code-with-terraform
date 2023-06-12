@@ -1,0 +1,197 @@
+{
+  "mock": {
+    "valid": {
+      "resource_changes": [
+        {
+          "address": "aws_efs_access_point.test",
+          "mode": "managed",
+          "type": "aws_efs_access_point",
+          "name": "test",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "posix_user": [],
+              "root_directory": [
+                {
+                  "path": "/app/test/"
+                }
+              ],
+              "tags": null
+            },
+            "after_unknown": {
+              "arn": true,
+              "file_system_arn": true,
+              "file_system_id": true,
+              "id": true,
+              "owner_id": true,
+              "posix_user": [],
+              "root_directory": [
+                {
+                  "creation_info": true
+                }
+              ],
+              "tags_all": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "posix_user": [],
+              "root_directory": [
+                {
+                  "creation_info": []
+                }
+              ],
+              "tags_all": {}
+            }
+          }
+        }
+      ],
+      "configuration": {
+        "root_module": {
+          "resources": []
+        }
+      }
+    },
+    "invalid": {
+      "resource_changes": [
+        {
+          "address": "aws_efs_access_point.test",
+          "mode": "managed",
+          "type": "aws_efs_access_point",
+          "name": "test",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "posix_user": [],
+              "root_directory": [
+                {
+                  "path": "/"
+                }
+              ],
+              "tags": null
+            },
+            "after_unknown": {
+              "arn": true,
+              "file_system_arn": true,
+              "file_system_id": true,
+              "id": true,
+              "owner_id": true,
+              "posix_user": [],
+              "root_directory": [
+                {
+                  "creation_info": true
+                }
+              ],
+              "tags_all": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "posix_user": [],
+              "root_directory": [
+                {
+                  "creation_info": []
+                }
+              ],
+              "tags_all": {}
+            }
+          }
+        }
+      ],
+      "configuration": {
+        "root_module": {
+          "resources": [
+            {
+              "address": "aws_efs_access_point.test",
+              "mode": "managed",
+              "type": "aws_efs_access_point",
+              "name": "test",
+              "provider_config_key": "aws",
+              "expressions": {
+                "file_system_id": {
+                  "references": [
+                    "aws_efs_file_system.test.id",
+                    "aws_efs_file_system.test"
+                  ]
+                },
+                "root_directory": [
+                  {
+                    "path": {
+                      "constant_value": "/"
+                    }
+                  }
+                ]
+              },
+              "schema_version": 0
+            }
+          ]
+        }
+      }
+    },
+    "default_settings": {
+      "resource_changes": [
+        {
+          "address": "aws_efs_access_point.test",
+          "mode": "managed",
+          "type": "aws_efs_access_point",
+          "name": "test",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "posix_user": [],
+              "tags": null
+            },
+            "after_unknown": {
+              "arn": true,
+              "file_system_arn": true,
+              "file_system_id": true,
+              "id": true,
+              "owner_id": true,
+              "posix_user": [],
+              "root_directory": true,
+              "tags_all": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "posix_user": [],
+              "root_directory": [],
+              "tags_all": {}
+            }
+          }
+        }
+      ],
+      "configuration": {
+        "root_module": {
+          "resources": [
+            {
+              "address": "aws_efs_access_point.test",
+              "mode": "managed",
+              "type": "aws_efs_access_point",
+              "name": "test",
+              "provider_config_key": "aws",
+              "expressions": {
+                "file_system_id": {
+                  "references": [
+                    "aws_efs_file_system.test.id",
+                    "aws_efs_file_system.test"
+                  ]
+                }
+              },
+              "schema_version": 0
+            }
+          ]
+        }
+      }
+    }
+  }
+}

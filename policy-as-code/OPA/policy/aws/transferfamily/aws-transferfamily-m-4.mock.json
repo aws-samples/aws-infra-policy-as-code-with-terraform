@@ -1,0 +1,358 @@
+{
+  "mock": {
+    "valid_endpoint_type": {
+      "resource_changes": [
+        {
+          "address": "aws_transfer_server.tf_server",
+          "mode": "managed",
+          "type": "aws_transfer_server",
+          "name": "tf_server",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "certificate": null,
+              "directory_id": null,
+              "domain": "S3",
+              "endpoint_details": [
+                {
+                  "address_allocation_ids": null,
+                  "subnet_ids": [
+                    "subnet-bc208a82"
+                  ],
+                  "vpc_id": "vpc-05de6c7f"
+                }
+              ],
+              "endpoint_type": "VPC",
+              "force_destroy": false,
+              "function": null,
+              "host_key": null,
+              "identity_provider_type": "SERVICE_MANAGED",
+              "invocation_role": null,
+              "logging_role": null,
+              "protocols": [
+                "FTP"
+              ],
+              "security_policy_name": "TransferSecurityPolicy-FIPS-2020-06",
+              "tags": {
+                "Name": "Sample"
+              },
+              "tags_all": {
+                "Name": "Sample"
+              },
+              "url": null
+            },
+            "after_unknown": {
+              "arn": true,
+              "endpoint": true,
+              "endpoint_details": [
+                {
+                  "address_allocation_ids": [
+                    false
+                  ],
+                  "security_group_ids": true,
+                  "subnet_ids": [
+                    false
+                  ],
+                  "vpc_endpoint_id": true
+                }
+              ],
+              "host_key_fingerprint": true,
+              "id": true,
+              "protocols": [
+                false
+              ],
+              "tags": {},
+              "tags_all": {}
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "endpoint_details": [
+                {
+                  "address_allocation_ids": [
+                    false
+                  ],
+                  "security_group_ids": [],
+                  "subnet_ids": [
+                    false
+                  ]
+                }
+              ],
+              "host_key": true,
+              "protocols": [
+                false
+              ],
+              "tags": {},
+              "tags_all": {}
+            }
+          }
+        }
+      ]
+    },
+    "invalid_endpoint_type_internet": {
+      "resource_changes": [
+        {
+          "address": "aws_transfer_server.tf_server",
+          "mode": "managed",
+          "type": "aws_transfer_server",
+          "name": "tf_server",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "certificate": null,
+              "directory_id": null,
+              "domain": "S3",
+              "endpoint_details": [
+                {
+                  "address_allocation_ids": [
+                    "eipalloc-071c435ae79cd8cef"
+                  ],
+                  "subnet_ids": [
+                    "subnet-e907618f"
+                  ],
+                  "vpc_id": "vpc-2c03364a"
+                }
+              ],
+              "endpoint_type": "VPC",
+              "force_destroy": false,
+              "function": null,
+              "host_key": null,
+              "identity_provider_type": "SERVICE_MANAGED",
+              "invocation_role": null,
+              "logging_role": null,
+              "protocols": [
+                "FTP"
+              ],
+              "security_policy_name": "TransferSecurityPolicy-FIPS-2020-06",
+              "tags": {
+                "Name": "Sample"
+              },
+              "tags_all": {
+                "Name": "Sample"
+              },
+              "url": null
+            },
+            "after_unknown": {
+              "arn": true,
+              "endpoint": true,
+              "endpoint_details": [
+                {
+                  "address_allocation_ids": [
+                    false
+                  ],
+                  "security_group_ids": true,
+                  "subnet_ids": [
+                    false
+                  ],
+                  "vpc_endpoint_id": true
+                }
+              ],
+              "host_key_fingerprint": true,
+              "id": true,
+              "protocols": [
+                false
+              ],
+              "tags": {},
+              "tags_all": {}
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "endpoint_details": [
+                {
+                  "address_allocation_ids": [
+                    false
+                  ],
+                  "security_group_ids": [],
+                  "subnet_ids": [
+                    false
+                  ]
+                }
+              ],
+              "host_key": true,
+              "protocols": [
+                false
+              ],
+              "tags": {},
+              "tags_all": {}
+            }
+          }
+        }
+      ]
+    },
+    "invalid_endpoint_type_public": {
+      "resource_changes": [
+        {
+          "address": "aws_transfer_server.tf_server",
+          "mode": "managed",
+          "type": "aws_transfer_server",
+          "name": "tf_server",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "certificate": null,
+              "directory_id": null,
+              "domain": "S3",
+              "endpoint_details": [],
+              "endpoint_type": "PUBLIC",
+              "force_destroy": false,
+              "function": null,
+              "host_key": null,
+              "identity_provider_type": "SERVICE_MANAGED",
+              "invocation_role": null,
+              "logging_role": null,
+              "protocols": [
+                "SFTP"
+              ],
+              "security_policy_name": "TransferSecurityPolicy-FIPS-2020-06",
+              "tags": {
+                "Name": "Sample"
+              },
+              "tags_all": {
+                "Name": "Sample"
+              },
+              "url": null
+            },
+            "after_unknown": {
+              "arn": true,
+              "endpoint": true,
+              "endpoint_details": [
+                {
+                  "address_allocation_ids": [
+                    false
+                  ],
+                  "security_group_ids": true,
+                  "subnet_ids": [
+                    false
+                  ],
+                  "vpc_endpoint_id": true
+                }
+              ],
+              "host_key_fingerprint": true,
+              "id": true,
+              "protocols": [
+                false
+              ],
+              "tags": {},
+              "tags_all": {}
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "endpoint_details": [
+                {
+                  "address_allocation_ids": [
+                    false
+                  ],
+                  "security_group_ids": [],
+                  "subnet_ids": [
+                    false
+                  ]
+                }
+              ],
+              "host_key": true,
+              "protocols": [
+                false
+              ],
+              "tags": {},
+              "tags_all": {}
+            }
+          }
+        }
+      ]
+    },
+    "invalid_endpoint_type_vpc_endpont": {
+      "resource_changes": [
+        {
+          "address": "aws_transfer_server.tf_server",
+          "mode": "managed",
+          "type": "aws_transfer_server",
+          "name": "tf_server",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "certificate": null,
+              "directory_id": null,
+              "domain": "S3",
+              "endpoint_details": [],
+              "endpoint_type": "VPC_ENDPOINT",
+              "force_destroy": false,
+              "function": null,
+              "host_key": null,
+              "identity_provider_type": "SERVICE_MANAGED",
+              "invocation_role": null,
+              "logging_role": null,
+              "protocols": [
+                "SFTP"
+              ],
+              "security_policy_name": "TransferSecurityPolicy-FIPS-2020-06",
+              "tags": {
+                "Name": "Sample"
+              },
+              "tags_all": {
+                "Name": "Sample"
+              },
+              "url": null
+            },
+            "after_unknown": {
+              "arn": true,
+              "endpoint": true,
+              "endpoint_details": [
+                {
+                  "address_allocation_ids": [
+                    false
+                  ],
+                  "security_group_ids": true,
+                  "subnet_ids": [
+                    false
+                  ],
+                  "vpc_endpoint_id": true
+                }
+              ],
+              "host_key_fingerprint": true,
+              "id": true,
+              "protocols": [
+                false
+              ],
+              "tags": {},
+              "tags_all": {}
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "endpoint_details": [
+                {
+                  "address_allocation_ids": [
+                    false
+                  ],
+                  "security_group_ids": [],
+                  "subnet_ids": [
+                    false
+                  ]
+                }
+              ],
+              "host_key": true,
+              "protocols": [
+                false
+              ],
+              "tags": {},
+              "tags_all": {}
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,535 @@
+{
+  "mock": {
+    "valid_referenced": {
+      "resource_changes": [
+        {
+          "address": "aws_elasticache_replication_group.test",
+          "mode": "managed",
+          "type": "aws_elasticache_replication_group",
+          "name": "test",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "apply_immediately": true,
+              "at_rest_encryption_enabled": true,
+              "auth_token": null,
+              "automatic_failover_enabled": false,
+              "availability_zones": null,
+              "description": "test description",
+              "engine": "redis",
+              "engine_version": "6.2",
+              "final_snapshot_identifier": null,
+              "log_delivery_configuration": [],
+              "multi_az_enabled": false,
+              "node_type": "cache.t3.small",
+              "notification_topic_arn": null,
+              "port": 6379,
+              "preferred_cache_cluster_azs": null,
+              "replication_group_id": "myreplicationgroup",
+              "snapshot_arns": null,
+              "snapshot_name": null,
+              "snapshot_retention_limit": null,
+              "tags": null,
+              "timeouts": null,
+              "transit_encryption_enabled": true
+            },
+            "after_unknown": {
+              "arn": true,
+              "auto_minor_version_upgrade": true,
+              "cluster_enabled": true,
+              "cluster_mode": true,
+              "configuration_endpoint_address": true,
+              "data_tiering_enabled": true,
+              "engine_version_actual": true,
+              "global_replication_group_id": true,
+              "id": true,
+              "kms_key_id": true,
+              "log_delivery_configuration": [],
+              "maintenance_window": true,
+              "member_clusters": true,
+              "num_cache_clusters": true,
+              "num_node_groups": true,
+              "number_cache_clusters": true,
+              "parameter_group_name": true,
+              "primary_endpoint_address": true,
+              "reader_endpoint_address": true,
+              "replicas_per_node_group": true,
+              "replication_group_description": true,
+              "security_group_ids": true,
+              "security_group_names": true,
+              "snapshot_window": true,
+              "subnet_group_name": true,
+              "tags_all": true,
+              "user_group_ids": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "auth_token": true,
+              "cluster_mode": [],
+              "log_delivery_configuration": [],
+              "member_clusters": [],
+              "security_group_ids": [],
+              "security_group_names": [],
+              "tags_all": {},
+              "user_group_ids": []
+            }
+          }
+        }
+      ]
+    },
+    "valid_constant": {
+      "resource_changes": [
+        {
+          "address": "aws_elasticache_replication_group.test",
+          "mode": "managed",
+          "type": "aws_elasticache_replication_group",
+          "name": "test",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "apply_immediately": true,
+              "at_rest_encryption_enabled": true,
+              "auth_token": null,
+              "auto_minor_version_upgrade": "false",
+              "automatic_failover_enabled": false,
+              "availability_zones": null,
+              "description": "test description",
+              "engine": "redis",
+              "final_snapshot_identifier": null,
+              "kms_key_id": "arn:aws:kms:eu-central-1:123456789012:key/d702dd93-711c-4d2c-b762-17d1f185a844",
+              "log_delivery_configuration": [
+                {
+                  "destination": "/aws/elasticache/enginelogs",
+                  "destination_type": "cloudwatch-logs",
+                  "log_format": "text",
+                  "log_type": "engine-log"
+                },
+                {
+                  "destination": "/aws/elasticache/slowlogs",
+                  "destination_type": "cloudwatch-logs",
+                  "log_format": "text",
+                  "log_type": "slow-log"
+                }
+              ],
+              "maintenance_window": "tue:06:30-tue:07:30",
+              "multi_az_enabled": false,
+              "node_type": "cache.t3.small",
+              "notification_topic_arn": null,
+              "port": 6379,
+              "preferred_cache_cluster_azs": null,
+              "replication_group_id": "myreplicationgroup",
+              "snapshot_arns": null,
+              "snapshot_name": null,
+              "snapshot_retention_limit": null,
+              "snapshot_window": "01:00-02:00",
+              "tags": null,
+              "timeouts": null,
+              "transit_encryption_enabled": true,
+              "user_group_ids": [
+                "userGroupId"
+              ]
+            },
+            "after_unknown": {
+              "arn": true,
+              "cluster_enabled": true,
+              "cluster_mode": true,
+              "configuration_endpoint_address": true,
+              "data_tiering_enabled": true,
+              "engine_version": true,
+              "engine_version_actual": true,
+              "global_replication_group_id": true,
+              "id": true,
+              "log_delivery_configuration": [
+                {},
+                {}
+              ],
+              "member_clusters": true,
+              "num_cache_clusters": true,
+              "num_node_groups": true,
+              "number_cache_clusters": true,
+              "parameter_group_name": true,
+              "primary_endpoint_address": true,
+              "reader_endpoint_address": true,
+              "replicas_per_node_group": true,
+              "replication_group_description": true,
+              "security_group_ids": true,
+              "security_group_names": true,
+              "subnet_group_name": true,
+              "tags_all": true,
+              "user_group_ids": [
+                false
+              ]
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "auth_token": true,
+              "cluster_mode": [],
+              "log_delivery_configuration": [
+                {},
+                {}
+              ],
+              "member_clusters": [],
+              "security_group_ids": [],
+              "security_group_names": [],
+              "tags_all": {},
+              "user_group_ids": [
+                false
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "default_settings": {
+      "resource_changes": [
+        {
+          "address": "aws_elasticache_replication_group.test",
+          "mode": "managed",
+          "type": "aws_elasticache_replication_group",
+          "name": "test",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "apply_immediately": true,
+              "auth_token": null,
+              "automatic_failover_enabled": false,
+              "availability_zones": null,
+              "description": "test description",
+              "engine": "redis",
+              "final_snapshot_identifier": null,
+              "kms_key_id": null,
+              "log_delivery_configuration": [],
+              "multi_az_enabled": false,
+              "node_type": "cache.t3.small",
+              "notification_topic_arn": null,
+              "port": 6379,
+              "preferred_cache_cluster_azs": null,
+              "replication_group_id": "myreplicationgroup",
+              "snapshot_arns": null,
+              "snapshot_name": null,
+              "snapshot_retention_limit": null,
+              "tags": null,
+              "timeouts": null,
+              "user_group_ids": null
+            },
+            "after_unknown": {
+              "arn": true,
+              "at_rest_encryption_enabled": true,
+              "auto_minor_version_upgrade": true,
+              "cluster_enabled": true,
+              "cluster_mode": true,
+              "configuration_endpoint_address": true,
+              "data_tiering_enabled": true,
+              "engine_version": true,
+              "engine_version_actual": true,
+              "global_replication_group_id": true,
+              "id": true,
+              "log_delivery_configuration": [],
+              "maintenance_window": true,
+              "member_clusters": true,
+              "num_cache_clusters": true,
+              "num_node_groups": true,
+              "number_cache_clusters": true,
+              "parameter_group_name": true,
+              "primary_endpoint_address": true,
+              "reader_endpoint_address": true,
+              "replicas_per_node_group": true,
+              "replication_group_description": true,
+              "security_group_ids": true,
+              "security_group_names": true,
+              "snapshot_window": true,
+              "subnet_group_name": true,
+              "tags_all": true,
+              "transit_encryption_enabled": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "auth_token": true,
+              "cluster_mode": [],
+              "log_delivery_configuration": [],
+              "member_clusters": [],
+              "security_group_ids": [],
+              "security_group_names": [],
+              "tags_all": {}
+            }
+          }
+        }
+      ]
+    },
+    "invalid_engine_version": {
+      "resource_changes": [
+        {
+          "address": "aws_elasticache_replication_group.test",
+          "mode": "managed",
+          "type": "aws_elasticache_replication_group",
+          "name": "test",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "delete",
+              "create"
+            ],
+            "before": {
+              "apply_immediately": true,
+              "arn": "arn:aws:elasticache:eu-central-1:123456789012:replicationgroup:myreplicationgroup",
+              "at_rest_encryption_enabled": false,
+              "auth_token": "",
+              "auto_minor_version_upgrade": "true",
+              "automatic_failover_enabled": false,
+              "availability_zones": null,
+              "cluster_enabled": false,
+              "cluster_mode": [
+                {
+                  "num_node_groups": 1,
+                  "replicas_per_node_group": 0
+                }
+              ],
+              "configuration_endpoint_address": null,
+              "data_tiering_enabled": false,
+              "description": "test description",
+              "engine": "redis",
+              "engine_version": "6.2",
+              "engine_version_actual": "6.2.6",
+              "final_snapshot_identifier": null,
+              "global_replication_group_id": null,
+              "id": "myreplicationgroup",
+              "kms_key_id": "",
+              "log_delivery_configuration": [],
+              "maintenance_window": "wed:03:30-wed:04:30",
+              "member_clusters": [
+                "myreplicationgroup-001"
+              ],
+              "multi_az_enabled": false,
+              "node_type": "cache.t3.small",
+              "notification_topic_arn": null,
+              "num_cache_clusters": 1,
+              "num_node_groups": 1,
+              "number_cache_clusters": 1,
+              "parameter_group_name": "default.redis6.x",
+              "port": 6379,
+              "preferred_cache_cluster_azs": null,
+              "primary_endpoint_address": "myreplicationgroup.m6osui.ng.0001.use1.cache.amazonaws.com",
+              "reader_endpoint_address": "myreplicationgroup-ro.m6osui.ng.0001.use1.cache.amazonaws.com",
+              "replicas_per_node_group": 0,
+              "replication_group_description": "test description",
+              "replication_group_id": "myreplicationgroup",
+              "security_group_ids": [],
+              "security_group_names": [],
+              "snapshot_arns": null,
+              "snapshot_name": null,
+              "snapshot_retention_limit": 0,
+              "snapshot_window": "08:00-09:00",
+              "subnet_group_name": "default",
+              "tags": {},
+              "tags_all": {},
+              "timeouts": null,
+              "transit_encryption_enabled": false,
+              "user_group_ids": null
+            },
+            "after": {
+              "apply_immediately": true,
+              "at_rest_encryption_enabled": true,
+              "auth_token": null,
+              "automatic_failover_enabled": false,
+              "availability_zones": null,
+              "description": "test description",
+              "engine": "redis",
+              "engine_version": "3.2.10",
+              "final_snapshot_identifier": null,
+              "kms_key_id": null,
+              "log_delivery_configuration": [],
+              "multi_az_enabled": false,
+              "node_type": "cache.t3.small",
+              "notification_topic_arn": null,
+              "port": 6379,
+              "preferred_cache_cluster_azs": null,
+              "replication_group_id": "myreplicationgroup",
+              "snapshot_arns": null,
+              "snapshot_name": null,
+              "snapshot_retention_limit": null,
+              "tags": null,
+              "timeouts": null,
+              "transit_encryption_enabled": false,
+              "user_group_ids": null
+            },
+            "after_unknown": {
+              "arn": true,
+              "auto_minor_version_upgrade": true,
+              "cluster_enabled": true,
+              "cluster_mode": true,
+              "configuration_endpoint_address": true,
+              "data_tiering_enabled": true,
+              "engine_version_actual": true,
+              "global_replication_group_id": true,
+              "id": true,
+              "log_delivery_configuration": [],
+              "maintenance_window": true,
+              "member_clusters": true,
+              "num_cache_clusters": true,
+              "num_node_groups": true,
+              "number_cache_clusters": true,
+              "parameter_group_name": true,
+              "primary_endpoint_address": true,
+              "reader_endpoint_address": true,
+              "replicas_per_node_group": true,
+              "replication_group_description": true,
+              "security_group_ids": true,
+              "security_group_names": true,
+              "snapshot_window": true,
+              "subnet_group_name": true,
+              "tags_all": true
+            },
+            "before_sensitive": {
+              "auth_token": true,
+              "cluster_mode": [
+                {}
+              ],
+              "log_delivery_configuration": [],
+              "member_clusters": [
+                false
+              ],
+              "security_group_ids": [],
+              "security_group_names": [],
+              "tags": {},
+              "tags_all": {},
+              "user_group_ids": []
+            },
+            "after_sensitive": {
+              "auth_token": true,
+              "cluster_mode": [],
+              "log_delivery_configuration": [],
+              "member_clusters": [],
+              "security_group_ids": [],
+              "security_group_names": [],
+              "tags_all": {}
+            },
+            "replace_paths": [
+              [
+                "engine_version"
+              ],
+              [
+                "replication_group_id"
+              ]
+            ]
+          },
+          "action_reason": "replace_because_cannot_update"
+        }
+      ]
+    },
+    "invalid_kms_key": {
+      "resource_changes": [
+        {
+          "address": "aws_elasticache_replication_group.test",
+          "mode": "managed",
+          "type": "aws_elasticache_replication_group",
+          "name": "test",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "delete",
+              "create"
+            ],
+            "after": {
+              "apply_immediately": true,
+              "at_rest_encryption_enabled": true,
+              "auth_token": null,
+              "automatic_failover_enabled": false,
+              "availability_zones": null,
+              "description": "test description",
+              "engine": "redis",
+              "engine_version": "6.2",
+              "final_snapshot_identifier": null,
+              "kms_key_id": null,
+              "log_delivery_configuration": [],
+              "multi_az_enabled": false,
+              "node_type": "cache.t3.small",
+              "notification_topic_arn": null,
+              "port": 6379,
+              "preferred_cache_cluster_azs": null,
+              "replication_group_id": "myreplicationgroup",
+              "snapshot_arns": null,
+              "snapshot_name": null,
+              "snapshot_retention_limit": null,
+              "tags": null,
+              "timeouts": null,
+              "transit_encryption_enabled": true,
+              "user_group_ids": null
+            },
+            "after_unknown": {
+              "arn": true,
+              "auto_minor_version_upgrade": true,
+              "cluster_enabled": true,
+              "cluster_mode": true,
+              "configuration_endpoint_address": true,
+              "data_tiering_enabled": true,
+              "engine_version_actual": true,
+              "global_replication_group_id": true,
+              "id": true,
+              "log_delivery_configuration": [],
+              "maintenance_window": true,
+              "member_clusters": true,
+              "num_cache_clusters": true,
+              "num_node_groups": true,
+              "number_cache_clusters": true,
+              "parameter_group_name": true,
+              "primary_endpoint_address": true,
+              "reader_endpoint_address": true,
+              "replicas_per_node_group": true,
+              "replication_group_description": true,
+              "security_group_ids": true,
+              "security_group_names": true,
+              "snapshot_window": true,
+              "subnet_group_name": true,
+              "tags_all": true
+            },
+            "before_sensitive": {
+              "auth_token": true,
+              "cluster_mode": [
+                {}
+              ],
+              "log_delivery_configuration": [],
+              "member_clusters": [
+                false
+              ],
+              "security_group_ids": [],
+              "security_group_names": [],
+              "tags": {},
+              "tags_all": {},
+              "user_group_ids": []
+            },
+            "after_sensitive": {
+              "auth_token": true,
+              "cluster_mode": [],
+              "log_delivery_configuration": [],
+              "member_clusters": [],
+              "security_group_ids": [],
+              "security_group_names": [],
+              "tags_all": {}
+            },
+            "replace_paths": [
+              [
+                "engine_version"
+              ],
+              [
+                "replication_group_id"
+              ]
+            ]
+          },
+          "action_reason": "replace_because_cannot_update"
+        }
+      ]
+    }
+  }
+}

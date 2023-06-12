@@ -1,0 +1,365 @@
+{
+  "mock": {
+    "compliant": {
+      "resource_changes": [
+        {
+          "address": "aws_elasticache_cluster.compliant",
+          "mode": "managed",
+          "type": "aws_elasticache_cluster",
+          "name": "compliant",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "apply_immediately": true,
+              "auto_minor_version_upgrade": "true",
+              "cluster_id": "mycluster",
+              "engine": "redis",
+              "final_snapshot_identifier": null,
+              "log_delivery_configuration": [
+                {
+                  "destination": "/aws/elasticache/enginelogs",
+                  "destination_type": "cloudwatch-logs",
+                  "log_format": "text",
+                  "log_type": "engine-log"
+                },
+                {
+                  "destination": "/aws/elasticache/slowlogs",
+                  "destination_type": "cloudwatch-logs",
+                  "log_format": "text",
+                  "log_type": "slow-log"
+                }
+              ],
+              "node_type": "cache.t3.micro",
+              "notification_topic_arn": null,
+              "num_cache_nodes": 1,
+              "port": 6379,
+              "preferred_availability_zones": null,
+              "snapshot_arns": null,
+              "snapshot_name": null,
+              "snapshot_retention_limit": null,
+              "tags": null
+            },
+            "after_unknown": {
+              "arn": true,
+              "availability_zone": true,
+              "az_mode": true,
+              "cache_nodes": true,
+              "cluster_address": true,
+              "configuration_endpoint": true,
+              "engine_version": true,
+              "engine_version_actual": true,
+              "id": true,
+              "log_delivery_configuration": [
+                {},
+                {}
+              ],
+              "maintenance_window": true,
+              "parameter_group_name": true,
+              "replication_group_id": true,
+              "security_group_ids": true,
+              "security_group_names": true,
+              "snapshot_window": true,
+              "subnet_group_name": true,
+              "tags_all": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "cache_nodes": [],
+              "log_delivery_configuration": [
+                {},
+                {}
+              ],
+              "security_group_ids": [],
+              "security_group_names": [],
+              "tags_all": {}
+            }
+          }
+        }
+      ]
+    },
+    "not_compliant": {
+      "resource_changes": [
+        {
+          "address": "aws_elasticache_cluster.not_compliant",
+          "mode": "managed",
+          "type": "aws_elasticache_cluster",
+          "name": "not_compliant",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "apply_immediately": true,
+              "auto_minor_version_upgrade": "true",
+              "cluster_id": "mycluster",
+              "engine": "redis",
+              "engine_version": "5.0.6",
+              "final_snapshot_identifier": null,
+              "log_delivery_configuration": [
+                {
+                  "destination": "/aws/elasticache/enginelogs",
+                  "destination_type": "cloudwatch-logs",
+                  "log_format": "text",
+                  "log_type": "engine-log"
+                },
+                {
+                  "destination": "/aws/elasticache/slowlogs",
+                  "destination_type": "cloudwatch-logs",
+                  "log_format": "text",
+                  "log_type": "slow-log"
+                }
+              ],
+              "node_type": "cache.t3.micro",
+              "notification_topic_arn": null,
+              "num_cache_nodes": 1,
+              "port": 6379,
+              "preferred_availability_zones": null,
+              "snapshot_arns": null,
+              "snapshot_name": null,
+              "snapshot_retention_limit": null,
+              "tags": null
+            },
+            "after_unknown": {
+              "arn": true,
+              "availability_zone": true,
+              "az_mode": true,
+              "cache_nodes": true,
+              "cluster_address": true,
+              "configuration_endpoint": true,
+              "engine_version": true,
+              "engine_version_actual": true,
+              "id": true,
+              "log_delivery_configuration": [],
+              "maintenance_window": true,
+              "parameter_group_name": true,
+              "replication_group_id": true,
+              "security_group_ids": true,
+              "security_group_names": true,
+              "snapshot_window": true,
+              "subnet_group_name": true,
+              "tags_all": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "cache_nodes": [],
+              "log_delivery_configuration": [],
+              "security_group_ids": [],
+              "security_group_names": [],
+              "tags_all": {}
+            }
+          }
+        }
+      ]
+    },
+    "not_compliant_slow": {
+      "resource_changes": [
+        {
+          "address": "aws_elasticache_cluster.not_compliant_slow",
+          "mode": "managed",
+          "type": "aws_elasticache_cluster",
+          "name": "not_compliant",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "apply_immediately": true,
+              "auto_minor_version_upgrade": "true",
+              "cluster_id": "mycluster",
+              "engine": "redis",
+              "engine_version": "6.2",
+              "final_snapshot_identifier": null,
+              "log_delivery_configuration": [
+                {
+                  "destination": "/aws/elasticache/slowlogs",
+                  "destination_type": "cloudwatch-logs",
+                  "log_format": "text",
+                  "log_type": "engine-log"
+                }
+              ],
+              "node_type": "cache.t3.micro",
+              "notification_topic_arn": null,
+              "num_cache_nodes": 1,
+              "port": 6379,
+              "preferred_availability_zones": null,
+              "snapshot_arns": null,
+              "snapshot_name": null,
+              "snapshot_retention_limit": null,
+              "tags": null
+            },
+            "after_unknown": {
+              "arn": true,
+              "availability_zone": true,
+              "az_mode": true,
+              "cache_nodes": true,
+              "cluster_address": true,
+              "configuration_endpoint": true,
+              "engine_version": true,
+              "engine_version_actual": true,
+              "id": true,
+              "log_delivery_configuration": [],
+              "maintenance_window": true,
+              "parameter_group_name": true,
+              "replication_group_id": true,
+              "security_group_ids": true,
+              "security_group_names": true,
+              "snapshot_window": true,
+              "subnet_group_name": true,
+              "tags_all": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "cache_nodes": [],
+              "log_delivery_configuration": [],
+              "security_group_ids": [],
+              "security_group_names": [],
+              "tags_all": {}
+            }
+          }
+        }
+      ]
+    },
+    "not_compliant_engine": {
+      "resource_changes": [
+        {
+          "address": "aws_elasticache_cluster.not_compliant_engine",
+          "mode": "managed",
+          "type": "aws_elasticache_cluster",
+          "name": "not_compliant",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "apply_immediately": true,
+              "auto_minor_version_upgrade": "true",
+              "cluster_id": "mycluster",
+              "engine": "redis",
+              "engine_version": "6.2",
+              "final_snapshot_identifier": null,
+              "log_delivery_configuration": [
+                {
+                  "destination": "/aws/elasticache/enginelogs",
+                  "destination_type": "cloudwatch-logs",
+                  "log_format": "text",
+                  "log_type": "slow-log"
+                }
+              ],
+              "node_type": "cache.t3.micro",
+              "notification_topic_arn": null,
+              "num_cache_nodes": 1,
+              "port": 6379,
+              "preferred_availability_zones": null,
+              "snapshot_arns": null,
+              "snapshot_name": null,
+              "snapshot_retention_limit": null,
+              "tags": null
+            },
+            "after_unknown": {
+              "arn": true,
+              "availability_zone": true,
+              "az_mode": true,
+              "cache_nodes": true,
+              "cluster_address": true,
+              "configuration_endpoint": true,
+              "engine_version": true,
+              "engine_version_actual": true,
+              "id": true,
+              "log_delivery_configuration": [],
+              "maintenance_window": true,
+              "parameter_group_name": true,
+              "replication_group_id": true,
+              "security_group_ids": true,
+              "security_group_names": true,
+              "snapshot_window": true,
+              "subnet_group_name": true,
+              "tags_all": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "cache_nodes": [],
+              "log_delivery_configuration": [],
+              "security_group_ids": [],
+              "security_group_names": [],
+              "tags_all": {}
+            }
+          }
+        }
+      ]
+    },
+    "not_compliant_engine_and_slow": {
+      "resource_changes": [
+        {
+          "address": "aws_elasticache_cluster.not_compliant_engine_and_slow",
+          "mode": "managed",
+          "type": "aws_elasticache_cluster",
+          "name": "not_compliant",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "change": {
+            "actions": [
+              "create"
+            ],
+            "before": null,
+            "after": {
+              "apply_immediately": true,
+              "auto_minor_version_upgrade": "true",
+              "cluster_id": "mycluster",
+              "engine": "redis",
+              "engine_version": "6.2",
+              "final_snapshot_identifier": null,
+              "log_delivery_configuration": [
+              ],
+              "node_type": "cache.t3.micro",
+              "notification_topic_arn": null,
+              "num_cache_nodes": 1,
+              "port": 6379,
+              "preferred_availability_zones": null,
+              "snapshot_arns": null,
+              "snapshot_name": null,
+              "snapshot_retention_limit": null,
+              "tags": null
+            },
+            "after_unknown": {
+              "arn": true,
+              "availability_zone": true,
+              "az_mode": true,
+              "cache_nodes": true,
+              "cluster_address": true,
+              "configuration_endpoint": true,
+              "engine_version": true,
+              "engine_version_actual": true,
+              "id": true,
+              "log_delivery_configuration": [],
+              "maintenance_window": true,
+              "parameter_group_name": true,
+              "replication_group_id": true,
+              "security_group_ids": true,
+              "security_group_names": true,
+              "snapshot_window": true,
+              "subnet_group_name": true,
+              "tags_all": true
+            },
+            "before_sensitive": false,
+            "after_sensitive": {
+              "cache_nodes": [],
+              "log_delivery_configuration": [],
+              "security_group_ids": [],
+              "security_group_names": [],
+              "tags_all": {}
+            }
+          }
+        }
+      ]
+    }
+  }
+}
