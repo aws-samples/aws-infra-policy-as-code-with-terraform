@@ -43,9 +43,9 @@ File naming convention:
  - type_of_control - can be any one of (m, r) - `m` refers to mandatory control, `r` for recommended control - aws-s3-m-<policy_id>
  - policy_id - can be a number E.g., 1, 2, 3  - aws-s3-m-1 or aws-s3-r-1
 
-## Usage
+# Usage
 
-# Pre-requisites:
+## Pre-requisites:
 1. Install [terraform](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli)
 2. Install [opa](https://www.openpolicyagent.org/docs/latest/#running-opa) 
 
@@ -62,7 +62,7 @@ Download the repo and do the following:
    ``` 
    opa eval -i <terraform_plan_json_file_path> -d <OPA_rule_rego_file_path> -d <common_utils_file_path> "data.aws.<service_name>.<policy_id>.deny"
    ```
-    E.g. Go to the directory of the repo - `~/policy-as-code/policy ` and run `opa eval -i /tmp/plan.json -d aws/aws-efs-m-1.rego -d common.utils.rego "data.aws.efs.m2.deny"`
+    E.g. Go to the directory of the repo - `~/policy-as-code/OPA/policy ` and run `opa eval -i /tmp/plan.json -d aws/efs/aws-efs-m-1.rego -d common.utils.rego "data.aws.efs.m2.deny"`
 3. If opa evaluations are done successfully against the generated plan, you can safely deploy the infrastructure. If not, modify terraform code to comply with the policies defined.
 
 
