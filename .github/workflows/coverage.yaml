@@ -15,7 +15,7 @@ jobs:
       - name: Fetch OPA policies
         run: |
           git clone https://github.com/aws-samples/aws-infra-policy-as-code-with-terraform.git
-          cp aws-infra-policy-as-code-with-terraform/policy-as-code/* .
+          cp -rf aws-infra-policy-as-code-with-terraform/policy-as-code/* .
 
       - name: Run OPA policy check
         run: |
