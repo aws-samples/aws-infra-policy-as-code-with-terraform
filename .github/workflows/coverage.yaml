@@ -22,7 +22,7 @@ jobs:
           for policy in ${policies}
           do
           printf "\nPolicy: \e[0;32m.${policy}.rego\e[0m\n"
-          utils=$(find ./OPA/policy -name "*.utils.*")
+          utils=$(find ./policy-as-code/OPA/policy -name "*.utils.*")
           target=".${policy}.* $utils"
           set -o pipefail
           opa test $target -v | grep -v ".utils." || exit 1
