@@ -20,7 +20,7 @@ jobs:
 
       - name: Run OPA policy checks
         run: |
-          echo `opa --version`
+          echo `opa version`
           policies=$(find ./policy-as-code/OPA/policy -name "*.rego" | grep -v .utils. | cut -d"." -f2 | sort | uniq)
           for policy in ${policies}
           do
