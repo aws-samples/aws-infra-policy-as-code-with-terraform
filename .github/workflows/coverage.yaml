@@ -10,20 +10,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
-      - name: Set up OPA and Run policy checks
+      - name: Check out repository code
+        uses: actions/checkout@v3
+
+      - name: Setup OPA
+        uses: open-policy-agent/setup-opa@v2
+        with:
+          version: latest
+
+      - name: Run OPA policy checks
         run: |
-          # Install dependencies
-
-          sudo apt-get -y update; sudo apt-get -y install curl
-          curl --version
-          curl -L https://openpolicyagent.org/downloads/v0.36.1/opa_linux_amd64_static -vvv --output /usr/bin/opa
-          chmod +x /usr/bin/opa
-          version=$(opa version)
-          echo $version
-
-          # Run OPA policy checks
-
+          echo `opa --version`
           policies=$(find ./policy-as-code/OPA/policy -name "*.rego" | grep -v .utils. | cut -d"." -f2 | sort | uniq)
           for policy in ${policies}
           do
