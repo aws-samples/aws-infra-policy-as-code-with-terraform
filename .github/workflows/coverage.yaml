@@ -27,8 +27,9 @@ jobs:
           printf "\nPolicy: \e[0;32m.${policy}.rego\e[0m\n"
           utils=$(find ./policy-as-code/OPA/policy -name "*.utils.*")
           target=".${policy}.* $utils"
+          echo $target
           set -o pipefail
-          opa test $target -v | grep -v ".utils." || exit 1
+          opa test $target -v || exit 1
           coverage_values=`opa test --coverage $target -v | grep -iE '"coverage": [ 0-9 ]+'`
           coverage=`printf "${coverage_values}%%\n" | tail -n 1 | xargs`
           echo $coverage
