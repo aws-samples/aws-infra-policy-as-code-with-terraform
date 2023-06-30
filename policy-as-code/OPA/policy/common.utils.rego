@@ -88,10 +88,12 @@ index_of(array, value) = output {
 }
 
 # Checks if value is null or false
-is_null_or_false(value) = output {
-	output := is_null(value)
-} else = output {
-	output := value == false
+is_null_or_false(value) {
+	is_null(value)
+} else {
+	value == false
+} else = false {
+    true
 }
 
 # Checks if object matches fraction

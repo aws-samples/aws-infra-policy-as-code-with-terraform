@@ -36,6 +36,9 @@ test_to_path {
 test_is_null_or_false {
 	is_null_or_false(null) == true
 	is_null_or_false(false) == true
+	is_null_or_false(true) == false
+	is_null_or_false("sample") == false
+	is_null_or_false(["1", "2"]) == false
 }
 
 test_get {
