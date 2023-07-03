@@ -1,3 +1,5 @@
+[![Coverage Check](https://github.com/aws-samples/aws-infra-policy-as-code-with-terraform/actions/workflows/coverage.yaml/badge.svg)](https://github.com/aws-samples/aws-infra-policy-as-code-with-terraform/actions/workflows/coverage.yaml)
+
 # Policy-as-Code
 
 This repo contains Open Policy Agent (OPA) policies to test AWS infrastructure against terraform plan.
@@ -47,7 +49,8 @@ File naming convention:
 
 ## Pre-requisites:
 1. Install [terraform](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli)
-2. Install [opa](https://www.openpolicyagent.org/docs/latest/#running-opa) 
+2. Install [opa](https://www.openpolicyagent.org/docs/latest/#running-opa)
+3. Install [conftest](https://github.com/open-policy-agent/conftest)
 
 Download the repo and do the following:
 
@@ -58,12 +61,31 @@ Download the repo and do the following:
    terraform show -json /tmp/planfile > /tmp/plan.json
 
    ```
-2. Run OPA rule against the generated terraform plan using:
+2. Run specific OPA rule against the generated terraform plan use:
+
+   Go to the directory of the repo - `~/policy-as-code/OPA/policy ` (Note: check the path correctly)
    ``` 
    opa eval -i <terraform_plan_json_file_path> -d <OPA_rule_rego_file_path> -d <common_utils_file_path> "data.aws.<service_name>.<policy_id>.deny"
    ```
-    E.g. Go to the directory of the repo - `~/policy-as-code/OPA/policy ` and run `opa eval -i /tmp/plan.json -d aws/efs/aws-efs-m-1.rego -d common.utils.rego "data.aws.efs.m2.deny"`
-3. If opa evaluations are done successfully against the generated plan, you can safely deploy the infrastructure. If not, modify terraform code to comply with the policies defined.
+    E.g.
+    ```
+    cd ~/policy-as-code/OPA/policy
+    opa eval -i /tmp/plan.json -d aws/efs/aws-efs-m-1.rego -d common.utils.rego "data.aws.efs.m2.deny"
+    ```
+
+3. Run all OPA rules in this repository against the generated terraform plan use:
+   
+    Go to the directory of the repo - `~/policy-as-code/OPA/` (Note: check the path correctly)
+    ```
+    conftest test  <terraform_plan_json_file_path> -o table --all-namespaces -p <OPA_rule_policy_dir_file_path>
+    ```
+     E.g.
+     ```
+     cd ~/policy-as-code/OPA/
+     conftest test /tmp/tfplan.json -o table --all-namespaces -p policy/
+     ```
+   
+4. If opa evaluations are done successfully against the generated plan, you can safely deploy the infrastructure. If not, modify terraform code to comply with the policies defined.
 
 
 ## Security
