@@ -1,6 +1,6 @@
 package eks.blueprint.control.logs
 
-msg := {"EKS Cluster should countain following cluster log types enabled - 'api', 'audit', 'authenticator'"}
+msg := {"EKS Cluster should contain following cluster log types enabled - 'api', 'audit', 'authenticator'"}
 
 test_valid {
   

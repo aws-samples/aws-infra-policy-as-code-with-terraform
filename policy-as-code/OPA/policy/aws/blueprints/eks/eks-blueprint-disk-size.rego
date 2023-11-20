@@ -1,4 +1,5 @@
-package aws.blueprints.eks.securityGroup
+package aws.blueprints.eks.disk_size
+
 
 import future.keywords.in
 
