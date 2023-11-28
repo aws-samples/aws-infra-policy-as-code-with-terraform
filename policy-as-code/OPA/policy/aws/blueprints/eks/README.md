@@ -7,11 +7,22 @@ This repo contains below OPA Rego policies for the Fargate Serverless pattern fr
 4. eks-blueprint-selfmanaged-security-group: Check if self managed cluster nodes have security groups defined
 5. eks-blueprint-disk-size: Check if the EKS Cluster node groups have disk_size parameter configured
 
-# Validating Rego Policies
+# Testing EKS Blueprint OPA Rego Policies
 ```
    opa test <path_to_opa_control> <path_to_common_utils.rego> -v
 ```
 For instance:
 ```
+   cd ~/aws-infra-policy-as-code-with-terraform/policy-as-code/OPA/policy
    opa test eks-blueprint-control-logs* common.utils.rego -v
+```
+
+# EKS Blueprint OPA Rego Test Coverage
+```
+   opa test <path_to_opa_control> <path_to_common_utils.rego> -v --coverage
+```
+For instance:
+```
+   cd ~/aws-infra-policy-as-code-with-terraform/policy-as-code/OPA/policy
+   opa test eks-blueprint-control-logs* common.utils.rego -v --coverage
 ```
