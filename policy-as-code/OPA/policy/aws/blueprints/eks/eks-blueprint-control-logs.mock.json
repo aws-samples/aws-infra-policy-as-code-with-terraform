@@ -1,5 +1,5 @@
 {
-  "m1_valid": {
+  "controllogs_valid": {
     "resource_changes": [
       {
         "address": "module.eks.aws_eks_cluster.eks_cluster",
@@ -148,7 +148,7 @@
         }
       }]
 },
-  "m1_api_invalid": {
+  "controllogs_api_invalid": {
     "resource_changes": [
       {
         "address": "module.eks.aws_eks_cluster.eks_cluster",
