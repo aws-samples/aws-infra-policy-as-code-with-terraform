@@ -1,6 +1,6 @@
 package aws.blueprints.eks.controllogs
 
-msg := {"EKS Cluster should contain following cluster log types enabled - 'api', 'audit', 'authenticator'"}
+msg := {"'module.eks.aws_eks_cluster.eks_cluster' EKS Cluster should contain following cluster log types enabled - 'api', 'audit', 'authenticator'"}
 
 test_valid {
   result = deny with input as data.m1_valid

@@ -28,5 +28,5 @@ deny[reason] {
 	some resource in input.resource_changes
 	is_in_scope(resource)
 	not is_logging_valid(resource)
-	reason := sprintf("'%s' EKS Cluster should contain following control plane log types enabled - 'api', 'audit', 'authenticator'", [resource.address])
+    reason := sprintf("'%s' EKS Cluster should contain following cluster log types enabled - 'api', 'audit', 'authenticator'", [resource.address])
 }
