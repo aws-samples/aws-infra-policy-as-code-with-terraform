@@ -11,3 +11,13 @@ test_invalid_api {
   result = deny with input as data.controllogs_api_invalid
   msg == result
 }
+
+test_invalid_audit {
+  result = deny with input as data.controllogs_audit_invalid
+  msg == result
+} 
+
+test_invalid_authenticator {
+  result = deny with input as data.controllogs_audit_authenticator
+  msg == result
+} 
