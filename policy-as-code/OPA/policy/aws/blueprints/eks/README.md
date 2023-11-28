@@ -9,9 +9,9 @@ This repo contains below OPA Rego policies for the EKS Blueprint for Terraform p
 
 # Pre-requisites
 
-- Install AWS CLI version 2 on your local machine
-- Install Open Policy Agent from the latest release
-- Install Terraform
+- [Install AWS CLI version 2](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html) on your local machine
+- [Install Open Policy Agent](https://github.com/open-policy-agent/opa) from the latest release
+- [Install Terraform](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli)
 
 # Testing EKS Blueprint OPA Rego Policies
 ```
