@@ -13,6 +13,48 @@ This repo contains below OPA Rego policies for the EKS Blueprint for Terraform p
 - [Install Open Policy Agent](https://github.com/open-policy-agent/opa) from the latest release
 - [Install Terraform](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli)
 
+# Evaluate EKS Blueprint for Terraform plan with OPA
+
+You can git clone the two repos, one containing the EKS Blueprint terraform configuration and this one containing the OPA Rego policies which would be used to scan the terraform plans
+```
+   git clone https://github.com/aws-ia/terraform-aws-eks-blueprints.git
+   git clone https://github.com/gpmattoo/aws-infra-policy-as-code-with-terraform.git
+```
+
+You can initialize and run the terraform plan command 
+```
+terraform -chdir=terraform-aws-eks-blueprints/patterns/fargate-serverless/ init
+terraform -chdir=terraform-aws-eks-blueprints/patterns/fargate-serverless/ plan --out tfplan.binary
+terraform -chdir=terraform-aws-eks-blueprints/patterns/fargate-serverless/ show -json tfplan.binary > tfplan.json
+
+cat tfplan.json
+```
+
+Here is the OPA policy execution to evaluate the terraform plan from fargate-serverless pattern of EKS Blueprint
+
+```
+opa eval -i /Users/gpmattoo/devOpsRepos/aws-infra-policy-as-code-with-terraform/policy-as-code/OPA/policy/aws/blueprints/eks/fargate-serverless-tfplan.json -d /Users/gpmattoo/devOpsRepos/aws-infra-policy-as-code-with-terraform/policy-as-code/OPA/policy/aws/blueprints/eks/eks-blueprint-control-logs.rego -d common.utils.rego "data.aws.blueprints.eks.controllogs.deny"
+```
+and here is the output of above policy execution:
+```
+{
+  "result": [
+    {
+      "expressions": [
+        {
+          "value": [],
+          "text": "data.aws.blueprints.eks.controllogs.deny",
+          "location": {
+            "row": 1,
+            "col": 1
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
 # Testing EKS Blueprint OPA Rego Policies
 ```
    opa test <path_to_opa_control> <path_to_common_utils.rego> -v

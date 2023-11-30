@@ -8,7 +8,7 @@ import future.keywords.in
 # Terraform policy resource link
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/eks_node_group#disk_size
 
-# AWS link to policy defitinio/explanation
+# AWS link to policy definition/explanation
 # https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html
 
 is_in_scope(resource) {
