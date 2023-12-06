@@ -1,0 +1,598 @@
+{
+  "controllogs_valid": {
+    "resource_changes": [
+      {
+        "address": "module.eks.aws_eks_cluster.eks_cluster",
+        "module_address": "module.eks",
+        "mode": "managed",
+        "type": "aws_eks_cluster",
+        "name": "this",
+        "index": 0,
+        "provider_name": "registry.terraform.io/hashicorp/aws",
+        "change": {
+          "actions": [
+            "create"
+          ],
+          "before": null,
+          "after": {
+            "enabled_cluster_log_types": [
+              "api",
+              "audit",
+              "authenticator"
+            ],
+            "encryption_config": [
+              {
+                "provider": [
+                  {}
+                ],
+                "resources": [
+                  "secrets"
+                ]
+              }
+            ],
+            "kubernetes_network_config": [
+              {}
+            ],
+            "name": "fargate-serverless",
+            "outpost_config": [],
+            "tags": {
+              "Blueprint": "fargate-serverless",
+              "GithubRepo": "github.com/aws-ia/terraform-aws-eks-blueprints"
+            },
+            "tags_all": {
+              "Blueprint": "fargate-serverless",
+              "GithubRepo": "github.com/aws-ia/terraform-aws-eks-blueprints"
+            },
+            "timeouts": {
+              "create": null,
+              "delete": null,
+              "update": null
+            },
+            "version": "1.27",
+            "vpc_config": [
+              {
+                "endpoint_private_access": true,
+                "endpoint_public_access": true,
+                "public_access_cidrs": [
+                  "0.0.0.0/0"
+                ],
+                "security_group_ids": null
+              }
+            ]
+          },
+          "after_unknown": {
+            "arn": true,
+            "certificate_authority": true,
+            "cluster_id": true,
+            "created_at": true,
+            "enabled_cluster_log_types": [
+              false,
+              false,
+              false
+            ],
+            "encryption_config": [
+              {
+                "provider": [
+                  {
+                    "key_arn": true
+                  }
+                ],
+                "resources": [
+                  false
+                ]
+              }
+            ],
+            "endpoint": true,
+            "id": true,
+            "identity": true,
+            "kubernetes_network_config": [
+              {
+                "ip_family": true,
+                "service_ipv4_cidr": true,
+                "service_ipv6_cidr": true
+              }
+            ],
+            "outpost_config": [],
+            "platform_version": true,
+            "role_arn": true,
+            "status": true,
+            "tags": {},
+            "tags_all": {},
+            "timeouts": {},
+            "vpc_config": [
+              {
+                "cluster_security_group_id": true,
+                "public_access_cidrs": [
+                  false
+                ],
+                "subnet_ids": true,
+                "vpc_id": true
+              }
+            ]
+          },
+          "before_sensitive": false,
+          "after_sensitive": {
+            "certificate_authority": [],
+            "enabled_cluster_log_types": [
+              false,
+              false,
+              false
+            ],
+            "encryption_config": [
+              {
+                "provider": [
+                  {}
+                ],
+                "resources": [
+                  false
+                ]
+              }
+            ],
+            "identity": [],
+            "kubernetes_network_config": [
+              {}
+            ],
+            "outpost_config": [],
+            "tags": {},
+            "tags_all": {},
+            "timeouts": {},
+            "vpc_config": [
+              {
+                "public_access_cidrs": [
+                  false
+                ],
+                "subnet_ids": []
+              }
+            ]
+          }
+        }
+      }]
+},
+  "controllogs_api_invalid": {
+    "resource_changes": [
+      {
+        "address": "module.eks.aws_eks_cluster.eks_cluster",
+        "module_address": "module.eks",
+        "mode": "managed",
+        "type": "aws_eks_cluster",
+        "name": "this",
+        "index": 0,
+        "provider_name": "registry.terraform.io/hashicorp/aws",
+        "change": {
+          "actions": [
+            "create"
+          ],
+          "before": null,
+          "after": {
+            "enabled_cluster_log_types": [
+              "api1",
+              "audit",
+              "authenticator"
+            ],
+            "encryption_config": [
+              {
+                "provider": [
+                  {}
+                ],
+                "resources": [
+                  "secrets"
+                ]
+              }
+            ],
+            "kubernetes_network_config": [
+              {}
+            ],
+            "name": "fargate-serverless",
+            "outpost_config": [],
+            "tags": {
+              "Blueprint": "fargate-serverless",
+              "GithubRepo": "github.com/aws-ia/terraform-aws-eks-blueprints"
+            },
+            "tags_all": {
+              "Blueprint": "fargate-serverless",
+              "GithubRepo": "github.com/aws-ia/terraform-aws-eks-blueprints"
+            },
+            "timeouts": {
+              "create": null,
+              "delete": null,
+              "update": null
+            },
+            "version": "1.27",
+            "vpc_config": [
+              {
+                "endpoint_private_access": true,
+                "endpoint_public_access": true,
+                "public_access_cidrs": [
+                  "0.0.0.0/0"
+                ],
+                "security_group_ids": null
+              }
+            ]
+          },
+          "after_unknown": {
+            "arn": true,
+            "certificate_authority": true,
+            "cluster_id": true,
+            "created_at": true,
+            "enabled_cluster_log_types": [
+              false,
+              false,
+              false
+            ],
+            "encryption_config": [
+              {
+                "provider": [
+                  {
+                    "key_arn": true
+                  }
+                ],
+                "resources": [
+                  false
+                ]
+              }
+            ],
+            "endpoint": true,
+            "id": true,
+            "identity": true,
+            "kubernetes_network_config": [
+              {
+                "ip_family": true,
+                "service_ipv4_cidr": true,
+                "service_ipv6_cidr": true
+              }
+            ],
+            "outpost_config": [],
+            "platform_version": true,
+            "role_arn": true,
+            "status": true,
+            "tags": {},
+            "tags_all": {},
+            "timeouts": {},
+            "vpc_config": [
+              {
+                "cluster_security_group_id": true,
+                "public_access_cidrs": [
+                  false
+                ],
+                "subnet_ids": true,
+                "vpc_id": true
+              }
+            ]
+          },
+          "before_sensitive": false,
+          "after_sensitive": {
+            "certificate_authority": [],
+            "enabled_cluster_log_types": [
+              false,
+              false,
+              false
+            ],
+            "encryption_config": [
+              {
+                "provider": [
+                  {}
+                ],
+                "resources": [
+                  false
+                ]
+              }
+            ],
+            "identity": [],
+            "kubernetes_network_config": [
+              {}
+            ],
+            "outpost_config": [],
+            "tags": {},
+            "tags_all": {},
+            "timeouts": {},
+            "vpc_config": [
+              {
+                "public_access_cidrs": [
+                  false
+                ],
+                "subnet_ids": []
+              }
+            ]
+          }
+        }
+      }]
+  },
+  "controllogs_audit_invalid": {
+    "resource_changes": [
+      {
+        "address": "module.eks.aws_eks_cluster.eks_cluster",
+        "module_address": "module.eks",
+        "mode": "managed",
+        "type": "aws_eks_cluster",
+        "name": "this",
+        "index": 0,
+        "provider_name": "registry.terraform.io/hashicorp/aws",
+        "change": {
+          "actions": [
+            "create"
+          ],
+          "before": null,
+          "after": {
+            "enabled_cluster_log_types": [
+              "api",
+              "audit1",
+              "authenticator"
+            ],
+            "encryption_config": [
+              {
+                "provider": [
+                  {}
+                ],
+                "resources": [
+                  "secrets"
+                ]
+              }
+            ],
+            "kubernetes_network_config": [
+              {}
+            ],
+            "name": "fargate-serverless",
+            "outpost_config": [],
+            "tags": {
+              "Blueprint": "fargate-serverless",
+              "GithubRepo": "github.com/aws-ia/terraform-aws-eks-blueprints"
+            },
+            "tags_all": {
+              "Blueprint": "fargate-serverless",
+              "GithubRepo": "github.com/aws-ia/terraform-aws-eks-blueprints"
+            },
+            "timeouts": {
+              "create": null,
+              "delete": null,
+              "update": null
+            },
+            "version": "1.27",
+            "vpc_config": [
+              {
+                "endpoint_private_access": true,
+                "endpoint_public_access": true,
+                "public_access_cidrs": [
+                  "0.0.0.0/0"
+                ],
+                "security_group_ids": null
+              }
+            ]
+          },
+          "after_unknown": {
+            "arn": true,
+            "certificate_authority": true,
+            "cluster_id": true,
+            "created_at": true,
+            "enabled_cluster_log_types": [
+              false,
+              false,
+              false
+            ],
+            "encryption_config": [
+              {
+                "provider": [
+                  {
+                    "key_arn": true
+                  }
+                ],
+                "resources": [
+                  false
+                ]
+              }
+            ],
+            "endpoint": true,
+            "id": true,
+            "identity": true,
+            "kubernetes_network_config": [
+              {
+                "ip_family": true,
+                "service_ipv4_cidr": true,
+                "service_ipv6_cidr": true
+              }
+            ],
+            "outpost_config": [],
+            "platform_version": true,
+            "role_arn": true,
+            "status": true,
+            "tags": {},
+            "tags_all": {},
+            "timeouts": {},
+            "vpc_config": [
+              {
+                "cluster_security_group_id": true,
+                "public_access_cidrs": [
+                  false
+                ],
+                "subnet_ids": true,
+                "vpc_id": true
+              }
+            ]
+          },
+          "before_sensitive": false,
+          "after_sensitive": {
+            "certificate_authority": [],
+            "enabled_cluster_log_types": [
+              false,
+              false,
+              false
+            ],
+            "encryption_config": [
+              {
+                "provider": [
+                  {}
+                ],
+                "resources": [
+                  false
+                ]
+              }
+            ],
+            "identity": [],
+            "kubernetes_network_config": [
+              {}
+            ],
+            "outpost_config": [],
+            "tags": {},
+            "tags_all": {},
+            "timeouts": {},
+            "vpc_config": [
+              {
+                "public_access_cidrs": [
+                  false
+                ],
+                "subnet_ids": []
+              }
+            ]
+          }
+        }
+      }]
+  },
+  "controllogs_audit_authenticator": {
+    "resource_changes": [
+      {
+        "address": "module.eks.aws_eks_cluster.eks_cluster",
+        "module_address": "module.eks",
+        "mode": "managed",
+        "type": "aws_eks_cluster",
+        "name": "this",
+        "index": 0,
+        "provider_name": "registry.terraform.io/hashicorp/aws",
+        "change": {
+          "actions": [
+            "create"
+          ],
+          "before": null,
+          "after": {
+            "enabled_cluster_log_types": [
+              "api",
+              "audit",
+              "authenticator1"
+            ],
+            "encryption_config": [
+              {
+                "provider": [
+                  {}
+                ],
+                "resources": [
+                  "secrets"
+                ]
+              }
+            ],
+            "kubernetes_network_config": [
+              {}
+            ],
+            "name": "fargate-serverless",
+            "outpost_config": [],
+            "tags": {
+              "Blueprint": "fargate-serverless",
+              "GithubRepo": "github.com/aws-ia/terraform-aws-eks-blueprints"
+            },
+            "tags_all": {
+              "Blueprint": "fargate-serverless",
+              "GithubRepo": "github.com/aws-ia/terraform-aws-eks-blueprints"
+            },
+            "timeouts": {
+              "create": null,
+              "delete": null,
+              "update": null
+            },
+            "version": "1.27",
+            "vpc_config": [
+              {
+                "endpoint_private_access": true,
+                "endpoint_public_access": true,
+                "public_access_cidrs": [
+                  "0.0.0.0/0"
+                ],
+                "security_group_ids": null
+              }
+            ]
+          },
+          "after_unknown": {
+            "arn": true,
+            "certificate_authority": true,
+            "cluster_id": true,
+            "created_at": true,
+            "enabled_cluster_log_types": [
+              false,
+              false,
+              false
+            ],
+            "encryption_config": [
+              {
+                "provider": [
+                  {
+                    "key_arn": true
+                  }
+                ],
+                "resources": [
+                  false
+                ]
+              }
+            ],
+            "endpoint": true,
+            "id": true,
+            "identity": true,
+            "kubernetes_network_config": [
+              {
+                "ip_family": true,
+                "service_ipv4_cidr": true,
+                "service_ipv6_cidr": true
+              }
+            ],
+            "outpost_config": [],
+            "platform_version": true,
+            "role_arn": true,
+            "status": true,
+            "tags": {},
+            "tags_all": {},
+            "timeouts": {},
+            "vpc_config": [
+              {
+                "cluster_security_group_id": true,
+                "public_access_cidrs": [
+                  false
+                ],
+                "subnet_ids": true,
+                "vpc_id": true
+              }
+            ]
+          },
+          "before_sensitive": false,
+          "after_sensitive": {
+            "certificate_authority": [],
+            "enabled_cluster_log_types": [
+              false,
+              false,
+              false
+            ],
+            "encryption_config": [
+              {
+                "provider": [
+                  {}
+                ],
+                "resources": [
+                  false
+                ]
+              }
+            ],
+            "identity": [],
+            "kubernetes_network_config": [
+              {}
+            ],
+            "outpost_config": [],
+            "tags": {},
+            "tags_all": {},
+            "timeouts": {},
+            "vpc_config": [
+              {
+                "public_access_cidrs": [
+                  false
+                ],
+                "subnet_ids": []
+              }
+            ]
+          }
+        }
+      }]
+  }
+}
